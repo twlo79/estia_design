@@ -46,3 +46,5 @@
   唯一 MNC = 傑太日煙(JTI)→ B2B 敲門磚;千益/昊之等 = 案源線索
 
 **本次(2026-09-09)**:建立本 repo 備份體系(結構/README/sync.sh/estia-backup skill)
+
+**自動備份管線啟用(2026-09-09)**:Project 知識庫(SKILL.md+token.txt)+ 專案指令已就位;本 commit 即為管線驗收。
