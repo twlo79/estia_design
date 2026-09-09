@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Day 1–18 重新體檢</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1000px; margin:0 auto; padding:56px 22px 90px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:52px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(36px,6.5vw,60px); line-height:1.06; margin-bottom:14px; }
+  .intro{ font-family:'Noto Serif TC',serif; font-size:15px; color:#5b5449; line-height:1.95; max-width:660px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  .legend{ display:flex; gap:22px; flex-wrap:wrap; margin-top:26px; font-family:'Noto Serif TC',serif; font-size:12.5px; color:#5b5449; }
+  .dot{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; vertical-align:1px; }
+  .g{ background:#7d8b6a; } .y{ background:#c2a35c; } .r{ background:#a3543f; }
+
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:26px; margin:64px 0 4px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:13.5px; color:var(--stone); margin-bottom:22px; letter-spacing:.1em; }
+
+  .day{ border:1px solid rgba(34,29,23,.13); background:var(--marble); margin-bottom:12px; padding:18px 22px 20px; }
+  .day-head{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+  .day-id{ font-size:11px; letter-spacing:.22em; color:var(--oak); white-space:nowrap; }
+  .day-title{ font-family:'Noto Serif TC',serif; font-size:14.5px; font-weight:500; color:var(--ember); }
+  .verdict{ margin-left:auto; font-family:'Noto Serif TC',serif; font-size:11.5px; color:#5b5449; white-space:nowrap; }
+  .row{ font-family:'Noto Serif TC',serif; font-size:13px; line-height:1.85; color:#4a443b; margin-top:6px; }
+  .row b{ color:var(--oak); font-weight:500; }
+  .row .warn{ color:#a3543f; font-weight:500; }
+
+  .top{ border:1px solid var(--oak); background:var(--linen); padding:26px 24px; margin-top:56px; }
+  .top .t-item{ font-family:'Noto Serif TC',serif; font-size:13.5px; line-height:1.9; color:#3f3a32; margin-top:12px; }
+  .top .t-item b{ color:var(--oak); font-weight:500; }
+  .top .t-item .warn{ color:#a3543f; font-weight:500; }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>Re-Audit · Day 1–18</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Full-Strength Review · 最強模型重新體檢</div>
+    <h1>Eighteen days,<br/>re-examined.</h1>
+    <p class="intro">這不是重寫,是體檢:把 18 天的每一個決策,用現在的腦重看一次——哪裡穩、哪裡有隱患、哪裡建議補強。<b>結論先講:骨架全部成立,沒有任何一天需要推翻。</b>但體檢找出了幾個之前沒人抓到的洞——最重要的一個,關係到你能不能合法使用 ESTIA 這個名字。</p>
+    <div class="legend">
+      <span><span class="dot g"></span>穩固 — 經得起檢驗,照走</span>
+      <span><span class="dot y"></span>可強化 — 成立,但有具體補強建議</span>
+      <span><span class="dot r"></span>需要處理 — 有未管理的風險</span>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <h2>Phase 1 · The Soul</h2>
+  <div class="h2-cn">品牌靈魂 · Day 1–6</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 1</span><span class="day-title">起源 · 創辦人與為什麼</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">「人決定一個地方」的洞察 + 你親手做的那次修正 (台灣是主角,希臘只是啟蒙),讓這個故事站得非常穩。「Greek in spirit, Taiwanese in hands.」是全系統前三強的句子。</div>
+    <div class="row"><b>補強</b> — 起源故事目前只有 200 字完整版。做一個「三句話壓縮版」給放不下長文的場合 (訂房頁、Instagram bio、媒體一句話介紹),避免別人替你亂剪。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 2</span><span class="day-title">客人 · 「我還想再回來」</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">「回頭」作為唯一指標,方向對。但客人定義目前是純情感式的——營運上你需要知道「誰真的會訂」:外派主管 (要公司報帳、統編)、數位游牧 (要網速、要彈性)、攜家帶眷的移居者 (要嬰兒床、要學區資訊)。三種人的需求與合約長相完全不同。</div>
+    <div class="row"><b>補強</b> — 在做官網 (Day 19) 之前,先定義 2–3 個「營運原型」:各自的租期慣性、發票需求、必備設備。不是行銷人設,是營運規格。沒有它,官網和訂房流程會設計給一個不存在的平均人。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 3</span><span class="day-title">標準 · 原形建材與比例</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">「原形建材、比例先行、克制即品質」——立場清晰且可防守。但有一個工程現實:實木在台北的濕度裡會動。<span class="warn">「絕不用貼皮」是承諾,而承諾需要保養制度撐著</span>——沒有保養計畫的實木,三年後就是「品牌自己打臉」的證據。</div>
+    <div class="row"><b>補強</b> — 建立「材質保養規格」:橡木地板多久上油一次、大理石怎麼防染色、由誰執行、預算多少。把它寫進未來的營運手冊,讓 Value 07 有牙齒。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 4</span><span class="day-title">感受 · 靜+雅 · 都市避世所</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">「A city address. A world apart.」重看一次,結論是:<b>這是整個系統裡最強的一句對外文案</b>,強過它目前被賦予的地位 (設計綱要)。它同時講了地段價值和產品體驗,九個字,零形容詞。</div>
+    <div class="row"><b>補強</b> — 把它升格:官網首頁主標的第一候選,與「Every detail, a welcome.」分工 (前者講定位、後者講承諾)。Day 20 寫官網文案時處理。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 5</span><span class="day-title">名字 · ESTIA Residences</span><span class="verdict"><span class="dot r"></span>需要處理</span></div>
+    <div class="row"><span class="warn">這是 18 天裡最大的未管理風險:ESTIA 的商標與網域,從頭到尾沒有查核過。</span>「Estia」是常見希臘字,全球有同名餐廳、飯店、甚至澳洲上市的照護集團 (Estia Health)。名字本身沒問題,但在台灣的「不動產租賃/旅宿」類別能不能註冊、estia 相關網域還在不在,直接決定你能不能印任何東西。</div>
+    <div class="row"><b>處理</b> — 回台後第一件事:①經濟部智慧財產局商標檢索 (第 36/43 類) ②委託事務所送件 ③確認並買下網域 (estiaresidences.com 或 estia.tw 等)。<b>在這件事完成前,不要印刷任何實體物。</b>你家裡就是開會計事務所的——這件事你有主場優勢。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 6</span><span class="day-title">靈魂四句 · Essence / Promise / Signature / Origin</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">四句話各司其職,品質都在線上。唯一的隱患是「句子太多互相搶」——四句同時出現時會稀釋彼此。</div>
+    <div class="row"><b>補強</b> — 在識別手冊裡加一頁「語句使用位階」:哪句只能內部用、哪句上官網首頁、哪句進 Email 簽名檔、哪句上封蠟。一個場合,一句話,不並列。</div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <h2>Phase 2 · The Language</h2>
+  <div class="h2-cn">品牌語言 · Day 7–10</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 7</span><span class="day-title">價值觀 · 八條+政策+五輪面試</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">用政策把價值觀釘死 (5,000 元裁量預算、創辦人輪房務、無業績獎金) 是這一天最強的部分——多數公司的價值觀死於沒有政策。兩個誠實的觀察:①第三輪面試 (約在應徵者的地盤) 天然偏好外向、擅社交的人——但「真誠」有安靜的版本,小心把內向但真心的人濾掉了;面試官要學會分辨「不會表演」和「沒有溫度」。②八條全部朝向客人,<span class="warn">沒有一條講「團隊之間怎麼相待」</span>——這正是上次新人離職事件的制度缺口,而你已經在補了:Value 09 (顧火) 就是為這個洞而生,等你選名字。</div>
+    <div class="row"><b>補強</b> — Value 09 定名後立刻入冊;面試手冊加一行「內向者判準」。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 8</span><span class="day-title">聲音 · Aesop 店員 · 四原則 · 署名 ESTIA</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">聲音系統完整。重看發現一個小張力:訊息一律署名 ESTIA,但 The First Hour 是一個<b>有名字的真人</b>去接待——客人會認識他的管家,卻收到匿名的訊息,有半度落差。</div>
+    <div class="row"><b>補強</b> — 微調一條規則:只有「入住前 24 小時」那封訊息署名「___, your host at ESTIA」(讓客人知道明天誰來開門),之後回歸署名 ESTIA。人只出現一次,剛好接住 The First Hour。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 9</span><span class="day-title">詞彙憲法 · 含困難對話腳本</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">催租×2、漲租、噪音、退房——都寫了。但長租業<span class="warn">衝突最烈的兩個時刻沒有腳本</span>:①押金扣款/損壞求償 (最容易撕破臉的對話,沒有之一) ②提前解約。這兩封信寫壞,前面三十天的款待一次歸零。</div>
+    <div class="row"><b>補強</b> — 定稿收尾項⑤時,補這兩份腳本 (中英),與其他訊息一起文件化。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 10</span><span class="day-title">命名系統 · 街區混用制 · The Hearth 預留</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">系統成立,禁字清單 (Deluxe/Premier/…) 是好護欄。唯一未完成:等你的實際街區名單 (待辦Ⓑ),把每個物件的正式名一次定完。無其他建議。</div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <h2>Phase 3 · The Visual</h2>
+  <div class="h2-cn">視覺識別 · Day 11–14</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 11</span><span class="day-title">色彩 · 五色皆材質</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">「材質即色彩」概念層面無懈可擊。技術層面抓到一個之前沒人算的問題:<span class="warn">Stone (#A49E94) 放在 Marble 底上,對比度約 2.4:1——遠低於網頁可讀性標準 (內文需 4.5:1)</span>。當裝飾標籤沒問題,當功能文字會讓人瞇眼,也影響 SEO 與無障礙評分。</div>
+    <div class="row"><b>補強</b> — 在識別手冊加一條:Stone 僅限 14px 以上的說明標籤與分隔線,<b>永遠不當內文與按鈕文字</b>;內文一律 Ember。這條必須在官網開工前寫進去。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 12</span><span class="day-title">字體 · Italiana / Cormorant / Outfit / 思源宋</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">四聲部分工正確,開源授權零風險。兩個實務微調:①Cormorant 字重輕,網頁上低於 18px 會發虛——設最小字級。②思源宋體 300 字重在「印刷品」上會偏淡——印刷內文改用 400。寫進手冊即可。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 13</span><span class="day-title">Logo · 字標日常 + M11 儀式</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">七輪 48 席的過程雖長,但最終架構 (字標=日常 / M11=儀式) 是對的,而且是你自己走到的——這比我直接給你答案值錢。兩件未了:①M11 目前是網頁草圖,<b>向量化時需要光學校正</b> (三橫的長度節奏、拱的線端收頭、極小尺寸下避免被讀成「柵欄/散熱孔」)——這是聖托里尼簽字後製檔時的工藝活。②<span class="warn">M42 (名字裡的一盞燈) 與 M43 (倒影) 的採用狀態懸而未決</span>——你當時只說「選 M11」,那日常字標到底是「素的 ESTIA」還是「I 字亮 Oak 的 ESTIA」?M43 要不要當官網動態語言?這是一個被漏掉的決定。</div>
+    <div class="row"><b>補強</b> — 把「M42/M43 採用與否」加入聖托里尼清單,跟 Logo 一起簽字。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 14</span><span class="day-title">識別手冊 · HTML + Word 雙版</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">結構完整,CMYK/Pantone 已備。定位它為「v1 活文件」:等聖托里尼定案後,補進 Marble 最終值、M11 正式向量、M42/M43 裁決、Stone 對比規則、攝影規範 (Day 21 產出)——屆時升版 v2,才是交廠商的最終版。</div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <h2>Phase 4 · The Experience</h2>
+  <div class="h2-cn">感官與體驗 · Day 15–18</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 15</span><span class="day-title">感官 · 聲=安靜 · 香=待測 · 味=不做</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">「安靜本身就是聲音」是高級的選擇——但重看一次要誠實說:<span class="warn">安靜不是氣質,是工程</span>。客人關上門聽不到城市,靠的是氣密窗、門縫條、樓板隔音,不是品牌哲學。你賣「靜」,就要買單「靜」的成本。</div>
+    <div class="row"><b>補強</b> — 把「靜」規格化:訂一個臥室夜間噪音目標值 (工程上常用 40dB 以下作住宅安靜標準),新物件驗收時實測。很便宜的一支分貝計,就讓品牌承諾變成可驗收的數字——這很你 (工程師)。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 16</span><span class="day-title">第一印象 · 密碼鎖 + 手寫卡</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">你做了一連串減法 (無香無樂無茶無玄關儀式),把全部溫度壓在一張手寫卡上——立場乾淨。一個零成本的軟建議:「開門第一眼看到什麼」(玄關對景) 你婉拒了當標配,但既然每個案子都是你親自設計,<b>把它當你個人的設計習慣</b>就好,不必是制度——效果一樣,不增加任何人的負擔。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 17</span><span class="day-title">客人旅程 · 七階段 + 七份訊息</span><span class="verdict"><span class="dot y"></span>可強化</span></div>
+    <div class="row">七階段地圖成立。定稿時建議補三塊:①「入住第 7 天」的一則輕問候 (居住期的存在感,目前只靠清潔小卡) ②押金/損壞腳本 (同 Day 9 缺口) ③一個營運決定:<b>這些模板住在哪裡</b>——員工從哪裡複製、誰負責更新版本。沒有家的模板,三個月後就會有五個版本在流傳。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 18</span><span class="day-title">The First Hour · 務實版三動作</span><span class="verdict"><span class="dot g"></span>穩固</span></div>
+    <div class="row">「接得暖→交得清→走得穩」+ 三個不能省 (名字/一句推薦/我隨時都在),是現階段人力做得到的最好版本;奉茶版留作升級選項,誠實。一個傳承建議:第一次由最會做的人 (可能是你) 執行時,<b>錄一次影片</b>——之後每個新管家看 15 分鐘,勝過三頁文字。這是 Phase 6 內部手冊的第一份素材。</div>
+  </div>
+
+  <!-- TOP FINDINGS -->
+  <div class="top">
+    <div class="eyebrow">Priority · 體檢結論 · 依急迫排序</div>
+    <div class="t-item"><span class="warn">① 商標與網域查核 (Day 5)</span> — 唯一的紅燈。回台第一件事,<b>完成前不印任何實體物</b>。你家的會計事務所背景是主場優勢。</div>
+    <div class="t-item"><b>② M42 / M43 採用裁決 (Day 13)</b> — 日常字標是素的還是 I 亮 Oak?倒影要不要當官網動態語言?已補進聖托里尼清單,與 Logo 一起簽。</div>
+    <div class="t-item"><b>③ Stone 對比規則 (Day 11)</b> — 官網開工前寫進識別手冊:Stone 永不當內文。一行字,救掉整個網站的可讀性。</div>
+    <div class="t-item"><b>④ 三份缺失腳本 (Day 9/17)</b> — 押金扣款、提前解約、入住第 7 天問候。與收尾項⑤一起定稿。</div>
+    <div class="t-item"><b>⑤ 官網前置:客人營運原型 (Day 2)</b> — 2–3 種真實客型的租期/發票/設備規格。Day 19 開工前的必要地基。</div>
+    <div class="t-item"><b>⑥ 把承諾規格化 (Day 3/15)</b> — 實木保養制度 + 安靜的分貝驗收。品牌的形容詞,一個一個變成工程數字——這是 ESTIA 和「說得漂亮的品牌」的分別。</div>
+  </div>
+
+  <footer>
+    <span>ESTIA · Re-Audit v1</span>
+    <span>Day 1–18 · Full-Strength Review · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

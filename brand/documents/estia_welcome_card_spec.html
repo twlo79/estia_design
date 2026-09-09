@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 手寫迎賓卡 設計規格 The Welcome Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b;
+         --paper:#F6F2E9; --deboss:#E6E0D2; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .wrap{ max-width:860px; margin:0 auto; }
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:20px; margin-bottom:36px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:#8d8577; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(28px,5vw,42px); margin-bottom:10px; }
+  .intro{ font-size:13px; color:#4a443b; line-height:2.0; max-width:640px; margin-bottom:8px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:44px 0 16px; }
+
+  /* card stage */
+  .stage{ background:#DDD5C4; padding:clamp(24px,5vw,48px) clamp(16px,4vw,40px); display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .dim-top{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.14em; color:#7d7566; }
+  .card-row{ display:flex; align-items:center; gap:10px; width:100%; justify-content:center; }
+  .dim-side{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.14em; color:#7d7566; writing-mode:vertical-rl; }
+  .card{ width:min(592px, 88vw); aspect-ratio:148/105; background:
+      radial-gradient(120% 140% at 30% 20%, #F8F4EC 0%, var(--paper) 55%, #F1ECDF 100%);
+    box-shadow:0 18px 40px rgba(34,29,23,.22), 0 2px 6px rgba(34,29,23,.12);
+    position:relative; }
+  .card::after{ content:""; position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.47 0 0 0 0 0.4 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .wm-deboss{ position:absolute; left:50%; transform:translateX(-50%);
+    font-family:'Italiana',serif; letter-spacing:.42em; text-indent:.42em; color:var(--deboss);
+    text-shadow:0 -1px 1px rgba(34,29,23,.28), 0 1px 1px rgba(255,255,255,.95); }
+  .front .wm-deboss{ bottom:8.5%; font-size:clamp(15px,3.4vw,22px); }
+  .handw{ position:absolute; left:9%; top:16%; width:82%;
+    font-family:'Caveat',cursive; color:#3B3026; font-size:clamp(19px,4.2vw,29px); line-height:1.55; transform:rotate(-.6deg); }
+  .handw .sig{ display:block; margin-top:10px; font-size:.82em; letter-spacing:.06em; }
+  .m11{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); }
+  .cap{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.14em; color:#7d7566; margin-top:6px; text-align:center; line-height:1.8; }
+  .cap b{ color:var(--ember); font-weight:500; }
+
+  /* spec blocks */
+  .spec{ background:var(--marble); border:1px solid rgba(34,29,23,.14); padding:16px 20px; margin-bottom:12px; }
+  .spec .s-t{ font-size:13.5px; font-weight:500; margin-bottom:8px; }
+  .row{ display:grid; grid-template-columns:96px 1fr; gap:12px; padding:7px 0; border-bottom:1px dashed rgba(34,29,23,.1); align-items:baseline; }
+  .row:last-child{ border-bottom:none; }
+  .r-k{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.16em; color:var(--stone); }
+  .r-v{ font-size:12.5px; line-height:1.85; color:#3f3a32; }
+  .r-v b{ color:var(--ember); font-weight:500; }
+  .no{ color:#a3543f; }
+
+  .sw{ display:inline-block; width:14px; height:14px; border-radius:50%; vertical-align:-2px; margin-right:6px; border:1px solid rgba(34,29,23,.2); }
+
+  ul.rules li{ list-style:none; font-size:12.5px; line-height:2.05; color:#33302a; padding-left:20px; position:relative; }
+  ul.rules li::before{ content:"·"; position:absolute; left:4px; color:var(--oak); font-weight:700; }
+  ul.rules b{ color:var(--ember); font-weight:500; }
+
+  .gate{ background:var(--ember); padding:15px 20px; margin-top:16px; }
+  .gate p{ font-size:12.5px; line-height:1.95; color:#cfc8ba; }
+  .gate b{ color:var(--marble); font-weight:500; }
+
+  footer{ margin-top:56px; padding-top:20px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:#8d8577; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Welcome Card · Spec v1</span>
+  </header>
+
+  <h1>手寫迎賓卡</h1>
+  <p class="intro">整個品牌的實體旗艦——極簡空間裡<b>唯一的添加物</b>。設計原則只有一條:<b>印刷是配角,整張卡為手寫服務</b>。所以它幾乎是空白的:正面只有一個「壓」進紙裡的字標,沒有墨、沒有色、沒有裝飾——第一眼幾乎看不見,摸到才懂。</p>
+
+  <!-- FRONT BLANK -->
+  <h2>正面 · 印刷完成品(素壓,無墨)</h2>
+  <div class="stage">
+    <div class="dim-top">← 148 mm →</div>
+    <div class="card-row">
+      <div class="card front">
+        <div class="wm-deboss">ESTIA</div>
+      </div>
+      <div class="dim-side">← 105 mm →</div>
+    </div>
+    <div class="cap"><b>素壓(Blind Deboss)</b>:字標壓進紙裡,只有光影,沒有顏色 · 寬 32 mm · 底緣上方 12 mm · 置中<br/>紙面即 Marble——卡的顏色就是紙的顏色,不印底色</div>
+  </div>
+
+  <!-- FRONT WRITTEN -->
+  <h2>正面 · 手寫後的樣子(示意)</h2>
+  <div class="stage">
+    <div class="card-row">
+      <div class="card front">
+        <div class="handw">David,<br/>Welcome back — the light is just as you left it.<span class="sig">— ESTIA</span></div>
+        <div class="wm-deboss">ESTIA</div>
+      </div>
+    </div>
+    <div class="cap">手寫字跡為<b>示意</b>(實際由 Host 手寫)· 墨色:深褐或 Ember 黑 · 三行以內 · 名字開頭 · — ESTIA 收尾<br/><span class="no">手寫禁用藍色原子筆(藍是品牌禁色,連筆也守)</span></div>
+  </div>
+
+  <!-- BACK -->
+  <h2>背面 · M11 標記(二批加入)</h2>
+  <div class="stage">
+    <div class="card-row">
+      <div class="card">
+        <svg class="m11" width="76" height="76" viewBox="0 0 100 100" fill="none">
+          <path d="M26 84 V44 A24 24 0 0 1 74 44 V84" stroke="#E0D9C9" stroke-width="4" stroke-linecap="square"
+            style="filter: drop-shadow(0 -1px 0 rgba(34,29,23,.22)) drop-shadow(0 1px 0 rgba(255,255,255,.9));"/>
+          <path d="M40 52 H60 M40 63 H54 M40 74 H60" stroke="#E0D9C9" stroke-width="4" stroke-linecap="square"
+            style="filter: drop-shadow(0 -1px 0 rgba(34,29,23,.22)) drop-shadow(0 1px 0 rgba(255,255,255,.9));"/>
+        </svg>
+      </div>
+    </div>
+    <div class="cap">門中之 E · 素壓 · 高 18 mm · 正中央 · <b>此圖為示意,正式以 M11 向量檔為準(聖托里尼後定稿)</b><br/>首批可先只做正面;背面 M11 於二批加入</div>
+  </div>
+
+  <!-- SPEC -->
+  <h2>給印刷廠的規格(可直接截圖)</h2>
+  <div class="spec">
+    <div class="row"><span class="r-k">品名</span><span class="r-v">ESTIA 手寫迎賓卡 · P1</span></div>
+    <div class="row"><span class="r-k">尺寸</span><span class="r-v"><b>A6 橫式 · 148 × 105 mm</b> · 平卡 · 直角(不做圓角)</span></div>
+    <div class="row"><span class="r-k">紙</span><span class="r-v">未塗佈棉紙(高棉含量)· <b>325 gsm ±25</b> · 色帶暖米白——<b>現場對 Marble #F4F0E8 色票選紙,偏冷白即換</b>,不用純白</span></div>
+    <div class="row"><span class="r-k">印刷</span><span class="r-v"><b>零印墨</b>。唯一工藝:素壓(Blind Deboss / 無墨壓凹)</span></div>
+    <div class="row"><span class="r-k">正面</span><span class="r-v">素壓字標 <b>ESTIA</b>(Italiana 字體、全大寫、字距 +0.42em 不得壓縮)· 寬 <b>32 mm</b> · 底緣上方 <b>12 mm</b> · 水平置中 · 壓深以指腹可辨、不破紙為準</span></div>
+    <div class="row"><span class="r-k">背面</span><span class="r-v">素壓 M11 標記 · 高 <b>18 mm</b> · 置中(<b>二批;待向量檔</b>,首批背面全白)</span></div>
+    <div class="row"><span class="r-k">數量</span><span class="r-v">首批 <b>300 張</b>(小量精緻,驗過手感再續印)</span></div>
+    <div class="row"><span class="r-k">選配</span><span class="r-v">同紙信封 120 gsm × 100(致贈場合用)</span></div>
+  </div>
+
+  <!-- COLOUR -->
+  <h2>顏色系統(這張卡只有三個顏色,兩個還是同一個)</h2>
+  <div class="spec">
+    <div class="row"><span class="r-k">紙色</span><span class="r-v"><span class="sw" style="background:#F4F0E8"></span><b>Marble #F4F0E8</b>——紙本身就是品牌底色,不印</span></div>
+    <div class="row"><span class="r-k">壓痕</span><span class="r-v"><span class="sw" style="background:#E6E0D2"></span>素壓陰影——不是顏色,是光。紙自己的顏色變深一階</span></div>
+    <div class="row"><span class="r-k">手寫墨</span><span class="r-v"><span class="sw" style="background:#3B3026"></span>深褐 或 <span class="sw" style="background:#221D17"></span>Ember 黑(統一筆款回台實測後公告;<span class="no">禁藍筆</span>)</span></div>
+  </div>
+
+  <!-- RULES -->
+  <h2>禁止事項(驗收時逐條看)</h2>
+  <div class="spec">
+    <ul class="rules">
+      <li><b>不印任何其他文字</b>——沒有 Welcome、沒有網址、沒有電話。卡上唯一的字,是手寫的那幾行</li>
+      <li>不上墨、不燙金、不燙任何箔、不上光</li>
+      <li>字標字距不得壓縮;不得改字體、不得加外框陰影</li>
+      <li>不做圓角、不壓紋框線</li>
+      <li>紙偏冷白、偏亮白 → 退,重選紙</li>
+    </ul>
+  </div>
+
+  <!-- GATE -->
+  <div class="gate">
+    <p><b>給去發包的同事:</b>現在可以做的——拿樣紙、打白樣、打一張素壓樣、用候選筆在樣張上實寫三行(不暈墨、不刮紙才過)。<b>量產 300 張,等商標查核完成後才下單。</b>打樣的錢照花,量產的錢等門開。</p>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Welcome Card</span>
+    <span>P1 · Spec v1 · 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

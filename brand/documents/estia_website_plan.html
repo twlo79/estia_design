@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 官網總規劃 The Website Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:940px; margin:0 auto; padding:56px 22px 100px; }
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:44px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(32px,5.5vw,50px); line-height:1.12; margin-bottom:14px; }
+  .intro{ font-size:13.5px; color:#4a443b; line-height:2.0; max-width:680px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:23px; margin:56px 0 3px; }
+  .h2-cn{ font-size:12.5px; color:var(--stone); margin-bottom:18px; letter-spacing:.1em; }
+
+  .card{ border:1px solid rgba(34,29,23,.14); background:var(--marble); margin-bottom:12px; padding:15px 20px; }
+  .c-t{ font-size:14px; font-weight:500; margin-bottom:7px; }
+  .c-t span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .card p{ font-size:12.8px; line-height:1.95; color:#3f3a32; }
+  .card p + p{ margin-top:6px; }
+  .card b{ color:var(--ember); font-weight:500; }
+  .en{ font-family:'Outfit',sans-serif; letter-spacing:.01em; }
+  .lock{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:var(--ember);
+    border-left:2px solid var(--oak); padding:2px 0 2px 14px; margin:8px 0 4px; line-height:1.75; }
+  .lock-cn{ font-size:11.5px; color:var(--stone); padding-left:16px; margin-bottom:4px; }
+
+  table{ width:100%; border-collapse:collapse; margin-top:8px; }
+  th{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.16em; color:var(--oak);
+    text-align:left; padding:8px 10px; border-bottom:1px solid rgba(34,29,23,.2); font-weight:400; text-transform:uppercase; }
+  td{ font-size:12.3px; line-height:1.85; color:#3f3a32; padding:9px 10px; border-bottom:1px solid rgba(34,29,23,.1); vertical-align:top; }
+  td b{ color:var(--ember); font-weight:500; }
+  .no{ color:#a3543f; }
+  .ok{ color:#5e7050; }
+
+  .sitemap{ background:var(--ember); padding:20px 24px; margin-bottom:12px; }
+  .sitemap pre{ font-family:'Outfit','Noto Serif TC',monospace; font-size:12px; line-height:2.0; color:#cfc8ba; white-space:pre-wrap; }
+  .sitemap b{ color:var(--marble); font-weight:400; }
+
+  .chk li{ list-style:none; font-size:12.8px; line-height:2.1; color:#33302a; padding-left:24px; position:relative; }
+  .chk li::before{ content:"□"; position:absolute; left:2px; color:var(--oak); }
+  .chk b{ color:var(--ember); font-weight:500; }
+
+  footer{ margin-top:70px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Website Plan · v1</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">官網總規劃 · 交給建站者的完整文件</div>
+    <h1>官網,一份講完。</h1>
+    <p class="intro">這份文件整合官網的全部決策:給誰看、有哪些頁、每頁每段放什麼、定稿的文案、全站規則、上線前置。搭配三樣東西一起交給建站者:<b>兩個 mock</b>(estia_website_mock_v1.html 首頁/estia_subpage_renai_mock.html 子頁——它們是活的規格書,字體色碼間距都在原始碼裡)+<b>識別手冊</b>(ESTIA_Brand_Guidelines)。</p>
+  </div>
+
+  <!-- 1 -->
+  <h2>一 · 策略總綱:官網要接住的三種人</h2>
+  <div class="h2-cn">架構是從「誰會來」推出來的,不是從美感</div>
+
+  <div class="card">
+    <div class="c-t"><span>路徑 A</span>陌生搜尋的人</div>
+    <p>搜「Taipei serviced apartment monthly」進來,對我們一無所知。他需要:三十秒內懂我們是什麼、跟連鎖公寓差在哪。→ 首頁的 Hero 與 The Idea 為他而寫。</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>路徑 B</span>朋友推薦來的人</div>
+    <p>聽住過的人說「去台北就住 ESTIA」。他已經半信,來找確認。→ The Stay(The First Hour)與照片為他而放:證明朋友說的是真的。</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>路徑 C</span>替別人找家的人(最容易被忽略,成交佔比高)</div>
+    <p>HR、秘書、relocation 顧問——<b>他不住,他決定</b>。他需要:規格清楚、一頁講完、<b>可以轉寄給老闆或外派者</b>。→ 這條路徑直接催生了整個架構決定:<b>每個物件要有自己的獨立網址子頁</b>,以及子頁上的 The Essentials 規格區。</p>
+  </div>
+
+  <!-- 2 -->
+  <h2>二 · 網站地圖</h2>
+  <div class="h2-cn">混合制:一頁式首頁(品牌)+ 物件子頁(轉寄與收錄)</div>
+
+  <div class="sitemap"><pre><b>estia.com(暫定網域,回台購買)</b>
+│
+├── /            首頁 · 一頁滾動 · 六段一底(第三節)
+├── /renai       ESTIA REN'AI 子頁(模板已完成,見 mock)
+├── /songshan    ESTIA SONGSHAN 子頁(套模板)
+├── /bade        ESTIA BADE · The Townhouse(套模板)
+└── /kaifeng     ESTIA KAIFENG · The House(套模板)
+
+不上站:年租型公寓(第五類)—— 只走內部與仲介通路
+網址規則:小寫、無撇號(renai 不是 ren'ai)、無多餘層級
+Favicon:M11 向量檔完成前,暫用素字母 E;完成後替換</pre></div>
+
+  <!-- 3 -->
+  <h2>三 · 首頁:六段一底</h2>
+  <div class="h2-cn">全英文先行,中文版後加 · Rates on enquiry(不放價格)</div>
+
+  <div class="card">
+    <div class="c-t"><span>§1</span>Arrival — 開場</div>
+    <p>滿版照片(The Light 鏡位:空景、暖光、窗外過曝成柔白)+ 一句話,再無其他:</p>
+    <div class="lock">A city address. A world apart.</div>
+    <div class="lock-cn">門牌在城市,門後是另一個世界。(定位主標,全站唯一一次出現)</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>§2</span>The Idea — 我們是什麼</div>
+    <p>三短段講完:不是飯店、不是短租,是為住一個月以上的人準備的家;飯店的紀律+家的靈魂;台灣的溫度。段落收尾:</p>
+    <div class="lock">Every detail, a welcome.</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>§3</span>The Residences — 物件卡</div>
+    <p>主卡兩張:<b>REN'AI</b>(家庭與長住旗艦)、<b>SONGSHAN</b>(單身商務,距機場十分鐘);次卡兩張:<b>BADE · The Townhouse</b> 與 <b>KAIFENG · The House</b> 標 <span class="en">Opening soon</span>。每卡:一張照片、一句話、房型與坪數帶 m²、連到子頁。<b>年租型公寓不出現。</b>物件間的差異照實寫,並以此句總綱:</p>
+    <div class="lock">Every home here is different. What never changes is the quiet.</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>§4</span>The Stay — The First Hour 對外亮相</div>
+    <p>唯一被命名的服務,在這裡第一次對外講:抵達那一小時,有人在門口、家已是暖的、卡片寫著你的名字。<b>不寫流程細節</b>(那是內部的),寫感受。照片:手寫卡入鏡的 Bedroom 鏡位。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>§5</span>The Story — 起源</div>
+    <p>用第一章壓縮版三句話(手冊 1.2),不放創辦人照片、不放大頭故事——低調是我們的樣子。收尾一行小字:<span class="en">Greek in spirit. Taiwanese in hands.</span></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>§6</span>The Enquiry — 詢問</div>
+    <p>Ember 深色底區塊。表單欄位:姓名/Email/日期(從–到)/幾位入住/<span class="en">What brings you to Taipei?</span>/物件偏好(可預選)/<b>How did you find us?</b> 下拉:<span class="en">A friend or past guest / Search / Agent / Other</span>——這一欄直接餵年終指標 R3 推薦率,必放。送出鈕下方一行:</p>
+    <div class="lock">You'll hear from us within twelve hours.</div>
+    <p>送出後畫面:「<span class="en">Thank you — your message is with us. You'll hear from a real person within twelve hours.</span>」</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>Footer</span>頁底</div>
+    <p>字標 ESTIA、四子頁連結、Email、一行簽名句:</p>
+    <div class="lock">Warmth, made in Taiwan.</div>
+  </div>
+
+  <!-- 4 -->
+  <h2>四 · 物件子頁:五段模板</h2>
+  <div class="h2-cn">以 REN'AI mock 為準 · 其他三頁套用 · 每頁可獨立轉寄</div>
+
+  <table>
+    <tr><th>段</th><th>內容</th><th>定稿要點</th></tr>
+    <tr><td><b>① Hero</b></td><td>滿版照+物件一句話</td><td>仁愛定稿:<span class="en">"the boulevard Taipei keeps for itself"</span>;其他物件各寫一句(見下表角度)</td></tr>
+    <tr><td><b>② The Home</b></td><td>空間敘事+房型表</td><td>仁愛:3BR 60–65 坪(198–215 m²)/4BR 65–70 坪(215–231 m²)。<b>坪數永遠帶 m² 換算</b>(國際客看不懂坪)。材質段落:等材質表,只寫真的。</td></tr>
+    <tr><td><b>③ The Essentials</b></td><td>路徑 C 的規格區</td><td>最短租期 1 個月/每週房務/專屬 Host/12h 回覆/<b>Corporate lets welcome · GUI invoice(統編)available</b>/<b>Deposit:1 個月租金(租期 1–3 個月)、2 個月(3 個月以上)</b>/Rates on enquiry。區塊收尾:<span class="en">"This page forwards well — send it to whoever decides."</span></td></tr>
+    <tr><td><b>④ Neighbourhood</b></td><td>三個在地地址</td><td>來自 Host 們的三個地址(手冊 6.2 共創頁的對外版),收尾:<span class="en">"Your host's own addresses come with the home."</span></td></tr>
+    <tr><td><b>⑤ Gallery + Enquire</b></td><td>照片牆+表單</td><td>12–15 張(攝影規範八鏡位);表單同首頁,<b>物件欄預選本頁物件</b>。</td></tr>
+  </table>
+
+  <div class="card" style="margin-top:12px">
+    <div class="c-t"><span>4.1</span>四頁的角度分工(照實寫,不硬套)</div>
+    <table>
+      <tr><th>子頁</th><th>敘事角度</th></tr>
+      <tr><td><b>REN'AI</b></td><td>林蔭大道、家庭與長住旗艦、大坪數的從容。</td></tr>
+      <tr><td><b>SONGSHAN</b></td><td>單身與商務、Studio 的剛剛好、<b>距機場十分鐘</b>、巷子的靜。</td></tr>
+      <tr><td><b>BADE · The Townhouse</b></td><td>整棟的私有感——自己的門、自己的樓梯、沒有電梯裡的陌生人。</td></tr>
+      <tr><td><b>KAIFENG · The House</b></td><td>老城區紋理裡的一整棟家(細節等材質表與照片後定稿)。</td></tr>
+    </table>
+  </div>
+
+  <!-- 5 -->
+  <h2>五 · 全站規則</h2>
+  <div class="h2-cn">建站者必讀 · 違反任一條即退件</div>
+
+  <div class="card">
+    <div class="c-t"><span>5.1</span>語言與價格</div>
+    <p><b>全英文先行</b>,中文版之後加(客群是國際客;中文讀者主要是房東,走一頁式簡介)。<b>價格不上站</b>:Rates on enquiry——價格談出來的過程,就是關係開始的過程。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.2</span>語句位階(哪句能上哪)</div>
+    <p><span class="en">A city address. A world apart.</span> 只在首頁 Hero;<span class="en">Every detail, a welcome.</span> 只在 The Idea 收尾;<span class="en">Warmth, made in Taiwan.</span> 只在 Footer;<span class="no"><b>Hosted, not served. 永不上站</b></span>(內部句,出現即退件)。同一畫面永遠只有一句。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.3</span>用字與誠實</div>
+    <p>禁字全套適用(amazing/luxurious/exclusive/premium⋯見識別手冊);<b>材質三層誠實</b>:自己裝修的才說 built,嚴選的說 <span class="en">chosen</span>(定稿句:<span class="en">"Chosen, not collected."</span>),每間都有的說 added(暖光、室溫、手寫卡、Host)。<b>沒有的材質不寫,照片不騙</b>(現場不得低於照片)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.4</span>視覺(細節見識別手冊,這裡是紅線)</div>
+    <p>五色系統,<b>Stone #A49E94 永不當內文與按鈕字</b>(對比不足);文字永遠 Ember 非純黑;Italiana 只給字標與大標;Cormorant 網頁最小 18px;照片窗外過曝成柔白=品牌的攝影語言,不要「修正」它。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.5</span>SEO 策略(建站前就要定的部分)</div>
+    <p><b>已內建的三個優勢:</b>子頁獨立網址(每個物件=可收錄資產)/全英文先行(對上真實搜尋語言)/具體誠實文案(真材質真地名=天然關鍵字)。</p>
+    <p><b>建站選型硬約束:</b>靜態/伺服器端渲染(禁純 JS 單頁應用)、每頁自訂 title 與 meta、乾淨網址、自動 sitemap、未來可擴 /zh/ 中文版與文章區。三選中 🅐🅑 過關,<span class="no">🅒 套版多半不過</span>。</p>
+    <p><b>上線技術清單:</b>title 規則「物件名 — ESTIA Residences Taipei」;meta 用該頁定稿句;<b>每頁 OG 分享圖與描述</b>(路徑 C 靠轉寄,連結預覽=第一印象);結構化資料 schema.org LodgingBusiness+地理座標;sitemap 送 Search Console;照片 WebP+懶載入(速度是排名因素);表單來源欄資料可匯出。</p>
+    <p><b>品牌搜尋防守:</b>「Estia」全球撞名大量希臘餐廳——品牌搜尋主戰場是完整詞 <b>ESTIA Residences Taipei</b>:官網、Google 商家檔案、各平台名稱統一全稱、地址電話一致。<b>Google 商家檔案為上線同步必辦</b>(地圖區塊排在所有網站之前,是小品牌唯一贏過訂房平台的版位)。</p>
+    <p><b>三階段路線:</b>P1 上線基本盤(本清單)→ P2 商家檔案+客人評論累積 → P3 內容引擎:每季一篇街區文章,素材直接取自 Host 三個地址(與冊子共創、Value 06 同源,零額外成本)。<b>誠實預期:</b>SEO 是 6–12 個月起效的三年資產;近期客源仍靠推薦、平台、仲介——不急,但每一步都要落在對的地基上。</p>
+  </div>
+
+  <!-- 6 -->
+  <h2>六 · 上線前置清單</h2>
+  <div class="h2-cn">按順序 · 🔴 為關鍵路徑</div>
+
+  <ul class="chk">
+    <li>🔴 <b>網域購買</b>(回台 48 小時內;連同常見變體)</li>
+    <li>🔴 <b>商標查核</b>(名字的法律地位,先於一切對外投放)</li>
+    <li>🔴 <b>攝影</b>:徵選 → 付費試拍(松山)→ 正式拍攝仁愛+松山——時程最長,第一週就發徵選</li>
+    <li><b>建站執行方三選</b>:🅐 設計級建站平台(快、質感夠、月費)/🅑 工程外包手刻(全控、慢)/🅒 套版平台(<span class="no">不建議,質感風險</span>)。我的建議:🅐,用兩個 mock 當規格直接復刻。<b>[待 Jim 回台定案]</b></li>
+    <li><b>材質表</b>回填 → 子頁 The Home 材質段落定稿(追蹤清單④)</li>
+    <li><b>平面圖 ×4</b>(追蹤清單②)→ 子頁 Essentials 附件</li>
+    <li><span class="ok">押金級距 ✓ 統編 ✓</span>(已定案,本文件已更新)</li>
+    <li>走屋影片 ×每戶 3 分鐘(詢問流程用,可與試拍同場錄)</li>
+    <li>表單後台:送出 → 統一信箱 → 追蹤表(七欄,含來源)——上線前實測一次 12h 流程</li>
+    <li>Favicon 過渡版(素 E)→ M11 向量後替換</li>
+  </ul>
+
+  <footer>
+    <span>ESTIA · The Website Plan</span>
+    <span>Consolidated · Day 19–22 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

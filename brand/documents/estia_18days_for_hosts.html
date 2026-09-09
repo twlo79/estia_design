@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA 的十八天 — 寫給每一位 Host</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:860px; margin:0 auto; padding:56px 24px 100px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:60px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:18px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(34px,6vw,54px); line-height:1.15; margin-bottom:18px; }
+  .intro{ font-size:15px; color:#4a443b; line-height:2.05; max-width:640px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+  .intro p + p{ margin-top:12px; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:24px; margin:80px 0 4px; letter-spacing:.04em; }
+  .h2-cn{ font-size:13px; color:var(--stone); margin-bottom:26px; letter-spacing:.14em; }
+
+  .day{ border:1px solid rgba(34,29,23,.13); background:var(--marble); margin-bottom:20px; }
+  .d-head{ padding:20px 24px 14px; border-bottom:1px solid rgba(34,29,23,.08); }
+  .d-id{ font-family:'Outfit',sans-serif; font-size:10.5px; letter-spacing:.26em; color:var(--oak); margin-bottom:6px; }
+  .d-title{ font-size:17px; font-weight:500; letter-spacing:.04em; }
+  .d-body{ padding:18px 24px 24px; }
+
+  .q{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:var(--oak); margin:18px 0 8px; }
+  .q:first-child{ margin-top:4px; }
+  p.t{ font-size:13.5px; line-height:2.0; color:#3f3a32; }
+  p.t + p.t{ margin-top:8px; }
+  p.t b{ color:var(--ember); font-weight:500; }
+  .en{ font-family:'Outfit',sans-serif; letter-spacing:.02em; }
+
+  .quote{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:17px; color:var(--ember);
+    border-left:2px solid var(--oak); padding:2px 0 2px 16px; margin:14px 0 4px; line-height:1.65; }
+  .quote-cn{ font-size:12.5px; color:var(--stone); padding-left:18px; margin-bottom:8px; line-height:1.8; }
+
+  .foryou{ background:var(--linen); border:1px solid rgba(34,29,23,.1); padding:16px 18px; margin-top:18px; }
+  .foryou .fy-t{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:var(--oak); margin-bottom:8px; }
+  .foryou p{ font-size:13px; line-height:1.95; color:#3f3a32; }
+  .foryou p + p{ margin-top:6px; }
+
+  .vals .v{ margin-top:16px; padding-top:14px; border-top:1px dashed rgba(34,29,23,.14); }
+  .vals .v:first-child{ border-top:none; padding-top:0; }
+  .v-name{ font-size:14.5px; font-weight:500; }
+  .v-en{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:var(--stone); margin-left:8px; }
+  .v-mean{ font-size:13px; line-height:1.95; color:#3f3a32; margin-top:6px; }
+  .v-pol{ font-size:12.5px; line-height:1.9; color:#5b5449; margin-top:6px; }
+  .v-pol b{ color:var(--oak); font-weight:500; }
+
+  ul.plain{ list-style:none; margin-top:6px; }
+  ul.plain li{ font-size:13px; line-height:1.95; color:#3f3a32; padding-left:16px; position:relative; margin-top:4px; }
+  ul.plain li::before{ content:"·"; position:absolute; left:2px; color:var(--oak); }
+
+  .closing{ border:1px solid var(--oak); background:var(--marble); padding:32px 28px; margin-top:70px; text-align:center; }
+  .closing .c1{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:var(--ember); line-height:2; }
+  .closing .c2{ font-size:13px; color:#5b5449; line-height:2.0; max-width:560px; margin:18px auto 0; }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif;
+    font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>For Every Host</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">內部手冊 · 第一次閱讀版</div>
+    <h1>ESTIA 的十八天<br/>寫給每一位 Host</h1>
+    <div class="intro">
+      <p>歡迎你。你手上這本,不是規章,也不是教育訓練教材——它是一個故事:<b>ESTIA 這個品牌,是怎麼用十八天,一天一個問題,被想出來的。</b></p>
+      <p>創辦人 Jim 花了十八天,每天回答一個關於這家公司的根本問題:我們為什麼存在?我們為誰服務?我們怎麼說話?我們長什麼樣子?每一天的答案,都變成了今天你工作中的某一條規則。<b>所以讀完這十八天,你不只會知道規則是什麼——你會知道每一條規則為什麼存在。</b></p>
+      <p>怎麼讀:照順序,慢慢讀,大約一小時。讀到任何覺得奇怪、不同意、或看不懂的地方,<b>把它記下來,帶到月會上提出</b>——在 ESTIA,提出問題不是找麻煩(這件事本身,也是這本手冊後面會講到的文化)。</p>
+    </div>
+  </div>
+
+  <!-- ═══ PHASE 1 ═══ -->
+  <h2>第一週 · 我們是誰</h2>
+  <div class="h2-cn">Day 1–6 · 品牌的靈魂:為什麼存在、為誰存在、是什麼感覺、叫什麼名字</div>
+
+  <!-- DAY 1 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 1 · 起源</div><div class="d-title">一切是從希臘的一個發現開始的</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">為什麼要創立 ESTIA?為什麼是現在?</p>
+
+      <div class="q">故事</div>
+      <p class="t">Jim 去過三十幾個國家。有一年他在希臘旅行,回來之後一直在想一個問題:我去過那麼多地方,為什麼偏偏是希臘留在心裡?</p>
+      <p class="t">白房子很美、海很藍——但很多國家都有美景。他後來想通了:<b>讓希臘變得不一樣的,是那裡的「人」。</b>希臘人款待他的方式,像對待家人,毫無所求。他發現:</p>
+      <div class="quote">你會不會愛上一個國家,從來不是因為食物、海、或建築。是因為那裡的人怎麼歡迎你。</div>
+      <p class="t">回台灣後他想:台灣人的溫度,根本不輸給任何國家——夜市老闆多給你的那一把菜、鄰居阿姨的一句「呷飽未」——只是這份溫度,還沒有被裝進一個高端的住宅品牌裡。<b>ESTIA 要做的,就是證明這件事做得到。</b></p>
+
+      <div class="q">市場上缺什麼</div>
+      <p class="t">來台北長住一個月以上的外國人,目前只有兩種選擇:<b>國際服務式公寓</b>(有系統、有效率,但冷冰冰,住完不會記得)或<b>高級民宿短租</b>(有人情味,但品質不穩定,每次都在賭)。ESTIA 站在中間:<b>飯店的紀律,加上家的靈魂。</b></p>
+
+      <div class="q">一個重要的立場</div>
+      <p class="t">雖然靈感來自希臘、名字來自希臘——但 <b>ESTIA 的主角是台灣</b>。我們不是把國外的奢華搬進來,是把台灣的溫度送出去。Jim 說過一句話:「ESTIA 靈魂是希臘的,手藝是台灣的。」</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>你的工作不是「管理出租公寓」。你的工作,是向全世界的客人證明:台灣人的款待,配得上世界最高的標準。你,就是那個證明。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 2 · 客人</div><div class="d-title">我們只用一個指標衡量成敗</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">我們的客人是誰?我們怎麼知道自己做得好不好?</p>
+
+      <div class="q">答案</div>
+      <p class="t">我們不用年齡、國籍、收入定義客人。我們用<b>一個瞬間</b>定義:在他住的這段時間裡,某一天、某一刻,他心裡浮出一句話——</p>
+      <div class="quote">我還想再回來。</div>
+      <p class="t">這是 ESTIA <b>唯一真正重要的指標</b>。入住率、營收、網路評價,全部都是從這句話流出來的結果。所以你會發現:我們的獎金不看你成交多少,看的是<b>客人回頭率和推薦率</b>——把人款待好,他自然回來。</p>
+
+      <div class="q">他不是來找什麼的</div>
+      <p class="t">他不是來找飯店的(飯店是給住幾天的人);不是來找一間空公寓的(空殼沒有人味);更不是來找最便宜的(要便宜他不會來找我們)。</p>
+
+      <div class="q">他在找什麼</div>
+      <p class="t">一個在漫長的會議、長途飛行之後,<b>關上門那一刻肩膀就放鬆下來</b>的地方。一個有人在他開口之前就想到他需要什麼的地方。還有——一個讓他離開時,對台灣的印象從此不一樣的地方。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>做任何決定之前,只要問自己一句:「這樣做,會讓他更想回來嗎?」答案是的,就做;答案不是,就再想想。這一句話,就是你的指南針。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 3 · 標準</div><div class="d-title">我們拒絕妥協的事</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">ESTIA 的「好」,標準在哪裡?</p>
+
+      <div class="q">關於空間:先看骨,再看皮</div>
+      <p class="t">Jim 是工程背景出身,他看空間的順序跟別人不一樣:在想顏色、傢俱、裝飾之前,他先量<b>比例</b>——門多高、牆多寬、天花板多高、窗戶佔牆面多少。他說:「骨頭不對,再多的溫度也救不了那個空間。」所以 ESTIA 的每一個家,都是他親自從比例開始設計的。</p>
+
+      <div class="q">關於建材:只用真的</div>
+      <p class="t">ESTIA 的建材永遠是<b>原形</b>:實木就是實木、石頭就是真石頭、皮就是真皮。絕不用貼皮、不用仿製品。為什麼這麼堅持?因為<b>假的材料會說謊</b>——貼皮的桌子第一年看起來跟實木一樣,第三年邊角掀起來,客人一摸就知道。而真材料會誠實地變老:實木越用越有光澤,那是「被住過」的證據。哪怕成本貴一倍,這條線不退。</p>
+
+      <div class="q">關於服務:細節是尊重的語言</div>
+      <p class="t">一則有錯字的訊息,是在告訴客人:我們不夠在乎,連重讀一遍都懶。一則晚了一小時的回覆,是在告訴他:你不重要。一個禮貌但不溫暖的微笑,是在告訴他:你只是眾多客人之一。<b>這些沒有一件是小事</b>——每一件,都是客人用來判斷「這家公司是不是玩真的」的證據。</p>
+
+      <div class="q">關於克制</div>
+      <p class="t">我們目前還沒有經營整棟大樓,所以大廳級的香氛、音樂、燈光設計,我們選擇<b>先不做</b>——寧可不做,也不做得虛假。記住這句話:<b>克制,本身就是一種品質。</b></p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>「零錯字」不是龜毛,是尊重的具體形狀。每一則要送出的訊息,先自己讀一遍出聲——這是我們共同的習慣。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 4 · 感受</div><div class="d-title">兩個字:靜、雅</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">客人推開 ESTIA 的門,第一秒該「感覺」到什麼?</p>
+
+      <div class="q">答案:靜 + 雅</div>
+      <p class="t">在客人還沒見到任何人、還沒注意到任何細節之前,他的身體應該先感受到兩件事:<b>靜</b>(安靜、不吵、不亂)和<b>雅</b>(有品味、不炫耀、恰到好處)。</p>
+
+      <div class="q">一個聽起來矛盾、其實是我們核心的想法</div>
+      <p class="t">我們的客人<b>愛城市</b>——他們選台北的精華區,就是要一出門就在生活的心臟裡:市場、咖啡館、老街。但是,當他們回到家,<b>他們希望城市停下來</b>。這個張力,我們用九個字說完:</p>
+      <div class="quote">A city address. A world apart.</div>
+      <div class="quote-cn">門牌在城市。門後是另一個世界。</div>
+
+      <div class="q">ESTIA 絕對不是</div>
+      <ul class="plain">
+        <li>不是冰冷的設計旅店(好看但沒人味)</li>
+        <li>不是網美打卡點(為拍照而生,不為生活而生)</li>
+        <li>不是量產的仿奢華(用金色和大 Logo 堆出來的「高級感」)</li>
+      </ul>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>「靜、雅」不只是空間的標準,也是你的標準:你在客人家中工作時的音量、動作、說話的節奏,都是這兩個字的一部分。空間很安靜,人卻很吵,靜就破功了。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 5 · 名字</div><div class="d-title">ESTIA 是誰</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">品牌叫什麼名字?這個名字是什麼意思?</p>
+
+      <div class="q">名字的由來</div>
+      <p class="t"><b>Estia(Ἑστία)是希臘神話中的灶神</b>——掌管家裡中央那把永恆不滅的火。她守護家庭、聚會、還有那份把一家人凝聚在一起、看不見的溫度。有趣的是:她是十二位主神裡雕像最少、故事最少的一位——卻也是最無所不在的一位,因為<b>每一個希臘人的家裡,都燒著她的火</b>。她不站在舞台上,她在每個家的中心。這就是我們想成為的樣子:不張揚,但無所不在。</p>
+
+      <div class="q">怎麼唸</div>
+      <p class="t"><b>es-TEE-ah</b>(欸斯-提-阿),三個音節,<b>重音在中間的「提」</b>。節奏是弱-強-弱,不是平平的四拍。全世界的客人——美國人、日本人、法國人——都能一次唸對,這也是選它的原因之一。</p>
+
+      <div class="q">為什麼全名是 ESTIA Residences</div>
+      <p class="t">Residences 是複數——因為我們不是做一間,是做很多間。用這個正式的字,是因為我們把自己放在 Aman Residences、Rosewood Residences 那個等級——不是自誇,是自我要求。</p>
+
+      <div class="q">為什麼沒有中文名</div>
+      <p class="t">暫時沒有,這是刻意的。Aman 沒有中文名,Aesop 也沒有。等品牌夠強大的那天,中文名會自然浮現——而不是現在硬取一個。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>客人問你「ESTIA 是什麼意思?」的時候,你可以這樣答:「是希臘的灶神——家裡那把永遠不滅的火。我們希望這裡就是你在台北的那把火。」一句話,就把品牌講完了。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 6 · 四句話</div><div class="d-title">承載整個品牌的四句話</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">如果整個品牌只能濃縮成幾句話,是哪幾句?每句用在哪裡?</p>
+
+      <div class="q">第一句 · 給我們自己(內部)</div>
+      <div class="quote">Hosted, not served.</div>
+      <div class="quote-cn">款待,不是服務。</div>
+      <p class="t">這是每一位 Host 該裝在口袋裡的一句話。服務生執行程序;<b>主人在乎人</b>。服務生下班就結束;主人一路到家都還是那個人。每傳一則訊息、每接一通電話、每迎接一位客人之前,心裡默唸一次。這句話<b>只在內部用</b>,不印在對外的東西上——它是我們的初衷,不是廣告詞。</p>
+
+      <div class="q">第二句 · 給客人(對外)</div>
+      <div class="quote">Every detail, a welcome.</div>
+      <div class="quote-cn">每一個細節,都是一次歡迎。</div>
+      <p class="t">這是我們對世界的承諾,會出現在官網、名片、迎賓信上。注意它多安靜:沒有形容詞、沒有「最好」「頂級」。只說一件事——我們做的每一件事,都是在歡迎你。</p>
+
+      <div class="q">第三句 · 品牌的簽名</div>
+      <div class="quote">Warmth, made in Taiwan.</div>
+      <div class="quote-cn">溫度,產自台灣。</div>
+      <p class="t">我們最驕傲的一句。它有兩層意思:設計的溫度(暖光、木頭、比例)+ 服務的溫度(人)。而且它悄悄做了一件大事:把「Made in Taiwan」這個曾經代表便宜代工的詞,<b>重新定義成最高級的印記</b>。它出現在 Email 簽名檔、網頁最底部、信封的封印上。</p>
+
+      <div class="q">第四樣 · 起源故事</div>
+      <p class="t">Jim 親自寫的一段兩百字故事,從「當我在希臘旅行時,我意識到一件事」開始,到「ESTIA 靈魂是希臘的,手藝是台灣的。整個想法,就是這樣。」結束。它用在媒體採訪、官網、還有——<b>每一位新夥伴入職的第一週,由 Jim 親自唸給你聽</b>。如果你還沒聽過,去跟他要,那是你的權利。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>四句話,四個位置,不要混用:第一句放心裡、第二句給客人看、第三句是簽名、第四句是故事。一個場合,一句話——句子跟人一樣,擠在一起就誰都不突出了。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PHASE 2 ═══ -->
+  <h2>第二週 · 我們信什麼、怎麼說話</h2>
+  <div class="h2-cn">Day 7–10 · 品牌的語言:價值觀、聲音、用字、命名</div>
+
+  <!-- DAY 7 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 7 · 價值觀</div><div class="d-title">八條信念——還有它們背後的真實制度</div></div>
+    <div class="d-body">
+      <div class="q">先講一件重要的事</div>
+      <p class="t">很多公司的「價值觀」是掛在牆上的裝飾品。ESTIA 不一樣:<b>每一條價值觀,都綁著一個真實的制度</b>——有預算、有做法、有時間表。價值觀是「我們信什麼」,制度是「所以我們真的這樣做」。前六條屬於每一位 Host,後兩條由創辦人親自守護。</p>
+
+      <div class="vals">
+        <div class="v">
+          <div class="v-name">01 · 意圖,先於動作 <span class="v-en">Intention over action</span></div>
+          <div class="v-mean">客人感受到的,不是你做了什麼,而是你<b>為什麼</b>做。同一杯水,「為了交差」端出來和「為了他」端出來,客人喝得出差別——因為意圖藏不住,它會從語氣、眼神、細節裡漏出來。所以每個動作前,停三十秒問自己:我是為了幫他,還是為了完成工作?</div>
+          <div class="v-pol"><b>制度</b> — ①三十秒暫停是習慣,不打卡不追蹤,是你送自己的紀律。②<b>我們沒有業績獎金</b>——因為獎金綁成交會扭曲意圖;我們的獎金綁「客人回頭率與推薦率」。③每月最後一週開「意圖反思會」:每人分享這個月意圖最純的一件事、和只是交差的一件事。不評分,只誠實。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">02 · 當一個主人,不是員工 <span class="v-en">Be a host</span></div>
+          <div class="v-mean">你不是來上班,你是回到一個被託付給你的家。客人不是顧客,是你邀來家裡的朋友。員工執行程序;主人有判斷、有溫度、有品味——所以我們給你主人的授權。</div>
+          <div class="v-pol"><b>制度</b> — ①<b>每月 NT$5,000 主人裁量預算</b>:你可以為客人做任何事——他生日的花、他提過想讀的書、他讚美過的甜點——<b>不用申請、不用報告</b>,月底大家分享用途、互相學習。②全員輪班:所有人(包含 Jim、包含財務)每年至少 2 天做接待、1 天做房務——「沒摺過床單的人,不能決定我們買什麼床單。」③內部稱呼:我們不說「員工」「顧客」,說 <b>Host</b> 和客人的<b>名字</b>。語言塑造心態。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">03 · 真誠的服務,不是專業的表演 <span class="v-en">Genuine service</span></div>
+          <div class="v-mean">「真誠」比「專業」「熱情」都難——因為它演不出來。所以我們的做法跟別人相反:<b>不訓練你怎麼微笑</b>(我們找進來的人,微笑本來就是真的),也<b>沒有服務話術手冊</b>(話術把人變成機器人)。我們給你價值觀和判斷力,用字你自己選。</div>
+          <div class="v-pol"><b>制度</b> — ①你會在這裡,是因為你通過了<b>五輪、將近五個半小時的面試</b>——聊你讀的書、跟團隊吃一頓飯、約在你最喜歡的咖啡館、回答幾個沒有標準答案的情境題、最後跟 Jim 對談。我們用面試取代訓練:找對的人,對的行為自然發生。②誠實的意見:客人問你某家餐廳好不好,你可以誠實說另一家更好。<b>永遠說 Yes 不是溫暖——那是虛偽。</b></div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">04 · 每一個細節,都是一次歡迎 <span class="v-en">Every detail is a welcome</span></div>
+          <div class="v-mean">一則沒有錯字的訊息、一分鐘內的回覆、一面沒有指紋的鏡子——這些不是小事。每一個被放過的瑕疵,都是我們對世界說「我們就這樣」。頂尖團隊跟普通團隊的差別不在能力,在<b>對瑕疵的容忍度</b>。</div>
+          <div class="v-pol"><b>制度</b> — ①零錯字文化:所有對外訊息,送出前自己讀一遍出聲。②「客人的眼睛」演練:每位客人抵達前 30 分鐘,負責的 Host 用客人的視角走一遍房間——開門看到什麼、鏡子有沒有指紋、浴室地上有沒有一根頭髮。③週五細節圈:每週五 30 分鐘,每人分享「這週我發現的一個瑕疵、我怎麼處理」。不是究責,是練眼力——看得見瑕疵的人,才修得掉瑕疵。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">05 · 主動預見,而非事後道歉 <span class="v-en">Anticipate, don't apologise</span></div>
+          <div class="v-mean">客人開口抱怨的那一刻,我們就已經失分了。一流的 Host 不是把問題處理得快,是<b>讓問題根本沒機會發生</b>。</div>
+          <div class="v-pol"><b>制度</b> — ①客人檔案系統:每位客人的偏好、家人名字、飲食禁忌、生日、上次的讚美與抱怨,全部記進<b>共享系統</b>——不能只活在某個人的腦袋裡,這樣不管誰接手都無縫。②入住前 48 小時預備會:15 分鐘,回顧檔案、預測需求、<b>準備三個他沒開口要、但我們主動給的小細節</b>。③客訴=系統失敗:客人抱怨不是你的錯,是我們的系統沒預見到。檢討時問「我們的預見哪裡漏了」,永遠不問「誰的錯」——所以你不需要怕客訴,你需要學會提前看見。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">06 · 文化素養,是款待的底氣 <span class="v-en">Cultural literacy</span></div>
+          <div class="v-mean">客人來台灣,不只是要住得舒服——他們想<b>認識台灣</b>。只會介紹房間設備的是服務生;能跟客人聊大稻埕老茶行、聊龍山寺、聊一部台灣電影的,是<b>這座城市的翻譯者</b>。客人愛上台北,常常是因為你。</div>
+          <div class="v-pol"><b>制度</b> — ①<b>Estia Reads 每月一書</b>(目前暫停,之後啟動):公司每月送每位 Host 一本書(台灣歷史、建築、電影、料理輪著來),月底喝咖啡一起聊。②<b>Estia Explores 每季一探</b>:每季一天有薪假 + NT$3,000,去台北一個地方(老茶行、獨立書店、藝廊),回來寫一頁筆記分享——你的品味,變成大家的品味。③你的私人散步路線:每位 Host 準備至少三條<b>自己親自走過</b>的台北散步路線。客人問「哪裡好玩」,你不查手機——你就是那本地圖。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">07 · 溫度,長在對的骨架上 <span class="v-en">(創辦人守護)</span></div>
+          <div class="v-mean">設計方向、建材選擇、空間比例——由 Jim 親自決定,不外包。原形建材(實木、真石、真皮)哪怕成本高一倍也守住;每次設計討論,第一件事永遠是比例;每樣傢俱用「三年後還會不會過時」來挑。這條由創辦人守,是因為市場永遠會勸你省成本——這條線,他替品牌擋。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">08 · 少,但深 <span class="v-en">(創辦人守護)</span></div>
+          <div class="v-mean">我們寧可只做十個家、每位 Host 記得每位客人的名字,也不做五十個而失溫。所以:<b>每位 Host 最多負責 8 個單位</b>(超過就記不住每個人的生日和口味);只做台北精華區;<b>每年只招 1–2 位新 Host</b>——我們的成長速度,由文化能傳承的速度決定,不由市場決定。你不會突然多出十個新同事,這是刻意的。</div>
+        </div>
+
+        <div class="v">
+          <div class="v-name">09 · 進行中——關於我們怎麼對待彼此</div>
+          <div class="v-mean">前八條都在講「我們怎麼對客人」,第九條講「我們怎麼對彼此」——它正在成形,而且需要你參與。核心想法借自 ESTIA 的名字:公司就像一座爐,火要一直有人看著。<b>看到問題卻不說,才是對不起這個家;提出問題的人,不是找麻煩,是在顧火。</b>配套的三條開會規則:講事不講人 / 聽到問題的人第一句先說「謝謝你講」/ 提出的人永遠受保護。細節會在月會上跟大家一起完成。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 8 · 聲音</div><div class="d-title">ESTIA 怎麼說話——想像一位 Aesop 店員</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">同一句話有一百種說法。ESTIA 用哪一種聲音說?</p>
+
+      <div class="q">我們的聲音原型:Aesop 的店員</div>
+      <p class="t">如果你去過 Aesop(澳洲的保養品牌,店面像藝廊):店員低調、有品味、非常誠實,可以跟你聊二十分鐘完全不推銷,你問他哪罐好,他甚至會說「你的膚質其實不需要這罐」。<b>那就是 ESTIA 說話的樣子</b>——安靜、真誠、不誇張、永遠站在你這邊。</p>
+
+      <div class="q">四個說話原則</div>
+      <ul class="plain">
+        <li><b>快半步</b> — 每則訊息比客人的需求早一步。他還沒問天氣,你已經提醒明天有雨、問要不要安排接送。</li>
+        <li><b>開門結尾</b> — 每則訊息的最後一句,留一扇他可以走進來的門:「有什麼想讓我先準備的,跟我說。」</li>
+        <li><b>道歉四步</b> — 出錯時:認錯(不找藉口)→ 說「這是我們的問題」→ 給明確時程 → 給一個為他量身的補償。</li>
+        <li><b>拒絕二式</b> — 要說不的時候:先給理由(我們是誰、為什麼堅持)+ 再給替代方案(我能為你做什麼)。拒絕也可以是一次品牌表達。</li>
+      </ul>
+
+      <div class="q">用字的憲法——還有它背後的道理</div>
+      <p class="t">我們<b>永遠不用</b>這些字:amazing、luxurious(奢華)、unforgettable(難忘)、exclusive、VIP、premium、頂級、完美。為什麼?兩個道理:</p>
+      <p class="t">一、<b>自稱奢華的,都不是真奢華</b>——就像自稱幽默的人通常不好笑。Hermès 不說自己 luxurious,它說工藝;Aman 不說自己 luxurious,它說寧靜。真正高級的品牌,讓客人自己說出「這很奢華」——那句話從客人嘴裡出來,才值錢。</p>
+      <p class="t">二、<b>形容詞是替客人決定他該有什麼感覺</b>——那是推銷。我們改用具體的事實:不說「高級地板」,說「實木橡木,光腳走最舒服」;不說「頂級大理石」,說「卡拉拉大理石——米開朗基羅雕大衛像用的同一種石頭」。事實自帶份量,讓客人自己得出結論。這就是我們的心法:</p>
+      <div class="quote">We don't describe the feeling. We create it.</div>
+      <div class="quote-cn">我們不形容感受,我們創造感受。</div>
+
+      <div class="q">署名</div>
+      <p class="t">所有給客人的訊息,一律署名「<b>— ESTIA</b>」,不署個人名字(Aesop 的信也永遠署名 Aesop)。你的溫度已經在訊息內容裡了;署名歸品牌,代表每一位 Host 說的話都是 ESTIA 說的話——客人不管遇到誰,聽到的聲音永遠一致。唯一例外:入住前一天那封訊息,會署「○○, your host at ESTIA」,讓客人知道明天來開門的是誰。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>寫任何訊息前,快速自問五題:①我有沒有用名字稱呼他?②有沒有比他的需求快半步?③有沒有用到禁字?④結尾有沒有開一扇門?⑤讀起來像 Aesop 店員,還是像客服機器人?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 9 · 詞彙</div><div class="d-title">我們的字典——包括最難開口的那幾封訊息</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">把 Day 8 的聲音,落到每一個具體的字、每一種具體的情境。</p>
+
+      <div class="q">我們愛用的字</div>
+      <p class="t">關於空間:實木、卡拉拉大理石、靜、溫度、光、比例、家(不說「物件」「單位」)。關於服務:歡迎、款待、準備好了、預見、真誠、誠實、「我會親自確認」。關於台灣:用真實的地名(大稻埕、永康街),不說模糊的「亞洲風情」。</p>
+
+      <div class="q">我們不用的腔調</div>
+      <p class="t">除了 Day 8 的禁字,中文還有一些「行業腔」也禁:「親愛的貴賓您好」「造成不便敬請見諒」「竭誠為您服務」——這些是沒有人在裡面的空話。也不用「親」「哦」「唷」「~」——那是電商語言。ESTIA 的中文跟英文一樣:安靜、乾淨、有分寸。一個句號的安靜,勝過三個驚嘆號的熱情。</p>
+
+      <div class="q">最難開口的訊息,我們也有溫度地說</div>
+      <p class="t">催租、漲租、提醒安靜、退房——這些「難說的話」最考驗品牌。原則是三條:<b>直接說</b>(繞圈子顯得心虛)、<b>給理由</b>(有理由的要求是溝通,沒理由的是命令)、<b>留尊嚴</b>(第一次提醒,永遠假設他只是忘了)。舉一個例子,催租的第一次提醒長這樣:</p>
+      <div class="quote-cn" style="border-left:2px solid var(--oak); padding:8px 0 8px 16px; color:#3f3a32; font-size:13px;">David 您好,提醒您,這個月的租金到昨天為止還沒有入帳,想確認是不是轉帳上遇到什麼問題?如果已經處理了請忽略這則訊息。有任何狀況都可以直接跟我說。— ESTIA</div>
+      <p class="t">注意它做了什麼:假設是疏忽(留台階)、給了台階(「已處理請忽略」)、門還開著(「有狀況跟我說」)。完整的情境訊息範本(催租、漲租、噪音、退房、以及所有客人旅程訊息)整理在另一本《訊息手冊》裡,工作時直接複製使用。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>難開口的訊息,不要自己硬寫——先開《訊息手冊》找範本,照著填。範本存在的目的,就是讓你在最尷尬的時刻,也能說出有溫度的話。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 10 · 命名</div><div class="d-title">ESTIA 裡的東西怎麼稱呼</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">物件、房型、服務——客人每天嘴裡唸的名字,怎麼取?</p>
+
+      <div class="q">規則</div>
+      <ul class="plain">
+        <li><b>物件</b> — ESTIA + 街區名:在有名的美街就用街名(ESTIA Qingtian 青田、ESTIA Yongkang 永康),其他用區名(ESTIA Da'an)。地點就是產品,地址就在名字裡。</li>
+        <li><b>房型</b> — The Studio / The One Bedroom / The Two Bedroom / The Three Bedroom。純描述,零學習成本。注意:<b>沒有「豪華房」「尊爵房」</b>——月租六萬的 Studio 和二十萬的 Three Bedroom,在命名上完全平等。差的是空間大小,不是客人的等級。這本身就是我們的態度。</li>
+        <li><b>服務</b> — 大多保持素顏(機場接送就叫 Airport pick-up),只有一個服務有專屬名字:<b>The First Hour</b>——入住的第一個小時(Day 18 會講)。</li>
+        <li><b>未來</b> — 有一個名字被預留著:<b>The Hearth</b>(爐火廳)。等 ESTIA 有整棟大樓的那天,公共交誼廳就叫這個名字——灶神的火,終於有一個實體的家。</li>
+      </ul>
+
+      <div class="q">禁用的字</div>
+      <p class="t">Deluxe、Premier、Executive、Royal、Grand——這些飯店業的階級詞,在 ESTIA 永遠不出現。它們把客人分成三六九等;而我們的每一位客人都是唯一的,不需要被分級。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>對客人介紹房型時,說「The Two Bedroom at ESTIA Qingtian」——像一個住址,不像一個商品編號。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PHASE 3 ═══ -->
+  <h2>第三週 · 我們長什麼樣子</h2>
+  <div class="h2-cn">Day 11–14 · 視覺識別:顏色、字體、標誌、手冊</div>
+
+  <!-- DAY 11 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 11 · 顏色</div><div class="d-title">五個顏色,每一個都摸得到</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">ESTIA 的顏色是什麼?為什麼是這幾個?</p>
+
+      <div class="q">核心概念:我們沒有「挑選」顏色</div>
+      <p class="t">ESTIA 的五個顏色,不是設計師從色票裡挑的——<b>每一個,都是我們家裡真實存在的材質</b>。你伸手就摸得到:</p>
+      <ul class="plain">
+        <li><b>Marble 大理石白</b> — 浴室裡的卡拉拉大理石,浸在暖光裡的顏色。我們的主背景(佔畫面約 55%)。注意:它<b>不是純白</b>——純白是診所的顏色,我們的白永遠帶一點暖。</li>
+        <li><b>Linen 亞麻米</b> — 窗簾和寢具的亞麻色。次背景(約 20%)。</li>
+        <li><b>Stone 石紋灰</b> — 大理石上灰色紋理的顏色。輔助用(約 10%)。</li>
+        <li><b>Oak 橡木棕</b> — 腳下實木地板的顏色。<b>這是品牌的簽名色</b>——但一個畫面裡最多出現一成,只在小地方點睛。多了,它就在喊叫。</li>
+        <li><b>Ember 餘燼黑</b> — 燈滅之後、爐火餘燼的深色。所有文字用它,<b>永遠不用純黑</b>(純黑太硬)。</li>
+      </ul>
+
+      <div class="q">還有第六種「材質」:光</div>
+      <p class="t">所有 ESTIA 的空間、照片、螢幕,一律用 <b>2700–3000K 的暖光</b>(就是黃光,不是白光)。同一面白牆,冷白光下像辦公室,暖光下像家——我們永遠選後者。<b>所以:家裡的燈泡壞了要換,只能換暖光的,絕對不能換成白光。</b>這不是偏好,是品牌規定。</p>
+
+      <div class="q">禁用的顏色</div>
+      <p class="t">純白(診所)、純黑(太硬)、藍色——尤其是聖托里尼那種藍(靈魂可以來自希臘,佈景不行)、金色(奢華的陳腔濫調,我們的金屬是鏡面和鐵,不是金箔)、任何鮮豔飽和的顏色(都在喊叫,違反「靜」)。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>兩件實際的事:①燈泡只換暖光。②幫公司做任何東西(小卡、公告、標示)時,只用這五個顏色——不確定就問,不要自己加新顏色。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 12 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 12 · 字體</div><div class="d-title">三種聲音,一種語氣</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">品牌用什麼字體?(字體就像聲音——同一句話,不同字體唸出來是不同的人。)</p>
+
+      <div class="q">我們的四款字體,各有各的工作</div>
+      <ul class="plain">
+        <li><b>Italiana</b> — 名字的聲音。只用在 ESTIA 這個字標和大標題,像家裡最珍貴的餐具,不常拿出來,拿出來就是主角。</li>
+        <li><b>Cormorant Garamond</b> — 故事的聲音。用在引言、創辦人故事這種「有人在說話」的段落,斜體最美。</li>
+        <li><b>Outfit</b> — 功能的聲音。按鈕、標籤、說明文字,安靜到你不會注意到它——那就是它做對了。</li>
+        <li><b>思源宋體</b> — 中文的聲音。宋體的筆畫有粗細、有書寫的痕跡——中文的「雅」在筆畫裡。所以我們的中文標題永遠不用粗黑體。</li>
+      </ul>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>一件事就好:自己做小卡、公告、任何印出來的東西時,<b>不要用電腦裡隨便的字體</b>(尤其是圓體、POP體、手寫風)。用系統裡的這幾款,或直接問——字體用錯,品牌的臉就歪了。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 13 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 13 · 標誌</div><div class="d-title">名字就是 Logo——和一個藏起來的祕密符號</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">ESTIA 的 Logo 長什麼樣?</p>
+
+      <div class="q">日常的臉:名字本身</div>
+      <p class="t">ESTIA 的日常 Logo 就是名字這五個字母(用 Italiana 字體,字距拉得很開,永遠大寫)。像 Aesop 一樣——自信的品牌,把名字寫好就夠了,不需要圖案來說明自己。</p>
+
+      <div class="q">特殊場合的印:門中之 E</div>
+      <p class="t">但我們有一個祕密符號,Jim 從<b>七輪、四十八個候選</b>裡親手選出來的:一道拱門,門裡面有三道橫線。三層意思疊在一起——<b>門</b>(歡迎發生的地方)、<b>爐火</b>(三道橫線像灶裡的火光,Estia 女神的火)、<b>字母 E</b>(三橫就是 E)。推開門,家的溫度在裡面。</p>
+      <p class="t">它的使用規矩很特別:<b>只出現在特殊場合</b>——封蠟、鑰匙牌、迎賓卡的角落。平常你看不到它;客人會慢慢自己發現,像發現房子裡的一個小祕密。稀有,才珍貴。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>Logo 的鐵律:不拉寬壓扁、不換顏色、不加陰影、不旋轉、字距不能縮。看到任何印刷品上的 ESTIA 歪了、擠了、變色了——那就是你週五細節圈可以提出的瑕疵。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 14 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 14 · 手冊</div><div class="d-title">把規格交給世界的那本書</div></div>
+    <div class="d-body">
+      <div class="q">這一天做了什麼</div>
+      <p class="t">把顏色、字體、Logo 的所有規格,整理成一本正式的《品牌識別手冊》(Brand Guidelines)——給印刷廠、網頁設計師、招牌廠商看的規格書,裡面連印刷用的色號都寫好了。</p>
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>只要有任何外部廠商要幫 ESTIA 做東西(印卡片、做招牌、設計網頁),<b>把這本手冊交給他們</b>,他們就知道什麼能做、什麼不能做。不用自己解釋,手冊替你把關。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PHASE 4 ═══ -->
+  <h2>第四週 · 客人的身體會記得什麼</h2>
+  <div class="h2-cn">Day 15–18 · 感官與體驗:五感、第一印象、完整旅程、The First Hour</div>
+
+  <!-- DAY 15 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 15 · 感官</div><div class="d-title">客人離開三個月後,身體還記得的東西</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">客人不會記得牆的色號,但會記得一種觸感、一種安靜、一種溫度。ESTIA 的五感,各是什麼?</p>
+
+      <div class="q">五感的答案</div>
+      <ul class="plain">
+        <li><b>觸覺</b> — 光腳踩在實木地板上、手摸到真的大理石、亞麻的床單。真材料的觸感,是花錢買不到的記憶點。</li>
+        <li><b>光與溫度</b> — 2700–3000K 暖光;而且<b>客人抵達之前,室溫先調到 24–25 度</b>——不是他進來才開冷氣,是開門那一刻,溫度已經在等他。這就是「快半步」的體感版。</li>
+        <li><b>聲音</b> — 我們的答案是:<b>安靜本身</b>。不放音樂、不放環境音。客人買的就是「都市裡的靜」,關上門,城市消失——那份安靜,是最貴的聲音。</li>
+        <li><b>氣味</b> — 還在決定中(Jim 要親自試過香味才拍板)。目前:保持乾淨,不用人工香氛。</li>
+        <li><b>味覺</b> — 目前不提供迎賓餐飲,保持極簡。</li>
+      </ul>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>入住前的準備清單裡,有兩條來自這一天:①冷氣提前開,24–25 度。②確認所有燈都是暖光、都亮著。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 16 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 16 · 前十秒</div><div class="d-title">開門後的十秒鐘,和那張手寫卡</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">心理學說:人對一個空間的判斷,在進門後 7–10 秒內完成,而且幾乎不可逆。ESTIA 最貴的十秒,怎麼設計?</p>
+
+      <div class="q">十秒鐘裡發生的事</div>
+      <p class="t">客人輸入密碼(我們用密碼鎖,方便他之後自由進出)→ 門開,燈<b>已經</b>亮著(深夜抵達的人不該摸黑找開關)→ 室溫剛好 → 脫鞋,腳踩上實木 → 門在身後關上,城市的聲音消失。注意:每一步都是「已經準備好」,不是「他來了才做」。</p>
+
+      <div class="q">整個空間裡,唯一的「添加物」</div>
+      <p class="t">我們拿掉了香氛、音樂、迎賓茶點——極簡到近乎空。但有一樣東西被刻意留下:<b>一張手寫的卡片</b>,放在客人一定會看到的地方,上面有他的名字。</p>
+      <p class="t">為什麼是它?因為在一個什麼都沒有的安靜空間裡,<b>一行有你名字的字,力量比十樣擺設都大</b>——它說明:有一個人,為你準備了這裡。這張卡,是「款待,不是服務」最便宜、也最有力的證據。範例:</p>
+      <div class="quote-cn" style="border-left:2px solid var(--oak); padding:8px 0 8px 16px; color:#3f3a32; font-size:13px;">David,<br/>歡迎回來台北。<br/>冰箱裡有水,需要任何協助隨時找我。<br/>— ESTIA</div>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>寫這張卡是你的工作,也是你的舞台。三個要求:①手寫,字跡工整,用好一點的筆和卡。②一定有客人的名字。③回頭客一定寫「歡迎回來」。可以依情況加一句(他生日、他長途飛行)——這張卡,是你的溫度落在紙上的樣子。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 17 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 17 · 旅程</div><div class="d-title">從還沒訂房、到離開之後——完整的一條線</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">客人跟 ESTIA 的關係,不是「入住到退房」——是一條更長的線。這條線有七站,每一站你都有事做。</p>
+
+      <div class="q">七站,和每一站的你</div>
+      <ul class="plain">
+        <li><b>① 訂房前</b> — 他在網路上第一次看到 ESTIA。頁面文案有固定範本(講材質、講具體,不喊高級)。</li>
+        <li><b>② 詢問與預訂</b> — 他寫信來。你的回覆速度和語氣,是他對 ESTIA 的第一個真實印象。訂房確認信有範本,<b>裡面包含大樓公約</b>(安靜時間、垃圾、公共空間)——先講清楚,是避免入住後的不愉快,這就是「主動預見」。</li>
+        <li><b>③ 抵達前 24 小時</b> — 傳抵達訊息:地址、密碼、天氣提醒、「要不要安排接送」、「有什麼想讓我先準備的」。這封訊息把「客人」變成「被期待的客人」。</li>
+        <li><b>④ 抵達</b> — The First Hour(下一頁詳講)。</li>
+        <li><b>⑤ 居住期間</b> — 最長、最容易被忽略的三十天,卻是我們的主場。核心動作:<b>每次清潔完,留一張小卡</b>(「今天為你整理過了,一切都好」)——讓客人知道有人在照顧,但不打擾。看到客人喜歡什麼,用你的 5,000 元預算補上,卡片說一聲。</li>
+        <li><b>⑥ 退房</b> — 退房訊息像告別,不像結帳。裡面有一句靈魂:「<b>您喜歡的樣子,我們都記得。</b>」</li>
+        <li><b>⑦ 離開後</b> — 離開後 3–7 天,傳一封信:「希望您平安到家。台北的家隨時都在——只要跟我說一聲,我會為您留著。」這封信的目的不是推銷,是<b>讓關係不結束</b>。回頭客,是我們的命脈,也是你的獎金來源。</li>
+      </ul>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>七站的每一封訊息都有現成範本(《訊息手冊》),照著填名字、日期、細節即可。你的任務不是發明文字,是在正確的時間、把正確的溫度送到。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 18 -->
+  <div class="day">
+    <div class="d-head"><div class="d-id">DAY 18 · The First Hour</div><div class="d-title">入住的第一個小時——你的主場</div></div>
+    <div class="d-body">
+      <div class="q">這一天在回答什麼</div>
+      <p class="t">客人抵達的第一小時,是 ESTIA 唯一一次「有人全程在場」的款待(之後 29 天他用密碼鎖自由進出)。這一小時怎麼做?</p>
+
+      <div class="q">整體節奏:約 15–20 分鐘,三個動作</div>
+
+      <p class="t"><b>一 · 接得暖(0–3 分鐘)</b><br/>門開,你在。第一件事不是掏文件講規則——是接過行李、請他進來。<b>第一句話裡一定有他的名字</b>:「David,歡迎,一路辛苦了。」這十秒不能省——省了,後面再有效率都是冷冰冰的交接。</p>
+
+      <p class="t"><b>二 · 交得清(3–15 分鐘)</b><br/>帶著他走一圈這個家——注意,是「介紹一個家」的語氣,不是唸說明書:密碼鎖親手教一次(確認他會了)、電器空調邊走邊講、打開冰箱(「有水,餓了隨時拿」)、把《生活手冊》交到他手上(「這裡有家的說明,還有這一區我們自己喜歡的地方」)。走到門口,<b>順口丟一句在地推薦</b>:「巷口那家早餐不錯,你明天可以試試。」——溫度不需要時間,需要心在。</p>
+
+      <p class="t"><b>三 · 走得穩(15–20 分鐘)</b><br/>不匆忙、不拖延。留下清楚的一句:「<b>這個家現在是你的了。我隨時都在</b>,有任何事——熱水器壞了、想找家好餐廳——直接傳訊給我。」確認他有你的聯絡方式(這是他往後 29 天的安心來源),然後<b>乾脆地離開</b>——把「第一次獨自在這個家」的時刻留給他,那是他真正住下來的一刻。</p>
+
+      <div class="q">三個絕對不能省的東西</div>
+      <ul class="plain">
+        <li><b>他的名字</b>(第一句話裡)</li>
+        <li><b>一句在地推薦</b>(哪怕只有一句)</li>
+        <li><b>「我隨時都在」</b>(最後一句)</li>
+      </ul>
+      <p class="t">一句心法:<b>時間可以短,溫度不能省。</b>你不是來辦入住的——你是來把一個家、和你自己,交給一位新朋友,然後放心離開。</p>
+
+      <div class="q">關於那本《生活手冊》——需要你</div>
+      <p class="t">交到客人手上的那本小冊子,前半是「這個家」(WiFi、電器、密碼,用 ESTIA 的語氣寫),後半是「這一區」——<b>而後半的內容,要由我們全體一起寫</b>:你自己會去的早餐店、咖啡館、買菜的地方、散步的路。不是 Google 查得到的答案,是你的私藏。客人手裡拿到的,會是一份「在地朋友的清單」——那位朋友,就是你。</p>
+
+      <div class="foryou"><div class="fy-t">這對你的意義</div>
+        <p>The First Hour 是你整份工作裡,最像「主人」的二十分鐘。而《生活手冊》的推薦欄,是你的名字第一次寫進 ESTIA 的產品裡——開始想:你最想跟一個外國朋友分享的三個地方是哪裡?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="c1">Hosted, not served.<br/>Every detail, a welcome.<br/>Warmth, made in Taiwan.</div>
+    <div class="c2">十八天,講完了。這本手冊不會考試——但它會活在你每天的訊息、每一張手寫卡、每一次開門迎接裡。讀完有任何疑問、不同意、或更好的想法,帶到月會上說出來。記住第九條:提出問題的人,是在顧火。</div>
+  </div>
+
+  <footer>
+    <span>ESTIA · Residences</span>
+    <span>The Eighteen Days · For Every Host · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

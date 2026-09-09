@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 三十四天總報告 · 逐日紀錄與顧問檢討</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1020px; margin:0 auto; padding:56px 22px 100px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:48px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(34px,6vw,56px); line-height:1.1; margin-bottom:14px; }
+  .intro{ font-size:14px; color:#4a443b; line-height:2.0; max-width:700px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  .legend{ display:flex; flex-wrap:wrap; gap:10px 22px; margin:22px 0 0; font-size:12px; color:#5b5449; }
+  .legend span{ white-space:nowrap; }
+  .legend b{ font-weight:500; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:25px; margin:64px 0 4px; }
+  .h2-cn{ font-size:13px; color:var(--stone); margin-bottom:22px; letter-spacing:.1em; }
+
+  .day{ border:1px solid rgba(34,29,23,.13); background:var(--marble); margin-bottom:14px; }
+  .day-head{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    padding:16px 20px 11px; border-bottom:1px solid rgba(34,29,23,.08); }
+  .day-id{ font-family:'Outfit',sans-serif; font-size:10.5px; letter-spacing:.24em; color:var(--oak); white-space:nowrap; }
+  .day-title{ font-size:15px; font-weight:500; }
+  .day-body{ padding:14px 20px 18px; }
+
+  .blk-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--oak); margin:12px 0 6px; }
+  .blk-t:first-child{ margin-top:0; }
+  .row{ font-size:12.5px; line-height:1.9; color:#4a443b; margin-top:4px; }
+  .row b{ color:var(--ember); font-weight:500; }
+  .row .en{ font-family:'Outfit',sans-serif; letter-spacing:.02em; }
+  .quote{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:var(--ember);
+    border-left:2px solid var(--oak); padding-left:13px; margin:8px 0 3px; line-height:1.65; }
+  .pend{ font-size:12px; color:#a3543f; margin-top:9px; line-height:1.8; }
+  .pend::before{ content:"◌ "; }
+  .files{ font-family:'Outfit',sans-serif; font-size:10.5px; letter-spacing:.05em; color:var(--stone); margin-top:8px; }
+
+  .rev{ background:var(--linen); border-left:2px solid var(--ember); padding:11px 16px; margin-top:12px; }
+  .rev .r-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9px; letter-spacing:.26em; text-transform:uppercase; color:var(--ember); margin-bottom:6px; }
+  .rev p{ font-size:12px; line-height:1.9; color:#3f3a32; }
+  .rev p + p{ margin-top:5px; }
+  .rev b{ color:var(--ember); font-weight:500; }
+  .rev .risk{ color:#a3543f; font-weight:500; }
+  .rev .str{ color:#5e7050; font-weight:500; }
+
+  .fly{ display:inline-block; font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9px; letter-spacing:.14em;
+    color:#5e7050; border:1px solid rgba(94,112,80,.45); padding:1px 7px; margin-left:6px; vertical-align:1px; }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Full Report · Day 1–34</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">總報告 · 逐日紀錄 + 顧問檢討 + 機上待辦</div>
+    <h1>三十四天,<br/>攤開來檢查。</h1>
+    <p class="intro">這份報告有三部分:<b>第一部</b>,34 天逐日完整紀錄——每天定了什麼、關鍵句子原文、產出檔案、未了事項;每一天底下附一格 <b>⚖ 顧問檢討</b>,用管理顧問的紀律誠實審這一天的決策品質(強在哪、險在哪、建議什麼)。<b>第二部</b>,跨日總檢:一致性審查、MECE 缺口掃描、風險登記簿、以及我對自己這 34 天顧問工作的檢討。<b>第三部</b>,未完成事項總表——特別標出 <span class="fly">✍️ 機上可決</span> 的純決策題,你飛機上一支筆就能清掉。</p>
+    <div class="legend">
+      <span><b>定案</b> = 已拍板內容</span>
+      <span style="color:#a3543f"><b>◌</b> = 未了事項</span>
+      <span><b>⚖</b> = 顧問檢討(<span style="color:#5e7050">強</span>/<span style="color:#a3543f">險</span>/議)</span>
+      <span><b>✍️</b> = 飛機上可完成的決策</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 1 ═══════════ -->
+  <h2>Phase 1 · 品牌靈魂</h2>
+  <div class="h2-cn">Day 1–6 · 為什麼存在、為誰存在、是什麼感覺、叫什麼名字</div>
+
+  <!-- D1 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 1</span><span class="day-title">起源 — 為什麼是這個品牌、為什麼是現在</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>創辦人底色</b> — Jim,33 歲,會計事務所家庭、走自己的路;工程背景(精準、比例、做對的紀律)+ 30+ 國旅行;台北精華區高端租賃六年,能一眼分辨空間是「用心蓋的」還是「為了賣蓋的」。</div>
+      <div class="row"><b>核心信念(希臘)</b>:</div>
+      <div class="quote">會不會愛上一個國家,從來不是因為食物、海、建築——是那裡的人怎麼款待你。</div>
+      <div class="row"><b>市場缺口</b> — 國際服務式公寓(有系統沒靈魂)vs 高端短租主人(有靈魂沒一致性)→ ESTIA 站中間:<b>飯店的紀律 + 家的靈魂</b>。</div>
+      <div class="row"><b>立場修正(你親手做的)</b> — 降低希臘比重、避免崇洋媚外:台灣與創辦人是主角,希臘只是啟蒙。「不是把國外奢華引進台灣,是把台灣的溫度輸出到世界。」</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>定位一句話可轉述(紀律+靈魂),且「反崇洋」修正讓故事在台灣輿論場站得住——這是創辦人自己抓的,品味正確。</p>
+        <p><span class="risk">險:</span>整個品牌敘事高度綁定創辦人個人(單點依賴)。故事只活在 Jim 嘴裡的那天,公司就有 key-man 風險。<b>議:</b>已有文字定稿是第一層保險;第二層是讓每位員工都能 60 秒講完起源(手冊已做);第三層——壓縮版三句話仍欠(見 Day 6 未了)。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 2</span><span class="day-title">客人 — 唯一的指標</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>客人的定義</b> — 不用年齡收入定義,用一個瞬間定義:住到某一刻心裡浮出「<b>我還想再回來</b>」。這是唯一北極星;入住率、營收、評價皆為下游。</div>
+      <div class="row"><b>他不要</b>:飯店(給幾週的)、空殼公寓、最便宜。<b>他要</b>:關上門肩膀放下的地方;有人先想到的地方;離開時對台灣印象改變的地方。</div>
+      <div class="quote">I have travelled to your country. I know what it feels like to be welcomed properly. I want you to feel that way here — in mine.</div>
+      <div class="pend">營運原型未完成:外派主管/數位游牧/攜家移居三種原型的租期、發票、設備需求——影響文案與表單設計(Day 19 曾點名,仍欠)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>單一北極星指標是教科書級的聚焦,且 Day 32–34 的獎金制度真的把錢綁上去了——多數公司的北極星只掛牆上,你的進了薪資單。</p>
+        <p><span class="risk">險:</span>34 天從未做<b>付費意願與定價研究</b>——「他要什麼」清楚了,「他願意為此付多少」仍是經驗值。<b>議:</b>列入 35+ 天延伸題(定價策略);短期用現行租金+續租率當實證代理即可,不急但要記得。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 3</span><span class="day-title">標準 — 拒絕妥協的事</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>設計</b> — 比例先於顏色材質傢俱(門高、牆寬、天花板、窗地比):「骨頭不對,再多溫度也救不了。」<b>建材</b> — 原形鐵律:實木/真石/真金屬/真皮,絕不貼皮仿製,成本貴一倍也守。</div>
+      <div class="row"><b>服務</b> — 細節是尊重的語言:錯字=不在乎;遲回=你不重要;禮貌但不暖=你只是之一。<b>克制條款</b> — 未做整棟前,大廳級香氛聲響光線不做:「克制,本身就是一種品質。」</div>
+      <div class="row"><b>Day 19 精準化(重要)</b> — 因應「部分物件為房東裝潢」的事實,原形鐵律拆成三層:<b>ESTIA 造的</b>(自己裝修→鐵律照舊)/<b>ESTIA 挑的</b>(房東裝潢→入選標準:骨架、光、靜、木頭系的暖)/<b>ESTIA 加的</b>(每間都做得到:2700K、室溫、手寫卡、Host)。</div>
+      <div class="pend">實木保養制度未訂(多久上油、誰執行、預算)。各物件「真實材質表」未交(子頁文案的前置)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="risk">險(已修但要記取):</span>這一天的教訓是<b>教義寫在盤點之前</b>——鐵律先立、供給實況後到,差點讓官網說謊。流程上正確順序應為:資產盤點 → 再立材料主張。Day 19 的三層修正是好補丁,且「Chosen, not collected」把弱點翻成賣點,<span class="str">處理得漂亮</span>。</p>
+        <p><b>議:</b>「三年不換測試」「絕不貼皮」這類承諾要配<b>維護預算線</b>才算數——把實木保養寫進年度預算表,一年一次,金額不大,但沒有它,三年後的自打臉是必然。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D4 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 4</span><span class="day-title">感受 — 靜、雅,與那句主標</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>兩個字</b> — 靜(Quiet)+ 雅(Refined):跨進門檻那一刻、先於見到任何人之前的身體感受。<b>張力</b> — 客人愛城市(選精華區就是要在生活脈搏裡),但回家時希望城市停下來。</div>
+      <div class="quote">A city address. A world apart. — 門牌在城市,門後是另一個世界。</div>
+      <div class="row">此句已升格為官網 Hero 主標與一頁式簡介定位句(Day 19/23 落實)。<b>不是</b>:冰冷設計旅店、網美打卡點、量產仿奢華。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>九個字同時完成定位(precision)與價格暗示(premium)——這是 34 天裡最高的單句資產,後續官網、簡介、攝影語言(窗外過曝)全從它展開,一致性極好。</p>
+        <p><b>議:</b>「靜」目前是形容詞不是規格。體檢時已提:訂<b>臥室夜間噪音驗收值</b>,新物件收房用分貝計實測——把最核心的產品主張工程化,這是工程背景創辦人最該親手做的一條,仍欠。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D5 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 5</span><span class="day-title">名字 — ESTIA Residences</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>語源</b> — 希臘灶神 Estia(Ἑστία):家中央永恆的火;十二主神中形象最少、卻最無所不在——每個家都燒著她的火。<b>發音</b> — es-TEE-ah,重音中間,全球客人一次唸對。<b>全稱</b> — Residences 複數且正式,對標 Aman/Rosewood 層級。<b>中文名</b> — 暫不取,識別夠強時自然浮現。</div>
+      <div class="pend">🔴 <b>商標(智財局 36/43 類)與網域從未查核</b> — 全案最高風險,回台第一優先;完成前不印任何實體物。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="risk">險(最高級):</span>名字是唯一「不可替換」的資產,而它的法律地位至今是未知數。<b>顧問自我檢討:此風險應在 Day 5 當天就攔停,我到體檢日才升紅旗,晚了十三天</b>——所幸尚未產生印刷沉沒成本。<b>議:</b>①回台 48 小時內完成檢索;②除英文商標外,評估<b>防禦性中文註冊</b>(即使不用中文名,防止他人搶注諧音);③網域先買(成本一杯咖啡,被搶損失整個名字)。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D6 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 6</span><span class="day-title">靈魂四句 — 語句系統與使用位階</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>內部初衷</b> — <span class="en">"Hosted, not served."</span> 款待,不是服務——<b>只在內部用,永不印在對外物</b>(此規則曾在官網初稿被我違反、重跑時抓回,見 Day 19)。</div>
+      <div class="row"><b>對外承諾</b> — <span class="en">"Every detail, a welcome."</span> 官網、名片、迎賓信。<b>簽名句</b> — <span class="en">"Warmth, made in Taiwan."</span> Email 簽名、頁腳、封印;把 MIT 從代工改寫成工藝印記。</div>
+      <div class="row"><b>起源故事(~200 字)</b> — 開頭 <span class="en">"When I was travelling in Greece…"</span>,收尾 <span class="en">"ESTIA is Greek in spirit. Taiwanese in hands. That's the whole idea."</span> 用於採訪、About、投資人、新人第一天由創辦人親唸。</div>
+      <div class="pend">三句話壓縮版起源故事(bio/訂房頁用)未寫。手冊「語句使用位階」一頁未補(防四句被並列濫用)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>四句各有崗位、互不打架——多數品牌死於「金句太多、位階不明」,你的位階表本身就是護欄。內外分離(Hosted 不出門)是成熟品牌的紀律。</p>
+        <p><b>議:</b>「位階」目前只存在於你我的共識,尚未進入識別手冊正文——v2 必補一頁,否則第一個外包設計師就會把四句排在同一張海報上。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 2 ═══════════ -->
+  <h2>Phase 2 · 品牌語言</h2>
+  <div class="h2-cn">Day 7–10 · 信什麼、怎麼說、用什麼字、東西叫什麼</div>
+
+  <!-- D7 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 7</span><span class="day-title">價值觀 — 八條信念 × 八套制度 × 五輪面試</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案(每條價值觀都綁真制度)</div>
+      <div class="row"><b>01 意圖先於動作</b> — 三十秒暫停;<b>無業績獎金</b>,獎金綁回頭/推薦率;每月意圖反思(現併入爐邊會)。</div>
+      <div class="row"><b>02 當一個主人</b> — 每月 <b>NT$5,000 主人裁量預算</b>(不申請不審批,月底分享);全員跨崗輪班含創辦人(Day 34 已修為跨崗邏輯);內部稱 Host + 客人名字。</div>
+      <div class="row"><b>03 真誠的服務</b> — 用面試取代訓練:<b>五輪 ~5.5 小時</b>(對話/半天現場+團隊午餐/他的地盤/情境判斷/創辦人三私問——三個 Yes 才錄取);無話術手冊;誠實意見(永遠 Yes 是虛偽)。</div>
+      <div class="row"><b>04 細節即歡迎</b> — 零錯字(讀出聲);客人的眼睛(抵達前 30 分);細節圈(現為雙週)。</div>
+      <div class="row"><b>05 主動預見</b> — 客人檔案共享系統;48h 預備會(三個沒開口的細節);<b>客訴=系統失敗</b>,問預見哪裡漏、不問誰的錯。</div>
+      <div class="row"><b>06 文化素養</b> — Estia Reads(<b>暫停中</b>)/Explores 每季一天+3,000/每人三條親走散步路線。</div>
+      <div class="row"><b>07 骨架(創辦人守)</b> — 原形建材、比例先行、三年測試;設計不外包。<b>08 少而深(創辦人守)</b> — 每 Host 上限 8 單位;只做精華區;年招 1–2 人,成長速度=文化傳承速度。</div>
+      <div class="pend">Value 09(相待之道)命名未定:🅐顧火/🅑對事直接對人溫柔/🅒為了這個家 <span class="fly">✍️ 機上可決</span>。文化制度年度預算表未編(5,000×人×12 + Explores + 書費 + 住一晚夜)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「價值觀皆綁制度」是本案最高含金量設計——可稽核、可傳承、難抄襲。五輪面試把品質控制前移到入口,替代了監控式管理,整套系統因此成立。</p>
+        <p><span class="risk">險①(算術矛盾,本報告最重要發現之一):</span><b>Value 08「每 Host ≤8 單位」× 現有 45+ 單位 × 全員僅 8 人</b> ——若 Host 佔 4 人,上限 32 單位 &lt; 45。三個出路:(a)上限只適用「服務式長住」層,年租型公寓(低接觸)另計;(b)上限是擴編後的目標態;(c)修改上限。<b>需你裁定</b> <span class="fly">✍️ 機上可決</span>。</p>
+        <p><span class="risk">險②:</span>文化制度是有價格的(粗估:裁量金 48 萬/年 + Explores ~10 萬 + 雜項),34 天從未編列<b>文化損益表</b>——不是錢的問題,是「沒被編列的預算,景氣差的那年第一個被砍」。<b>議:</b>回台把文化預算寫成正式年度科目,受保護。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D8 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 8</span><span class="day-title">聲音 — Aesop 店員與用字憲法</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>Voice Person</b> — Aesop 店員:低調、有品味、誠實、聊 20 分鐘不推銷。<b>四原則</b> — 快半步/開門結尾/道歉四步(認錯・不藉口・時程・客製補償)/拒絕二式(理由+替代)。</div>
+      <div class="row"><b>用字裁決</b> — 你原選 amazing/luxurious/unforgettable,論證後放棄(自稱奢華的都不是真奢華;形容詞是替客人決定感受=推銷)。✅ warm/considered/honest/crafted/genuine ❌ amazing/luxurious/unforgettable/exclusive/VIP/premium。</div>
+      <div class="quote">We don't describe the feeling. We create it. 我們不形容感受,我們創造感受。</div>
+      <div class="row"><b>署名</b> — 一律「— ESTIA」;唯一例外:入住前 24h 訊息署 <span class="en">"___, your host at ESTIA"</span>(客人要知道明天誰開門)。三情境範本已定稿(入住前/熱水器道歉/婉拒換地板)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>這一天的價值不在規則,在<b>你被說服的那個過程</b>——創辦人自己想用的字被自己的品牌邏輯否決,代表憲法是真憲法,不是顧問的文件。</p>
+        <p><b>議:</b>聲音是英文優先設計的;平台通路(訂房平台訊息)有自己的溝通慣性與字數限制,範本落地時需做<b>通路適配版</b>(同靈魂、更短)。列入訊息定稿批次一併處理即可。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D9 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 9</span><span class="day-title">詞彙憲法 — 七部分 + 困難對話</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>三法則</b> — 具體勝過形容/安靜勝過大聲/讓客人下結論。<b>三級禁字</b> — 自誇型/自稱型/行業腔(Dear valued customer、造成不便敬請見諒)。<b>句型六規</b> — 名字開頭、短句、驚嘆號≤1 最好 0、emoji 幾乎不用、I 扛責任 We 扛立場、開門結尾。<b>中文語感</b> — 禁「親/哦/唷/~」電商腔。</div>
+      <div class="row"><b>困難對話(中英)已擬</b> — 催租×2(第一次假設疏忽留台階/第二次明確日期)、漲租(提早 60 天+真實理由+考慮期)、噪音(不說有人投訴、怪樓板不怪人)、退房(「您喜歡的樣子我們都記得」)。</div>
+      <div class="pend">兩份最高衝突腳本仍缺:<b>押金扣款/損壞求償</b>、<b>提前解約</b>——衝突最烈的時刻目前無腳本。入住第 7 天輕問候亦欠。三份併入訊息定稿批次。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>把「難說的話」納入品牌語言系統是罕見的成熟度——多數品牌的聲音只設計晴天,你的設計了雨天。</p>
+        <p><span class="risk">險:</span>缺的恰是<b>最貴的三份</b>:押金扣款是客訴與負評的第一火藥庫,提前解約是金額最大的談判。無腳本=每個 Host 各自即興=品牌聲音在最關鍵時刻碎裂。<b>議:</b>定稿批次中此三份優先級最高,且押金腳本需與 G5(14 天+明細)及合約條款三方對齊。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D10 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 10</span><span class="day-title">命名系統 — 四層與禁區</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>憲法</b> — ESTIA 是系統裡唯一的希臘字(配額用完);具體勝過華麗;一次就能轉述。<b>L1 物件</b> — 混用制:美街用街名、其他用區名 → 已落地:<b>ESTIA REN'AI / SONGSHAN / BADE(The Townhouse)/ KAIFENG(The House)</b>;大樓本名(正隆官邸/時兆雅築)留內部合約用。<b>L2 戶型</b> — The Studio/One/Two/Three(/Four)Bedroom,零階級。<b>L3 服務</b> — 素顏為主,唯一命名 <b>The First Hour</b>。<b>L4 公設</b> — <b>The Hearth</b> 預留未來整棟交誼廳。<b>禁區</b> — Deluxe/Premier/Executive/Royal/Grand。</div>
+      <div class="pend">四物件名待最終確認(你指定併入最後批次)<span class="fly">✍️ 機上可決</span>。第五類年租公寓的內部命名規則未定(不上首頁,但營運需要代號)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>戶型零階級是命名層面的價值觀表達(6 萬與 20 萬的客人命名平等),與「無 VIP」用字憲法互鎖,系統自洽。</p>
+        <p><b>議:</b>REN'AI 帶撇號在網址與檔名層會退化為 renai——無礙,但商標與網域申請時需同時保護有/無撇號兩種拼寫;SONGSHAN 與松山機場英文同名是天然聯想紅利,子頁已用「距機場十分鐘」接住,保留。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 3 ═══════════ -->
+  <h2>Phase 3 · 視覺識別</h2>
+  <div class="h2-cn">Day 11–14 · 顏色、字體、標誌、手冊</div>
+
+  <!-- D11 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 11</span><span class="day-title">色彩系統 — 五色皆材質</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>三原則</b> — 材質即色彩(摸不到的不進系統)/光是第五種材質(2700–3000K,選黃昏不選正午)/九成安靜。</div>
+      <div class="row"><b>五色+比例</b> — Marble #F4F0E8(55%)/Linen #E4DCCC(20%)/Stone #A49E94(10%)/Oak #8B6F47(10%,簽名色,一頁一處)/Ember #221D17(5%,文字,永不純黑)。CMYK 全套已訂;Pantone 近似 9226C/9223C/WarmGray6C/7511C/Black7C(印前需實體對色)。<b>禁色</b> — 純白/純黑/聖托里尼藍/金/冷灰/飽和色。</div>
+      <div class="row"><b>體檢後補規</b> — Stone 對 Marble 對比僅 2.4:1:<b>永不當內文與按鈕字</b>,僅限大級距裝飾標籤(已寫入建站規則)。</div>
+      <div class="pend">Marble 暖度聖托里尼校準(白牆晨/午/昏三連拍)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「材質即色彩」讓色彩系統有不可辯論的物理錨點——設計討論從「我喜歡」變成「摸得到嗎」,決策成本大降。Stone 可近性修正及時,無障礙層面過關。</p>
+        <p><b>議:</b>五色在<b>深色模式/夜間螢幕</b>下的行為未定義(Ember 底已在 Enquire 區塊實戰過,可行),v2 手冊補一節「暗色用法」即可,小事。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D12 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 12</span><span class="day-title">字體系統 — 四聲部</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>四聲部</b> — Italiana(名字/大標,單一字重,永不內文)/Cormorant Garamond(故事,斜體最美)/Outfit(功能,Light 300)/思源宋體(中文,行距 1.9–2.0,永不粗黑當標)。你逐角色三選一、全選推薦款。<b>六規則</b> — 兩字體上限/字標大寫+0.42em/字重≤500/行距寬/文字永遠 Ember。<b>禁用</b> — 手寫、圓體、粗黑、壓縮、特效、科技幾何。授權全開源 SIL,零成本。<b>體檢微調</b> — Cormorant 網頁最小 18px;思源宋印刷內文 400。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>零授權成本 + 全平台可得(Google Fonts)= 供應鏈風險趨近零;四聲部分工清楚,任何外包能照做。</p>
+        <p><b>議:</b>唯一未測場景是<b>長篇中文印刷品</b>(未來的合約、手冊內頁)的思源宋實印效果——併入紙張打樣時順帶印一頁段落樣張,零額外成本。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D13 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 13</span><span class="day-title">Logo — 七輪四十八席之後</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>你立的總原則</b> — 「字標是日常,符號是特殊場合。」<b>日常</b> — 字標 ESTIA(Italiana、0.42em、永遠大寫);完整版加 Oak 細線+RESIDENCES。<b>儀式符號</b> — <b>M11「門中之 E」</b>:一道拱+三橫=門/灶火/字母三層;你在七輪 48+ 候選、否決我全部星標後親選。舞台(Day 29 收斂):<b>封蠟+迎賓卡</b>(+數位 favicon);鑰匙牌因密碼鎖除役、不補位。縮小自動退化為素拱。<b>規範</b> — 淨空=E 字高;字標最小 80px/20mm;六禁止。</div>
+      <div class="pend">M11 向量檔(聖托里尼後產,需光學校正)——封蠟銅模與卡片背面的前置。<b>M42/M43 裁決</b>:日常字標素版 vs I 亮 Oak?倒影當不當官網動態語言?<span class="fly">✍️ 機上可決</span></div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「日常/儀式」二分是小預算品牌的最優解——不養複雜 logo 系統,把稀有性當資產。決策過程(你連續否決顧問推薦、按自己審美拍板)本身健康:品牌的眼睛必須是創辦人的。</p>
+        <p><b>議:</b>M42 裁決其實牽動所有數位資產的字標檔(素版 vs 亮 I 版需各出一套),越早裁越省重工;M43(倒影)建議降級為「官網動效的候選語言」而非識別元素,避免系統增生。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D14 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 14</span><span class="day-title">識別手冊 — v1 活文件</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>你的三答 C/A/B</b> — HTML+文件雙版/含 CMYK+Pantone 印刷規格/M11 SVG 等聖托里尼。<b>四章</b> — Logo/Colour/Type/Application(官網 Hero、迎賓卡、名片、封蠟方向)。定位:v1 活文件,聖托里尼後升 v2 才是最終交付版。</div>
+      <div class="pend">v2 五項輸入:Marble 終值、M11 向量、M42/M43 裁決、Stone 內文禁令、攝影規範併章、+新增「語句位階」一頁。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>v1/v2 分版避免了「等完美才交付」的癱瘓,廠商溝通已可用 v1 起跑。</p>
+        <p><b>議:</b>v2 的五項輸入分屬三個時點(島上×3、機上×1、回台×1)——<b>把 v2 升版排為回台第二週的固定日程</b>,否則它會永遠差一項。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 4 ═══════════ -->
+  <h2>Phase 4 · 感官與體驗</h2>
+  <div class="h2-cn">Day 15–18 · 身體記得的部分</div>
+
+  <!-- D15 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 15</span><span class="day-title">感官 — 五感盤點與三個決定</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>觸(已定)</b> — 實木/大理石/亞麻/金屬/鏡。<b>光/溫(已定)</b> — 2700–3000K;抵達前室溫先到 24–25°C。<b>聲(定)</b> — <b>安靜本身</b>:不放音樂、不放環境音——都市裡的靜就是聲音簽名。<b>香(掛起)</b> — 三路備選(招牌香/乾淨無香/只在第一小時),你要親鼻實測。<b>味(定)</b> — 迎賓餐飲不做。</div>
+      <div class="pend">香味實測(島上清單③)。「靜」的工程化:臥室夜間分貝驗收值未訂。<b>新發現:</b>「抵達前室溫 24–25°C」的作業前提未驗證——每戶空調能否遠端/預先啟動?誰在抵達前 1 小時到場?此 SOP 未寫。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「以無為有」(無香、無樂、無迎賓食)是把預算與注意力全數讓位給核心主張(靜)的紀律,和 Day 3 克制條款一脈相承。</p>
+        <p><span class="risk">險:</span>感官承諾裡唯一「每次入住都要人力兌現」的是室溫與燈——它目前是一句話,不是一個流程。<b>議:</b>把「抵達前 60 分:開空調→逐燈確認→卡片就位」寫成 The First Hour 前置檢查單(與攝影日清單同源),指派到值日;智慧插座/遠端空調可行性列回台盤點。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D16 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 16</span><span class="day-title">第一印象 — 前十秒與那張卡</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>十秒拆解</b> — 鎖的手感→視線落點→光已先亮→溫度空氣→腳踩實木→門關、城市消失。<b>門鎖</b> — 密碼鎖(實用性優先)。<b>玄關三件</b> — 暫緩。<b>手寫迎賓卡</b> — 保留,<b>唯一添加物</b>:極簡空間裡,一行有名字的字=「Hosted, not served.」最有力的證據。你的設計立場:把歡迎從物件上逐一拿掉,重量全壓一張卡——不是變少,是變準。</div>
+      <div class="pend"><b>新發現(安全缺口):</b>密碼鎖管理規範未訂——每組客人是否換碼?誰設定?清潔/維修臨時碼?離職人員權限?退房後多久失效?這是資安級的營運洞,回台必補。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「唯一添加物」策略讓每張卡的邊際價值極大化,且成本趨零——這是全案 ROI 最高的體驗設計。</p>
+        <p><span class="risk">險:</span>密碼鎖選了便利,卻沒同步選「密碼治理」。長住一個月、房務每週進出、廠商偶入——沒有換碼與權限規則,一次糾紛(失竊指控)就能燒掉品牌。<b>議:</b>一頁《密碼管理規範》:每客一碼、退房即換、房務碼分離、變更留紀錄——會計行政可管此台帳。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D17 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 17</span><span class="day-title">客人旅程 — 七階段 × 七份訊息</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>七階段</b> — ①訂房前 ②詢問預訂 ③抵達前48h ④抵達 ⑤居住期間(最長、最易忽略——ESTIA 主場)⑥退房(像告別不像結帳)⑦離開後(回頭客=命脈)。<b>你的指示</b> — 七份訊息全要、全文件化:訂房頁文案/確認信(含大樓公約)/入住前24h(含密碼)/手寫卡/清潔後小卡/退房訊息(「您喜歡的樣子我們都記得」)/離開後3–7天回頭信(「台北的家我會為您留著」)。範例中英已擬,<b>定稿留最後批次(你指定)</b>。</div>
+      <div class="pend">定稿批次現含:七份+第7天問候+押金扣款+提前解約+首覆範本+不保留腳本=<b>12 份</b>;另加 12h/14天承諾句寫進退房訊息與合約。模板存放與版本管理(誰更新、放哪)未決。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>把「居住期間」指認為主場是正確的競爭判斷——飯店贏在抵達日,長住品牌贏在第 14 天。清潔後小卡是低成本高頻的存在感設計。</p>
+        <p><b>議:</b>12 份訊息是你機上批改量最大的一包——建議我先彙整成單一《訊息手冊草稿》文件供你逐份批(見第三部待辦);模板治理定一句話即可:「原檔在共享雲端一處,改版經 Jim,舊版存檔」。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D18 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 18</span><span class="day-title">The First Hour — 三次迭代後的務實版</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>迭代</b> — v1 無人版 → 你補「第一天有管家」→ v2 陪坐奉茶版 → 你判做不到 → <b>v3 務實版定案</b>,奉茶列未來升級。</div>
+      <div class="row"><b>三動作(15–20 分)</b> — <b>接得暖</b>(0–3 分:第一句有名字)→ <b>交得清</b>(3–15 分:帶走一圈、密碼親手教、冊子交到手、門口一句在地推薦)→ <b>走得穩</b>(15–20 分:「這個家現在是你的了,我隨時都在」,乾脆離開)。<b>三個不能省</b> — 名字/一句推薦/我隨時都在。<b>迎賓那一口</b> — 🅒 只留手寫卡。<b>冊子</b> — 做;前半這個家、後半這一區,<b>內容員工共創</b>(=顧火第一道安全實戰題)。</div>
+      <div class="pend">冊子內容共創(收尾⑦,建議掛在爐邊會啟動)。第一次正式執行錄影 15 分(訓練素材)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>v2→v3 的降版是「承諾≤能力」的正確取捨——寧可小承諾全兌現,不做大承諾偶爾掉。三個不能省把儀式壓縮到不可再減的核,人力再緊也守得住。</p>
+        <p><b>議:</b>務實版的品質完全繫於 Host 個人狀態——用「錄影一次+雙週細節圈回放片段」做輕量校準即可,勿加考核(一考核就變表演,見 Day 32 哲學)。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 5 ═══════════ -->
+  <h2>Phase 5 · 對外之臉</h2>
+  <div class="h2-cn">Day 19–23 · 官網、子頁、攝影、詢問線、一頁式</div>
+
+  <!-- D19 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 19</span><span class="day-title">官網架構 — 三路徑與混合制(重跑版)</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>三抵達路徑</b> — A 陌生搜尋/B 朋友推薦/<b>C 替別人找的人(HR、秘書、relocation)</b>——C 佔成交可觀比例,直接催生架構決定。<b>混合制</b> — 一頁式首頁(品牌體驗)+ 物件子頁 ×N(可轉寄、可收錄:estia.com/qingtian 型網址)。<b>首頁六段一底</b> — Arrival(Hero:A city address. A world apart.)/The Idea(收 Every detail, a welcome.)/The Residences(仁愛・松山主卡+八德・開封 soon)/The Stay(The First Hour 首次對外亮相)/The Story/The Enquiry(12 小時承諾)+Footer(Warmth, made in Taiwan.)。<b>語言</b> — 全英文先行,中文後加。<b>價格</b> — Rates on enquiry。<b>自我糾錯</b> — 初稿誤把內部句放上官網,重跑時抓回。<b>材質誠實修正</b> — builds→keeps;Solid→Warm woods;新增 <span class="en">"Chosen, not collected"</span>;<span class="en">"Every home here is different. What never changes is the quiet."</span></div>
+      <div class="pend">建站執行方未決(自建平台/外包/框架)——影響時程與網址結構落地。網站分析追蹤(來源歸因)未規劃,與追蹤表「來源欄」需打通。網域購買(回台 48h)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>路徑 C 的識別是本階段最高價值洞察——B2B2C 的轉寄動線(子頁+Essentials 規格區+「This page forwards well」)在同業官網幾乎無人做。</p>
+        <p><b>議:</b>架構已就緒但<b>執行鏈未指派</b>:誰把 mock 變成真站、多久、多少錢——回台第一週定執行方;同時在表單埋「來源」下拉(朋友介紹/搜尋/仲介/其他),讓 R3 推薦率的數據從第一天就自動長。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D20 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 20</span><span class="day-title">物件子頁 — REN'AI 模板</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>五段</b> — Hero(<span class="en">"the boulevard Taipei keeps for itself"</span>)/The Home(敘事+房型表:3BR 60–65 坪・198–215 m²/4BR 65–70・215–231 m²)/The Essentials(HR 規格區:含 m² 換算、Corporate lets [confirm]、「This page forwards well — send it to whoever decides.」)/Neighbourhood ×3(收:<span class="en">"Your host's own addresses come with the home."</span>)/Gallery+Enquire(預填物件名)。模板將套用至松山(單身商務調性、機場十分鐘)/八德(整棟私有敘事)/開封。</div>
+      <div class="pend">材質表(哪戶真有實木/大理石)→ 子頁材質段落。押金月數、統編可否 → 填 confirm 標。平面圖繪製(誰畫、何格式)未指派。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「感覺給住的人、規格給付錢的人」在同一頁完成,轉化鏈路完整;m² 換算這種小事正是 Every detail 的落地。</p>
+        <p><b>議:</b>四個子頁的內容瓶頸全在你手上的三個資料(材質表/兩個數字)<span class="fly">✍️ 機上可決</span>——機上填完,我回程即可出四頁全稿。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D21 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 21</span><span class="day-title">攝影規範 — The Eye</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>總綱</b> — 我們拍的是光,不是房間;<b>照片是承諾</b>(現場不得低於照片)。<b>五規</b> — 光是主角(黃昏優先,禁閃燈/HDR/冷白)/人眼高度 120–150cm・35–50mm(禁超廣角變形)/留白即構圖/細節是證據(每家 3–5 張)/誠實。<b>痕跡</b> — 🅑 微痕跡:永無人,但有「剛被準備過」的證據;鐵律:<b>只准真的會發生的事</b>(可以一杯有熱氣的茶,不准香檳草莓)。<b>色調</b> — 白=Marble、陰影帶暖、窗外過曝成柔白(A city address 的攝影語言)。<b>八鏡位</b> — Door/First Look/Living/The Light(靈魂鏡位)/Bedroom(手寫卡入鏡)/Bath/Details/Window。<b>交件</b> — 12–15 張、3:2+4:5、sRGB ≥4000px、estia-renai-living-01 命名。<b>第一輪</b> — 仁愛+松山室內(街區第二輪)。<b>選人</b> — 作品集三訊號(個人作品/敢留陰影/白不偏藍)+面談兩問+<b>付費試拍制</b>(松山一間半天,過了才簽長期;前任已淘汰)。</div>
+      <div class="pend">攝影師徵選與試拍(回台)。走屋影片(Day 22 決定)併入試拍測錄。拍攝檔期受空置窗約束——排程需與訂房行事曆聯動。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「拍攝日清單=The First Hour 預演」的一單兩用是流程設計的巧勁;試拍制把你面試哲學延伸到供應商,選人邏輯全司一致。</p>
+        <p><b>議:</b>照片是官網上線的<b>關鍵路徑最長項</b>(徵人→試拍→定約→排空置檔期→修圖),回台第一週就發徵選,勿等其他事。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D22 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 22</span><span class="day-title">詢問到鑰匙 — 12 小時線</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>承諾</b> — 對外 <b>12 小時</b>(你拍板上修)、內部工作時間 3 小時;兩線分離。<b>收件</b> — 🅐 統一信箱→值日 2 小時內指派→物件 Host 當日首覆(名字在內文 <span class="en">"I'm ___"</span>,署名維持 — ESTIA)。<b>看房</b> — 🅐 每戶預錄 3 分鐘走屋影片。<b>保留</b> — 🅑 不保留:訂金到才鎖定;優雅話術已擬(「不讓您空等」)。<b>金句(進員工教材)</b> — 「漏接一封詢問,漏掉的不是一則訊息——是一整年的租金,和一位可能回頭十年的客人。」<b>追蹤</b> — 一張七欄表(日期/名字/來源/物件/階段/Host/下一步)。</div>
+      <div class="pend">值日輪替表(誰、夜間與假日覆蓋)未排——12h 承諾的兌現機制。追蹤表工具落地(建議直接 Google Sheet 開版)。詢問 SOP 一頁(含金句)待我彙整。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>12h 是敢寫在官網上的差異化承諾,且 G4(≥95%)給了它牙齒——承諾、流程、指標三位一體,少見的完整。</p>
+        <p><span class="risk">險:</span>12h 含深夜與假日,而值日制尚無班表——<b>承諾已上線(mock 已寫),兌現機制還在紙上</b>。議:值日雙人制(主+備援),假日輪值進 G1 出席同一張行事曆管理;正式官網上線前班表必須先跑兩週實測。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D23 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 23</span><span class="day-title">一頁式簡介 — 房東版為主,三用</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>判斷</b> — 三讀者中<b>房東最重要</b>(供給端=彈藥;談判差 3% 年差數十萬)。<b>結構</b> — 定位句雙語/我們是誰/四數字(45+ 戶[confirm]・6 年・3 區・1 月起租)/做法四條(嚴選不濫收/一客一 Host 12h/每週保養/<b>帳務透明——會計事務所家族</b>)/<b>給屋主的一段話</b>(「您的資產在我們手上,是增值,不是折舊」「捨不得隨便出租的房子」)。<b>替換段</b> — 合作方版(供給穩定+統編[confirm]+一位窗口)/媒體版(MIT 翻轉故事鉤)。列印時替換段自動隱藏。</div>
+      <div class="pend">確切戶數、聯絡資料、統編確認 <span class="fly">✍️ 機上可決</span>。印刷版(P4)等商標門。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「帳務透明」把家族背景轉成供給端信任資產,是本案少數把創辦人身世變現的一手;「捨不得隨便出租」精準打中好房東的心理帳戶。</p>
+        <p><b>議:</b>一頁式之後應長出<b>房東開發的迷你漏斗</b>(名單→遞頁→帶看 ESTIA 現場→條件框架)——目前只有武器沒有戰役,列 35+ 天延伸題。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 6 ═══════════ -->
+  <h2>Phase 6 · 內部文化</h2>
+  <div class="h2-cn">Day 24–28 · 從上次的傷口,長出一套系統</div>
+
+  <!-- D24 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 24</span><span class="day-title">內部節奏 — 十三個儀式收進四層</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>診斷</b> — 23 天發明了 13 個儀式;八人公司若各開各的會=死在會議室=三個月後全停辦。<b>四層</b> — L1 日常習慣(不進會議室:30 秒暫停/讀出聲/客人眼睛/48h 預備)/L2 <b>細節圈</b>(你改雙週,隔週五 30 分站著開;一人一分鐘一個瑕疵+處理;實例已寫入附錄)/L3 <b>爐邊會</b>(你命名;每月底 95 分:①顧火 40——你永遠第一個講、講自己的 ②意圖反思 25 ③5,000 分享 20 ④回音 10——上月議題逐條回報)/L4 季年(Explores/跨崗輪班/文化健檢/Reads 暫停中,回歸時併回爐邊會)。<b>兩鐵律</b> — 每人每月會議 ≈2.5 小時封頂,新會進舊會出;儀式不加班。</div>
+      <div class="pend">回音板(共享表)實際開版。細節圈輪值主持順序排定。爐邊會首場日期(建議回台第一或第二週,發布文化+年終制度+謝她,三合一)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「儀式太多等於沒有儀式」的收斂是本階段最重要的一刀;顧火排第一段是議程設計層面的價值觀宣示(Collins「讓資訊不容忽視」的制度化)。你砍 Reads 的決定務實——暫停好過形骸化。</p>
+        <p><b>議:</b>Reads 暫停使 Value 06 的三制度只剩兩條在跑——確認 <b>Explores 是否照常</b>(若也緩,手冊需再標註,避免新人讀到未兌現的承諾)<span class="fly">✍️ 機上可決</span>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D25 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 25</span><span class="day-title">新人的前十四天 — 雙軌制(因會計行政而重設計)</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>轉折</b> — 你揭示新人是<b>會計行政</b>非管家 → 入職拆雙軌:<b>文化軌人人相同</b>(爐邊會宣布+講面試故事/指定學姊/「她的問題只會被謝謝」全員聽到/桌上=手冊+全隊手寫卡/Jim 親唸起源/住一晚/細節圈/新眼睛筆記 ≥5 條/Day 14 面談——你第一句只能是「謝謝你講」)+ <b>職務軌照角色</b>(Module A 管家:一週看二週做+三個不能省;Module B 會計:看懂錢在買什麼→接手三件——5/20 請款節奏、押金退款、<b>5,000 元=記錄不審批</b>的文化地雷排除)。<b>她的三個不能省</b> — 房東租金永不遲一天/5・20 逢班必出絕不漏單/押金 14 天+明細(唯一可插隊款項)。<b>你加碼</b> — 住一晚推及全員:空置夜、兩月輪完、同事互寫卡、隔日一則觀察進細節圈、<b>你排第一個睡</b>。</div>
+      <div class="pend">全員住一晚排程表(誰排、行事曆)。學姊人選指定。她的 Day 14 面談日期落定。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>雙軌抽象化讓入職系統對任何未來職務可複用;「5,000 元=記錄不審批」是提前拆彈——會計本能與主人制度的衝突,九成公司會在三個月後才爆。</p>
+        <p><b>議:</b>此日暴露的深層問題(輪班role-blind)已由你在 Day 34 抓出並修正為<b>跨崗制</b>——雙軌與跨崗現已同構,但《成員與定位規範》(8 人各自崗位、跨崗對應表)仍待你給名單後成文 <span class="fly">✍️ 機上可決(名單與配置)</span>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D26 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 26</span><span class="day-title">顧火深水區 — 當批評指向你、指向資深</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>指向你:接招五步</b> — 身體穩住/第一句固定「謝謝你講」不接但是/複述確認/三選一皆合法(認・想[必給死線]・<b>誠實不同意+理由</b>)/事後公開回報改了什麼+點名感謝(=Cullman 動作)。禁:當場辯護、翻舊帳、隔日臉色、<b>私下找提出者「聊聊」=死罪</b>。</div>
+      <div class="row"><b>指向資深(你的真實痛點:管家查房 vs 資深房務)</b> — 結構診斷:<b>檢查者位階低於被檢查者</b>。三解:①清單當黑臉(對清單報告不對人宣判;禁個人瑕疵計分)②<b>殺手鐧:請資深房務親筆撰寫《ESTIA 清潔標準》、名字印在上面</b>——從被告變立法者,面子兌換成裡子,順帶解傳承 ③事後摸頭找資深不找新人(「謝謝妳的風度」)。</div>
+      <div class="row"><b>匿名裁決</b> — 你的直覺對:不做(八人假匿名→獵巫)。替代=<b>「掛我名下」</b>:私下告訴你、你以自己觀察帶上桌;三個月訓練輪。<b>預演</b> — 首場爐邊會你解剖自己「沒想清楚就派任務」:三行任務模板(要什麼/為什麼/什麼時候要)+「少一行可退回給我」+不急用預約傳送+點名感謝當時提醒的人。三分鐘講稿已擬。</div>
+      <div class="pend">邀請資深房務撰寫清潔標準——<b>需要你親自開口</b>(建議私下、以請教的姿態);此文件同時成為 G-系檢查的唯一依據。首場爐邊會你的解剖案例填空(哪一次、少講了什麼)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「立法者」解法是本階段最高一手——不花一毛錢,把最難取代員工的抗拒轉為所有權;同時是知識管理(她退休,標準留下)。「不同意也是合法回應」保住制度誠實性,避免表演式開明。</p>
+        <p><b>議:</b>清潔標準的邀請話術值得排練一次(在我這裡演一遍再去說),因為開場三十秒決定她把這當榮耀還是當多出來的工。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D27 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 27</span><span class="day-title">滅火與修復 — 五站與三條款</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>驗屍</b> — 上次事故死因不是吵架,是「沒有然後」;會修復的團隊比不吵架的更信任。<b>五站</b> — 0 現場滅火 0–10 分(停火不裁決;禁當眾判決/逼道歉/進 LINE 群)→ 1 當天分開聽(只聽不裁;兩邊都聽到「妳的感受是真的,不會被裝沒事」)→ 2 修復對話 48h 內(事實→影響→需求→<b>一條可檢查的約定</b>;「不需要今天喜歡彼此,只需要同意這條約定」)→ 3 一週回訪 → 4 爐邊會系統化(去人名)。<b>三條款</b> — A 氣頭上的離職不當場接受(48 小時條款——上次的學費)/B 當事人是你:24h 主動約談+氣頭不回群組隔夜再回/C 給臉色的執法:嚴肅談一次且只談一次,再犯按價值觀處理。</div>
+      <div class="pend">學姊與細節圈輪值主持需被<b>簡報過此文件</b>(Station 0 的滅火句是他們要說的)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>把修復目標從「和好」降到「一條可檢查的約定」是行為設計的正解——感情沿著被遵守的約定自己長回來;48 小時離職條款直接針對已發生過的失敗模式,學費真的變成了制度。</p>
+        <p><b>議:</b>唯一結構弱點:當衝突雙方之一是你、另一方又不敢跟你單獨談時,系統無第三方——八人公司無解,誠實接受;緩解=你的 B 條款開場白必須夠軟(已擬)。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D28 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 28</span><span class="day-title">文化健檢 — 八徵象與防作弊條款</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>總綱</b> — 文化指標是溫度計不是油門(古德哈特防線)。<b>八徵象(全從既有紀錄讀,零新表單)</b> — Ⅰ說真話:01 深水題比例(紅:連兩月只有安全題)/02 發言覆蓋 8/8/03 <b>回音兌現率 100%(量的是老闆)</b>/04 <b>自首率(皇冠:每季 ≥3 件)</b>。Ⅱ修復日常:05 修復完成率 100%(零衝突≠和諧)/06 發現→修好天數趨降/07 儀式兌現(含你的房務日打勾)。Ⅲ迴路:08 客人端(回頭/推薦+客訴複盤 100%)。<b>紅色警報 ×3</b> — 連兩月只有安全題/任一議題 &gt;30 天無回音/離職者說出「其實我不敢講」。<b>防作弊</b> — 提題數、自首數<b>永不進個人獎金</b>;節奏=季末 30 分自查、年底爐邊會公開全年。</div>
+      <div class="pend">回音板議題標籤(安全/流程/深水)由輪值主持標——寫進主持小抄。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「自首率」作為心理安全的行為代理指標,優於任何問卷(可演的問卷 vs 演不了的自首);第 03 條把老闆納入被檢方,健檢因此可信。</p>
+        <p><b>議:</b>八徵象與 Day 32–34 獎金表的<b>楚河漢界</b>已劃清(溫度計鎖抽屜),年底公開時務必重申一次此界線,免得團隊誤讀為變相考核。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 7 ═══════════ -->
+  <h2>Phase 7 · 印刷與實體</h2>
+  <div class="h2-cn">Day 29–31 · 品牌落到手上</div>
+
+  <!-- D29 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 29</span><span class="day-title">實體清單 — 三層十項與一場除役</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>印前之門</b> — 商標完成前,一切僅止取樣打樣報價,不量產。<b>Tier 1(只等商標)</b> — P1 手寫迎賓卡/P2 清潔小卡/P3 名片/P4 一頁式印刷版。<b>Tier 2</b> — P5 冊子(殼先行,內頁等共創)/P6 封蠟銅模(等 M11 向量;一顆模用十年)/P7 信封信紙(押金明細也要好看地寄回)/<b>P10 雨傘(你新增)</b>:家的配備非贈品——素 Ember 傘面零印刷、實木手把、識別僅傘帶或手把小標、每戶玄關 2 把、遺失視為行銷費。<b>Tier 3</b> — P8 戶門黃銅小牌(需房東點頭)/P9 軟裝統一(採購案,獨立成案)。<b>除役</b> — 鑰匙牌(密碼鎖時代無鑰匙)且<b>不補位</b>:M11 舞台=封蠟+迎賓卡(+favicon),稀有即價值。<b>首批哲學</b> — 🅐 小量精緻(300 級),先驗手感再加印。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>鑰匙牌除役是系統自我一致性的勝利(Day 16 決策的下游被你主動清算);雨傘的「配備非贈品」定位守住了與飯店贈品文化的界線。</p>
+        <p><b>議:</b>P9 軟裝統一是「ESTIA 加的」那一層的物質基礎(每戶 100% 可控),戰略權重其實高於多數印刷品——建議回台後為它單開一天(35+ 延伸),先從<b>寢具+毛巾+燈泡</b>三樣起。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D30 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 30</span><span class="day-title">紙感與工藝 — 紙就是觸覺的品牌</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>紙三規</b> — 紙色即 Marble(帶暖米白,永不純白)/未塗佈高棉(為手寫服務)/磅數階梯 325±25/240/350/110–140。<b>工藝</b> — 迎賓卡=<b>素壓</b>(你選 B:無墨壓凹,最安靜;印刷為手寫讓路)/名片=<b>凸版</b>(你選 A:要被讀,需墨色)/清潔卡=同紙平印(紙不降級、工藝降級)。<b>墨箔</b> — 單一 Ember 特調(Pantone Black 7C,禁純黑);Oak 僅以箔存在;金箔永不。<b>筆</b> — 統一一款+一種墨(款式歸回台實測批:筆跟香味一樣,用手選)。<b>打樣四步</b> — 紙行白樣→<b>手寫測試(別人看印刷,你試手寫)</b>→單色打樣→簽字量產。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「省下香氛音樂的預算,砸在紙上」是資源配置與品牌主張的完美對齊;手寫測試這一步是全流程唯一針對你的實際使用場景(卡是被寫的)設計的驗收,別家不會做。</p>
+        <p><b>議:</b>素壓對紙的纖維與厚度敏感——白樣階段請廠商<b>先在候選紙上打一個素壓樣</b>再定紙,順序別反。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D31 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 31</span><span class="day-title">發包規格單 — 九品項全規格</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>通用</b> — 棉紙對 Marble 色票選紙/Ember=Black 7C 特調/字距 0.42em 不得壓縮。<b>要點</b> — P1:A6 325gsm 正面素壓字標 32mm、背面素壓 M11 18mm(待向量,首批可先正面);P3:90×54・350gsm 凸版;P4:A4 140gsm 數位每批 50(內容會更新不壓庫存);P6:銅模 Ø25mm M11 陽刻+蜜蠟褐(蠟也守禁色);P7:信封封口留素面=封蠟位;P8:黃銅蝕刻 90×30 霧面,先做仁愛/松山樣品兩塊;P10:直傘 8 骨 100 把。<b>驗收六條</b> — 對色票/對 Black 7C/素壓均勻不破紙/<b>指定筆實寫三行不暈墨</b>/字距目視比對/全數過檢才建續印檔。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>把「驗收標準」寫進發包單=把品味翻譯成可執行合約語言;首批小量+續印檔機制控制了學費上限。</p>
+        <p><b>議:</b>發包順序建議:白樣與筆(第 1 週)→ P2/P4 數位件(門開即印,最快見物)→ P1/P3 工藝件 → P6/P8 金屬件(等向量/等房東)。傘廠交期通常最長(布料+骨架),詢價可先行。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PHASE 8 ═══════════ -->
+  <h2>Phase 8 · 年終與成長</h2>
+  <div class="h2-cn">Day 32–34 · 把「還想回來」變成一張能算錢的表</div>
+
+  <!-- D32 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 32</span><span class="day-title">她的機制 × 三工具拆分</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>對她文件的裁決</b> — 保留三個正確直覺(回覆階梯/回訪率/輔導先於處分);判定整體為「寫給上一家公司(Oasis Living・平台短租)的好制度」;四衝突:扣分文化 vs 自首、推銷加分 vs Value 01、月月打分 vs 主人心態、Airbnb 星等=舊模式。<b>你的四修正</b> — 續住不扭曲意圖(對,已在成果層)/成長對話改<b>每季</b>/長租仍走平台故星等保留為<b>地板</b>/住房率改看<b>營業額</b>。<b>三工具</b> — ①服務標準(尺,不打分)②成長對話(季度 1:1,無分數)③年終獎金(門檻+成果)。<b>她的文件去處</b> — 🅐 改寫為《ESTIA 服務標準》、爐邊會點名感謝(已寫入員工版第四部致謝欄)。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>你的「續住不扭曲意圖」反駁精準——顧問原判過寬,修正後的分界線(獎勵客人自願留下的結果、不獎勵說服掏錢的行為)比原版更鋒利。對她作品的處理方式本身就是一次顧火示範。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D33 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 33</span><span class="day-title">逐條範例 + 分錢公式</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>基線年原則</b> — 成果三指標第一年只量不設線;門檻第一年即生效。<b>門檻</b> — 個人 G1 出席≥8成/G2 <b>跨崗輪班(已修:管家輪房務、房務輪接待見習、會計與 Jim 輪 2+1;日常職務不能充抵)</b>/G3 零誠信(錯誤免責・隱瞞重罪;正當程序)。團隊 G4 12h 首覆≥95%/G5 押金 14 天(允 1 例外+書面)/G6 平台地板(防線非比賽;禁「幫我們留五星」)。<b>成果</b> — R1 續租(任期自然結束剔除)/R2 回訪(12 個月)/R3 推薦(來源欄;沒記錄=作廢)。<b>池子</b> — 營業額×提撥率×成果係數(基線年 1.0;之後 1.0/+0.05 每超一支・上限 1.15/全未達 0.9)。<b>雙籃</b> — 同店比去年(+3~5% 即健康)/新店比開站前白紙黑字目標;成長率是你的儀表<b>不進員工公式</b>。<b>分法</b> — 成果只算公司層級(小樣本+盤性差異=個人歸因會冤枉人);80 基本份(在職月數×職務係數)+20 貢獻份(具名裁量+三護欄:理由當面講/不公告金額/具體事蹟)。<b>老闆條款</b> — 你不進池但門檻公開結算;農曆年前一次發清。<b>公平五條</b> — 長假折算/新人比例/正當程序/定義先行/數據缺漏不發不扣。</div>
+      <div class="pend">三數字:提撥率/平台現況分/新店目標 <span class="fly">✍️ 機上可決</span>。職務係數表草擬 <span class="fly">✍️</span>。係數級距批准 <span class="fly">✍️</span>。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><span class="str">強:</span>「公司層級成果」避開了八人團隊最常見的獎金內戰;「沒被記錄的表現不發錢也不扣錢」讓數據紀律自我執行——制度自己會養習慣。</p>
+        <p><span class="risk">險(留觀):</span>R1 續租率與「合理調租」存在張力(為保指標而不敢調租)。<b>議:</b>調租提案權歸你一人;第一年純觀察,若出現「該調不調」跡象,再加個案註記規則——先不過度設計。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- D34 -->
+  <div class="day">
+    <div class="day-head"><span class="day-id">DAY 34</span><span class="day-title">總裝 — 員工版制度書 + 發布腳本</span></div>
+    <div class="day-body">
+      <div class="blk-t">定案</div>
+      <div class="row"><b>員工版四部一冊</b> — 哲學與三工具/年終機制/逐條範例(已併入,你指定)/《ESTIA 服務標準》(她的骨架+致謝欄;基本要求五條 ESTIA 語氣改寫——含「你的權限是真的」把她的第七章與 5,000 元制度接軌)。<b>爐邊會發布腳本(三分鐘)</b> — 開場→<b>謝她</b>(「新版是在她的骨架上長出來的」)→三句話講制度(池子/分法/資格)→單獨強調「錯誤免責,隱瞞重罪」→基線年收尾。<b>G2 跨崗修正</b> — 已依你指示改入員工版;《成員與定位規範》列入最後批次。</div>
+      <div class="rev"><div class="r-t">⚖ 檢討</div>
+        <p><b>議:</b>發布順序鎖死:<b>文化節奏(爐邊會是什麼)→ 謝她 → 年終制度</b>——先給安全感、再給歸屬感、最後才談錢;順序反了,前兩者都會被錢的討論吃掉。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PART II ═══════════ -->
+  <h2>第二部 · 顧問總檢</h2>
+  <div class="h2-cn">跨日審查 · 用 MECE 與風險紀律,檢查這座 34 天蓋起來的系統</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">Ⅱ-A</span><span class="day-title">一致性審查 — 各天決策互相打架的地方</span></div>
+    <div class="day-body">
+      <div class="row"><b>A1 · 算術矛盾(最重要)</b> — Value 08「每 Host ≤8 單位」× 45+ 單位 × 全員 8 人:若 Host 約 4 人,上限 32 &lt; 45。出路三選:(a)上限僅適用服務式長住層,年租低接觸公寓另計;(b)上限為擴編後目標態;(c)修改上限。<span class="fly">✍️ 機上裁定</span> — 我的傾向是 (a):它同時解釋了「第五類不上首頁」的既有直覺,系統最自洽。</div>
+      <div class="row"><b>A2 · 跨崗輪班傳播</b> — G2 已修,但舊寫法(人人 2 天接待+1 天房務)仍留在:節奏表 L4、前十四天全員補課框、員工手冊 Value 02、健檢 07——<b>列入最後批次一次改齊</b>,以《成員與定位規範》為準。</div>
+      <div class="row"><b>A3 · 續租率 × 調租</b> — 見 Day 33 檢討;調租權集中於你+第一年觀察,暫不加規則。</div>
+      <div class="row"><b>A4 · 12h 承諾 × 值日覆蓋</b> — 承諾已寫進官網 mock,班表還在紙上。正式站上線前,值日雙人制(主+備援)先實測兩週。</div>
+      <div class="row"><b>A5 · Reads 暫停 × Value 06</b> — 手冊已標註;<b>Explores 是否照常</b>需一句話確認 <span class="fly">✍️</span>,否則新人會讀到未兌現的承諾。</div>
+      <div class="row"><b>A6 · 密碼鎖 × 密碼治理</b> — Day 16 選了便利、未選治理:每客一碼/退房即換/房務碼分離/變更留紀錄/離職權限回收——一頁 SOP,會計行政管台帳,回台第二週。</div>
+      <div class="row"><b>A7 · 直客官網 × 平台通路</b> — 品牌聲音以官網英文設計;平台訊息有字數與慣性限制,訊息定稿批次需含<b>通路短版</b>。G6 地板的前提是平台通路持續經營,與直客化路線並行不悖,但兩通路的房源/價格一致性規則未寫——列 35+ 延伸。</div>
+      <div class="row"><b>A8 · Favicon 過渡</b> — 若官網早於 M11 向量上線,favicon 暫用素字母 E,向量到即換;小事,先記。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">Ⅱ-B</span><span class="day-title">MECE 缺口掃描 — 34 天刻意沒碰、但生意需要的</span></div>
+    <div class="day-body">
+      <div class="row">34 天的範圍是<b>品牌與文化作業系統</b>——以下不是失誤,是相鄰地塊。按建議順位:</div>
+      <div class="row"><b>①(高)工具選型一次到位</b> — 客人檔案、七欄追蹤表、回音板、修繕清單、密碼台帳:建議全數落在同一套雲端試算表/雲端硬碟,一小時開完版,拒絕多工具。<b>②(高)法務包</b> — 雙語租約、大樓公約定版、押金條款(含 14 天+明細入約)、責任險盤點。<b>③(高)文化預算表</b> — 裁量金/Explores/書費/住一晚/保養油——寫成受保護科目。<b>④(中)房東開發漏斗</b> — 一頁式之後的戰役設計:名單→遞頁→帶看現場→條件框架。<b>⑤(中)需求通路計畫</b> — relocation agency 合作方案(路徑 C 的主動版)、內容與搜尋。<b>⑥(中)危機 SOP</b> — 客人重大事故(醫療/意外)、媒體負評、房東糾紛三腳本。<b>⑦(中)個資最小化</b> — 客人檔案誰可看、存多久、離職回收。<b>⑧(中)軟裝統一採購案</b> — 寢具/毛巾/燈泡三樣先行。<b>⑨(低)定價策略研究</b> — 付費意願、競品帶狀、調租節奏。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">Ⅱ-C</span><span class="day-title">風險登記簿 — 機率 × 衝擊,附緩解</span></div>
+    <div class="day-body">
+      <div class="row"><b>R1 商標未查(高×高)</b> — 唯一不可替換資產法律地位未知。緩解:回台 48h 檢索+網域先購;印刷全數閘後;評估中文防禦性註冊。</div>
+      <div class="row"><b>R2 關鍵人依賴(高×中)</b> — 敘事/設計/文化皆繫於你。緩解已在跑:全案文件化、資深立法者、員工手冊;Value 07 的集中是刻意選擇,接受之,但知識沉澱持續。</div>
+      <div class="row"><b>R3 供給集中度未知(中×高)</b> — 若正隆與時兆各為單一房東,兩紙約≈七成供給。<b>行動:盤點房東結構</b>;若集中,續約提前 6 個月啟動+一頁式攻勢分散化。</div>
+      <div class="row"><b>R4 12h 承諾破功(中×高)</b> — 已寫上官網。緩解:班表實測、G4 留 5% 緩衝、值日雙人制。</div>
+      <div class="row"><b>R5 密碼治理缺口(中×高)</b> — 一次失竊指控即可傷及品牌。緩解:A6 之 SOP。</div>
+      <div class="row"><b>R6 上線時程滑動(中×中)</b> — 照片是最長路徑。緩解:徵選第一週發、空置檔期預排。</div>
+      <div class="row"><b>R7 材質誤宣殘餘(低×高)</b> — 已由三層修正壓低;守則:材質表未回前,子頁不寫材質段。</div>
+      <div class="row"><b>R8 文化發布順序(低×中)</b> — 錢先於文化會吃掉一切。緩解:D34 腳本順序鎖死。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">Ⅱ-D</span><span class="day-title">顧問自我檢討 — 我這 34 天做錯與修正的</span></div>
+    <div class="day-body">
+      <div class="row"><b>一 · 商標風險晚舉了十三天。</b>應在 Day 5 命名當天攔停,我到體檢日才升紅旗。教訓:法務前置永遠先於創意衝刺——所幸未產生印刷沉沒成本。</div>
+      <div class="row"><b>二 · 教義先於盤點。</b>Day 3 立了原形建材鐵律,Day 19 才被供給實況(房東裝潢)打臉。正確順序是先資產盤點、再立主張;三層修正是補丁,不是免責。</div>
+      <div class="row"><b>三 · 內部句外洩。</b>官網初稿把「Hosted, not served.」放上對外頁面,違反 Day 6 你定的鐵律——重跑時自抓自改,並把該規則寫進建站檢查項。</div>
+      <div class="row"><b>四 · 制度設計沒過「真人測試」。</b>輪班規則(人人 2+1)對天天接待的管家、天天打掃的房務毫無意義——被你抓出。教訓:每條通用制度,發布前逐一套在八個真名字上跑一遍。入職設計也犯過同型錯(預設新人是管家)。</div>
+      <div class="row"><b>五 · 審美誤判三輪。</b>Logo 星標推薦連續與你的眼睛不合,調整為平列選項制後才順——顧問的品味只該是選項,不該是預設。</div>
+      <div class="row"><b>六 · 範例供給遲滯。</b>你兩度說「給實際例子不然看不懂」(細節圈、計分卡)。已改為預設:凡制度必附 ✓/✗ 實例——本報告每日檢討沿用此紀律。</div>
+      <div class="row"><b>七 · 預算量化缺位。</b>文化制度談了信念沒編價格;本報告以 Ⅱ-B③ 補列,回台落表。</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PART III ═══════════ -->
+  <h2>第三部 · 未完成總表</h2>
+  <div class="h2-cn">按「你在哪裡就能做什麼」排列 · ✍️ 段落是你的機上作業</div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">✍️</span><span class="day-title">機上可完成 — 十六題純決策,一支筆清掉</span></div>
+    <div class="day-body">
+      <div class="row">01 · Value 09 命名:🅐顧火/🅑對事直接對人溫柔/🅒為了這個家 → ______</div>
+      <div class="row">02 · Value 08 上限解法:(a)僅限服務式層/(b)擴編目標態/(c)修改上限 → ______</div>
+      <div class="row">03 · 物件名最終確認:REN'AI/SONGSHAN/BADE/KAIFENG → 照案或改 ______</div>
+      <div class="row">04 · 押金 ______ 個月;統編發票:可/不可</div>
+      <div class="row">05 · 一頁式數字:確切戶數 ______;聯絡資料(名/電話/Email)______</div>
+      <div class="row">06 · 材質表(每物件:地板/浴室/可講的真材料):仁愛 ______/松山 ______/八德 ______/開封 ______</div>
+      <div class="row">07 · 新店開站目標(白紙黑字):八德第一年 ______ 萬/開封 ______ 萬</div>
+      <div class="row">08 · 提撥率 r = ______ %</div>
+      <div class="row">09 · 平台現況平均分 ______ → 地板值 = ______</div>
+      <div class="row">10 · 成果係數級距(1.0/每超一支+0.05・上限1.15/全未達0.9):批准/修改 ______</div>
+      <div class="row">11 · M42/M43 裁決:日常字標 素版/亮I;倒影動效 用/不用</div>
+      <div class="row">12 · Explores:照常/暫停</div>
+      <div class="row">13 · 《成員與定位規範》:8 人名單 × 崗位 × 跨崗對應 × 值日資格(草表:姓名/日常崗/跨崗內容/天數)</div>
+      <div class="row">14 · 職務係數表草擬(基本份用,年初公告)</div>
+      <div class="row">15 · 首場爐邊會日期 ______;你的解剖案例(哪一次、少講了什麼)______</div>
+      <div class="row">16 · 訊息 12 份逐份批改 — <b>需要我先把草稿彙整成《訊息手冊草稿》單一文件</b>(散在對話中無法機上作業)→ 說一聲,起飛前交你。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">🏝</span><span class="day-title">聖托里尼實地 — 帶著做的四件</span></div>
+    <div class="day-body">
+      <div class="row">① Marble 暖度:白牆晨/午/昏三連拍(帶色票)。② M11 向量草稿+光學校正筆記(拱與三橫的粗細目測比例)。③ 試香三路(招牌香/無香/僅第一小時)。④ 手寫卡範例:用旅途實際寫三張(給虛構客人),語感回台定稿。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">🏠</span><span class="day-title">回台四週 — 關鍵路徑排程</span></div>
+    <div class="day-body">
+      <div class="row"><b>W1</b> — 🔴 商標檢索+網域購買/攝影師徵選發布(最長路徑先動)/三數字對內公告準備/值日班表 v1 開始兩週實測/工具一次開版(Ⅱ-B①)。</div>
+      <div class="row"><b>W2</b> — 紙白樣+筆實測(先打素壓樣再定紙)/<b>首場爐邊會</b>(順序:文化→謝她→制度)/密碼治理 SOP/私下邀資深房務寫《清潔標準》(話術可先來我這排練)。</div>
+      <div class="row"><b>W3</b> — 試拍+走屋影片測錄/建站執行方定案/房東結構盤點(R3)/文化預算落表。</div>
+      <div class="row"><b>W4</b> — 識別手冊 v2 升版(五輸入齊)/商標過→Tier 1 發包(P2/P4 先行)/子頁 ×4 全稿(材質表已回)。</div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head"><span class="day-id">🤝</span><span class="day-title">需要我 — 說一聲就出</span></div>
+    <div class="day-body">
+      <div class="row">《訊息手冊草稿》12 份彙整(機上批改用,<b>建議最優先</b>)· 詢問流程 SOP 一頁(含金句+七欄表)· Manifesto 雙語擴充(補 Day 8–10+Value 09)· 識別手冊 v2 組裝 · 子頁 ×4 全稿 · 員工手冊 19–34 天擴充版 · 文化預算表模板 · 密碼治理 SOP 草稿 · 《成員與定位規範》成文(你給名單後)· 舊寫法傳播修正(A2 清單一次改齊)。</div>
+    </div>
+  </div>
+
+  <div class="day" style="border-color:var(--oak)">
+    <div class="day-body" style="padding-top:16px">
+      <div class="quote" style="border:none;padding:0;font-size:15.5px">三十四天,一個從希臘帶回來的問題,長成了一個台灣品牌的完整答案。<br/>這份報告是它的 X 光片——飛機上慢慢看,哪裡想動刀,標代號回我。</div>
+    </div>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Full Report</span>
+    <span>Day 1–34 · Record + Review · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

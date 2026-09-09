@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Typeface Candidates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Marcellus&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,400&family=Outfit:wght@300;400&family=Jost:wght@300;400&family=Inter:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&family=LXGW+WenKai+TC&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Sans TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,68px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:640px; }
+
+  section{ margin-top:80px; }
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:28px; margin-bottom:4px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:26px; letter-spacing:.1em; }
+
+  .card{ border:1px solid rgba(34,29,23,.13); margin-bottom:16px; background:var(--marble); position:relative; }
+  .card.rec{ border-color:var(--oak); }
+  .badge{ position:absolute; top:14px; right:16px; font-size:9.5px; letter-spacing:.24em;
+    color:var(--oak); border:1px solid var(--oak); padding:5px 12px; text-transform:uppercase; }
+  .c-head{ padding:16px 20px 0; }
+  .c-id{ font-size:11px; letter-spacing:.24em; color:var(--oak); margin-bottom:4px; }
+  .c-name{ font-size:14px; letter-spacing:.1em; }
+  .c-spec{ padding:26px 20px 22px; }
+  .c-notes{ padding:0 20px 20px; display:grid; gap:8px; }
+  .note{ font-size:12.5px; line-height:1.7; color:#4a443b; font-family:'Noto Serif TC',serif; }
+  .note b{ color:var(--oak); font-weight:500; letter-spacing:.06em; }
+
+  /* Display renders */
+  .d-italiana{ font-family:'Italiana',serif; font-size:clamp(36px,8vw,64px); letter-spacing:.4em; padding-left:.4em; text-align:center; }
+  .d-marcellus{ font-family:'Marcellus',serif; font-size:clamp(34px,7.5vw,60px); letter-spacing:.34em; padding-left:.34em; text-align:center; }
+  .d-cinzel{ font-family:'Cinzel',serif; font-weight:400; font-size:clamp(32px,7vw,56px); letter-spacing:.3em; padding-left:.3em; text-align:center; }
+  .d-sub{ text-align:center; margin-top:14px; font-size:13px; color:var(--stone); letter-spacing:.08em; }
+  .d-i{ font-family:'Italiana',serif; } .d-m{ font-family:'Marcellus',serif; } .d-c{ font-family:'Cinzel',serif; }
+
+  /* Serif renders */
+  .q{ font-style:italic; font-size:clamp(20px,3.6vw,26px); line-height:1.6; max-width:620px; }
+  .q-cormorant{ font-family:'Cormorant Garamond',serif; }
+  .q-eb{ font-family:'EB Garamond',serif; }
+  .q-crimson{ font-family:'Crimson Pro',serif; font-weight:300; }
+  .q-body{ margin-top:14px; font-style:normal; font-size:15px; line-height:1.8; color:#4a443b; max-width:620px; }
+
+  /* Sans renders */
+  .s-row{ display:flex; flex-wrap:wrap; gap:14px 24px; align-items:center; }
+  .s-lb{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; }
+  .s-btn{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); border:1px solid var(--oak); padding:9px 20px; }
+  .s-tx{ font-size:13.5px; color:#4a443b; }
+  .s-outfit{ font-family:'Outfit',sans-serif; font-weight:300; }
+  .s-jost{ font-family:'Jost',sans-serif; font-weight:300; }
+  .s-inter{ font-family:'Inter',sans-serif; font-weight:300; }
+
+  /* CN renders */
+  .cn-h{ font-size:clamp(20px,4vw,26px); letter-spacing:.14em; margin-bottom:12px; font-weight:500; }
+  .cn-b{ font-size:14.5px; line-height:2.0; color:#3f3a32; max-width:620px; font-weight:300; }
+  .cn-serif{ font-family:'Noto Serif TC',serif; }
+  .cn-sans{ font-family:'Noto Sans TC',sans-serif; }
+  .cn-kai{ font-family:'LXGW WenKai TC',serif; }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:80px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ font-family:'Outfit',monospace; letter-spacing:.12em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} .badge{ position:static; display:inline-block; margin:14px 0 0 20px; } }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Typeface Candidates · Day 12</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 02 · Candidates</div>
+    <h1>Choose the voices.</h1>
+    <p class="intro-cn">四個角色,每個角色三位候選人。每一款都真實渲染在這一頁——用眼睛選,不用理論選。看的時候問自己一個問題:<b>哪一款,像 ESTIA 在說話?</b></p>
+  </div>
+
+  <!-- ════════ A · DISPLAY ════════ -->
+  <section>
+    <h2>A · The Name</h2>
+    <div class="h2-cn">名字的聲音 · Logo 與大標 · 品牌的臉</div>
+
+    <div class="card rec">
+      <span class="badge">★ 推薦</span>
+      <div class="c-head"><div class="c-id">A1</div><div class="c-name">Italiana</div></div>
+      <div class="c-spec">
+        <div class="d-italiana">ESTIA</div>
+        <div class="d-sub d-i">The Two Bedroom · Qingtian</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 高對比細襯線。像時尚雜誌刊頭與羅馬石刻的混血:有古典的骨,有現代的削瘦。</div>
+        <div class="note"><b>為什麼推薦</b> — ESTIA 五個字母左右近乎對稱,字距拉開後站得極穩,天生是這款字的形狀。只有一個字重——它的克制就是品牌的克制。市面少見,不會撞款:你的競品用 Playfair 和 Cinzel,你用它,一眼就分出來。</div>
+        <div class="note"><b>風險</b> — 細筆畫在極小尺寸 (小於 14px) 會糊,所以它只當大標——這個限制我們本來就要。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">A2</div><div class="c-name">Marcellus</div></div>
+      <div class="c-spec">
+        <div class="d-marcellus">ESTIA</div>
+        <div class="d-sub d-m">The Two Bedroom · Qingtian</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 羅馬碑文體。字母像刻在石頭上,安靜、端正、有重量。</div>
+        <div class="note"><b>為什麼考慮</b> — 血統直通希臘羅馬古典世界,與 Estia 的語源暗合,但不做作。比 Italiana 更「穩」,適合想再收斂一點的方向。</div>
+        <div class="note"><b>風險</b> — 正,但少了時尚感;它是好的石匠,不是造型師。品牌容易顯得「古典」多於「當代」。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">A3</div><div class="c-name">Cinzel</div></div>
+      <div class="c-spec">
+        <div class="d-cinzel">ESTIA</div>
+        <div class="d-sub d-c">The Two Bedroom · Qingtian</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — Trajan 血統的羅馬大寫。最「奢華飯店」的一張臉,自帶儀式感。</div>
+        <div class="note"><b>為什麼考慮</b> — 如果要讓人第一眼就讀到「高級」,它最快。字母結構雄壯,招牌遠看清楚。</div>
+        <div class="note"><b>風險</b> — 太常見:精品酒店、電影海報、婚禮請帖都在用,有 cliché 風險。而且它的情緒是「莊嚴」,不是「溫暖」——與我們的靈魂差半度。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ B · SERIF ════════ -->
+  <section>
+    <h2>B · The Stories</h2>
+    <div class="h2-cn">故事的聲音 · Origin Story、引文、敘事段落</div>
+
+    <div class="card rec">
+      <span class="badge">★ 推薦</span>
+      <div class="c-head"><div class="c-id">B1</div><div class="c-name">Cormorant Garamond</div></div>
+      <div class="c-spec">
+        <div class="q q-cormorant">"What makes Greece truly Greece is the hospitality of its people."</div>
+        <div class="q-body q-cormorant">When I came home, I thought: this is what luxury really is. Not marble. Not designer furniture. It's a welcome that feels true.</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — Garamond 的現代高雅版。輕盈、貴氣、斜體美得像手寫的告白。</div>
+        <div class="note"><b>為什麼推薦</b> — 與 Italiana 同一個氣質家族 (細、雅、高對比),兩者同台不打架。Origin Story 用它的斜體排出來,像創辦人親口在說話。</div>
+        <div class="note"><b>風險</b> — 字重輕,12px 以下可讀性弱——所以它只負責引文與大段敘事,不做小字。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">B2</div><div class="c-name">EB Garamond</div></div>
+      <div class="c-spec">
+        <div class="q q-eb">"What makes Greece truly Greece is the hospitality of its people."</div>
+        <div class="q-body q-eb">When I came home, I thought: this is what luxury really is. Not marble. Not designer furniture. It's a welcome that feels true.</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 最忠於十六世紀原版的 Garamond。書卷氣、耐讀、永不過時。</div>
+        <div class="note"><b>為什麼考慮</b> — 如果官網會有長文 (Journal、街區故事),它的長篇可讀性比 Cormorant 好。是「實」的選擇。</div>
+        <div class="note"><b>風險</b> — 樸素。「雅」少一分,「書」多一分,氣質偏出版社而非精品。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">B3</div><div class="c-name">Crimson Pro</div></div>
+      <div class="c-spec">
+        <div class="q q-crimson">"What makes Greece truly Greece is the hospitality of its people."</div>
+        <div class="q-body q-crimson">When I came home, I thought: this is what luxury really is. Not marble. Not designer furniture. It's a welcome that feels true.</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 溫暖的書籍體,為螢幕而生,可讀性三者最佳。</div>
+        <div class="note"><b>為什麼考慮</b> — 如果你最在意「讀起來舒服」,它贏。溫度也夠。</div>
+        <div class="note"><b>風險</b> — 個性最弱,像文學出版社的內文——好用,但沒有記憶點。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ C · SANS ════════ -->
+  <section>
+    <h2>C · The Function</h2>
+    <div class="h2-cn">功能的聲音 · 按鈕、標籤、導覽、說明文字</div>
+
+    <div class="card rec">
+      <span class="badge">★ 推薦</span>
+      <div class="c-head"><div class="c-id">C1</div><div class="c-name">Outfit</div></div>
+      <div class="c-spec">
+        <div class="s-row s-outfit">
+          <span class="s-lb">The Two Bedroom · Qingtian</span>
+          <span class="s-btn">Enquire</span>
+          <span class="s-tx">Weekly housekeeping included.</span>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 幾何骨架、圓潤收邊。乾淨,但不冰。</div>
+        <div class="note"><b>為什麼推薦</b> — Light 字重大寫拉開字距時,有精品吊牌的質感。圓形字母 (O、C、S) 與 Italiana 的圓互相呼應,系統有血緣。它安靜到不被注意——功能字體的最高境界。</div>
+        <div class="note"><b>風險</b> — 較新的字體,個性中等——但配角本來就不需要個性。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">C2</div><div class="c-name">Jost</div></div>
+      <div class="c-spec">
+        <div class="s-row s-jost">
+          <span class="s-lb">The Two Bedroom · Qingtian</span>
+          <span class="s-btn">Enquire</span>
+          <span class="s-tx">Weekly housekeeping included.</span>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — Futura 的開源後裔。包浩斯、歐洲現代主義,最有「設計」血統的一款。</div>
+        <div class="note"><b>為什麼考慮</b> — 如果想讓品牌多一點歐陸精品的冷冽 (COS、Arket 那條線),它是對的。</div>
+        <div class="note"><b>風險</b> — 幾何感強,偏冷;個別字母 (j、t) 有個性,偶爾搶戲。與「溫暖」的品牌體溫差半度。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">C3</div><div class="c-name">Inter</div></div>
+      <div class="c-spec">
+        <div class="s-row s-inter">
+          <span class="s-lb">The Two Bedroom · Qingtian</span>
+          <span class="s-btn">Enquire</span>
+          <span class="s-tx">Weekly housekeeping included.</span>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 世界最通用的介面字體。可讀性的天花板。</div>
+        <div class="note"><b>為什麼考慮</b> — 如果未來有複雜的訂房系統、後台介面,它最不會出錯。</div>
+        <div class="note"><b>風險</b> — 科技新創的預設臉。零個性 = 零記憶點,品牌感最弱。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ D · CHINESE ════════ -->
+  <section>
+    <h2>D · The Chinese</h2>
+    <div class="h2-cn">中文的聲音 · 標題與內文</div>
+
+    <div class="card rec">
+      <span class="badge">★ 推薦</span>
+      <div class="c-head"><div class="c-id">D1</div><div class="c-name">Noto Serif TC · 思源宋體</div></div>
+      <div class="c-spec cn-serif">
+        <div class="cn-h">每一個細節,都是一次歡迎。</div>
+        <div class="cn-b">青田街成形於一九三○年代——矮房、老樹、以及一種始終沒有跟上城市的步調。腳下是實木橡木,浴室是卡拉拉大理石。</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 宋體 = 中文的襯線。筆畫有粗細、有起收、有紙的記憶。</div>
+        <div class="note"><b>為什麼推薦</b> — 與英文襯線體同一種骨相,雙語排版時氣質無縫。「雅」在筆畫裡——黑體給不了這個。開源完整、印刷網頁通吃。</div>
+        <div class="note"><b>風險</b> — 通用性高,識別要靠排版功夫 (行距 1.9–2.0、字距 +0.05em) 做出來——這些規則我們已經立好。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">D2</div><div class="c-name">Noto Sans TC · 思源黑體</div></div>
+      <div class="c-spec cn-sans">
+        <div class="cn-h">每一個細節,都是一次歡迎。</div>
+        <div class="cn-b">青田街成形於一九三○年代——矮房、老樹、以及一種始終沒有跟上城市的步調。腳下是實木橡木,浴室是卡拉拉大理石。</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 乾淨、現代、中性。</div>
+        <div class="note"><b>為什麼考慮</b> — 介面小字 (按鈕、表單) 它最清楚。可以當宋體的配角,負責純功能場合。</div>
+        <div class="note"><b>風險</b> — 沒有筆意,「雅」出不來。當主角時,品牌會往「科技公司」漂。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-id">D3</div><div class="c-name">LXGW WenKai TC · 霞鶩文楷</div></div>
+      <div class="c-spec cn-kai">
+        <div class="cn-h">每一個細節,都是一次歡迎。</div>
+        <div class="cn-b">青田街成形於一九三○年代——矮房、老樹、以及一種始終沒有跟上城市的步調。腳下是實木橡木,浴室是卡拉拉大理石。</div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>性格</b> — 楷體。有手寫的溫度、文人的氣息。</div>
+        <div class="note"><b>為什麼考慮</b> — 溫度最高的一款。如果 ESTIA 想在某些私密場合 (手寫感卡片) 用印刷字模擬筆跡,它是候選。</div>
+        <div class="note"><b>風險</b> — 「親切」多於「精品」,當品牌主字會顯得隨性;而且真正的手寫卡,ESTIA 應該用真的手寫。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ANSWER -->
+  <section class="howto">
+    <div class="eyebrow">How to decide · 怎麼選</div>
+    <p>每一區獨立選一款,回覆格式:<span class="code">A1 / B1 / C1 / D1</span> (可任意混搭)。</p>
+    <p>選之前做一個測試:想像它出現在<b>大門的銅牌上</b>、<b>給客人的第一封信上</b>、<b>官網打開的第一秒</b>——哪一款是 ESTIA?</p>
+    <p>我的完整推薦:<span class="code">A1 · B1 · C1 · D1</span>——四款彼此有血緣 (細、雅、圓、靜),是一個家族,不是四個路人。</p>
+  </section>
+
+  <footer>
+    <span>ESTIA · Typeface Candidates</span>
+    <span>Day 12 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

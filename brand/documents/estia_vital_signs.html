@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 文化健檢 The Vital Signs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:820px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:820px; margin:0 auto; background:var(--marble); padding:clamp(32px,6vw,52px) clamp(24px,6vw,50px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:6px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(23px,4.4vw,32px); margin:22px 0 6px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.14em; margin-bottom:12px; }
+  .credo{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:var(--oak); margin-bottom:26px; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:28px 0 12px; }
+
+  .sign{ border:1px solid rgba(34,29,23,.14); margin-bottom:10px; padding:14px 18px; }
+  .sg-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:7px; flex-wrap:wrap; }
+  .sg-name{ font-size:14px; font-weight:500; }
+  .sg-name span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .sg-src{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.08em; color:var(--stone); }
+  .sign p{ font-size:12.5px; line-height:1.9; color:#4a443b; }
+  .sign b{ color:var(--ember); font-weight:500; }
+  .g{ color:#5e7050; font-weight:500; }
+  .r{ color:#a3543f; font-weight:500; }
+
+  .alarm{ background:var(--ember); padding:18px 22px; margin-top:22px; }
+  .alarm .a-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.28em; color:#c9855f; margin-bottom:10px; text-transform:uppercase; }
+  .alarm li{ list-style:none; font-size:12.5px; line-height:2.05; color:#cfc8ba; padding-left:18px; position:relative; }
+  .alarm li::before{ content:"⚑"; position:absolute; left:0; color:#c9855f; font-size:11px; }
+  .alarm b{ color:var(--marble); font-weight:500; }
+
+  .law{ background:var(--linen); padding:16px 20px; margin-top:14px; }
+  .law .l-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.26em; color:var(--oak); margin-bottom:8px; text-transform:uppercase; }
+  .law p{ font-size:12.5px; line-height:1.95; color:#3f3a32; }
+  .law b{ color:var(--ember); font-weight:500; }
+
+  footer{ max-width:820px; margin:32px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page{ box-shadow:none; max-width:none; }
+    .note{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">Jim 專用 · 每季末 30 分自查 · 年底於爐邊會公開全年結果</div>
+
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">The Vital Signs · v1.0</div>
+  </div>
+
+  <h1>文化健檢</h1>
+  <div class="h-cn">八個生命徵象 · 全部從既有紀錄裡讀,不加任何新表單</div>
+  <div class="credo">文化指標是溫度計,不是油門。量它,是為了讀懂它——不是為了獎勵它。</div>
+
+  <h2>Ⅰ · 說真話的健康(顧火)</h2>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>01</span>深水題比例</div><div class="sg-src">來源:回音板(每題標:安全/流程/深水)</div></div>
+    <p>安全題=冷氣文具;流程題=作業方式;<b>深水題=涉及人、錢、或 Jim 的決策</b>。<span class="g">健康:半年內出現深水題,且提出者被善待。</span><span class="r">警訊:連續兩個月只有安全題——大家在演。</span></p>
+  </div>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>02</span>發言覆蓋</div><div class="sg-src">來源:回音板 · 提出者欄</div></div>
+    <p><span class="g">健康:每季 8/8,每個人都提過至少一題真的。</span><span class="r">警訊:永遠是同兩三個人在講——其他人不是沒意見,是不敢或不信。</span></p>
+  </div>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>03</span>回音兌現率 —— 這條量的是老闆</div><div class="sg-src">來源:回音板 · 決議欄</div></div>
+    <p>每一題在 30 天內得到「採納/不採納 + 為什麼」的比例。<span class="g">健康:100%,沒有例外。</span><span class="r">警訊:任何一題超過 30 天沒回音——文化死掉的第一因,通常不是員工不敢講,是老闆沒回音。</span></p>
+  </div>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>04</span>自首率 —— 皇冠指標</div><div class="sg-src">來源:細節圈手帳</div></div>
+    <p>細節圈裡「自己講自己的錯」的件數(如:我打錯字、我漏檢查)。敢自首=真的相信講了只會被謝謝。<span class="g">健康:每季 ≥3 件。</span><span class="r">警訊:一整季零自首——安全感是演的。</span></p>
+  </div>
+
+  <h2>Ⅱ · 修復與日常的健康</h2>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>05</span>修復完成率</div><div class="sg-src">來源:修復紀錄(Station 0–3)</div></div>
+    <p>已知衝突走完五站的比例。<span class="g">健康:100%——吵架不可恥,爛尾才可恥。</span><span class="r">警訊:存在任何「大家都知道、但沒人處理」的冷衝突。</span>注意:<b>衝突數本身不是指標</b>——零衝突通常代表沉默,不代表和諧。</p>
+  </div>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>06</span>發現到修好的天數</div><div class="sg-src">來源:修繕清單</div></div>
+    <p>細節圈記錄的瑕疵,平均幾天被修掉。<span class="g">健康:趨勢向下。</span><span class="r">警訊:清單越來越長、越修越慢——大家會停止回報修不好的東西。</span></p>
+  </div>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>07</span>儀式的出席與兌現</div><div class="sg-src">來源:行事曆</div></div>
+    <p>細節圈與爐邊會的出席、全員輪班完成率——<b>含 Jim 的房務日打了勾沒有</b>。<span class="r">警訊:儀式開始「因為忙先跳過這次」——跳過第二次,它就死了。</span></p>
+  </div>
+
+  <h2>Ⅲ · 迴路 —— 文化最終流向客人</h2>
+
+  <div class="sign">
+    <div class="sg-head"><div class="sg-name"><span>08</span>客人端結果</div><div class="sg-src">來源:客人檔案 · 追蹤表</div></div>
+    <p>回頭率、推薦率(獎金的錨,Value 01)+ <b>客訴複盤完成率</b>:每一件客訴都做過「系統哪裡沒預見」的無責複盤 = 100%。文化好不好,最後由客人「還想不想回來」投票。</p>
+  </div>
+
+  <!-- ALARMS -->
+  <div class="alarm">
+    <div class="a-t">紅色警報 · 任一亮起,Jim 當月親自處理</div>
+    <li>連續<b>兩個月</b>,顧火時間只有安全題</li>
+    <li>回音板出現<b>超過 30 天</b>沒有回覆的議題</li>
+    <li>任何離職者,在離職談話中說出<b>「其實我不敢講」</b></li>
+  </div>
+
+  <!-- LAWS -->
+  <div class="law">
+    <div class="l-t">防作弊條款(古德哈特防線)</div>
+    <p><b>提題數、自首數、深水題數——永不進入個人獎金。</b>說真話一旦被計價,你會得到很多假的真話。獎金端(Day 32–34)只綁:客人端結果 + 基本參與門檻。這張表是溫度計,鎖在你抽屜;獎金表是另一張。</p>
+  </div>
+
+  <div class="law">
+    <div class="l-t">節奏</div>
+    <p><b>每季末:</b>Jim 用 30 分鐘,從回音板、細節圈手帳、修繕清單、行事曆讀出八個徵象,填一行紀錄。<b>年底:</b>在爐邊會公開唸全年健檢——把體檢結果攤給團隊看,本身就是一次顧火;然後全隊一起挑「明年要修的一個文化弱點」。</p>
+  </div>
+</div>
+
+<footer>
+  <span>ESTIA · The Vital Signs</span>
+  <span>Day 28 · 2026</span>
+</footer>
+
+</body>
+</html>

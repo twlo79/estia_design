@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 一頁式簡介 The One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+
+  .note{ max-width:760px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  /* THE PAGE */
+  .page{ max-width:760px; margin:0 auto; background:var(--marble); padding:clamp(34px,6vw,58px) clamp(26px,6vw,56px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); position:relative; }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:20px; border-bottom:1px solid rgba(34,29,23,.15); }
+  .p-wm{ font-family:'Italiana',serif; font-size:26px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  .p-hero{ text-align:center; padding:44px 0 38px; border-bottom:1px solid rgba(34,29,23,.1); }
+  .p-line-en{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:21px; color:var(--ember); }
+  .p-line-cn{ font-size:13px; color:var(--stone); margin-top:10px; letter-spacing:.16em; }
+
+  .p-sec{ padding:26px 0; border-bottom:1px solid rgba(34,29,23,.1); }
+  .p-label{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin-bottom:12px; }
+  .p-text{ font-size:13.5px; line-height:2.0; color:#3f3a32; }
+  .p-text b{ color:var(--ember); font-weight:500; }
+
+  .nums{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:18px; text-align:center; }
+  .num .n1{ font-family:'Italiana',serif; font-size:30px; color:var(--ember); }
+  .num .n2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10.5px; letter-spacing:.14em; color:var(--stone); margin-top:6px; line-height:1.7; }
+
+  .std{ display:grid; grid-template-columns:1fr 1fr; gap:14px 26px; }
+  @media (max-width:560px){ .std{ grid-template-columns:1fr; } }
+  .std-item .s1{ font-size:13.5px; font-weight:500; }
+  .std-item .s2{ font-size:12px; line-height:1.85; color:#5b5449; margin-top:4px; }
+
+  .pledge{ background:var(--linen); padding:22px 24px; margin-top:4px; }
+  .pledge .p-label{ margin-bottom:10px; }
+  .pledge .p-text{ font-size:13px; }
+
+  .p-foot{ display:flex; justify-content:space-between; align-items:flex-end; padding-top:26px; flex-wrap:wrap; gap:14px; }
+  .pf-sign{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:var(--oak); }
+  .pf-contact{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.18em; color:var(--soft); text-align:right; line-height:2; }
+  .confirm{ display:inline-block; font-size:8px; letter-spacing:.18em; text-transform:uppercase;
+    color:#a3543f; border:1px solid rgba(163,84,63,.4); padding:1px 7px; margin-left:6px; vertical-align:2px; font-family:'Outfit',sans-serif; }
+
+  /* SWAP BLOCKS */
+  .swap-wrap{ max-width:760px; margin:44px auto 0; }
+  .swap-title{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.26em;
+    text-transform:uppercase; color:#8d8577; text-align:center; margin-bottom:18px; }
+  .swap{ background:var(--marble); border:1px dashed var(--oak); padding:22px 26px; margin-bottom:14px; }
+  .swap .p-label{ margin-bottom:10px; }
+  .swap .p-text{ font-size:13px; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page{ box-shadow:none; max-width:none; }
+    .note, .swap-wrap{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">A4 一頁 · 房東版為主 · 最末段可依對象替換 (往下看兩個替換段)</div>
+
+<!-- ═══ THE PAGE ═══ -->
+<div class="page">
+
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">Residences · Taipei</div>
+  </div>
+
+  <div class="p-hero">
+    <div class="p-line-en">A city address. A world apart.</div>
+    <div class="p-line-cn">門牌在城市,門後是另一個世界。</div>
+  </div>
+
+  <div class="p-sec">
+    <div class="p-label">我們是誰</div>
+    <p class="p-text">ESTIA 是台北的長住宅邸品牌,為來台一個月以上的國際客人——外商主管、國際家庭、長期出差者——經營精華區的家。我們的方法用一句話說完:<b>飯店的紀律,家的靈魂。</b>每一位客人有一位專屬 Host,從第一封信照顧到最後一個早晨。</p>
+  </div>
+
+  <div class="p-sec">
+    <div class="p-label">現況</div>
+    <div class="nums">
+      <div class="num"><div class="n1">45+</div><div class="n2">戶 · 管理中<span class="confirm">確切數字待定</span></div></div>
+      <div class="num"><div class="n1">6</div><div class="n2">年 · 精華區<br/>高端租賃經驗</div></div>
+      <div class="num"><div class="n1">3</div><div class="n2">區 · 中正 大安 松山<br/>只做精華區</div></div>
+      <div class="num"><div class="n1">1</div><div class="n2">月 · 起租<br/>長住為本</div></div>
+    </div>
+  </div>
+
+  <div class="p-sec">
+    <div class="p-label">我們的做法</div>
+    <div class="std">
+      <div class="std-item"><div class="s1">嚴選,不濫收</div><div class="s2">骨架、比例、光線、安靜——過了這些關,一扇門才掛上 ESTIA 的名字。</div></div>
+      <div class="std-item"><div class="s1">一位客人,一位 Host</div><div class="s2">不是客服中心。一個名字,負責到底,十二小時內必回覆。</div></div>
+      <div class="std-item"><div class="s1">每週房務與材質保養</div><div class="s2">亞麻換洗、實木上油、五金擦亮——房子被當作品照顧。</div></div>
+      <div class="std-item"><div class="s1">帳務透明,租金準時</div><div class="s2">會計事務所家族出身,契約、發票、匯款,一切乾淨。</div></div>
+    </div>
+  </div>
+
+  <div class="p-sec" style="border-bottom:none; padding-bottom:8px;">
+    <div class="pledge">
+      <div class="p-label">給屋主的一段話</div>
+      <p class="p-text">好房子交給誰,決定它十年後的樣子。ESTIA 的租客是經過篩選的國際長住客;我們簽穩定長約、準時付款、定期保養——<b>您的資產在我們手上,是增值,不是折舊。</b>如果您在中正、大安、松山有一間捨不得隨便出租的房子,我們想跟您聊聊。</p>
+    </div>
+  </div>
+
+  <div class="p-foot">
+    <div class="pf-sign">Warmth, made in Taiwan.</div>
+    <div class="pf-contact">
+      Jim ___ · Founder<span class="confirm">聯絡資料待填</span><br/>
+      ___@___ · +886 ___
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ SWAPPABLE CLOSINGS ═══ -->
+<div class="swap-wrap">
+  <div class="swap-title">替換段 · 依對象換掉「給屋主的一段話」</div>
+
+  <div class="swap">
+    <div class="p-label">合作方版 · Relocation / 外商 HR</div>
+    <p class="p-text">替外派主管找家,最怕供給不穩、窗口混亂、帳開不出來。ESTIA 提供:精華區的嚴選宅邸、一位固定窗口、十二小時回覆承諾、<b>公司承租與統編發票齊備</b>。一次合作,長期供給——歡迎將 ESTIA 納入貴公司的住宿名單。</p>
+  </div>
+
+  <div class="swap">
+    <div class="p-label">媒體版 · 採訪邀約用</div>
+    <p class="p-text">「Made in Taiwan」曾經是便宜的代名詞——ESTIA 想把它變成款待的最高標記。一位走過三十多國的台灣創辦人,在希臘看懂了一件事:讓人留下來的從來不是風景,是人。他回到台北,用飯店的紀律加上台灣人的溫度,做了一個讓外國人「還想再回來」的長住品牌。<b>故事、空間與人,都歡迎採訪。</b></p>
+  </div>
+</div>
+
+</body>
+</html>

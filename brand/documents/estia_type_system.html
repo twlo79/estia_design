@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Type System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Sans TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:64px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:18px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(42px,7vw,80px); line-height:1.02; margin-bottom:14px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:17px; color:var(--stone); margin-bottom:22px; letter-spacing:.06em; }
+  .intro p{ max-width:640px; font-size:15px; line-height:1.85; color:#4a443b; }
+  .intro p + p{ margin-top:10px; }
+  .cn{ font-family:'Noto Serif TC',serif; }
+
+  section{ margin-top:88px; }
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:30px; margin-bottom:6px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:30px; letter-spacing:.12em; }
+
+  /* TYPE CARDS */
+  .tcard{ border:1px solid rgba(34,29,23,.13); margin-bottom:18px; background:var(--marble); }
+  .tcard-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
+    padding:16px 22px; border-bottom:1px solid rgba(34,29,23,.09); }
+  .tname{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; }
+  .trole{ font-size:12px; color:var(--oak); letter-spacing:.08em; font-family:'Noto Serif TC',serif; }
+  .tspec{ padding:34px 22px 30px; }
+  .tnote{ padding:0 22px 22px; font-size:13px; line-height:1.75; color:#4a443b; font-family:'Noto Serif TC',serif; }
+
+  .spec-italiana .big{ font-family:'Italiana',serif; font-size:clamp(40px,8vw,72px); letter-spacing:.4em; padding-left:.4em; text-align:center; }
+  .spec-italiana .abc{ font-family:'Italiana',serif; font-size:20px; text-align:center; color:var(--stone); margin-top:18px; letter-spacing:.12em; }
+
+  .spec-cormorant .quote{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400;
+    font-size:clamp(22px,4vw,30px); line-height:1.55; max-width:640px; }
+  .spec-cormorant .abc{ font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--stone); margin-top:16px; }
+
+  .spec-outfit .labels{ display:flex; flex-wrap:wrap; gap:14px 26px; align-items:center; }
+  .spec-outfit .lb1{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; }
+  .spec-outfit .lb2{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); border:1px solid var(--oak); padding:9px 22px; }
+  .spec-outfit .lb3{ font-size:13px; color:#4a443b; }
+  .spec-outfit .abc{ font-size:15px; color:var(--stone); margin-top:18px; letter-spacing:.04em; }
+
+  .spec-noto .cnh{ font-family:'Noto Serif TC',serif; font-weight:500; font-size:clamp(22px,4vw,28px); letter-spacing:.14em; margin-bottom:14px; }
+  .spec-noto .cnb{ font-family:'Noto Serif TC',serif; font-weight:300; font-size:15px; line-height:2.0; color:#3f3a32; max-width:640px; }
+
+  /* HIERARCHY DEMO */
+  .demo{ border:1px solid rgba(34,29,23,.13); padding:52px 30px 46px; background:var(--marble); }
+  .demo .d-eyebrow{ font-size:10.5px; letter-spacing:.32em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  .demo .d-h1{ font-family:'Italiana',serif; font-size:clamp(30px,5.5vw,48px); line-height:1.08; margin-bottom:14px; }
+  .demo .d-lead{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:#4a443b; margin-bottom:22px; }
+  .demo .d-body{ font-size:14px; line-height:1.85; color:#4a443b; max-width:560px; margin-bottom:10px; }
+  .demo .d-cn{ font-family:'Noto Serif TC',serif; font-size:14px; line-height:2.0; color:#5b5449; max-width:560px; margin-bottom:26px; }
+  .demo .d-btn{ display:inline-block; font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); border:1px solid var(--oak); padding:10px 26px; }
+  .demo .d-cap{ margin-top:22px; font-size:11px; letter-spacing:.14em; color:var(--stone); }
+
+  /* RULES */
+  .rules{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px;
+    background:rgba(34,29,23,.12); border:1px solid rgba(34,29,23,.12); }
+  .rule{ background:var(--marble); padding:24px 22px; }
+  .rule .num{ font-size:10.5px; letter-spacing:.24em; color:var(--oak); margin-bottom:10px; }
+  .rule p{ font-size:13px; line-height:1.75; color:#4a443b; font-family:'Noto Serif TC',serif; }
+
+  /* FORBIDDEN */
+  .fb-list{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+  .fb{ border:1px solid rgba(34,29,23,.13); padding:16px 16px 14px; background:var(--marble); }
+  .fb .x{ font-size:15px; margin-bottom:8px; color:#a06e5c; }
+  .fb .n{ font-size:12px; letter-spacing:.06em; margin-bottom:5px; }
+  .fb .w{ font-size:11px; color:var(--stone); line-height:1.6; font-family:'Noto Serif TC',serif; }
+
+  .lic{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; }
+  .lic p{ font-size:13.5px; line-height:1.85; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .lic p + p{ margin-top:8px; }
+
+  footer{ margin-top:90px; padding-top:26px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+
+  @media (max-width:560px){ header .hide-m{display:none;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Type System · Day 12</span>
+    <span>2026</span>
+  </header>
+
+  <div class="intro">
+    <div class="eyebrow">Visual Identity / 02</div>
+    <h1>Three voices,<br/>one tone.</h1>
+    <div class="intro-cn">三種字體,一種語氣。</div>
+    <p>A brand's typefaces are its voices. ESTIA speaks with three: one for the name, one for the stories, one for the quiet work. Each knows when to speak — and when not to.</p>
+    <p class="cn" style="font-size:14px; color:#5b5449;">字體就是品牌的聲音。ESTIA 用三種聲音說話:一種留給名字,一種留給故事,一種留給安靜的日常工作。每一種都知道什麼時候該說話——什麼時候不該。</p>
+  </div>
+
+  <!-- TYPEFACES -->
+  <section>
+    <h2>The voices</h2>
+    <div class="h2-cn">三種聲音 + 一種中文</div>
+
+    <div class="tcard">
+      <div class="tcard-head">
+        <span class="tname">01 · Italiana</span>
+        <span class="trole">名字的聲音 · Logo 與大標</span>
+      </div>
+      <div class="tspec spec-italiana">
+        <div class="big">ESTIA</div>
+        <div class="abc">ABCDEFGHIJKLM · abcdefghijklm · 1234567890</div>
+      </div>
+      <div class="tnote">只有一個字重——它的克制就是它的態度。只用於 Logo、頁面主標、大型場合。永遠不出現在內文。像家裡最珍貴的那套餐具:不常拿出來,拿出來就是主角。</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tcard-head">
+        <span class="tname">02 · Cormorant Garamond</span>
+        <span class="trole">故事的聲音 · 引文與敘事</span>
+      </div>
+      <div class="tspec spec-cormorant">
+        <div class="quote">"What makes Greece truly Greece is the hospitality of its people."</div>
+        <div class="abc">AaBbCcDdEe · <i>italic AaBbCcDdEe</i> · 1234567890</div>
+      </div>
+      <div class="tnote">Origin Story、客人信件的引言、官網上的敘事段落——所有「有人在說話」的時刻用它。斜體是它最美的樣子。</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tcard-head">
+        <span class="tname">03 · Outfit</span>
+        <span class="trole">功能的聲音 · 標籤、按鈕、說明</span>
+      </div>
+      <div class="tspec spec-outfit">
+        <div class="labels">
+          <span class="lb1">The Two Bedroom · Qingtian</span>
+          <span class="lb2">Enquire</span>
+          <span class="lb3">Weekly housekeeping included.</span>
+        </div>
+        <div class="abc">AaBbCcDdEeFfGg · 1234567890 · Light 300 only</div>
+      </div>
+      <div class="tnote">導覽列、按鈕、圖說、價格、表格——所有做事的文字。只用 Light 到 Regular 字重,大寫時字距拉開。它安靜到你不會注意到它——這就是它做對了。</div>
+    </div>
+
+    <div class="tcard">
+      <div class="tcard-head">
+        <span class="tname">04 · Noto Serif TC 思源宋體</span>
+        <span class="trole">中文的聲音 · 標題與內文</span>
+      </div>
+      <div class="tspec spec-noto">
+        <div class="cnh">每一個細節,都是一次歡迎。</div>
+        <div class="cnb">中文以宋體為本——它與英文襯線體同一種骨相:有筆畫的粗細、有書寫的痕跡、有紙的記憶。介面上的小字 (按鈕、表單) 可改用思源黑體,但一切敘事性的文字,都交給宋體。</div>
+      </div>
+      <div class="tnote">行距是中文的呼吸:內文行距 1.9–2.0,比英文更寬。字距微調 +0.05em。永遠不用粗黑體當標題——中文的「雅」在筆畫裡,不在粗細裡。</div>
+    </div>
+  </section>
+
+  <!-- HIERARCHY -->
+  <section>
+    <h2>The voices, together</h2>
+    <div class="h2-cn">四種聲音同台 · 一頁的樣子</div>
+    <div class="demo">
+      <div class="d-eyebrow">The Residences / Qingtian</div>
+      <div class="d-h1">A quiet street,<br/>kept quiet.</div>
+      <div class="d-lead">"The kind of street where you hear your own footsteps."</div>
+      <div class="d-body">Qingtian Street was laid out in the 1930s — low houses, old trees, and a pace that never caught up with the city around it. The Two Bedroom sits on its quietest corner, with solid oak underfoot and Carrara marble in the bath.</div>
+      <div class="d-cn">青田街成形於一九三○年代——矮房、老樹、以及一種始終沒有跟上城市的步調。The Two Bedroom 座落在它最安靜的轉角,腳下是實木橡木,浴室是卡拉拉大理石。</div>
+      <span class="d-btn">Enquire</span>
+      <div class="d-cap">EYEBROW: OUTFIT · H1: ITALIANA · QUOTE: CORMORANT · BODY: OUTFIT + NOTO SERIF TC</div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section>
+    <h2>Six rules</h2>
+    <div class="h2-cn">六條規則</div>
+    <div class="rules">
+      <div class="rule"><div class="num">01</div><p>一個版面最多兩種英文字體同時出現。三種以上就是喧嘩。</p></div>
+      <div class="rule"><div class="num">02</div><p>Italiana 永遠不當內文。它只在名字與大標出現——稀有,才貴。</p></div>
+      <div class="rule"><div class="num">03</div><p>ESTIA 字標永遠大寫 + 字距 0.35–0.45em。這個呼吸感就是品牌的簽名。</p></div>
+      <div class="rule"><div class="num">04</div><p>字重上限 500。不用 Bold、不用 Black——強調靠留白與 Oak 色,不靠加粗。</p></div>
+      <div class="rule"><div class="num">05</div><p>行距要寬:英文 1.7–1.85,中文 1.9–2.0。擁擠的字,說不出安靜的話。</p></div>
+      <div class="rule"><div class="num">06</div><p>文字永遠用 Ember #221D17,不用純黑。與色彩系統同一條血脈。</p></div>
+    </div>
+  </section>
+
+  <!-- FORBIDDEN -->
+  <section>
+    <h2>What we never use</h2>
+    <div class="h2-cn">禁用 · 與禁字禁色同源</div>
+    <div class="fb-list">
+      <div class="fb"><div class="x">✕</div><div class="n">手寫體 / Script</div><div class="w">假裝的親切。我們的溫度在服務裡,不在字型裡。</div></div>
+      <div class="fb"><div class="x">✕</div><div class="n">圓體 / Rounded Sans</div><div class="w">可愛不是我們的語氣。</div></div>
+      <div class="fb"><div class="x">✕</div><div class="n">粗黑體標題</div><div class="w">喊叫。違反「靜」。</div></div>
+      <div class="fb"><div class="x">✕</div><div class="n">壓縮體 / Condensed</div><div class="w">擁擠、緊張、廉價感。</div></div>
+      <div class="fb"><div class="x">✕</div><div class="n">陰影 / 描邊 / 漸層字</div><div class="w">任何字體特效都是不安。</div></div>
+      <div class="fb"><div class="x">✕</div><div class="n">科技幾何體</div><div class="w">新創公司的字。我們是住宅,不是 App。</div></div>
+    </div>
+  </section>
+
+  <!-- LICENSING -->
+  <section>
+    <div class="lic">
+      <div class="eyebrow">Licensing · 授權說明</div>
+      <p>本系統四款字體 (Italiana / Cormorant Garamond / Outfit / Noto Serif TC) 全部為 SIL 開源授權——商用免費、網頁免費、印刷免費,零授權成本、零法律風險。</p>
+      <p>未來品牌成熟時,可選擇升級 Display 字體至 Canela 或 Domaine Display 等付費字體 (約 $300–800 USD/年)——但那是三年後的事。現在這套,已經足以站上 Aesop 的層級。</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>ESTIA · Type System v1</span>
+    <span>Day 12 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA 手冊 — 三十四天完整版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:920px; margin:0 auto; padding:56px 22px 100px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:44px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(32px,5.6vw,52px); line-height:1.12; margin-bottom:14px; }
+  .intro{ font-size:13.5px; color:#4a443b; line-height:2.05; max-width:660px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:23px; margin:60px 0 3px; }
+  .h2-cn{ font-size:12.5px; color:var(--stone); margin-bottom:20px; letter-spacing:.1em; }
+
+  .card{ border:1px solid rgba(34,29,23,.14); background:var(--marble); margin-bottom:12px; padding:15px 20px; }
+  .c-t{ font-size:14px; font-weight:500; margin-bottom:7px; }
+  .c-t span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .card p{ font-size:12.8px; line-height:1.95; color:#3f3a32; }
+  .card p + p{ margin-top:6px; }
+  .card b{ color:var(--ember); font-weight:500; }
+  .en{ font-family:'Outfit',sans-serif; letter-spacing:.01em; }
+
+  .quote{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:15px; color:var(--ember);
+    border-left:2px solid var(--oak); padding:2px 0 2px 14px; margin:10px 0 4px; line-height:1.75; }
+  .q-cn{ font-size:12px; color:var(--stone); padding-left:16px; margin-bottom:6px; line-height:1.8; }
+
+  .ex{ background:var(--linen); padding:13px 16px; margin-top:8px; font-size:12.8px; line-height:1.95; color:#33302a; }
+  .ex i{ color:var(--oak); font-style:normal; }
+  .ex-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9px; letter-spacing:.24em; text-transform:uppercase; color:var(--oak); margin:10px 0 5px; }
+  .ex-t:first-child{ margin-top:0; }
+
+  table{ width:100%; border-collapse:collapse; margin-top:8px; }
+  th{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.18em; color:var(--oak);
+    text-align:left; padding:8px 10px; border-bottom:1px solid rgba(34,29,23,.2); font-weight:400; text-transform:uppercase; }
+  td{ font-size:12.3px; line-height:1.8; color:#3f3a32; padding:9px 10px; border-bottom:1px solid rgba(34,29,23,.1); vertical-align:top; }
+  td b{ color:var(--ember); font-weight:500; }
+  .no{ color:#a3543f; }
+
+  .pendbox{ border:1px dashed var(--oak); padding:13px 16px; margin-top:8px; }
+  .pendbox p{ font-size:12.5px; color:#5b5449; line-height:1.9; }
+  .pendbox b{ color:#a3543f; font-weight:500; }
+
+  .chk li{ list-style:none; font-size:12.8px; line-height:2.1; color:#33302a; padding-left:24px; position:relative; }
+  .chk li::before{ content:"□"; position:absolute; left:2px; color:var(--oak); }
+  .chk b{ color:var(--ember); font-weight:500; }
+
+  footer{ margin-top:70px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media print{ body{background:white} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Handbook · Complete</span>
+    <span>v2 · 2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">內部手冊 · 完整版 · 取代十八天版</div>
+    <h1>ESTIA 手冊<br/>三十四天完整版</h1>
+    <div class="intro">
+      <p>這本手冊是 ESTIA 的全部:我們是誰、信什麼、怎麼說話、怎麼工作、怎麼相待、錢怎麼分。<b>每一章都附實物</b>——真的檢查單、真的卡片文字、真的表格,拿了就能用。讀到不懂或不同意的,記下來,爐邊會上提出——在這家公司,<b>提出問題的人是在顧火</b>。標了 <b style="color:#a3543f">[待定]</b> 的地方,代表正在跟 Jim 一起完成。</p>
+    </div>
+  </div>
+
+  <!-- ═══ CH 1 ═══ -->
+  <h2>第一章 · 我們是誰</h2>
+  <div class="h2-cn">起源、客人、名字、四句話——還有它們各自的位置</div>
+
+  <div class="card">
+    <div class="c-t"><span>1.1</span>起源故事(完整版 · 對外的正式版本)</div>
+    <div class="quote">When I was travelling in Greece, I realised something. What stays with you about a country is never the food, the sea, or the buildings. It is the people — the way they welcome you decides whether you return.<br/>I came home to Taipei and saw what was missing: serviced apartments with systems but no soul, and beautiful rentals whose warmth changes with every host.<br/>ESTIA is the middle we could not find, so we built it: the discipline of a hotel, the soul of a home. The name belongs to the Greek goddess of the hearth — the fire at the centre of every house. The fire here is Taiwanese.<br/>ESTIA is Greek in spirit. Taiwanese in hands. That's the whole idea.</div>
+    <p>用於:媒體採訪、官網 Story、投資人、<b>每位新人第一天由 Jim 親自唸給你聽</b>(這是你的權利)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>1.2</span>起源故事 · 三句話壓縮版(新)</div>
+    <p>塞不下兩百字的地方用這個——平台自介欄、簡報第一頁、一句話介紹:</p>
+    <div class="ex"><span class="en">In Greece, our founder learned that what makes you love a country is how its people welcome you. Back in Taipei, he built ESTIA to prove Taiwanese warmth belongs at the highest standard of hospitality — the discipline of a hotel, the soul of a home. Greek in spirit, Taiwanese in hands.</span></div>
+    <div class="ex">創辦人在希臘懂了一件事:讓人愛上一個國家的,是那裡的人怎麼款待你。回到台北,他創立 ESTIA——用飯店的紀律加上家的靈魂,證明台灣的溫度配得上世界最高的款待標準。靈魂是希臘的,手藝是台灣的。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>1.3</span>客人 · 唯一的指標</div>
+    <p>我們不用年齡國籍定義客人,用一個瞬間定義:住到某一刻,他心裡浮出「<b>我還想再回來</b>」。做任何決定前問自己:這樣做,會讓他更想回來嗎?——這句話就是你的指南針,也是公司獎金的錨(第十一章)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>1.4</span>名字怎麼唸、怎麼介紹</div>
+    <p><b>es-TEE-ah</b>(欸斯-<b>提</b>-阿),重音在中間。客人問 ESTIA 是什麼意思,標準答:「是希臘的灶神——家裡那把永遠不滅的火。我們希望這裡,就是你在台北的那把火。」</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>1.5</span>四句話與使用位階表(新 · 防混用)</div>
+    <p>四句各有崗位。<b>鐵律:一個版面,最多出現一句。</b>永遠不把兩句以上排在一起。</p>
+    <table>
+      <tr><th>句子</th><th>身分</th><th>只出現在</th><th>永不出現在</th></tr>
+      <tr><td class="en">Hosted, not served.</td><td>內部初衷</td><td>這本手冊、內部會議、你心裡</td><td class="no">任何對外物——官網、卡片、貼文,一律禁止</td></tr>
+      <tr><td class="en">A city address. A world apart.</td><td>定位主標</td><td>官網 Hero、一頁式簡介開頭、簡報封面</td><td class="no">訊息內文、卡片</td></tr>
+      <tr><td class="en">Every detail, a welcome.</td><td>對外承諾</td><td>官網理念段收尾、名片、迎賓信</td><td class="no">與主標同一版面</td></tr>
+      <tr><td class="en">Warmth, made in Taiwan.</td><td>簽名句</td><td>Email 簽名檔、網頁最底、信封封印</td><td class="no">標題位置(它是收尾,不是開場)</td></tr>
+    </table>
+  </div>
+
+  <!-- ═══ CH 2 ═══ -->
+  <h2>第二章 · 我們信什麼</h2>
+  <div class="h2-cn">九條價值觀 · 每一條都綁著真制度</div>
+
+  <div class="card">
+    <div class="c-t"><span>01</span>意圖,先於動作</div>
+    <p>客人感受到的不是你做了什麼,是你為什麼做。動作前停三十秒:我是為了幫他,還是為了交差?<b>制度:</b>無業績獎金——獎金綁客人回頭率與推薦率(第十一章);每月爐邊會有意圖反思段。</p>
+    <div class="ex"><span class="ex-t">實例</span>客人問哪家牛肉麵好。為了交差的答案:丟一個 Google 連結。為了他的答案:「巷口那家,記得跟老闆說不要加酸菜,你上次說不吃酸的。」——差別就是意圖。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>02</span>當一個主人,不是員工</div>
+    <p><b>制度:</b>每月 NT$5,000 主人裁量預算——為客人做任何事,<b>不用申請、不用審批</b>,月底分享互相偷學;全員跨崗輪班(第八章);內部不說員工顧客,說 Host 和客人的名字。</p>
+    <div class="ex"><span class="ex-t">實例 · 5,000 元怎麼用</span>客人提過女兒下週來訪 → 你買一束桔梗放餐桌,卡片寫「歡迎妳女兒回家」。客人讚美過某家的鳳梨酥 → 他退房那天,行李旁放一盒。<b>不用問任何人,做就對了</b>——會計只記錄,不審核。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>03</span>真誠的服務,不是專業的表演</div>
+    <p>你會在這裡,是因為你通過了五輪、五個半小時的面試——我們用面試取代訓練,所以<b>沒有話術手冊</b>,用你自己的字。誠實的意見:客人問的餐廳你覺得普通,可以說另一家更好。<b>永遠說 Yes 不是溫暖,是虛偽。</b></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>04</span>每一個細節,都是一次歡迎</div>
+    <p><b>制度:</b>零錯字(送出前讀出聲——用手指著字讀);客人的眼睛(抵達前走檢,第五章有完整檢查單);細節圈(第八章)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>05</span>主動預見,而非事後道歉</div>
+    <p><b>制度:</b>客人檔案共享系統(偏好、家人、禁忌、生日——當日記入,不能只活在你腦裡);入住前 48 小時預備會 15 分,準備<b>三個他沒開口的小細節</b>;<b>客訴=系統失敗</b>:檢討問「預見哪裡漏了」,永遠不問「誰的錯」。</p>
+    <div class="ex"><span class="ex-t">實例 · 三個沒開口的細節</span>檔案寫他帶兩歲小孩 → 插座蓋先裝好、茶几尖角貼好、樓下藥局位置寫進冊子。他沒開口,你已經做完——這就是預見。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>06</span>文化素養,是款待的底氣</div>
+    <p>能跟客人聊大稻埕老茶行的,是這座城市的翻譯者。<b>制度:</b>每人三條親自走過的散步路線(冊子後半就是它,第六章);Estia Explores 每季一天有薪+NT$3,000 <b style="color:#a3543f">[本年度是否施行:待定]</b>;Estia Reads 暫停中,回歸時併回爐邊會。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>07</span>溫度,長在對的骨架上(創辦人守護)</div>
+    <p>比例先於裝飾、原形建材、三年不換測試——設計由 Jim 親自把關。你需要知道的一層:我們的家分三種——<b>ESTIA 造的</b>(自己裝修,建材鐵律)/<b>ESTIA 挑的</b>(房東設計,靠入選標準:骨架、光、靜、木頭系的暖)/<b>ESTIA 加的</b>(每一間都有:暖光、室溫、手寫卡、你)。<b>對客人只講真話:那間房有什麼,才說什麼。</b></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>08</span>少,但深(創辦人守護)</div>
+    <p>寧可十個家記得每位客人的名字,不做五十個而失溫。每位 Host 有照看上限、只做精華區、每年只招 1–2 位新人——成長速度由文化傳承速度決定。<span style="color:#a3543f">[照看上限數字調整中——待《成員與定位規範》定案]</span></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>09</span>對事直接,對人溫柔 · 我們怎麼相待</div>
+    <p>前八條講對客人,這一條講對彼此。<b>對事直接</b>:看到問題就說——看到問題不說,才是對不起這個家;提出問題的人,是在顧火。<b>對人溫柔</b>:講事不講人;聽到問題,第一句永遠是「謝謝你講」;提出者永遠受保護。</p>
+    <div class="ex"><span class="ex-t">實例 · 同一件事的兩種說法</span>✓ 對事直接:「這份報價單有兩個數字對不上,我標出來了。」<br/><span class="no">✗ 對人不對事:「你怎麼每次都這麼粗心。」</span><br/>前者修的是問題,後者傷的是人——在 ESTIA,只有第一種是合法的。</div>
+  </div>
+
+  <!-- ═══ CH 3 ═══ -->
+  <h2>第三章 · 我們怎麼說話</h2>
+  <div class="h2-cn">聲音、用字、還有三個直接拿去用的範例</div>
+
+  <div class="card">
+    <div class="c-t"><span>3.1</span>聲音原型與四原則</div>
+    <p>想像一位 Aesop 店員:低調、有品味、誠實、聊二十分鐘不推銷——那就是 ESTIA 說話的樣子。四原則:<b>快半步</b>(每則訊息早客人一步)/<b>開門結尾</b>(最後一句留一扇門)/<b>道歉四步</b>(認錯・不藉口・給時程・客製補償)/<b>拒絕二式</b>(給理由+給替代)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>3.2</span>用字憲法(速查)</div>
+    <table>
+      <tr><th>永遠用</th><th>永遠不用</th></tr>
+      <tr><td>warm / considered / honest / crafted / genuine / quiet / home / 具體的材質與地名</td><td class="no">amazing / luxurious / unforgettable / exclusive / VIP / premium / 頂級 / 完美 / Deluxe 系列 / 「親」「哦」「唷」「~」/「造成不便敬請見諒」</td></tr>
+    </table>
+    <p style="margin-top:8px">句型:名字開頭不用頭銜;短句;驚嘆號一則最多一個、最好零個;結尾開一扇門;署名一律「— ESTIA」(唯二例外:入住前 24h 訊息與詢問首覆,內文帶你的名字)。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>3.3</span>三個立即可用的範例(完整範本共 17 份,見《訊息手冊》)</div>
+    <div class="ex-t">① 詢問首覆(客人第一次寫信來)</div>
+    <div class="ex"><i>David</i> 您好,<br/>謝謝您的來信。您的日期(<i>__ 至 __</i>),ESTIA <i>Ren'ai</i> 的 <i>Three Bedroom</i> 目前有空,月租 NT$<i>__</i>,含每週房務與專屬 Host。兩件事想先了解,好為您準備對的家:會有幾位入住?這次來台北主要是?想先看房,我可以傳屋內影片,或視訊帶您走一遍。接下來由我負責您的入住,有任何需要直接跟我說。— ESTIA</div>
+    <div class="ex-t">② 催租第一次(永遠先假設他只是忘了)</div>
+    <div class="ex"><i>David</i> 您好,提醒您,這個月的租金到昨天為止還沒有入帳,想確認是不是轉帳上遇到什麼問題?如果已經處理了,請直接忽略這則訊息。有任何需要我協助的,跟我說。— ESTIA</div>
+    <div class="ex-t">③ 手寫迎賓卡(回頭客必寫「歡迎回來」)</div>
+    <div class="ex"><span class="en">David,<br/>Welcome back — the light is just as you left it.<br/>— ESTIA</span></div>
+  </div>
+
+  <!-- ═══ CH 4 ═══ -->
+  <h2>第四章 · 我們的樣子</h2>
+  <div class="h2-cn">員工需要知道的視覺規則——就這五條</div>
+
+  <div class="card">
+    <div class="c-t"><span>4.1</span>你會用到的五條</div>
+    <ul class="chk">
+      <li><b>燈泡只換暖光(2700–3000K)</b>——發現白光燈泡,換掉並在細節圈提出。這是品牌規定,不是偏好。</li>
+      <li>幫公司做任何東西(小卡、公告、標示),只用五色:大理石白/亞麻米/石紋灰/橡木棕/餘燼黑——不確定就問,不自己加色。</li>
+      <li>不用電腦裡隨便的字體(尤其圓體、POP 體)。用系統字型或請 Jim 出檔。</li>
+      <li>ESTIA 字標:永遠大寫、字距不能擠、不變形不換色不加陰影——看到印壞的,細節圈提出。</li>
+      <li>那個「門中之 E」的符號只出現在封蠟和迎賓卡——別處看到它出現,就是用錯了。</li>
+    </ul>
+  </div>
+
+  <!-- ═══ CH 5 ═══ -->
+  <h2>第五章 · 客人的旅程與 The First Hour</h2>
+  <div class="h2-cn">七站地圖、抵達前六十分鐘檢查單、二十分鐘的主場</div>
+
+  <div class="card">
+    <div class="c-t"><span>5.1</span>七站,每一站你做什麼</div>
+    <table>
+      <tr><th>站</th><th>你的動作</th></tr>
+      <tr><td><b>① 訂房前</b></td><td>官網與平台文案已定版,不自行改寫。</td></tr>
+      <tr><td><b>② 詢問</b></td><td>對外 12 小時內首覆(內部目標 3 小時)。範本 T9/T10;<b>漏接一封詢問,漏掉的是一整年的租金,和一位可能回頭十年的客人。</b></td></tr>
+      <tr><td><b>③ 抵達前</b></td><td>訂金到 → 確認信 T2(含大樓公約);前一天 → T3(地址+密碼+天氣),這封署你的名字。</td></tr>
+      <tr><td><b>④ 抵達</b></td><td>The First Hour(5.3)。</td></tr>
+      <tr><td><b>⑤ 居住中</b></td><td>每週房務後留小卡 T6;第 7 天輕問候 T5;觀察到的喜好 → 用 5,000 元;一切偏好當日入客人檔案。</td></tr>
+      <tr><td><b>⑥ 退房</b></td><td>前一天發 T7(含押金 14 天承諾+「您喜歡的樣子我們都記得」)。</td></tr>
+      <tr><td><b>⑦ 離開後</b></td><td>3–7 天發 T8 回頭信;押金 14 天內退+一頁明細(會計)。</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.2</span>抵達前六十分鐘 · 檢查單(實物 · 印出來勾)</div>
+    <ul class="chk">
+      <li>空調開,室溫調 <b>24–25°C</b>(開門那一刻,溫度已經在等他)</li>
+      <li>全屋燈開,<b>逐顆</b>確認暖光;白光燈泡當場換</li>
+      <li>門鎖:輸入<b>本客專屬碼</b>並實測一次(密碼規範見第十二章)</li>
+      <li>用「客人的眼睛」走一遍:站門口看第一眼 → 鏡面退到門口斜看水痕 → 浴室地面毛髮 → 床品平整亞麻自然</li>
+      <li>生活手冊放茶几;<b>手寫迎賓卡就位——確認卡上有他的名字</b></li>
+      <li>玄關傘架兩把、室內拖擺好</li>
+      <li>移走:清潔用品、雜物、外露電線;垃圾桶清空</li>
+      <li>窗簾調到光最好的位置</li>
+      <li>離開前,回到門口,用他的視角<b>再看最後一眼</b></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>5.3</span>The First Hour · 你的二十分鐘(含台詞)</div>
+    <p><b>接得暖(0–3 分)</b>——門開,你在。第一句話一定有他的名字:「<i>David</i>,歡迎,一路辛苦了。」接過行李,請進。</p>
+    <p><b>交得清(3–15 分)</b>——帶著走一圈,是「介紹一個家」不是唸說明書:密碼鎖<b>親手教他按一次</b>;電器空調邊走邊講;開冰箱(「有水,餓了隨時拿」);把冊子交到手上(「這裡有家的說明,和這一區我們自己喜歡的地方」)。走到門口,順口一句在地推薦:「巷口那家早餐不錯,明天可以試試。」</p>
+    <p><b>走得穩(15–20 分)</b>——「<b>這個家現在是你的了。我隨時都在</b>——熱水器、餐廳、任何事,一則訊息就好。」確認他存了你的聯絡方式,然後乾脆離開——第一次獨自在這個家的時刻,留給他。</p>
+    <p><b>三個不能省:</b>他的名字/一句推薦/「我隨時都在」。時間可以短,溫度不能省。</p>
+  </div>
+
+  <!-- ═══ CH 6 ═══ -->
+  <h2>第六章 · 生活手冊範本</h2>
+  <div class="h2-cn">放在每個家茶几上的那本冊子 · 前半照抄改地址,後半等你的三個地址</div>
+
+  <div class="card">
+    <div class="c-t"><span>6.1</span>前半 ·「這個家」標準內容(實物文案 · 逐頁)</div>
+    <div class="ex-t">第 1 頁 · 歡迎</div>
+    <div class="ex"><span class="en">Welcome home.<br/>Everything you need to live here is in these pages.<br/>Everything else — just message your host.</span><br/>歡迎回家。住在這裡需要的一切,都在這幾頁裡;這幾頁以外的一切,傳訊息給你的 Host 就好。</div>
+    <div class="ex-t">第 2 頁 · 連上這個家</div>
+    <div class="ex">Wi-Fi:<i>ESTIA_RENAI_3F</i> 密碼:<i>________</i>(路由器在電視櫃,燈不亮時重插電源,一分鐘回來)<br/>門鎖:你的專屬密碼已在入住訊息裡。按「<i>密碼+#</i>」開門;連錯三次會鎖定一分鐘,別緊張,等它。</div>
+    <div class="ex-t">第 3 頁 · 電器們</div>
+    <div class="ex">空調:遙控器在床頭;我們把全屋調在 24–25 度,那是這個家最舒服的溫度。<br/>洗衣機:①衣物入 ②左一格倒洗劑至線 ③轉到「標準」按啟動——約 50 分鐘。烘衣同機,洗完轉「烘乾」。<br/>熱水:恆溫供應,不用等。水忽冷忽熱時,傳訊息給我們,<b>不用自己檢查機器</b>。<br/>燈:全屋是暖光,這是刻意的。哪顆不亮了,告訴我們,別自行更換。</div>
+    <div class="ex-t">第 4 頁 · 垃圾與回收</div>
+    <div class="ex">垃圾車:週<i>一・三・五</i>約 <i>19:30</i> 到<i>巷口</i>。一般垃圾用<b>藍色專用袋</b>(補充包在水槽下),回收另袋。不想追垃圾車?集中在門邊,<b>房務日我們帶走</b>。</div>
+    <div class="ex-t">第 5 頁 · 有狀況的時候</div>
+    <div class="ex">水:總開關在<i>陽台洗衣機旁</i>(圖示框:平面小圖)。電:總開關在<i>玄關鞋櫃上方</i>。瓦斯:聞到異味 → 開窗、不碰電器開關、關<i>廚房檯面下</i>閥門、到樓下打給我們。<br/>任何時刻:你的 Host <i>雅婷 __________</i>。真正緊急:119(消防救護)/110(警察)。</div>
+    <div class="ex-t">第 6 頁 · 這棟樓的教養</div>
+    <div class="ex">安靜時段 <i>22:00–08:00</i>;訪客歡迎,過夜先說一聲;公共空間保持淨空。都不是特別的要求——只是這棟樓的教養。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>6.2</span>後半 ·「這一區」共創頁(每位 Host 交一頁,格式如下)</div>
+    <div class="ex"><b>___(你的名字)的三個地址</b><br/><br/>早餐 · <i>店名+怎麼走一句</i> —— 為什麼:<i>「他們的蛋餅皮是自己擀的,我每週六都去。」</i><br/>散步 · <i>路線起點→終點</i> —— 為什麼:<i>「傍晚六點走,整條街的光是橘色的。」</i><br/>深夜 · <i>地方</i> —— 為什麼:<i>「十一點後整個公園只剩蟬聲,想事情最好的地方。」</i></div>
+    <p>規則:<b>只寫你真的去、會再去的地方</b>;「為什麼」必須是你自己的一句話,不准抄食記。這一頁會印上你的名字——它是你送給每位客人的私房台北。</p>
+  </div>
+
+  <!-- ═══ CH 7 ═══ -->
+  <h2>第七章 · 新人的前十四天</h2>
+  <div class="h2-cn">具象版 · 日程表、台詞、模板、面談單——全部是實物</div>
+
+  <div class="card">
+    <div class="c-t"><span>7.1</span>十四天日程表(文化軌人人相同 · 職務軌照角色)</div>
+    <table>
+      <tr><th>天</th><th>文化軌(所有人)</th><th>Module A · 管家/接待</th><th>Module B · 會計行政</th></tr>
+      <tr><td><b>D1 上午</b></td><td>Jim 親唸起源故事(20 分)→ 交這本手冊 → 桌上有全體同事<b>手寫的歡迎卡</b></td><td colspan="2">認識環境、系統帳號開通</td></tr>
+      <tr><td><b>D1 下午</b></td><td>學姊帶「客人的眼睛」實走一個物件(用 5.2 檢查單)</td><td colspan="2">—</td></tr>
+      <tr><td><b>D2–3</b></td><td>—</td><td>跟房務兩天:鋪床、鏡面、看見「乾淨」的標準</td><td>看懂錢在買什麼:對著帳目走一遍物件,每筆錢=客人的哪個體驗</td></tr>
+      <tr><td><b>D4</b></td><td>訊息課:讀出聲練習;抄寫 T9/T12 各一遍</td><td>擬一則真場景回覆,學姊批改</td><td>認識金流三本帳:租金/押金/裁量金台帳</td></tr>
+      <tr><td><b>D5</b></td><td><b>細節圈初登場</b>:帶一個你看到的細節上場(規則見 8.2)</td><td colspan="2">—</td></tr>
+      <tr><td><b>D8–9</b></td><td>—</td><td>The First Hour:看學姊做一次 → 你做一次(學姊在場)</td><td>接手第一件:5・20 請款流程實跑一輪</td></tr>
+      <tr><td><b>D10–11</b></td><td>爐邊會(如逢月底):只聽,感受顧火怎麼運作</td><td>開始回覆真訊息(學姊複核 48h)</td><td>接手第二件:一筆押金退款全流程(14 天+明細)</td></tr>
+      <tr><td><b>D12–13</b></td><td>—</td><td>接手第一個單位的日常照看</td><td>接手第三件:裁量金台帳(<b>記錄،不審批</b>——這是文化,不是漏洞)</td></tr>
+      <tr><td><b>D14</b></td><td colspan="3"><b>住一晚</b>(空置物件,同事互寫迎賓卡)+ <b>Day 14 面談</b>(見 7.4)+ Module A 加交:你的三個地址(6.2)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>7.2</span>學姊的台詞(帶新人的人,照這個說)</div>
+    <div class="ex"><span class="ex-t">D1 開場(當著大家的面說,讓所有人聽到)</span>「接下來十四天,我是妳的人——任何問題先找我。先記住這裡最重要的一條:<b>妳的每一個問題,只會被謝謝。</b>在 ESTIA,新人的眼睛最值錢,因為我們都看習慣了。」</div>
+    <div class="ex"><span class="ex-t">新人指出問題時(不管她指的是不是你的工作)</span>「謝謝妳講——妳沒來之前,這個問題在這裡放了很久,沒有人看見。記下來,細節圈上提。」</div>
+    <div class="ex"><span class="ex-t">新人做錯時</span>「沒事,這關卡過的人才學得會。我們看一下是哪個環節沒接住妳——是我沒講清楚,還是流程少一步?」(<b>先檢討系統,不檢討她</b>)</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>7.3</span>兩個實物模板</div>
+    <div class="ex-t">① 同事寫給新人的歡迎卡(範例,D1 前一天全員各寫一張)</div>
+    <div class="ex">「<i>佳蓉</i>,歡迎回家。這裡的人會直說、也會接住妳——兩個都是真的。有事找我。— <i>美玲</i>」</div>
+    <div class="ex-t">② 新眼睛筆記(發一本小冊,每頁如下;D14 前至少 5 條)</div>
+    <div class="ex">日期:____ ・ 地點/場景:__________<br/>我看到:____________________________<br/>我不懂 / 我覺得可以更好:____________________________<br/>(不用客氣,不用確定自己是對的——看到就寫。)</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>7.4</span>Day 14 面談單(Jim 用 · 45 分)</div>
+    <ul class="chk">
+      <li>開場白(固定):「今天妳講,我聽。第一題:這十四天,<b>哪一刻最像 ESTIA?哪一刻最不像?</b>」</li>
+      <li>逐條聽她的新眼睛筆記(≥5 條)。<b>每一條的第一句回應只能是:「謝謝你講。」</b></li>
+      <li>每條當場三選一:採納(說何時改)/想想(給死線)/不同意(給理由)——寫進回音板</li>
+      <li>問:「有沒有哪件事,妳覺得怪但不敢寫?」(停十秒,等)</li>
+      <li>收尾:「妳的眼睛從今天起是團隊的資產——細節圈永遠有妳一分鐘。」</li>
+    </ul>
+  </div>
+
+  <!-- ═══ CH 8 ═══ -->
+  <h2>第八章 · 我們的節奏</h2>
+  <div class="h2-cn">兩個會、四個日常習慣 · 會議總量三個半小時封頂</div>
+
+  <div class="card">
+    <div class="c-t"><span>8.1</span>會議地圖 <span style="color:#a3543f;font-size:10px">[營運會為合併提案 · 待 Jim 範本定稿]</span></div>
+    <table>
+      <tr><th>會</th><th>頻率 · 長度</th><th>內容</th></tr>
+      <tr><td><b>營運會</b></td><td>雙週 · 60 分</td><td>①細節圈 10 分(開場)②評價管理 ③住宿概況 ④進行中事項與問題 ⑤下步確認。<b>談事情的會。</b></td></tr>
+      <tr><td><b>爐邊會</b></td><td>每月底 · 95 分</td><td>①顧火 40(提出問題;Jim 永遠第一個講、講自己的)②意圖反思 25 ③5,000 元分享 20 ④回音 10(上月每一題的下文)。<b>顧火的會,不談營運。</b></td></tr>
+    </table>
+    <p style="margin-top:8px">四個日常習慣(不進會議室):三十秒暫停 · 讀出聲 · 客人的眼睛 · 48h 預備會。兩條鐵律:<b>新會進、舊會出</b>;儀式不加班——排不進工作時間的儀式,就是設計錯了。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>8.2</span>細節圈怎麼玩(60 秒規則)</div>
+    <p>每人一分鐘:<b>一個本週看到的細節</b>(瑕疵或亮點)+ 已做或建議的處理。講事不講人;講自己的錯會被謝謝(那叫自首,是這裡最珍貴的發言);修不了的進修繕清單追蹤。</p>
+    <div class="ex"><span class="ex-t">實例 · 一分鐘長這樣</span>「松山 5F 浴室鏡,下緣有水痕殘留,我當場擦掉了;發現是新洗劑會留膜,我把品牌記在清單,建議換回原本的。」——完畢,下一位。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>8.3</span>跨崗輪班(年度 · 進年終門檻 G2)</div>
+    <p>輪班的目的是<b>跨崗</b>——走進不是你日常的崗位:管家 → 1 天房務;房務 → 1–2 天接待見習(含旁觀一次 The First Hour);會計行政與 Jim → 2 天接待+1 天房務。<b>日常職務不能充抵。</b>住一晚:全員(Jim 排第一個)。正式配置依《成員與定位規範》<span style="color:#a3543f">[待定]</span>。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>8.4</span>一三一法則(求助與提案的紀律 · 沿用舊守則,ESTIA 改寫)</div>
+    <p>找 Jim 或同事<b>要決策、要資源、要幫忙</b>之前:<b>一</b>——定義一個問題(一句話講清楚,不是一堆背景與情緒);<b>三</b>——想出三條可行的路;<b>一</b>——挑一條你推薦的,說為什麼。然後才開口。這不是替誰省時間——是把你放在主人的位置:<b>主人不把問題丟出去,主人帶著答案來討論。</b></p>
+    <p><b>⚠️ 豁免條款(重要):</b>顧火、細節圈、自首,<b>永遠不適用一三一</b>。看到問題就說,不需要先想好解法——那裡的入場券是眼睛,不是答案。一句話分清楚:<b>要決策,帶三條路來;報問題,帶眼睛來就好。</b></p>
+    <div class="ex"><span class="ex-t">實例</span><span class="no">✗「Jim,松山那間好麻煩,客人一直反映冷氣,怎麼辦?」</span><br/>✓「Jim,問題:松山 5F 冷氣噪音,兩組客人反映過。三條路:A 請廠商保養(約三千)/B 換新機(約三萬)/C 今天先移床位避開風口(零成本)。我建議 A+C 並行,一個月內再犯就升級 B。你覺得?」</div>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>8.5</span>交辦三行+一問(給任務的紀律 · 已併入「完成的定義」精神)</div>
+    <p>任何人交辦任務——<b>包括 Jim</b>——必附三行:①<b>要什麼</b>,含非達不可的標準(=事實)②<b>為什麼</b>,這件事幫到誰(=功能)③<b>什麼時候要</b>。少一行,接的人<b>可以退回補齊</b>——退回不是不敬,是把事做對。客人相關的任務,加問第四句:<b>完成時,客人會有什麼感受?</b>(=感受,接 Value 01 的意圖)</p>
+    <div class="ex"><span class="ex-t">實例</span>✓「佳蓉:①本月押金明細,金額與單據逐筆核對零誤差,一頁 PDF ②David 退房後十四天內要收到——這是我們白紙黑字的承諾 ③週四中午前給我。」<br/><span class="no">✗「押金那個弄一下。」</span></div>
+  </div>
+
+  <!-- ═══ CH 9 ═══ -->
+  <h2>第九章 · 顧火與修復</h2>
+  <div class="h2-cn">問題怎麼提、批評怎麼接、吵架之後怎麼辦</div>
+
+  <div class="card">
+    <div class="c-t"><span>9.1</span>提出問題的路(三條,都合法)</div>
+    <p>①<b>細節圈</b>——日常瑕疵。②<b>爐邊會顧火時間</b>——制度、流程、包括 Jim 的決定。③<b>「掛我名下」</b>——不想具名的,私下告訴 Jim,他會以自己的觀察帶上桌,永不透露來源。<b>沒有匿名箱</b>:八個人的公司,匿名是假的,保護是真的——保護的方式是文化,不是箱子。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>9.2</span>批評怎麼接(所有人適用,Jim 帶頭)</div>
+    <p>第一句固定:<b>「謝謝你講。」</b>(不接「但是」)→ 複述確認 → 三選一:認、想(必給死線)、<b>誠實不同意+理由</b>——不同意也是合法回應,表演式的全盤接受才是虛偽。事後:改了什麼,公開回報並點名感謝提出的人。<span class="no">禁:當場辯護、翻舊帳、隔日臉色、私下找提出者「聊聊」。</span></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>9.3</span>吵架之後(修復五站 · 簡版)</div>
+    <p>現場:最資深者喊停,不裁決、不逼道歉、<b>不進 LINE 群</b> → 當天:分開被聽見(「妳的感受是真的,不會被裝沒事」)→ 48 小時內:修復對話,收在<b>一條可檢查的約定</b>(不需要今天喜歡彼此)→ 一週後回訪 → 教訓去掉人名進爐邊會。<b>氣頭上的離職,公司不當場接受</b>——48 小時後你再說,那時完全尊重。</p>
+  </div>
+
+  <!-- ═══ CH 10 ═══ -->
+  <h2>第十章 · 服務標準速覽</h2>
+  <div class="h2-cn">日常的尺 · 不打分、不排名、不進獎金 · 完整版見《年終與成長制度》第四部</div>
+
+  <div class="card">
+    <div class="c-t"><span>10.1</span>四把尺</div>
+    <table>
+      <tr><th>尺</th><th>標準</th></tr>
+      <tr><td><b>S1 在住訊息</b></td><td>5 分鐘=優 · 15 分鐘=正常 · 超過 30 分=補救(致歉+處理+檢討交接)——是尺,不是分。</td></tr>
+      <tr><td><b>S2 詢問首覆</b></td><td>對外承諾 12 小時;內部目標工作時間 3 小時。</td></tr>
+      <tr><td><b>S3 抵達前</b></td><td>六十分鐘檢查單(5.2)逐項打勾。</td></tr>
+      <tr><td><b>S4 錢三不能省</b></td><td>房東租金永不遲一天 · 5/20 請款逢班必出 · 押金 14 天+明細。</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>10.2</span>基本五條</div>
+    <p>①款待的禮貌與耐心——第一句有名字,送出前讀出聲。②永不與客人爭執——拒絕用二式。③承諾的邊界——5,000 元內<b>你就是主人,直接做</b>;超出的說「我確認一下,今天回覆你」。<b>你的權限是真的。</b>④即時回報——房況與特殊事件當日入系統。⑤<b>錯誤免責,隱瞞重罪</b>——說出來的錯是團隊的養分,藏起來的錯才是對這個家的傷害。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>10.3</span>押金收取級距(Jim 定案 · 報價時照這個講)</div>
+    <table>
+      <tr><th>租期</th><th>押金</th></tr>
+      <tr><td>一個月以內(平台短住)</td><td><b>半個月</b>租金</td></tr>
+      <tr><td>一至三個月</td><td><b>一個月</b>租金</td></tr>
+      <tr><td>三個月以上</td><td><b>兩個月</b>租金</td></tr>
+    </table>
+    <p style="margin-top:8px">退還一律 14 天內+一頁明細(S4)。公司承租可開統編發票。</p>
+  </div>
+
+  <!-- ═══ CH 11 ═══ -->
+  <h2>第十一章 · 錢與獎金(摘要)</h2>
+  <div class="h2-cn">完整機制與逐條範例,見《ESTIA 年終與成長制度》——這裡只放你必須記得的</div>
+
+  <div class="card">
+    <div class="c-t"><span>11.1</span>三句話版本</div>
+    <p><b>池子多大</b>:看公司營業額——我們一起做大。<b>怎麼分</b>:看客人還想不想回來(續租、回訪、推薦;全公司一起算,不比個人)。<b>誰有資格</b>:說到做到(出席、跨崗、誠實)。加薪談的是成長對話(每季一次,無分數);年終農曆年前一次發清。</p>
+  </div>
+
+  <!-- ═══ CH 12 ═══ -->
+  <h2>第十二章 · 密碼管理規範(v0)</h2>
+  <div class="h2-cn">密碼鎖時代的安全底線 · 台帳由會計行政保管</div>
+
+  <div class="card">
+    <div class="c-t"><span>12.1</span>七條</div>
+    <ul class="chk">
+      <li><b>一客一碼</b>:入住前一日設定,只經 T3 訊息傳給客人;退房日 12:00 前作廢更換。</li>
+      <li><b>房務/維修用獨立碼</b>,每週更換;廠商臨時碼用完即刪。</li>
+      <li><b>主控碼</b>只有 Jim 與當週值日持有。</li>
+      <li>所有設定與變更<b>記入密碼台帳</b>(日期/物件/類型/操作人)——會計行政保管。</li>
+      <li>密碼永不寫在:門上、冊子裡、群組聊天、便條紙。<b>只存在台帳與 T3 訊息。</b></li>
+      <li>人員離職:<b>當日</b>更換其經手的所有代碼。</li>
+      <li>懷疑外洩(客人反映有人進出、碼被多人知道):不用查證,<b>先換碼再說</b>,並記錄事件。</li>
+    </ul>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="card" style="border-color:var(--oak);margin-top:40px">
+    <div class="quote" style="border:none;padding:0">這本手冊會一直長大——你在細節圈和爐邊會說的每一句真話,都是它的下一頁。<br/>看到問題就說。提出問題的人,是在顧火。</div>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Handbook · Complete</span>
+    <span>34 Days · v2 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

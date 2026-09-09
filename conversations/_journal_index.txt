@@ -1,0 +1,35 @@
+
+=== Journal Entry 2026-07-03T12:49:43.787720+00:00 ===
+2026-07-03-12-49-43-estia-brand-build.txt
+[Extended brand-building consultation (conducted in Traditional Chinese) for "ESTIA Residences," a premium long-stay serviced-apartment brand in Taipei founded by Jim, a 33-year-old Taiwanese entrepreneur. A structured multi-day process ("Day 1–Day 34" agenda) covering brand soul, values, tone of voice, lexicon, naming system, and visual identity (colour, type, logo). Contains numerous generated HTML/DOCX deliverables with file paths, a 7-round logo exploration, company-culture (psychological-safety) initiative, and ready-to-send group messages. Also includes off-topic side requests. Currently mid-Day-14 (brand guidelines document generation).]
+
+
+
+
+=== Journal Entry 2026-07-08T08:48:08.083483+00:00 ===
+2026-07-08-08-48-07-estia-brand-build-day1-18.txt
+[Extended brand-building consultation (conducted in Traditional Chinese) for "ESTIA Residences," a premium long-stay serviced-apartment brand in Taipei founded by Jim. Covers Days 1–18 of a 34-day agenda: brand soul, values, tone of voice, lexicon, naming, visual identity (color/type/logo across 7 rounds), sensory/experience design, guest journey message templates, The First Hour arrival ritual, a company-culture (psychological safety/顧火) initiative, a full-strength re-audit, and multiple HTML/DOCX deliverables with file paths. Ends with an employee-facing handbook version of all 18 days.]
+
+
+
+
+=== Journal Entry 2026-07-16T14:23:33.370737+00:00 ===
+2026-07-16-14-23-33-estia-brand-build-day19-31.txt
+[Continuation of ESTIA Residences brand-building consultation (Traditional Chinese) covering Days 19-31: full-strength re-audit of Days 1-18, employee handbook creation, website architecture with rendered HTML mockups (homepage + property sub-page), photography direction, enquiry pipeline, one-pager for landlords, internal culture rhythm system (fireside meeting, detail circle, onboarding, conflict repair, culture health check), and physical items production specs. Contains all deliverable file paths and pending item lists.]
+
+
+
+
+=== Journal Entry 2026-07-20T20:05:19.197793+00:00 ===
+2026-07-20-20-05-18-estia-day19-34-handbook-build.txt
+[Continuation of ESTIA Residences brand consultation (Traditional Chinese): Days 19-34 execution covering website mocks, photography, enquiry pipeline, culture systems, print production, and year-end bonus scorecard. Contains Jim's plane-review feedback with itemized dispositions, Dubai travel Q&A interlude, all deliverable HTML file paths, and an in-progress complete employee handbook (chapters 1-5 written, 6-12 pending).]
+
+
+
+
+=== Journal Entry 2026-08-24T08:42:18.809699+00:00 ===
+2026-08-24-08-42-18-estia-post34-handbook-assets-tracking.txt
+[Continuation of ESTIA Residences brand consultation (Traditional Chinese): post-34-day phase covering Jim's plane-review feedback processing, complete employee handbook (HTML + Word docx with CJK font fixes), persistent tracking-list system, Chinese name decision (rejected), website master plan with SEO, welcome card spec, logo JPEG exports (including M11 geometry correction), and brand film script (CN + RU versions for Russian model girlfriend). Contains all deliverable file paths, docx build pipeline details, and the standing 4-item tracking list.]
+
+
+

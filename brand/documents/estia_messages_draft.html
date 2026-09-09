@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 訊息手冊草稿 The Messages (Draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:920px; margin:0 auto; padding:56px 22px 100px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:44px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(32px,5.5vw,50px); line-height:1.12; margin-bottom:14px; }
+  .intro{ font-size:13.5px; color:#4a443b; line-height:2.0; max-width:680px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:24px; margin:58px 0 4px; }
+  .h2-cn{ font-size:12.5px; color:var(--stone); margin-bottom:20px; letter-spacing:.1em; }
+
+  .tpl{ border:1px solid rgba(34,29,23,.14); margin-bottom:16px; background:var(--marble); }
+  .tp-head{ padding:14px 20px 11px; border-bottom:1px solid rgba(34,29,23,.09); }
+  .tp-name{ font-size:15px; font-weight:500; }
+  .tp-name span{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.2em; color:var(--oak); margin-right:10px; }
+  .tp-when{ font-size:11.5px; color:var(--stone); margin-top:4px; line-height:1.7; }
+  .tp-when b{ color:#a3543f; font-weight:500; }
+  .tp-body{ padding:14px 20px 16px; }
+
+  .lang{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9px; letter-spacing:.26em; text-transform:uppercase; color:var(--oak); margin:12px 0 6px; }
+  .lang:first-child{ margin-top:0; }
+  .msg{ background:var(--linen); padding:14px 16px; font-size:13px; line-height:2.0; color:#33302a; }
+  .msg .en{ font-family:'Outfit',sans-serif; letter-spacing:.01em; font-size:12.8px; }
+  .msg i{ color:var(--oak); font-style:normal; }
+  .rule-note{ font-size:11px; color:var(--stone); margin-top:9px; line-height:1.8; }
+  .rule-note b{ color:var(--oak); font-weight:500; }
+
+  .annot{ margin-top:12px; border:1px dashed rgba(34,29,23,.3); padding:10px 14px 26px; }
+  .annot span{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9px; letter-spacing:.24em; text-transform:uppercase; color:var(--stone); }
+
+  footer{ margin-top:70px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media print{ .annot{ padding-bottom:48px; } }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Messages · Draft for Review</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">訊息手冊 · 草稿版 · 你的機上批改本</div>
+    <h1>十七份訊息,<br/>一次批完。</h1>
+    <p class="intro">旅程八份 + 詢問三份 + 困難時刻六份。每份含<b>中英雙語</b>、填空欄位(<i style="color:#8B6F47">斜體橘字</i>)、與批註區。所有後定的規則已烤進草稿:<b>12 小時首覆、押金 14 天+明細、密碼鎖、不保留、署名規則</b>(一律 — ESTIA,唯入住前 24h 與首覆內文帶 Host 名字)。批改方式:每份標 <b>照用/修/重寫</b>,改字直接寫在批註區。T16、T17 的金額與天數繫於合約條款(尚未定),結構與語氣先批。</p>
+  </div>
+
+  <!-- ═══ A 旅程 ═══ -->
+  <h2>A · 旅程訊息</h2>
+  <div class="h2-cn">T1–T8 · 從還沒認識,到離開之後</div>
+
+  <!-- T1 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T1</span>平台房源刊登文案(通路短版)</div>
+      <div class="tp-when">用於:訂房平台的房源標題與描述。官網文案已另案(mock 內);此份解決<b>平台字數限制下的 ESTIA 聲音</b>。每物件替換斜體處。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN · 標題</div>
+      <div class="msg en">ESTIA <i>Ren'ai</i> — The <i>Three Bedroom</i> · A quiet home on <i>Ren'ai Road</i></div>
+      <div class="lang">EN · 描述</div>
+      <div class="msg en">A home for the long stay, kept by ESTIA.<br/><br/><i>Solid oak underfoot, tall windows, morning light.</i> [依材質表填,只寫真的] The room is warmed before you arrive; the lights are 2700K, the colour of evening. Close the door — the city stops.<br/><br/>Every guest has one dedicated host, from your first message to your last morning. Weekly housekeeping, a handwritten welcome, and one good address for breakfast.<br/><br/>Minimum stay one month. Tell us what you're looking for — you'll hear from us within twelve hours.</div>
+      <div class="rule-note"><b>規則:</b>具體勝過形容;禁字全避;12h 承諾入文;材質段留待材質表。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T2 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T2</span>訂房確認信(含大樓公約)</div>
+      <div class="tp-when">時機:訂金入帳、合約完成後當日。目的:確定感 + 先講清楚規矩(主動預見,避免入住後不愉快)。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>It's confirmed — the <i>Three Bedroom</i> at ESTIA <i>Ren'ai</i> is yours from <i>March 1</i> to <i>March 31</i>.<br/><br/>Three things before you arrive:<br/><br/>1 · The house keeps a few quiet rules, as every good building does: quiet hours from <i>22:00 to 08:00</i>; recycling is sorted — we'll show you how on day one; guests are welcome, overnight visitors just let us know; shared spaces stay clear. Nothing unusual — just the manners of the building.<br/><br/>2 · Your deposit (<i>NT$___</i>) is held safely and returned within fourteen days of check-out, with a written statement.<br/><br/>3 · A day before you arrive, I'll send the address, your door code, and a note on the weather.<br/><br/>Anything you'd like ready before you land — just tell me.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>確認完成——ESTIA <i>Ren'ai</i> 的 <i>Three Bedroom</i>,<i>3/1</i> 至 <i>3/31</i>,是您的了。<br/><br/>入住前三件事:<br/><br/>一・這棟房子有幾條安靜的規矩,像每一棟好房子一樣:安靜時段 <i>22:00–08:00</i>;垃圾需分類,第一天我們會示範;訪客歡迎,過夜請先說一聲;公共空間保持淨空。都不是特別的要求——只是這棟樓的教養。<br/><br/>二・您的押金(<i>NT$___</i>)由我們妥善保管,退房後十四天內退還,並附一頁明細。<br/><br/>三・抵達前一天,我會傳地址、門鎖密碼、和一句天氣提醒給您。<br/><br/>有任何想先準備的,直接跟我說。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>公約寫成「這棟樓的教養」而非禁令;押金 14 天承諾首次白紙黑字;開門結尾。公約細項依各大樓調整(斜體)。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T3 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T3</span>入住前 24 小時訊息</div>
+      <div class="tp-when">時機:抵達前一天下午。<b>唯一署 Host 名字的旅程訊息</b>——客人要知道明天誰開門。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Tomorrow, then. Here's everything for your arrival:<br/><br/>Address — <i>No. __, Ren'ai Rd Sec __, Taipei</i> (building entrance on the <i>lane side</i>).<br/>Door code — <i>______</i> (yours alone for the stay; I'll walk you through the lock when we meet).<br/>Weather — <i>light rain expected; there's an umbrella waiting in the entryway.</i><br/><br/>I'll be at the door at <i>15:00</i>. If your flight moves, just message me — I'll adjust.<br/>Would you like an airport pick-up arranged?<br/><br/><i>Ya-ting</i>, your host at ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>明天見了。抵達需要的一切在這裡:<br/><br/>地址——<i>台北市仁愛路_段_號</i>(入口在<i>巷子側</i>)。<br/>門鎖密碼——<i>______</i>(這組專屬於您這次入住;見面時我會帶您操作一次)。<br/>天氣——<i>明天有小雨,玄關備了傘。</i><br/><br/>我 <i>15:00</i> 在門口等您。航班若有變動,傳訊息給我就好,我會調整。<br/>需要為您安排機場接送嗎?<br/><br/><i>雅婷</i>,您在 ESTIA 的 Host</div>
+      <div class="rule-note"><b>規則:</b>快半步(天氣+傘);密碼專屬一客(密碼治理);署名例外條款啟用。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T4 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T4</span>手寫迎賓卡 · 三個範例</div>
+      <div class="tp-when">放置:客人一進門必見處。手寫、有名字、短。三例:首次/回頭客(必寫「歡迎回來」)/長途航班。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">例一 · 首次入住</div>
+      <div class="msg en">David,<br/>Welcome home.<br/>Water's in the fridge; the city can wait until morning.<br/>— ESTIA</div>
+      <div class="lang">例二 · 回頭客</div>
+      <div class="msg en">David,<br/>Welcome back — the light is just as you left it.<br/>— ESTIA</div>
+      <div class="lang">例三 · 長途航班後(中文示例)</div>
+      <div class="msg"><i>David</i>,<br/>十四個小時的飛行辛苦了。<br/>熱水已備好,今晚什麼都不用想。<br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>永遠有名字;一到兩行;不寫規則不寫推銷;回頭客必「Welcome back」。正式範例集(八到十則)聖托里尼手寫試筆後定稿。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T5 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T5</span>入住第七天 · 輕問候(新寫)</div>
+      <div class="tp-when">時機:入住滿一週。目的:存在感不打擾;一個問題就好。體檢補洞項。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>A week in — I hope the home is settling around you.<br/>Anything you'd like adjusted — a pillow, the temperature, a lamp that should be warmer — it takes one message.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>住滿一週了——希望這個家已經開始像您的了。<br/>有任何想調整的——枕頭、溫度、或哪盞燈該更暖——一則訊息就好。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>只問一題;具體例子降低開口門檻;不索取好評、不問滿意度(那是客服腔)。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T6 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T6</span>清潔後小卡 · 兩個版本</div>
+      <div class="tp-when">放置:每週房務完成後,桌面。目的:居住期的存在感——有人在照顧,但不打擾。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">版本一 · 日常</div>
+      <div class="msg en">Fresh linen today. Everything's in order.<br/>— ESTIA</div>
+      <div class="lang">版本二 · 帶一個被注意到的細節(每月至多一次,避免膩)</div>
+      <div class="msg en"><i>David</i> — fresh linen today.<br/><i>We noticed the reading lamp flickering — it's been replaced.</i><br/>— ESTIA</div>
+      <div class="lang">中文對照</div>
+      <div class="msg">今天為您換洗整理過了,一切都好。— ESTIA<br/><br/><i>David</i>——今天整理過了。<i>注意到閱讀燈有點閃,已為您換新。</i>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>版本二的「細節」必須是真的做了的事(照片痕跡同一鐵律);不寫「有需要請告知」的客服腔——門在 T5 已開過。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T7 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T7</span>退房訊息</div>
+      <div class="tp-when">時機:退房前一天。目的:像告別,不像結帳;押金承諾再說一次。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Tomorrow's the last morning — no rush before <i>11:00</i>. Leave the code as it is; I'll take care of everything after you go.<br/><br/>Your deposit comes back within fourteen days, with a written statement — you'll have it before you've finished unpacking at home.<br/><br/>It was a pleasure keeping this home for you. The way you like it — the firmer pillow, the desk by the window — we've written it all down.<br/><br/>Safe travels,<br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>明天就是最後一個早晨了——<i>11:00</i> 前不用趕。門鎖照舊即可,之後的一切交給我。<br/><br/>您的押金會在十四天內退還,附一頁明細——大概在您回家行李還沒拆完時就會到。<br/><br/>很榮幸為您照看這個家。您喜歡的樣子——偏硬的枕頭、靠窗的書桌——我們都記下來了。<br/><br/>一路平安,<br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>靈魂句「您喜歡的樣子我們都記得」落地為具體兩例(偏好照客人檔案代入);14 天承諾第二次出現;不提「檢查房間」等結帳語。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T8 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T8</span>離開後 3–7 天 · 回頭客信</div>
+      <div class="tp-when">時機:離開後第 3–7 天(配合押金退款前後最自然)。目的:讓關係不結束;不推銷。R2 回訪率的第一顆種子。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>I hope the journey home was gentle, and that <i>Taipei's March light</i> follows you a while.<br/><br/>The home is quiet now — but your page in our book stays open. Whenever Taipei calls you back, one message is all it takes; I'll keep the kettle ready.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>希望回程一路順利,也希望<i>台北三月的光</i>還跟著您一陣子。<br/><br/>這個家現在安靜下來了——但您在我們這裡的那一頁,一直開著。哪天台北再叫您回來,一則訊息就好;我會把家為您留著。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>不放優惠、不放連結、不催——這封信的 KPI 是「被記得」,不是「被點擊」。季節細節照離開月份代入。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ B 詢問 ═══ -->
+  <h2>B · 詢問與成交</h2>
+  <div class="h2-cn">T9–T11 · 十二小時線上的三份標準答案</div>
+
+  <!-- T9 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T9</span>首覆 · 有房版(Day 22 已擬,微調定稿)</div>
+      <div class="tp-when">時機:對外 12h 內、內部目標 3h。<b>由未來負責他的 Host 發出</b>;名字在內文,署名歸品牌。誠實給價。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>___</i>,<br/><br/>Thank you for writing.<br/><br/>For your dates (<i>___ to ___</i>), The <i>___</i> at ESTIA <i>___</i> is available. The rate is NT$<i>___</i> per month — weekly housekeeping and your dedicated host included.<br/><br/>Two things that help me prepare the right home: who will be staying, and what brings you to Taipei?<br/><br/>If you'd like to see the place first, I can send a short video walkthrough, or we can walk through it together on a call.<br/><br/>I'm <i>___</i>, and I'll be looking after your stay from here. Whatever you need, just tell me.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>___</i> 您好,<br/><br/>謝謝您的來信。<br/><br/>您的日期(<i>__ 至 __</i>),ESTIA <i>___</i> 的 <i>___</i> 房型目前有空,月租 NT$<i>___</i>,含每週房務與專屬 Host。<br/><br/>兩件事想先了解,好為您準備對的家:會有幾位入住?這次來台北主要是?<br/><br/>想先看房的話,我可以傳一段屋內影片給您,或約時間視訊帶您走一遍。<br/><br/>接下來由我負責您的入住,有任何需要直接跟我說。<br/><br/>— ESTIA</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T10 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T10</span>首覆 · 無房版(拒絕二式+候補)</div>
+      <div class="tp-when">時機:同 12h 線。被好好拒絕的人,是下一個客人。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>___</i>,<br/><br/>Thank you for writing — and I'll be straight with you: for those dates, ESTIA <i>Ren'ai</i> is fully taken.<br/><br/>Two honest alternatives: The <i>Studio</i> at ESTIA <i>Songshan</i> is free for your dates — a smaller home, ten minutes from the airport, in a quiet lane. Or I can put you first on the Ren'ai waiting list; if anything opens, you hear from me the same day.<br/><br/>Which would you prefer?<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>___</i> 您好,<br/><br/>謝謝您的來信——直接跟您說:那段日期,ESTIA <i>Ren'ai</i> 已經滿了。<br/><br/>兩個誠實的替代:ESTIA <i>Songshan</i> 的 <i>Studio</i> 您的日期有空——小一點的家,距機場十分鐘,巷子很靜。或者,我把您記在仁愛候補名單第一位;一有空缺,當天通知您。<br/><br/>您想選哪一個?<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>先講壞消息(直接);替代方案具體到賣點;候補承諾「當天通知」呼應快半步。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T11 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T11</span>不保留說明(客人說「我考慮兩天」時)</div>
+      <div class="tp-when">政策:🅑 不做口頭保留,訂金到才鎖定。話術把「先到先得」講成體貼。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Of course — take the time you need.<br/><br/>One thing so you're never caught out: we don't hold homes on a promise — the deposit is what locks it in. Until then, if someone else completes first, I'll tell you straight away rather than leave you waiting.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg">當然,您慢慢考慮。<br/><br/>一件事先說清楚,免得您空等:我們沒有口頭保留的做法——訂金到了,房子才真正為您鎖定。在那之前如果有其他人先完成,我會第一時間告訴您。<br/><br/>— ESTIA</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ C 困難時刻 ═══ -->
+  <h2>C · 困難時刻</h2>
+  <div class="h2-cn">T12–T17 · 最考驗品牌的六封信 · 原則:直接說、給理由、留尊嚴</div>
+
+  <!-- T12 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T12</span>催租 · 第一次(假設疏忽)</div>
+      <div class="tp-when">時機:逾期第 2 天。第一次永遠假設他只是忘了——留台階。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>A small note — this month's rent hasn't come through as of yesterday. I wanted to check whether the transfer ran into any trouble. If it's already on its way, please ignore this entirely.<br/><br/>Anything I can help sort out, just tell me.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>提醒您,這個月的租金到昨天為止還沒有入帳,想確認是不是轉帳上遇到什麼問題?如果已經處理了,請直接忽略這則訊息。<br/><br/>有任何需要我協助的,跟我說。<br/><br/>— ESTIA</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T13 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T13</span>催租 · 第二次(明確日期)</div>
+      <div class="tp-when">時機:第一次後 3–4 天仍未入帳。語氣不變,內容變硬:明確日期 +「我需要」。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Following up on my note — the rent for <i>March</i> is still outstanding.<br/><br/>I need it settled by <i>Friday, March 8</i>. If something's making that difficult, tell me today and we'll work out how — but I do need to hear from you.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>接續上一則訊息——<i>三月</i>的租金目前仍未入帳。<br/><br/>我需要在 <i>3/8(五)</i>前收到這筆款項。如果有什麼困難,今天告訴我,我們一起想辦法——但我需要您的回覆。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>「我需要」而非「請您配合」;死線明確;門仍開著(一起想辦法),但回覆是必須。第三次即進入合約程序,不再用訊息。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T14 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T14</span>漲租通知(提早 60 天)</div>
+      <div class="tp-when">時機:續約到期前 ≥60 天。真實理由+考慮期;調租提案權在 Jim(見 Day 33 護欄)。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Your lease comes up on <i>May 31</i>, and I'd love to keep this home yours.<br/><br/>Being straight with you: from the next term, the monthly rate moves from NT$<i>___</i> to NT$<i>___</i>. The reason is real — <i>the building's management fees rose this year, and we've re-oiled the oak floors and replaced the linen throughout</i>.<br/><br/>Take until <i>April 15</i> to think it over. If the new rate doesn't work for you, tell me honestly — I'd rather find an answer together than lose a good guest quietly.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>您的租約 <i>5/31</i> 到期,我很希望這個家繼續是您的。<br/><br/>跟您直說:下一期起,月租從 NT$<i>___</i> 調整為 NT$<i>___</i>。理由是真的——<i>大樓管理費今年調漲,我們也重新保養了實木地板、全面更換了亞麻寢具</i>。<br/><br/><i>4/15</i> 前您慢慢考慮。如果新的價格對您有困難,誠實告訴我——我寧願一起找出辦法,也不想安靜地失去一位好客人。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>理由必須真實可驗(禁「市場行情」空話);考慮期明確;最後一句把談判變成關係。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T15 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T15</span>噪音提醒</div>
+      <div class="tp-when">原則:不說「有人投訴」(製造敵意)、怪樓板不怪人(留尊嚴)。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>A small thing about the building — the floors here are honest old wood, and they carry sound further than you'd think, especially after ten.<br/><br/>Soft slippers are in the entryway if you'd like them. That's genuinely all it takes.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>一件關於這棟房子的小事——這裡的地板是有年紀的實木,傳聲比想像中遠,尤其十點以後。<br/><br/>玄關有準備室內拖,穿上它就完全足夠了。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>全文無「投訴/鄰居/請注意」;給的是解法不是指責;一次即止,再犯才升級為當面談。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T16 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T16</span>押金扣款 / 損壞說明(新寫)</div>
+      <div class="tp-when">時機:點交後、退款前。<b>先講結果(退多少),再列扣項;每項附單據;遺憾不指控。</b>金額與條款依合約(待定)。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Your deposit statement, as promised.<br/><br/>Deposit held: NT$<i>___</i>. Returning to you: NT$<i>___</i> — it will reach your account by <i>___ (within the fourteen days)</i>.<br/><br/>Two items were deducted, with receipts attached:<br/>· <i>Replacement of the cracked lamp base — NT$___ (invoice attached)</i><br/>· <i>Final utilities, metered — NT$___ (statement attached)</i><br/><br/>These things happen in a month of real living — no hard feelings on our side, and the home is already back in order. If anything in the statement looks off to you, tell me and we'll go through it together.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>如約,這是您的押金明細。<br/><br/>押金總額:NT$<i>___</i>。退還金額:NT$<i>___</i>——會在 <i>___(十四天內)</i>入您的帳戶。<br/><br/>扣除兩項,單據都在附件:<br/>・<i>檯燈底座裂損更換——NT$___(附發票)</i><br/>・<i>最後一期水電實抄——NT$___(附帳單)</i><br/><br/>真實生活一個月,這些都是正常的——我們完全沒有介意,家也已經整理好了。明細裡若有任何看起來不對的地方,告訴我,我們一起核對。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>結果先行(退多少)降低防衛;逐項附據;「真實生活」一句卸罪惡感;爭議入口開著(一起核對,不是「有異議請於三日內」的法務腔)。與 G5、合約條款三方對齊後定稿。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <!-- T17 -->
+  <div class="tpl">
+    <div class="tp-head">
+      <div class="tp-name"><span>T17</span>提前解約回覆(新寫)</div>
+      <div class="tp-when">時機:客人提出提前退租。<b>先接住人,再談條款;條款數字依合約(待定)。</b>金額最大的談判,語氣決定結局。</div>
+    </div>
+    <div class="tp-body">
+      <div class="lang">EN</div>
+      <div class="msg en">Hello <i>David</i>,<br/><br/>Thank you for telling me directly — and I'm sorry Taipei is letting you go earlier than planned. <i>I hope everything is alright on your side.</i><br/><br/>Here's how an early departure works, plainly: <i>[per contract — notice period ___ days / early-termination terms ___ / deposit treatment ___]</i>. I've attached the exact clause so we're reading the same page.<br/><br/>One thing I can offer: if we find a suitable guest for your remaining dates, <i>[the terms soften accordingly — per contract]</i>. I'll start looking the moment you confirm.<br/><br/>Whatever the timing ends up being, your last morning here will be looked after like the first.<br/><br/>— ESTIA</div>
+      <div class="lang">中文</div>
+      <div class="msg"><i>David</i> 您好,<br/><br/>謝謝您直接告訴我——也很遺憾台北比預期更早放您走。<i>希望您那邊一切都好。</i><br/><br/>提前退租的規則,直接說清楚:<i>[依合約——提前通知 ___ 天/提前解約條件 ___/押金處理方式 ___]</i>。條款原文附在後面,我們看同一頁。<br/><br/>一件我能做的事:如果您剩餘的日期我們找到合適的客人,<i>[條件相應放寬——依合約]</i>。您一確認,我就開始找。<br/><br/>無論最後日期是哪一天,您在這裡的最後一個早晨,會被照顧得跟第一個一樣。<br/><br/>— ESTIA</div>
+      <div class="rule-note"><b>規則:</b>第一段永遠是人不是錢;條款透明(附原文,「看同一頁」);主動提供減損路徑(找替補);收尾把交易還原成款待。合約條款定案後填空。</div>
+      <div class="annot"><span>批註 · 照用/修/重寫</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Messages (Draft)</span>
+    <span>17 Templates · For Review · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Mark Candidates v7 · The Name Itself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,64px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:660px; }
+
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:28px; margin-bottom:4px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:24px; letter-spacing:.1em; }
+  section{ margin-top:72px; }
+
+  /* SURVIVOR LOCKUPS — enlarged */
+  .surv{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+  .sv{ border:1px solid rgba(34,29,23,.13); background:var(--marble); }
+  .sv-stage{ min-height:230px; display:flex; align-items:center; justify-content:center; padding:30px 16px; }
+  .sv-stage.dark{ background:var(--ember); }
+  .sv-label{ border-top:1px solid rgba(34,29,23,.09); padding:10px 14px; font-size:10px;
+    letter-spacing:.18em; color:var(--stone); text-transform:uppercase; }
+  .sv-label span{ display:block; font-family:'Noto Serif TC',serif; font-size:11.5px;
+    letter-spacing:.05em; text-transform:none; margin-top:3px; color:#7a7468; }
+  .lock{ text-align:center; }
+  .lock .mk-w{ display:flex; justify-content:center; margin-bottom:17px; }
+  .lock .wm{ font-family:'Italiana',serif; font-size:23px; letter-spacing:.42em; padding-left:.42em; }
+  .lock .rule{ width:22px; height:1px; background:var(--oak); margin:13px auto; }
+  .lock .sub{ font-size:9px; letter-spacing:.5em; padding-left:.5em; text-transform:uppercase; color:var(--stone); }
+  .wm-solo{ font-family:'Italiana',serif; font-size:30px; letter-spacing:.42em; padding-left:.42em; }
+  .dark .wm, .dark .wm-solo{ color:var(--marble); }
+
+  /* CARDS */
+  .card{ border:1px solid rgba(34,29,23,.13); margin-top:36px; background:var(--marble); position:relative; }
+  .c-head{ padding:18px 22px 0; }
+  .c-id{ font-size:11px; letter-spacing:.24em; color:var(--oak); margin-bottom:4px; }
+  .c-name{ font-family:'Italiana',serif; font-size:23px; }
+  .c-cn{ font-family:'Noto Serif TC',serif; font-size:13px; color:var(--stone); margin-top:3px; }
+
+  .stages{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px;
+    background:rgba(34,29,23,.1); border-top:1px solid rgba(34,29,23,.1); border-bottom:1px solid rgba(34,29,23,.1); margin-top:16px; }
+  .stage{ background:var(--marble); min-height:220px; display:flex; align-items:center; justify-content:center; position:relative; padding:36px 18px; }
+  .stage.dark{ background:var(--ember); }
+  .stage-label{ position:absolute; top:12px; left:16px; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--stone); }
+
+  .c-notes{ padding:18px 22px 20px; display:grid; gap:8px; }
+  .note{ font-size:13px; line-height:1.78; color:#4a443b; font-family:'Noto Serif TC',serif; }
+  .note b{ color:var(--oak); font-weight:500; }
+
+  svg.mk{ stroke:var(--ember); fill:none; stroke-width:2.6; stroke-linecap:square; }
+  .dark svg.mk{ stroke:var(--marble); }
+
+  /* wordmark treatments */
+  .t-wm{ font-family:'Italiana',serif; letter-spacing:.42em; padding-left:.42em; font-size:clamp(26px,5.6vw,40px); }
+  .dark .t-wm{ color:var(--marble); }
+  .lit-i .i{ color:var(--oak); }
+  .plate{ display:inline-block; border:1px solid var(--ember); padding:26px 34px 22px; text-align:center; }
+  .dark .plate{ border-color:var(--marble); }
+  .plate .sub2{ font-family:'Outfit',sans-serif; font-size:8.5px; letter-spacing:.52em; padding-left:.52em; color:var(--stone); margin-top:12px; text-transform:uppercase; }
+  .ground{ display:inline-block; text-align:center; }
+  .ground .ln{ height:1px; background:var(--ember); margin-top:14px; width:130%; margin-left:-15%; }
+  .dark .ground .ln{ background:var(--marble); }
+  .lintel .ln{ height:1px; background:var(--ember); margin-bottom:16px; width:130%; margin-left:-15%; }
+  .dark .lintel .ln{ background:var(--marble); }
+  .mirror-wrap{ display:inline-block; text-align:center; }
+  .mirror-wrap .mir{ transform:scaleY(-1); opacity:.16; margin-top:6px;
+    -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 15%, rgba(0,0,0,1) 90%);
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 15%, rgba(0,0,0,1) 90%); }
+  .italic-wm{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500;
+    font-size:clamp(38px,8vw,58px); letter-spacing:.02em; }
+  .dark .italic-wm{ color:var(--marble); }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:56px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ letter-spacing:.14em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Mark Candidates · v7</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03 · Seventh Round</div>
+    <h1>The name itself.</h1>
+    <p class="intro-cn">誠實說:感覺變差,是因為好挖的礦前四輪挖完了,後面在同一批基因裡排列組合。所以這輪換礦——<b>「0 純字標」是你活得最久的答案</b>,這輪一半席次直接在名字本身動刀:框、線、光、倒影、簽名。另一半,開負空間與花押兩條沒走過的路。</p>
+  </div>
+
+  <!-- ═══ SURVIVORS ═══ -->
+  <section>
+    <h2>Survivors, larger</h2>
+    <div class="h2-cn">存活八席 · 加大 · 含正反底</div>
+    <div class="surv">
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="wm-solo">ESTIA</div><div class="rule"></div><div class="sub">Residences</div></div>
+      </div><div class="sv-label">0<span>純字標 · 完整鎖定版 (Italiana)</span></div></div>
+
+      <div class="sv"><div class="sv-stage dark">
+        <div class="lock"><div class="wm-solo">ESTIA</div><div class="rule"></div><div class="sub" style="color:#8f887c">Residences</div></div>
+      </div><div class="sv-label">0 · Dark<span>同一版 · Ember 底</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M32 82 V46 A18 18 0 0 1 68 46 V82"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M1<span>拱 · 門</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M42 24 A28 28 0 0 0 42 80"/><path d="M58 24 A28 28 0 0 1 58 80"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M3<span>相對的弧</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><line x1="28" y1="32" x2="72" y2="32"/><line x1="28" y1="52" x2="56" y2="52"/><line x1="28" y1="72" x2="72" y2="72"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M7<span>三橫 · Ε</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M10<span>鑰匙</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M11<span>門裡的 E</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path style="fill:var(--oak);stroke:none" d="M22 38 L70 24 L74 31 L26 45 Z"/><path style="fill:var(--oak);stroke:none" d="M26 56 L74 42 L78 49 L30 63 Z"/><path style="fill:var(--oak);stroke:none" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M15<span>三道光</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path style="stroke-linecap:round" d="M26 34 C38 28, 62 40, 74 34"/><path style="stroke-linecap:round" d="M26 52 C38 46, 62 58, 74 52"/><path style="stroke-linecap:round" d="M26 70 C38 64, 62 76, 74 70"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M17<span>爐火柔波</span></div></div>
+
+    </div>
+  </section>
+
+  <!-- ═══ NEW TEN ═══ -->
+  <section>
+    <h2>Ten new · the name under the knife</h2>
+    <div class="h2-cn">第七輪 · M39 – M48</div>
+
+    <!-- M39 · NAMEPLATE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M39</div><div class="c-name">The Nameplate</div><div class="c-cn">門牌 · 你賣的本來就是一個地址</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">On Marble</span>
+          <div class="plate"><div class="t-wm" style="font-size:clamp(22px,4.6vw,32px)">ESTIA</div><div class="sub2">Residences</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember</span>
+          <div class="plate"><div class="t-wm" style="font-size:clamp(22px,4.6vw,32px)">ESTIA</div><div class="sub2" style="color:#8f887c">Residences</div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 一條細線,把名字框成一塊門牌。「A city address.」——你的品牌本體就是一個地址,Logo 就該長得像它會被鎖在門邊的樣子。黃銅蝕刻、大理石陰刻,它天生就是要被做出來的。</div>
+        <div class="note"><b>為什麼</b> — 純字標 (0) 的最小進化:不加圖,只加一個「物」的身分。</div>
+        <div class="note"><b>風險</b> — 框限制了排版彈性;數位小尺寸框線易糊。</div>
+      </div>
+    </div>
+
+    <!-- M40 · THRESHOLD LINE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M40</div><div class="c-name">The Threshold</div><div class="c-cn">名字站在一道門檻上</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">On Marble</span>
+          <div class="ground"><div class="t-wm">ESTIA</div><div class="ln"></div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember</span>
+          <div class="ground"><div class="t-wm">ESTIA</div><div class="ln"></div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 名字底下,一條比名字更寬的細線——<b>門檻</b>。跨過它,就進來了。整個 Logo 只多一筆,而那一筆是水平的、安靜的、承載的。</div>
+        <div class="note"><b>為什麼</b> — 你的美學一路是「橫」的 (M7、M15、M17 全是橫);這是讓名字自己站上那條橫。</div>
+        <div class="note"><b>風險</b> — 一條底線的既視感是「底線」;靠線的延伸比例 (寬於字 30%) 撐出「檻」而非「劃線」。</div>
+      </div>
+    </div>
+
+    <!-- M41 · LINTEL -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M41</div><div class="c-name">The Lintel</div><div class="c-cn">楣 · 名字被一道簷護著</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">On Marble</span>
+          <div class="ground lintel"><div class="ln"></div><div class="t-wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember</span>
+          <div class="ground lintel"><div class="ln"></div><div class="t-wm">ESTIA</div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 同一條線,移到名字上方——<b>楣,門上的那道橫樑</b>;也是騎樓的簷。名字被護在底下:你進來之前,已經有人為你遮了雨。</div>
+        <div class="note"><b>為什麼</b> — 與 M40 是一對鏡像題:檻是「跨進來」,楣是「被護著」。二選一,或都不選。</div>
+        <div class="note"><b>風險</b> — 同 M40;且上線比下線更少見,讀者需半秒。</div>
+      </div>
+    </div>
+
+    <!-- M42 · THE LIT I -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M42</div><div class="c-name">The Lit I</div><div class="c-cn">名字裡,留了一盞燈</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">On Marble</span>
+          <div class="t-wm lit-i">EST<span class="i">I</span>A</div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember · 夜裡最明顯</span>
+          <div class="t-wm lit-i">EST<span class="i">I</span>A</div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 五個字母,四個 Ember,一個 Oak——<b>I,那道直線,是深夜亮著的一盞燈</b>。不加任何東西,只讓名字裡的一個字母保持溫度。夜間模式的官網上,它會真的像燈。</div>
+        <div class="note"><b>為什麼</b> — 零元件、滿意義;與色彩系統 (Oak = 唯一的暖) 完全同法。</div>
+        <div class="note"><b>風險</b> — 單色印刷時燈熄滅,退回純字標——但退路本身就是 0,不虧。</div>
+      </div>
+    </div>
+
+    <!-- M43 · THE REFLECTION -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M43</div><div class="c-name">The Reflection</div><div class="c-cn">倒影 · 鏡面的名字</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">On Marble</span>
+          <div class="mirror-wrap"><div class="t-wm">ESTIA</div><div class="t-wm mir">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember</span>
+          <div class="mirror-wrap"><div class="t-wm">ESTIA</div><div class="t-wm mir">ESTIA</div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 名字之下,一層極淡的倒影——<b>鏡面與水磨石上的 ESTIA,就是這樣被看見的</b>。你空間裡最安靜的材質 (鏡),第一次進到 Logo 裡。</div>
+        <div class="note"><b>為什麼</b> — 材質即識別:別人靠圖案,你靠一片反光。攝影、官網動態都能延用這個語言。</div>
+        <div class="note"><b>風險</b> — 印刷需網版淡墨,工序較講究;倒影透明度差 3% 就俗,必須嚴格規範。</div>
+      </div>
+    </div>
+
+    <!-- M44 · THE SEAL BLOCK -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M44</div><div class="c-name">The Seal Block</div><div class="c-cn">印 · 負空間裡的門</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock"><div class="mk-w"><svg width="62" height="62" viewBox="0 0 100 100"><rect x="12" y="12" width="76" height="76" rx="8" fill="#221D17"/><path d="M38 88 V54 A12 12 0 0 1 62 54 V88 Z" fill="#F4F0E8"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Inverted · 封蠟即此形</span>
+          <div class="lock"><div class="mk-w"><svg width="62" height="62" viewBox="0 0 100 100"><rect x="12" y="12" width="76" height="76" rx="8" fill="#F4F0E8"/><path d="M38 88 V54 A12 12 0 0 1 62 54 V88 Z" fill="#221D17"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 一塊實心的印,門是<b>挖空的</b>——光從缺口進來。這是負空間的第一次出場:門不是畫上去的,是「讓」出來的。封蠟、鋼印、雷雕,天生就是這個邏輯。</div>
+        <div class="note"><b>為什麼</b> — 線條路線走了六輪;實心 + 負空間是完全沒開過的礦,而且是「印」的原生語言。</div>
+        <div class="note"><b>風險</b> — 量體感較重,與細線系統氣質不同——它更像「第二枚印」而非主符號。</div>
+      </div>
+    </div>
+
+    <!-- M45 · THE CUT STONE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M45</div><div class="c-name">The Cut Stone</div><div class="c-cn">刻石 · 負空間裡的 E</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock"><div class="mk-w"><svg width="62" height="62" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="#221D17"/><rect x="32" y="36" width="36" height="5" fill="#F4F0E8"/><rect x="36" y="47.5" width="26" height="5" fill="#F4F0E8"/><rect x="32" y="59" width="36" height="5" fill="#F4F0E8"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Inverted</span>
+          <div class="lock"><div class="mk-w"><svg width="62" height="62" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="#F4F0E8"/><rect x="32" y="36" width="36" height="5" fill="#221D17"/><rect x="36" y="47.5" width="26" height="5" fill="#221D17"/><rect x="32" y="59" width="36" height="5" fill="#221D17"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 一塊圓石,刻進三道——<b>M7 的三橫,用鑿的,不用畫的</b>。像卡拉拉大理石上的陰刻:字是從材料裡減出來的。</div>
+        <div class="note"><b>為什麼</b> — M7 是你的長青樹;給它一次「工藝」的版本,測試你要線還是要刻。</div>
+        <div class="note"><b>風險</b> — 同 M44,量體重;圓形基因曾陣亡,靠「石」的敘事翻案。</div>
+      </div>
+    </div>
+
+    <!-- M46 · EA MONOGRAM -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M46</div><div class="c-name">The Cipher</div><div class="c-cn">E · A 花押 · 首尾兩字母交扣</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock"><div class="mk-w"><svg class="mk" width="62" height="58" viewBox="0 0 100 100"><line x1="34" y1="26" x2="34" y2="78"/><line x1="34" y1="26" x2="58" y2="26"/><line x1="34" y1="52" x2="54" y2="52"/><line x1="34" y1="78" x2="58" y2="78"/><path d="M48 78 L66 22 L84 78"/><line x1="56" y1="58" x2="76" y2="58"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark alone</span>
+          <svg class="mk" width="72" height="66" viewBox="0 0 100 100"><line x1="34" y1="26" x2="34" y2="78"/><line x1="34" y1="26" x2="58" y2="26"/><line x1="34" y1="52" x2="54" y2="52"/><line x1="34" y1="78" x2="58" y2="78"/><path d="M48 78 L66 22 L84 78"/><line x1="56" y1="58" x2="76" y2="58"/></svg>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 名字的第一個字母與最後一個字母,E 與 A,交扣成一枚花押——<b>開頭與結尾,握在一起</b>。歐洲老宅門楣上的家徽,就是這種語言。</div>
+        <div class="note"><b>為什麼</b> — 花押 (cipher) 是精品的古典牌:Chanel 的雙 C、Gucci 的雙 G——你的版本不對稱、不張揚,像刻在銀器底部的那種。</div>
+        <div class="note"><b>風險</b> — 交扣處的優雅極吃工;此為草圖,定案需字體級精修。</div>
+      </div>
+    </div>
+
+    <!-- M47 · THE ITALIC -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M47</div><div class="c-name">The Italic</div><div class="c-cn">第二字標 · 主人的簽名體</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Secondary Wordmark</span>
+          <div class="italic-wm">Estia</div>
+        </div>
+        <div class="stage dark"><span class="stage-label">On Ember</span>
+          <div class="italic-wm">Estia</div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 不是取代,是<b>並存</b>:大寫 ESTIA 是門牌,斜體 Estia 是簽名。手寫卡的落款、酒單的頁眉、給老客人的信——需要「人」的場合,用它。Cartier 的斜體、Fortnum &amp; Mason 的手寫感,同一套邏輯。</div>
+        <div class="note"><b>為什麼</b> — 一個品牌,兩種音量:對世界說話用正楷,對朋友說話用行書。</div>
+        <div class="note"><b>風險</b> — 需嚴格規範使用場合,否則兩字標互相打架。</div>
+      </div>
+    </div>
+
+    <!-- M48 · GROUNDED ARCH -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M48</div><div class="c-name">The Grounded Arch</div><div class="c-cn">落地的門 · M1 + 一道地</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock"><div class="mk-w"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M32 78 V46 A18 18 0 0 1 68 46 V78"/><line x1="18" y1="78" x2="82" y2="78"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark alone · Small</span>
+          <div style="display:flex;gap:30px;align-items:center;"><svg class="mk" width="66" height="66" viewBox="0 0 100 100"><path d="M32 78 V46 A18 18 0 0 1 68 46 V78"/><line x1="18" y1="78" x2="82" y2="78"/></svg><svg class="mk" width="28" height="28" viewBox="0 0 100 100" style="stroke-width:5"><path d="M32 78 V46 A18 18 0 0 1 68 46 V78"/><line x1="18" y1="78" x2="82" y2="78"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 你最老的倖存者 M1,加上一道地平——<b>門落了地</b>。飄著的拱是圖形,落地的拱是建築。地線比門寬:門之外,還有世界。</div>
+        <div class="note"><b>為什麼</b> — 對長青樹做最小的加法,測一件事:M1 差的到底是不是「重量」。</div>
+        <div class="note"><b>風險</b> — 若 M1 本來就對,這一筆是多的。</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- HOW TO ANSWER -->
+  <div class="howto">
+    <div class="eyebrow">The endgame · 收網</div>
+    <p>存活:<span class="code">0 · M1 · M3 · M7 · M10 · M11 · M15 · M17</span> + 新十席 <span class="code">M39 – M48</span>。</p>
+    <p><b>這是廣度的最後一輪。</b>下一輪換打法:你選出 ≤3 席,我對每一席做 3–4 款字體級的精修 (弧度、粗細、比例、間距逐一調)——「就是他」是磨出來的,不是抽出來的。</p>
+    <p>而 7/13–15 的聖托里尼,本來就是為最後簽字留的。帶著決選名單去,在那個光線裡定生死。</p>
+  </div>
+
+  <footer>
+    <span>ESTIA · Mark Candidates v7</span>
+    <span>Day 13 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

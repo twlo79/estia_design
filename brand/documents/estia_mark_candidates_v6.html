@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Mark Candidates v6 · Lockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,64px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:640px; }
+
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:28px; margin-bottom:4px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:24px; letter-spacing:.1em; }
+  section{ margin-top:72px; }
+
+  /* SURVIVOR LOCKUPS */
+  .surv{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px; }
+  .sv{ border:1px solid rgba(34,29,23,.13); background:var(--marble); }
+  .sv-stage{ min-height:190px; display:flex; align-items:center; justify-content:center; padding:26px 14px; }
+  .sv-label{ border-top:1px solid rgba(34,29,23,.09); padding:10px 14px; font-size:10px;
+    letter-spacing:.18em; color:var(--stone); text-transform:uppercase; }
+  .sv-label span{ display:block; font-family:'Noto Serif TC',serif; font-size:11.5px;
+    letter-spacing:.05em; text-transform:none; margin-top:3px; color:#7a7468; }
+  .lock{ text-align:center; }
+  .lock .mk-w{ display:flex; justify-content:center; margin-bottom:15px; }
+  .lock .wm{ font-family:'Italiana',serif; font-size:19px; letter-spacing:.42em; padding-left:.42em; }
+  .lock .rule{ width:20px; height:1px; background:var(--oak); margin:11px auto; }
+  .lock .sub{ font-size:8px; letter-spacing:.5em; padding-left:.5em; text-transform:uppercase; color:var(--stone); }
+  .wm-solo{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; padding-left:.42em; }
+
+  /* NEW CARDS */
+  .card{ border:1px solid rgba(34,29,23,.13); margin-top:36px; background:var(--marble); position:relative; }
+  .c-head{ padding:18px 22px 0; }
+  .c-id{ font-size:11px; letter-spacing:.24em; color:var(--oak); margin-bottom:4px; }
+  .c-name{ font-family:'Italiana',serif; font-size:23px; }
+  .c-cn{ font-family:'Noto Serif TC',serif; font-size:13px; color:var(--stone); margin-top:3px; }
+
+  .stages{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px;
+    background:rgba(34,29,23,.1); border-top:1px solid rgba(34,29,23,.1); border-bottom:1px solid rgba(34,29,23,.1); margin-top:16px; }
+  .stage{ background:var(--marble); min-height:210px; display:flex; align-items:center; justify-content:center; position:relative; padding:34px 16px; }
+  .stage.dark{ background:var(--ember); }
+  .stage-label{ position:absolute; top:12px; left:16px; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--stone); }
+  .dark-row{ display:flex; gap:30px; align-items:center; }
+  .biglock .mk-w{ margin-bottom:17px; }
+  .biglock .wm{ font-size:25px; }
+  .dark .wm{ color:var(--marble); }
+
+  .c-notes{ padding:18px 22px 20px; display:grid; gap:8px; }
+  .note{ font-size:13px; line-height:1.78; color:#4a443b; font-family:'Noto Serif TC',serif; }
+  .note b{ color:var(--oak); font-weight:500; }
+
+  svg.mk{ stroke:var(--ember); fill:none; stroke-width:3; stroke-linecap:square; }
+  .dark svg.mk{ stroke:var(--marble); }
+  svg.mk .soft{ stroke-linecap:round; }
+  svg.mk .oakline{ stroke:var(--oak); }
+  svg.mk .fillonly{ fill:var(--oak); stroke:none; }
+
+  /* Open-A wordmark */
+  .openA{ font-family:'Italiana',serif; letter-spacing:.42em; display:inline-flex; align-items:baseline; }
+  .openA .ltr{ padding-right:.42em; }
+  .openA svg{ height:.72em; width:auto; stroke:currentColor; fill:none; stroke-width:6.5; }
+  .dark .openA{ color:var(--marble); }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:56px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ letter-spacing:.14em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Mark Candidates · v6</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03 · Sixth Round</div>
+    <h1>Now, as lockups.</h1>
+    <p class="intro-cn">你說得對——符號單獨看是零件,跟名字站在一起才是 Logo。這一輪起,所有東西都以「完整組合」呈現:存活的八席先列隊,新的十席跟上。</p>
+  </div>
+
+  <!-- ═══ SURVIVORS AS LOCKUPS ═══ -->
+  <section>
+    <h2>Survivors, with the name</h2>
+    <div class="h2-cn">存活八席 · 完整組合</div>
+    <div class="surv">
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="wm-solo">ESTIA</div><div class="rule"></div><div class="sub">Residences</div></div>
+      </div><div class="sv-label">0<span>純字標 · 完整鎖定版</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><path d="M32 82 V46 A18 18 0 0 1 68 46 V82"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M1<span>拱 · 門</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><path d="M42 24 A28 28 0 0 0 42 80"/><path d="M58 24 A28 28 0 0 1 58 80"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M3<span>相對的弧</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><line x1="28" y1="32" x2="72" y2="32"/><line x1="28" y1="52" x2="56" y2="52"/><line x1="28" y1="72" x2="72" y2="72"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M7<span>三橫 · Ε</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M10<span>鑰匙</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M11<span>門裡的 E</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><path class="fillonly" d="M22 38 L70 24 L74 31 L26 45 Z"/><path class="fillonly" d="M26 56 L74 42 L78 49 L30 63 Z"/><path class="fillonly" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M15<span>三道光</span></div></div>
+
+      <div class="sv"><div class="sv-stage">
+        <div class="lock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg></div><div class="wm">ESTIA</div></div>
+      </div><div class="sv-label">M17<span>爐火柔波</span></div></div>
+
+    </div>
+  </section>
+
+  <!-- ═══ NEW TEN ═══ -->
+  <section>
+    <h2>Ten new, as lockups</h2>
+    <div class="h2-cn">第六輪 · M29 – M38 · 這輪不標星,你的手感說了算</div>
+
+    <!-- M29 · OPEN A -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M29</div><div class="c-name">The Open A</div><div class="c-cn">名字的最後,是一扇開著的門</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">The Wordmark Itself</span>
+          <div class="openA" style="font-size:clamp(30px,7vw,44px);">
+            <span class="ltr">E</span><span class="ltr">S</span><span class="ltr">T</span><span class="ltr">I</span><svg viewBox="0 0 100 100"><path d="M12 92 L50 8 L88 92"/></svg>
+          </div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Reversed</span>
+          <div class="openA" style="font-size:clamp(26px,6vw,38px);">
+            <span class="ltr">E</span><span class="ltr">S</span><span class="ltr">T</span><span class="ltr">I</span><svg viewBox="0 0 100 100"><path d="M12 92 L50 8 L88 92"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 不加符號,只動一個字母:A 的橫畫拿掉,變成 Λ——<b>一個門的形狀</b>。名字唸完的那一刻,門開著。這是把 Logo 藏進字標本身,全世界只有懂的人會發現。</div>
+        <div class="note"><b>為什麼</b> — 你留下純字標 (0),證明字標路線活著;這是純字標的進化版:零元件,滿意義。Céline 拿掉重音符、Saint Laurent 換字順——頂級品牌都在字母上動過一刀。</div>
+        <div class="note"><b>風險</b> — 有人會讀成「ESTIΛ」;需要時間讓市場習慣 (此頁為示意,正式版以 Italiana 原字改刻)。</div>
+      </div>
+    </div>
+
+    <!-- M30 · ARCADE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M30</div><div class="c-name">The Arcade</div><div class="c-cn">三拱 · 騎樓 × 柱廊</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="66" height="52" viewBox="0 0 120 90"><path d="M14 78 V48 A12 12 0 0 1 38 48 V78"/><path d="M48 78 V48 A12 12 0 0 1 72 48 V78"/><path d="M82 78 V48 A12 12 0 0 1 106 48 V78"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="76" height="58" viewBox="0 0 120 90"><path d="M14 78 V48 A12 12 0 0 1 38 48 V78"/><path d="M48 78 V48 A12 12 0 0 1 72 48 V78"/><path d="M82 78 V48 A12 12 0 0 1 106 48 V78"/></svg><svg class="mk" width="34" height="26" viewBox="0 0 120 90" style="stroke-width:5"><path d="M14 78 V48 A12 12 0 0 1 38 48 V78"/><path d="M48 78 V48 A12 12 0 0 1 72 48 V78"/><path d="M82 78 V48 A12 12 0 0 1 106 48 V78"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 三道拱,並肩。它同時是兩個地方:希臘的柱廊 (stoa,人們相聚交談之處) 與台北的騎樓 (亭仔腳,城市為行人撐的簷)。<b>你的品牌血統,一排拱講完。</b>三,也是 E 的節奏。</div>
+        <div class="note"><b>為什麼</b> — M1 活著;這是 M1 的複數——一扇門是入口,一排拱是街。</div>
+        <div class="note"><b>風險</b> — 橫向較寬,直式排版時要縮。</div>
+      </div>
+    </div>
+
+    <!-- M31 · DOUBLE DOOR -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M31</div><div class="c-name">The Double Door</div><div class="c-cn">雙拱 · 對開的門</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="56" height="52" viewBox="0 0 100 90"><path d="M20 80 V46 A15 15 0 0 1 49 44 V80"/><path d="M51 80 V44 A15 15 0 0 1 80 46 V80"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="64" height="58" viewBox="0 0 100 90"><path d="M20 80 V46 A15 15 0 0 1 49 44 V80"/><path d="M51 80 V44 A15 15 0 0 1 80 46 V80"/></svg><svg class="mk" width="30" height="27" viewBox="0 0 100 90" style="stroke-width:5"><path d="M20 80 V46 A15 15 0 0 1 49 44 V80"/><path d="M51 80 V44 A15 15 0 0 1 80 46 V80"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 兩扇拱門,中間留一道縫——<b>對開的大門,正要為你打開</b>。老宅、教堂、豪邸的門都是對開的:雙手推開,是最隆重的歡迎。</div>
+        <div class="note"><b>為什麼</b> — M1 (拱) 與 M3 (成對) 的基因,在這裡合體;中縫是整個圖的呼吸。</div>
+        <div class="note"><b>風險</b> — 與 M30 同族,最終同族擇一。</div>
+      </div>
+    </div>
+
+    <!-- M32 · NESTED ARCH -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M32</div><div class="c-name">The Nested Arch</div><div class="c-cn">門中門 · 越走越深的家</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="52" height="52" viewBox="0 0 100 100"><path d="M24 84 V46 A26 26 0 0 1 76 46 V84"/><path d="M40 84 V54 A10 10 0 0 1 60 54 V84"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="62" height="62" viewBox="0 0 100 100"><path d="M24 84 V46 A26 26 0 0 1 76 46 V84"/><path d="M40 84 V54 A10 10 0 0 1 60 54 V84"/></svg><svg class="mk" width="28" height="28" viewBox="0 0 100 100" style="stroke-width:5"><path d="M24 84 V46 A26 26 0 0 1 76 46 V84"/><path d="M40 84 V54 A10 10 0 0 1 60 54 V84"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 門裡還有門。<b>好的家有層次:玄關、廊、室</b>——一道一道往裡走,世界一層一層安靜下來。「A world apart」的縱深,兩道線畫完。</div>
+        <div class="note"><b>為什麼</b> — M11 活著證明「拱 + 內容」成立;這次內容物是另一道拱——語言更純,零混血。</div>
+        <div class="note"><b>風險</b> — 與 M11 是兄弟題;小尺寸內拱易黏,需守最小尺寸。</div>
+      </div>
+    </div>
+
+    <!-- M33 · KEYSTONE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M33</div><div class="c-name">The Keystone</div><div class="c-cn">拱心石 · 「每一個細節」的那一塊</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="52" height="52" viewBox="0 0 100 100"><path d="M26 84 V46 A24 24 0 0 1 74 46 V84"/><line x1="44" y1="33" x2="41" y2="20"/><line x1="56" y1="33" x2="59" y2="20"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="62" height="62" viewBox="0 0 100 100"><path d="M26 84 V46 A24 24 0 0 1 74 46 V84"/><line x1="44" y1="33" x2="41" y2="20"/><line x1="56" y1="33" x2="59" y2="20"/></svg><svg class="mk" width="28" height="28" viewBox="0 0 100 100" style="stroke-width:5"><path d="M26 84 V46 A24 24 0 0 1 74 46 V84"/><line x1="44" y1="33" x2="41" y2="20"/><line x1="56" y1="33" x2="59" y2="20"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 拱的頂端,標出那一塊「拱心石」——整道拱靠它站著,少了它,全部塌下。<b>Every detail, a welcome. 的建築版:最小的那塊,撐起全部。</b></div>
+        <div class="note"><b>為什麼</b> — 是 M1 加了一個「信念」;工程師會看見結構,客人會看見講究。</div>
+        <div class="note"><b>風險</b> — 兩道小刻痕在極小尺寸會消失,favicon 退回素拱。</div>
+      </div>
+    </div>
+
+    <!-- M34 · HEARTH CIRCLE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M34</div><div class="c-name">The Hearth Circle</div><div class="c-cn">圍爐 · 圓桌與三道暖</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="52" height="52" viewBox="0 0 100 100"><circle cx="50" cy="52" r="30"/><line x1="38" y1="41" x2="62" y2="41"/><line x1="42" y1="52" x2="58" y2="52"/><line x1="38" y1="63" x2="62" y2="63"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="62" height="62" viewBox="0 0 100 100"><circle cx="50" cy="52" r="30"/><line x1="38" y1="41" x2="62" y2="41"/><line x1="42" y1="52" x2="58" y2="52"/><line x1="38" y1="63" x2="62" y2="63"/></svg><svg class="mk" width="28" height="28" viewBox="0 0 100 100" style="stroke-width:5"><circle cx="50" cy="52" r="30"/><line x1="38" y1="41" x2="62" y2="41"/><line x1="42" y1="52" x2="58" y2="52"/><line x1="38" y1="63" x2="62" y2="63"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 一個圓,裡面三道暖——<b>圍爐</b>。台灣人最深的待客字:圍著爐,就是一家人。圓是桌、是爐、是聚;三橫是 E、是火、是熱。</div>
+        <div class="note"><b>為什麼</b> — M7 的三橫活著;給它一個「家」——這次的圓不是印章 (那個死了),是圍起來的意思。</div>
+        <div class="note"><b>風險</b> — 圓形元素曾陣亡一次;成敗在「圍」的敘事能不能救回這個形。</div>
+      </div>
+    </div>
+
+    <!-- M35 · SHELTER & HEARTH -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M35</div><div class="c-name">The Shelter &amp; Hearth</div><div class="c-cn">屋與火 · 家的最小剖面</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="54" height="52" viewBox="0 0 100 100"><path d="M28 42 A22 22 0 0 1 72 42"/><path d="M28 60 A22 22 0 0 0 72 60"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="64" height="62" viewBox="0 0 100 100"><path d="M28 42 A22 22 0 0 1 72 42"/><path d="M28 60 A22 22 0 0 0 72 60"/></svg><svg class="mk" width="28" height="27" viewBox="0 0 100 100" style="stroke-width:5"><path d="M28 42 A22 22 0 0 1 72 42"/><path d="M28 60 A22 22 0 0 0 72 60"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 上面一道弧,是屋簷;下面一道弧,是爐膛。中間那道空,<b>是人住的地方</b>。M3 的兩道弧轉九十度,從「相對」變成「庇護」——家的最小剖面圖。</div>
+        <div class="note"><b>為什麼</b> — M3 的直系變奏:同樣兩筆,換一個方向,意思從「主與客」變成「屋與火」——Estia 女神的全部工作。</div>
+        <div class="note"><b>風險</b> — 抽象度高;也可能被讀成括號或眼睛。</div>
+      </div>
+    </div>
+
+    <!-- M36 · FACING E'S -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M36</div><div class="c-name">The Facing E's</div><div class="c-cn">相對的 E · 主與客,同一個字</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="54" height="50" viewBox="0 0 100 100"><line x1="40" y1="30" x2="40" y2="74"/><line x1="40" y1="30" x2="22" y2="30"/><line x1="40" y1="52" x2="27" y2="52"/><line x1="40" y1="74" x2="22" y2="74"/><line x1="60" y1="30" x2="60" y2="74"/><line x1="60" y1="30" x2="78" y2="30"/><line x1="60" y1="52" x2="73" y2="52"/><line x1="60" y1="74" x2="78" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="64" height="60" viewBox="0 0 100 100"><line x1="40" y1="30" x2="40" y2="74"/><line x1="40" y1="30" x2="22" y2="30"/><line x1="40" y1="52" x2="27" y2="52"/><line x1="40" y1="74" x2="22" y2="74"/><line x1="60" y1="30" x2="60" y2="74"/><line x1="60" y1="30" x2="78" y2="30"/><line x1="60" y1="52" x2="73" y2="52"/><line x1="60" y1="74" x2="78" y2="74"/></svg><svg class="mk" width="28" height="26" viewBox="0 0 100 100" style="stroke-width:5"><line x1="40" y1="30" x2="40" y2="74"/><line x1="40" y1="30" x2="22" y2="30"/><line x1="40" y1="52" x2="27" y2="52"/><line x1="40" y1="74" x2="22" y2="74"/><line x1="60" y1="30" x2="60" y2="74"/><line x1="60" y1="30" x2="78" y2="30"/><line x1="60" y1="52" x2="73" y2="52"/><line x1="60" y1="74" x2="78" y2="74"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — 兩個 E,背對背站開,臂朝外——像門的兩扇、像張開的雙臂。中間那道空隙,<b>是留給走進來的人的</b>。M3 的哲學,用字母重寫一次。</div>
+        <div class="note"><b>為什麼</b> — 你留下 M3 (相對) 與 M7 (E);這是兩者唯一的合法婚姻。</div>
+        <div class="note"><b>風險</b> — 遠看可能讀成「工」或欄杆;依賴中距離觀看。</div>
+      </div>
+    </div>
+
+    <!-- M37 · WARM LINE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M37</div><div class="c-name">The Warm Line</div><div class="c-cn">三橫,中間那道是暖的</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="52" height="48" viewBox="0 0 100 100"><line x1="28" y1="34" x2="72" y2="34"/><line class="oakline" x1="34" y1="52" x2="66" y2="52"/><line x1="28" y1="70" x2="72" y2="70"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="62" height="58" viewBox="0 0 100 100"><line x1="28" y1="34" x2="72" y2="34"/><line class="oakline" x1="34" y1="52" x2="66" y2="52"/><line x1="28" y1="70" x2="72" y2="70"/></svg><svg class="mk" width="28" height="26" viewBox="0 0 100 100" style="stroke-width:5"><line x1="28" y1="34" x2="72" y2="34"/><line class="oakline" x1="34" y1="52" x2="66" y2="52"/><line x1="28" y1="70" x2="72" y2="70"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — M7 一筆不動,只換一個顏色:<b>中間那道,是 Oak 色的</b>。三道線裡藏著一道暖——像素淨的房子裡,那盞永遠亮著的黃光。冷靜的系統裡,唯一的溫度。</div>
+        <div class="note"><b>為什麼</b> — 最小的介入,最大的意義密度:M7 + M15 的血,一滴就夠。</div>
+        <div class="note"><b>風險</b> — 單色場合 (鋼印、雷雕) 暖線消失,退回 M7——但那也還是個好記號。</div>
+      </div>
+    </div>
+
+    <!-- M38 · COLONNADE -->
+    <div class="card">
+      <div class="c-head"><div class="c-id">M38</div><div class="c-name">The Colonnade</div><div class="c-cn">三柱 · E 站起來</div></div>
+      <div class="stages">
+        <div class="stage"><span class="stage-label">Lockup</span>
+          <div class="lock biglock"><div class="mk-w"><svg class="mk" width="50" height="50" viewBox="0 0 100 100"><line x1="34" y1="26" x2="34" y2="76"/><line x1="50" y1="26" x2="50" y2="76"/><line x1="66" y1="26" x2="66" y2="76"/></svg></div><div class="wm">ESTIA</div></div>
+        </div>
+        <div class="stage dark"><span class="stage-label">Mark · Small</span>
+          <div class="dark-row"><svg class="mk" width="60" height="60" viewBox="0 0 100 100"><line x1="34" y1="26" x2="34" y2="76"/><line x1="50" y1="26" x2="50" y2="76"/><line x1="66" y1="26" x2="66" y2="76"/></svg><svg class="mk" width="27" height="27" viewBox="0 0 100 100" style="stroke-width:5"><line x1="34" y1="26" x2="34" y2="76"/><line x1="50" y1="26" x2="50" y2="76"/><line x1="66" y1="26" x2="66" y2="76"/></svg></div>
+        </div>
+      </div>
+      <div class="c-notes">
+        <div class="note"><b>意思</b> — M7 站起來:三根柱。柱廊 (stoa) 是希臘人談話與相聚的地方;柱,也是撐起一個家的東西。<b>靜到極致的一個形。</b></div>
+        <div class="note"><b>為什麼</b> — 你的系統一路偏橫;這是唯一的純直式,給整個家族一個站姿。</div>
+        <div class="note"><b>風險</b> — 有暫停鍵/條碼的既視感,靠字標同台化解。</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- HOW TO ANSWER -->
+  <div class="howto">
+    <div class="eyebrow">How to decide · 怎麼選</div>
+    <p>存活:<span class="code">0 · M1 · M3 · M7 · M10 · M11 · M15 · M17</span> + 新十席 <span class="code">M29 – M38</span>。</p>
+    <p>這一輪不標星——四輪下來,你的手感已經比我的推薦準。全部平放,你直接感覺。</p>
+    <p>老規矩:殺、留、改、雜交,皆合法。若哪一個讓你停了兩秒,那兩秒就是訊號。</p>
+  </div>
+
+  <footer>
+    <span>ESTIA · Mark Candidates v6</span>
+    <span>Day 13 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

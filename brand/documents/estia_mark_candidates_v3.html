@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Mark Candidates v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,64px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:640px; }
+
+  .card{ border:1px solid rgba(34,29,23,.13); margin-top:44px; background:var(--marble); position:relative; }
+  .card.rec{ border-color:var(--oak); }
+  .badge{ position:absolute; top:14px; right:16px; font-size:9.5px; letter-spacing:.24em;
+    color:var(--oak); border:1px solid var(--oak); padding:5px 12px; text-transform:uppercase; z-index:2; }
+  .c-head{ padding:18px 22px 0; }
+  .c-id{ font-size:11px; letter-spacing:.24em; color:var(--oak); margin-bottom:4px; }
+  .c-name{ font-family:'Italiana',serif; font-size:24px; }
+  .c-cn{ font-family:'Noto Serif TC',serif; font-size:13px; color:var(--stone); margin-top:3px; }
+
+  .stages{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px;
+    background:rgba(34,29,23,.1); border-top:1px solid rgba(34,29,23,.1); border-bottom:1px solid rgba(34,29,23,.1); margin-top:18px; }
+  .stage{ background:var(--marble); min-height:190px; display:flex; align-items:center; justify-content:center; position:relative; padding:34px 18px; }
+  .stage.dark{ background:var(--ember); }
+  .stage-label{ position:absolute; top:12px; left:16px; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--stone); }
+
+  .c-notes{ padding:20px 22px 22px; display:grid; gap:9px; }
+  .note{ font-size:13px; line-height:1.8; color:#4a443b; font-family:'Noto Serif TC',serif; }
+  .note b{ color:var(--oak); font-weight:500; }
+
+  .stack{ text-align:center; }
+  .stack .mk{ margin-bottom:18px; display:flex; justify-content:center; }
+  .stack .wm{ font-family:'Italiana',serif; font-size:26px; letter-spacing:.42em; padding-left:.42em; }
+  .dark .wm{ color:var(--marble); }
+
+  /* ── M4 · DOORFRAME 冂 ── */
+  .frame{ width:44px; height:62px; border:1.5px solid var(--ember); border-bottom:none; display:inline-block; }
+  .frame.rev{ border-color:var(--marble); }
+  .frame.sm{ width:21px; height:30px; border-width:1.2px; }
+
+  /* ── M5 · THE PLAN (architect door symbol) ── */
+  .plan{ position:relative; width:72px; height:42px; display:inline-block; }
+  .plan .wl{ position:absolute; bottom:0; left:0; width:18px; height:1.5px; background:var(--ember); }
+  .plan .wr{ position:absolute; bottom:0; right:0; width:18px; height:1.5px; background:var(--ember); }
+  .plan .leaf{ position:absolute; bottom:0; left:18px; width:1.5px; height:36px; background:var(--ember); }
+  .plan .arc{ position:absolute; bottom:0; left:18px; width:36px; height:36px;
+    border-top:1.5px solid var(--ember); border-right:1.5px solid var(--ember);
+    border-top-right-radius:100%; }
+  .plan.rev .wl,.plan.rev .wr,.plan.rev .leaf{ background:var(--marble); }
+  .plan.rev .arc{ border-color:var(--marble); }
+  .plan.sm{ width:40px; height:24px; }
+  .plan.sm .wl{ width:10px; height:1.2px; } .plan.sm .wr{ width:10px; height:1.2px; }
+  .plan.sm .leaf{ left:10px; width:1.2px; height:20px; }
+  .plan.sm .arc{ left:10px; width:20px; height:20px; border-width:1.2px; }
+
+  /* ── M6 · THE SECTION (golden ratio) ── */
+  .section-m{ position:relative; width:58px; height:36px; border:1.5px solid var(--ember); display:inline-block; }
+  .section-m .cut{ position:absolute; top:0; bottom:0; left:61.8%; width:1px; background:var(--ember); opacity:.85; }
+  .section-m.rev{ border-color:var(--marble); } .section-m.rev .cut{ background:var(--marble); }
+  .section-m.sm{ width:28px; height:17px; border-width:1.2px; }
+
+  /* ── M7 · THE EPSILON ── */
+  .eps{ display:inline-flex; flex-direction:column; gap:9px; align-items:flex-start; }
+  .eps span{ display:block; height:1.5px; background:var(--ember); }
+  .eps .b1{ width:42px; } .eps .b2{ width:26px; } .eps .b3{ width:42px; }
+  .eps.rev span{ background:var(--marble); }
+  .eps.sm{ gap:4.5px; } .eps.sm span{ height:1.2px; }
+  .eps.sm .b1{ width:20px; } .eps.sm .b2{ width:12px; } .eps.sm .b3{ width:20px; }
+
+  /* ── M8 · THE REFLECTION ── */
+  .refl{ position:relative; width:52px; height:56px; display:inline-block; }
+  .refl .r1{ position:absolute; top:0; left:0; width:32px; height:44px; border:1.5px solid var(--ember); }
+  .refl .r2{ position:absolute; bottom:0; right:0; width:32px; height:44px; border:1px solid var(--stone); }
+  .refl.rev .r1{ border-color:var(--marble); }
+  .refl.rev .r2{ border-color:#6f695f; }
+  .refl.sm{ width:26px; height:28px; }
+  .refl.sm .r1{ width:16px; height:22px; border-width:1.2px; }
+  .refl.sm .r2{ width:16px; height:22px; border-width:.8px; }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:60px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ letter-spacing:.14em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} .badge{position:static;display:inline-block;margin:14px 0 0 22px;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Mark Candidates · v3</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03 · Third Round</div>
+    <h1>Five more doors.</h1>
+    <p class="intro-cn">你留下的三個 (0 / M1 / M3) 有共同的血:細線、建築、抽象、開放的形。這五個新的,全部往那條血脈裡走——其中一個,是為你的工程師身分畫的。</p>
+  </div>
+
+  <!-- ── M4 · DOORFRAME ── -->
+  <div class="card">
+    <div class="c-head">
+      <div class="c-id">M4</div>
+      <div class="c-name">The Doorframe</div>
+      <div class="c-cn">門框 · 直角的門</div>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span><span class="frame"></span></div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><span class="frame" style="width:36px;height:50px;"></span></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:flex-end;"><span class="frame rev"></span><span class="frame rev sm"></span></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>故事</b> — 同一道門,但用你真正蓋的語言:直角、極簡、現代主義。M1 的拱屬於地中海;這個門框屬於你的空間——鏡面、大理石、直線。底部一樣開著:門,永遠為客人開。</div>
+      <div class="note"><b>為什麼</b> — 它是「A city address. A world apart.」的立面圖。高寬比取黃金比例,骨架先對,才有資格當 ESTIA 的門。</div>
+      <div class="note"><b>風險</b> — 極簡到接近「冂」字或畫框,識別全靠比例與線的細度撐住。</div>
+    </div>
+  </div>
+
+  <!-- ── M5 · THE PLAN ── -->
+  <div class="card rec">
+    <span class="badge">★ 推薦</span>
+    <div class="c-head">
+      <div class="c-id">M5</div>
+      <div class="c-name">The Plan</div>
+      <div class="c-cn">平面圖上的門 · 工程師的浪漫</div>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span><span class="plan"><span class="wl"></span><span class="wr"></span><span class="leaf"></span><span class="arc"></span></span></div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><span class="plan" style="width:58px;height:34px;"><span class="wl" style="width:14px;"></span><span class="wr" style="width:14px;"></span><span class="leaf" style="left:14px;height:29px;"></span><span class="arc" style="left:14px;width:29px;height:29px;"></span></span></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:flex-end;"><span class="plan rev"><span class="wl"></span><span class="wr"></span><span class="leaf"></span><span class="arc"></span></span><span class="plan rev sm"><span class="wl"></span><span class="wr"></span><span class="leaf"></span><span class="arc"></span></span></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>故事</b> — 建築平面圖上,「門」的符號:一道牆、一個開口、一片推開的門扇、一道弧。全世界的工程師與建築師一眼認得——而它的意思,剛好就是 ESTIA 的意思:<b>牆上為你開了一個口,門正在打開。</b></div>
+      <div class="note"><b>為什麼推薦</b> — 你的兩個身分,第一次在同一個圖形裡相遇:工程師的語言 × 主人的姿態。懂圖的人會心一笑;不懂的人,看到一道優雅的弧。開門的弧,就是歡迎的動作本身——這個符號不是靜物,它在動。而且沒有任何住宅品牌用過它。</div>
+      <div class="note"><b>風險</b> — 需要一秒的觀看時間;極小尺寸細節多,favicon 需備簡化版 (只留弧)。</div>
+    </div>
+  </div>
+
+  <!-- ── M6 · THE SECTION ── -->
+  <div class="card">
+    <div class="c-head">
+      <div class="c-id">M6</div>
+      <div class="c-name">The Section</div>
+      <div class="c-cn">比例 · 0.618 的那條線</div>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span><span class="section-m"><span class="cut"></span></span></div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><span class="section-m" style="width:48px;height:30px;"><span class="cut"></span></span></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><span class="section-m rev"><span class="cut"></span></span><span class="section-m rev sm"><span class="cut"></span></span></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>故事</b> — 一個矩形,一條線,落在 0.618。你量過的每一道門、每一面牆,都站在這條線上。這是把「溫度,長在對的骨架上」直接畫出來——創辦人的偏執,變成品牌的記號。</div>
+      <div class="note"><b>為什麼</b> — 五個裡最私人的一個:它的完整意義只有你懂。而頂級品牌的符號,常常就是創辦人的一個秘密。</div>
+      <div class="note"><b>風險</b> — 對外人只是「一個被分割的方框」。它是骨,沒有肉——情感溫度最低。</div>
+    </div>
+  </div>
+
+  <!-- ── M7 · THE EPSILON ── -->
+  <div class="card">
+    <div class="c-head">
+      <div class="c-id">M7</div>
+      <div class="c-name">The Epsilon</div>
+      <div class="c-cn">三橫 · 退到只剩呼吸的 E</div>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span><span class="eps"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span></div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><span class="eps" style="gap:7px;"><span class="b1" style="width:34px;"></span><span class="b2" style="width:21px;"></span><span class="b3" style="width:34px;"></span></span></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><span class="eps rev"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span><span class="eps rev sm"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>故事</b> — E,拿掉直畫,剩三道橫——Estia 的 E,希臘的 Ε,也像木地板的縫、壁爐的層。一個字母,退到只剩呼吸。中段短一分,是黃金比例,也是留白。</div>
+      <div class="note"><b>為什麼</b> — 字母標是精品的安全牌:Celine 的 C、Ferragamo 的花體 F。它永遠跟名字綁在一起,不需要解釋。</div>
+      <div class="note"><b>風險</b> — 三條橫線的形,世上用者眾 (有漢堡選單既視感),識別度中等,靠比例細節取勝。</div>
+    </div>
+  </div>
+
+  <!-- ── M8 · THE REFLECTION ── -->
+  <div class="card">
+    <div class="c-head">
+      <div class="c-id">M8</div>
+      <div class="c-name">The Reflection</div>
+      <div class="c-cn">鏡 · 一實一虛</div>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span><span class="refl"><span class="r1"></span><span class="r2"></span></span></div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><span class="refl" style="width:42px;height:46px;"><span class="r1" style="width:26px;height:36px;"></span><span class="r2" style="width:26px;height:36px;"></span></span></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><span class="refl rev"><span class="r1"></span><span class="r2"></span></span><span class="refl rev sm"><span class="r1"></span><span class="r2"></span></span></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>故事</b> — 兩個相同的框,一實一虛,錯開半步——鏡面,你空間裡最安靜的材質。也是那個張力本身:同一個形,兩個世界;城市在外,世界在內。</div>
+      <div class="note"><b>為什麼</b> — 五個裡唯一從「材質」長出來的符號,與室內攝影 (鏡子裡的空間) 會非常合拍。</div>
+      <div class="note"><b>風險</b> — 錯位的雙框在小尺寸容易被讀成「沒對齊的錯誤」,需要嚴格的最小尺寸限制。</div>
+    </div>
+  </div>
+
+  <!-- HOW TO ANSWER -->
+  <div class="howto">
+    <div class="eyebrow">How to decide · 怎麼選</div>
+    <p>目前存活名單:<span class="code">0 · M1 · M3</span> + 這五個 <span class="code">M4 – M8</span>。</p>
+    <p>可以直接選一個;可以再殺幾個留幾個;也可以下修改指令——「M5 但弧再大」「M4 但更瘦」都行。那個「就是他」的感覺出現之前,我們不停。</p>
+  </div>
+
+  <footer>
+    <span>ESTIA · Mark Candidates v3</span>
+    <span>Day 13 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

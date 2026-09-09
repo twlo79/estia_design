@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Colour System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@200;300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --marble: #F4F0E8;
+    --linen:  #E4DCCC;
+    --stone:  #A49E94;
+    --oak:    #8B6F47;
+    --ember:  #221D17;
+    --flame:  #C4854F;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html,body{
+    background: var(--marble);
+    color: var(--ember);
+    font-family: 'Outfit','Noto Serif TC',sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif{ font-family:'Italiana','Noto Serif TC',serif; }
+  .cn{ font-family:'Noto Serif TC',serif; }
+
+  main{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 22px 80px;
+  }
+
+  /* HEADER */
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:64px;
+    border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone);
+  }
+
+  .eyebrow{
+    font-size:11px; letter-spacing:.34em; text-transform:uppercase;
+    color:var(--oak); margin-bottom:18px;
+  }
+  h1{
+    font-family:'Italiana',serif; font-weight:400;
+    font-size:clamp(42px,7vw,80px); line-height:1.02; margin-bottom:14px;
+  }
+  .intro-cn{
+    font-family:'Noto Serif TC',serif; font-size:17px; color:var(--stone);
+    margin-bottom:22px; letter-spacing:.06em;
+  }
+  .intro p{
+    max-width:640px; font-size:15px; line-height:1.85; color:#4a443b;
+  }
+  .intro p + p{ margin-top:10px; }
+
+  section{ margin-top:88px; }
+
+  h2{
+    font-family:'Italiana',serif; font-weight:400; font-size:30px; margin-bottom:6px;
+  }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:30px; letter-spacing:.12em; }
+
+  /* PRINCIPLES */
+  .principles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px; background:rgba(34,29,23,.12); border:1px solid rgba(34,29,23,.12); }
+  .principle{ background:var(--marble); padding:30px 24px; }
+  .principle .num{ font-size:11px; letter-spacing:.25em; color:var(--oak); margin-bottom:14px; }
+  .principle h3{ font-family:'Italiana',serif; font-weight:400; font-size:21px; margin-bottom:4px; }
+  .principle .cn-t{ font-family:'Noto Serif TC',serif; font-size:13px; color:var(--stone); margin-bottom:12px; }
+  .principle p{ font-size:13.5px; line-height:1.75; color:#4a443b; }
+
+  /* SWATCHES */
+  .swatches{ display:flex; flex-direction:column; gap:14px; }
+  .swatch{
+    display:grid; grid-template-columns: 130px 1fr; gap:0;
+    border:1px solid rgba(34,29,23,.12); overflow:hidden;
+  }
+  .chip{ min-height:130px; position:relative; }
+  .chip::after{ content:""; position:absolute; inset:0;
+    background:linear-gradient(120deg, rgba(255,255,255,.18) 0%, transparent 45%, rgba(0,0,0,.05) 100%); }
+  .sw-info{ padding:20px 22px; background:var(--marble); }
+  .sw-top{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  .sw-name{ font-family:'Italiana',serif; font-size:24px; }
+  .sw-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); }
+  .sw-hex{ font-size:11px; letter-spacing:.18em; color:var(--stone); margin-left:auto; }
+  .sw-origin{ font-size:12px; letter-spacing:.06em; color:var(--oak); margin-bottom:8px; }
+  .sw-use{ font-size:13px; line-height:1.7; color:#4a443b; }
+
+  .c-marble{ background:var(--marble); }
+  .c-linen { background:var(--linen); }
+  .c-stone { background:var(--stone); }
+  .c-oak   { background:var(--oak); }
+  .c-ember { background:var(--ember); }
+  .c-flame { background:var(--flame); }
+
+  /* PROPORTION */
+  .prop-bar{ display:flex; height:74px; border:1px solid rgba(34,29,23,.15); overflow:hidden; }
+  .prop-bar div{ display:flex; align-items:flex-end; padding:8px 10px; font-size:10px; letter-spacing:.12em; }
+  .p-marble{ width:55%; background:var(--marble); color:var(--stone); }
+  .p-linen { width:20%; background:var(--linen); color:#8d8577; }
+  .p-stone { width:10%; background:var(--stone); color:#fffdf8; }
+  .p-oak   { width:10%; background:var(--oak);   color:#f4efe6; }
+  .p-ember { width:5%;  background:var(--ember); color:#c9c2b6; }
+  .prop-note{ margin-top:14px; font-size:13px; color:#4a443b; line-height:1.7; max-width:640px; }
+
+  /* LIGHT */
+  .light-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .light-card{ border:1px solid rgba(34,29,23,.14); }
+  .light-room{ height:170px; position:relative; overflow:hidden; }
+  .room-cool{ background:linear-gradient(180deg,#F3F3F1 0%, #ECECEA 62%, #D7D2C7 62%, #CFC9BC 100%); }
+  .room-warm{ background:linear-gradient(180deg,#F6EFE1 0%, #F1E7D3 62%, #C9A876 62%, #B8945F 100%); }
+  .lamp{ position:absolute; top:26px; right:30px; width:44px; height:44px; border-radius:50%;
+         filter:blur(14px); opacity:.9; }
+  .lamp-cool{ background:#EDF1F4; }
+  .lamp-warm{ background:#F5C98A; }
+  .light-label{ padding:14px 16px; background:var(--marble); font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+  .light-label span{ display:block; margin-top:5px; font-size:12px; letter-spacing:.05em; text-transform:none; color:var(--stone); font-family:'Noto Serif TC',serif; }
+  .no{ color:#a06e5c; }
+  .yes{ color:var(--oak); }
+
+  /* APPLICATIONS */
+  .apps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .app{ border:1px solid rgba(34,29,23,.14); }
+  .app-label{ padding:12px 16px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--stone); background:var(--marble); border-bottom:1px solid rgba(34,29,23,.1); }
+
+  .hero-demo{ background:var(--marble); padding:52px 30px 44px; text-align:center; }
+  .hero-demo .hd-logo{ font-family:'Italiana',serif; font-size:34px; letter-spacing:.42em; padding-left:.42em; margin-bottom:14px; }
+  .hero-demo .hd-line{ font-size:12.5px; letter-spacing:.14em; color:#4a443b; margin-bottom:26px; }
+  .hero-demo .hd-btn{ display:inline-block; padding:10px 30px; border:1px solid var(--oak); color:var(--oak);
+    font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; }
+
+  .card-demo{ background:var(--ember); padding:46px 30px; text-align:center; }
+  .card-demo .cd-logo{ font-family:'Italiana',serif; font-size:26px; letter-spacing:.4em; padding-left:.4em; color:var(--marble); margin-bottom:12px; }
+  .card-demo .cd-rule{ width:22px; height:1px; background:var(--oak); margin:0 auto 12px; }
+  .card-demo .cd-line{ font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--stone); }
+
+  /* FORBIDDEN */
+  .forbidden{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+  .fb{ border:1px solid rgba(34,29,23,.14); }
+  .fb-chip{ height:56px; position:relative; }
+  .fb-chip::after{ content:""; position:absolute; left:8%; right:8%; top:50%; height:1px; background:rgba(34,29,23,.55); transform:rotate(-8deg); }
+  .fb-info{ padding:10px 12px 12px; background:var(--marble); }
+  .fb-name{ font-size:12px; letter-spacing:.08em; margin-bottom:3px; }
+  .fb-why{ font-size:11px; color:var(--stone); line-height:1.55; }
+
+  .f-white{ background:#FFFFFF; }
+  .f-black{ background:#000000; }
+  .f-blue { background:#2E5E9E; }
+  .f-gold { background:linear-gradient(120deg,#D4AF37,#F0DA8B,#C89B2A); }
+  .f-grey { background:#B9BEC3; }
+  .f-neon { background:linear-gradient(120deg,#E84C6B,#F2A03D); }
+
+  /* SANTORINI */
+  .santorini{ border:1px solid rgba(34,29,23,.14); padding:34px 28px; background:var(--linen); }
+  .santorini .eyebrow{ margin-bottom:12px; }
+  .santorini p{ font-size:14px; line-height:1.85; color:#3f3a32; max-width:660px; }
+  .santorini p + p{ margin-top:8px; }
+
+  footer{
+    margin-top:90px; padding-top:26px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone);
+  }
+
+  @media (max-width:560px){
+    .swatch{ grid-template-columns: 84px 1fr; }
+    .sw-hex{ margin-left:0; width:100%; }
+    header .hide-m{ display:none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Colour System · Day 11</span>
+    <span>2026</span>
+  </header>
+
+  <div class="intro">
+    <div class="eyebrow">Visual Identity / 01</div>
+    <h1>The palette was<br/>never chosen.</h1>
+    <div class="intro-cn">我們沒有挑選顏色。顏色早就在那裡。</div>
+    <p>ESTIA's colours are not a designer's invention. Every one of them exists as a physical material inside an ESTIA home — the marble in the bathroom, the oak underfoot, the linen at the window, the ember-dark of iron. We simply named them, measured them, and promised never to invent one.</p>
+    <p class="cn" style="font-size:14px; color:#5b5449;">ESTIA 的色彩不是設計出來的。每一個顏色,都是 ESTIA 家中真實存在的材質——浴室裡的大理石、腳下的橡木、窗邊的亞麻、鐵件的深色。我們只是為它們命名、定值,並承諾:永遠不發明一個不存在的顏色。</p>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <section>
+    <h2>Three principles</h2>
+    <div class="h2-cn">三條原則</div>
+    <div class="principles">
+      <div class="principle">
+        <div class="num">01</div>
+        <h3>Materials are the palette</h3>
+        <div class="cn-t">材質即色彩</div>
+        <p>We do not decorate with colour. If a colour cannot be touched inside an ESTIA home, it does not belong in the system.</p>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <h3>Light is the fifth material</h3>
+        <div class="cn-t">光,是第五種材質</div>
+        <p>Every ESTIA space, photograph and screen leans warm — 2700K to 3000K. The same white reads cold at noon and golden at dusk. We choose dusk.</p>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <h3>Ninety percent quiet</h3>
+        <div class="cn-t">九成安靜</div>
+        <p>Neutrals carry the room. Oak speaks only in small moments. Nothing in the system is allowed to shout.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SWATCHES -->
+  <section>
+    <h2>The five colours</h2>
+    <div class="h2-cn">五色 · 全部來自真實材質</div>
+
+    <div class="swatches">
+
+      <div class="swatch">
+        <div class="chip c-marble" style="border-right:1px solid rgba(34,29,23,.1)"></div>
+        <div class="sw-info">
+          <div class="sw-top">
+            <span class="sw-name">Marble</span>
+            <span class="sw-cn">大理石白</span>
+            <span class="sw-hex">#F4F0E8</span>
+          </div>
+          <div class="sw-origin">來源 · 浴室的卡拉拉大理石,浸在 2700K 暖光裡</div>
+          <div class="sw-use">主背景。官網、印刷品、牆面的底色。佔整體約 55%。溫暖的白——永遠不是純白。</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip c-linen"></div>
+        <div class="sw-info">
+          <div class="sw-top">
+            <span class="sw-name">Linen</span>
+            <span class="sw-cn">亞麻米</span>
+            <span class="sw-hex">#E4DCCC</span>
+          </div>
+          <div class="sw-origin">來源 · 窗邊的亞麻簾、床上的織品</div>
+          <div class="sw-use">次背景。卡片、信封、包裝、區塊分層。讓 Marble 有深淺呼吸。</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip c-stone"></div>
+        <div class="sw-info">
+          <div class="sw-top">
+            <span class="sw-name">Stone</span>
+            <span class="sw-cn">石紋灰</span>
+            <span class="sw-hex">#A49E94</span>
+          </div>
+          <div class="sw-origin">來源 · 卡拉拉大理石的灰色紋理、微水泥</div>
+          <div class="sw-use">輔助。說明文字、標註、分隔線。安靜的中間層。</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip c-oak"></div>
+        <div class="sw-info">
+          <div class="sw-top">
+            <span class="sw-name">Oak</span>
+            <span class="sw-cn">橡木棕</span>
+            <span class="sw-hex">#8B6F47</span>
+          </div>
+          <div class="sw-origin">來源 · 腳下的實木橡木地板</div>
+          <div class="sw-use">品牌的簽名色。強調、連結、小標、按鈕線框——只在小地方出現,一頁最多一處主角。你手上的品牌手冊已經在用它。</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip c-ember"></div>
+        <div class="sw-info">
+          <div class="sw-top">
+            <span class="sw-name">Ember</span>
+            <span class="sw-cn">餘燼黑</span>
+            <span class="sw-hex">#221D17</span>
+          </div>
+          <div class="sw-origin">來源 · 燈滅之後,爐火的餘燼;鐵件的深色</div>
+          <div class="sw-use">文字與 Logo 的墨色。帶著暖意的深——永遠不用純黑。</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROPORTION -->
+  <section>
+    <h2>Proportion</h2>
+    <div class="h2-cn">比例 · 這不是五個平等的顏色</div>
+    <div class="prop-bar">
+      <div class="p-marble">MARBLE 55</div>
+      <div class="p-linen">LINEN 20</div>
+      <div class="p-stone">STONE 10</div>
+      <div class="p-oak">OAK 10</div>
+      <div class="p-ember">5</div>
+    </div>
+    <p class="prop-note cn">一個畫面、一頁網站、一張卡片——大約就是這個比例。Marble 承載一切,Oak 只說一句話,Ember 負責把話說清楚。如果一個設計裡 Oak 超過一成,它已經在喊叫了。</p>
+  </section>
+
+  <!-- LIGHT -->
+  <section>
+    <h2>Light — the fifth material</h2>
+    <div class="h2-cn">光 · 同一個空間,兩種溫度</div>
+    <div class="light-grid">
+      <div class="light-card">
+        <div class="light-room room-cool"><div class="lamp lamp-cool"></div></div>
+        <div class="light-label"><span class="no">4000K — Not ours.</span><span>冷白光。乾淨,但沒有人味。這是辦公室的光。</span></div>
+      </div>
+      <div class="light-card">
+        <div class="light-room room-warm"><div class="lamp lamp-warm"></div></div>
+        <div class="light-label"><span class="yes">2700K — The ESTIA standard.</span><span>暖光。同樣的牆、同樣的木地板——溫度回來了。所有空間、攝影、螢幕都用這個標準。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section>
+    <h2>In application</h2>
+    <div class="h2-cn">初步應用示意</div>
+    <div class="apps">
+      <div class="app">
+        <div class="app-label">Website · Hero</div>
+        <div class="hero-demo">
+          <div class="hd-logo">ESTIA</div>
+          <div class="hd-line">Every detail, a welcome.</div>
+          <span class="hd-btn">Enquire</span>
+        </div>
+      </div>
+      <div class="app">
+        <div class="app-label">Card · Reverse</div>
+        <div class="card-demo">
+          <div class="cd-logo">ESTIA</div>
+          <div class="cd-rule"></div>
+          <div class="cd-line">Warmth, made in Taiwan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORBIDDEN -->
+  <section>
+    <h2>What we never use</h2>
+    <div class="h2-cn">禁色 · 與禁字同一條血脈</div>
+    <div class="forbidden">
+      <div class="fb"><div class="fb-chip f-white"></div><div class="fb-info"><div class="fb-name">Pure White #FFF</div><div class="fb-why">診所的白。我們的白永遠帶著暖。</div></div></div>
+      <div class="fb"><div class="fb-chip f-black"></div><div class="fb-info"><div class="fb-name">Pure Black #000</div><div class="fb-why">太硬。用 Ember 代替。</div></div></div>
+      <div class="fb"><div class="fb-chip f-blue"></div><div class="fb-info"><div class="fb-name">Aegean Blue</div><div class="fb-why">聖托里尼藍。靈魂可以來自希臘,佈景不行。</div></div></div>
+      <div class="fb"><div class="fb-chip f-gold"></div><div class="fb-info"><div class="fb-name">Gold</div><div class="fb-why">奢華的陳腔濫調。我們的金屬是鏡面與鐵,不是金箔。</div></div></div>
+      <div class="fb"><div class="fb-chip f-grey"></div><div class="fb-info"><div class="fb-name">Cool Grey</div><div class="fb-why">北歐的冰。我們是溫暖的極簡,不是寒帶的。</div></div></div>
+      <div class="fb"><div class="fb-chip f-neon"></div><div class="fb-info"><div class="fb-name">Saturated Anything</div><div class="fb-why">任何飽和色都在喊叫。違反「靜」。</div></div></div>
+    </div>
+  </section>
+
+  <!-- SANTORINI -->
+  <section>
+    <div class="santorini">
+      <div class="eyebrow">7/13 – 7/15 · Calibration in Santorini</div>
+      <p class="cn">這套系統今天定「架構」,聖托里尼定「最後一格」。只帶一個問題去:<b>ESTIA 的白,該有多暖?</b></p>
+      <p class="cn">在島上,拍下白牆在清晨、正午、黃昏的樣子——各拍幾張就好。回來後我們對照照片,鎖定 Marble 的最終數值。其他一切,今天已經完成。</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>ESTIA · Colour System v1</span>
+    <span>Pending Santorini Calibration</span>
+  </footer>
+
+</main>
+</body>
+</html>

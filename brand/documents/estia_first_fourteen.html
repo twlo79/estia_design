@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 新人的前十四天 The First Fourteen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:800px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:800px; margin:0 auto; background:var(--marble); padding:clamp(32px,6vw,52px) clamp(24px,6vw,50px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:6px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(23px,4.4vw,32px); margin:22px 0 6px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.14em; margin-bottom:14px; }
+  .credo{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:15px; color:var(--oak); margin-bottom:28px; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:34px 0 12px; }
+
+  .box{ border:1px solid rgba(34,29,23,.14); padding:16px 20px; margin-bottom:10px; }
+  .box p{ font-size:12.5px; line-height:1.95; color:#4a443b; }
+  .box b{ color:var(--ember); font-weight:500; }
+  .box .hl{ color:var(--oak); font-weight:500; }
+
+  .row{ display:grid; grid-template-columns:92px 1fr; gap:14px; padding:10px 0; border-bottom:1px dashed rgba(34,29,23,.12); align-items:baseline; }
+  .row:last-child{ border-bottom:none; }
+  .r-t{ font-family:'Outfit',sans-serif; font-size:10px; color:var(--oak); letter-spacing:.12em; }
+  .r-n{ font-size:12.5px; line-height:1.85; color:#3f3a32; }
+  .r-n b{ font-weight:500; color:var(--ember); }
+
+  .tracks{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:640px){ .tracks{ grid-template-columns:1fr; } }
+  .track{ border:1px solid rgba(34,29,23,.14); }
+  .tk-head{ padding:12px 18px; border-bottom:1px solid rgba(34,29,23,.09);
+    font-size:14px; font-weight:500; }
+  .tk-head span{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.22em; color:var(--oak); display:block; margin-bottom:3px; text-transform:uppercase; }
+  .tk-body{ padding:12px 18px 16px; }
+  .tk-body .wk{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.2em; color:var(--stone); margin:10px 0 5px; text-transform:uppercase; }
+  .tk-body .wk:first-child{ margin-top:0; }
+  .tk-body p{ font-size:12px; line-height:1.9; color:#4a443b; }
+  .tk-body b{ color:var(--ember); font-weight:500; }
+
+  .three{ background:var(--linen); padding:14px 18px; margin-top:12px; }
+  .three .t-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.24em; color:var(--oak); margin-bottom:8px; text-transform:uppercase; }
+  .three li{ list-style:none; font-size:12px; line-height:1.95; color:#3f3a32; padding-left:16px; position:relative; }
+  .three li::before{ content:"·"; position:absolute; left:2px; color:var(--oak); }
+  .three b{ font-weight:500; color:var(--ember); }
+
+  .allstaff{ background:var(--ember); padding:22px 24px; margin-top:26px; }
+  .allstaff .a-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.28em; color:var(--oak); margin-bottom:10px; text-transform:uppercase; }
+  .allstaff p{ font-size:12.5px; line-height:2.0; color:#cfc8ba; }
+  .allstaff b{ color:var(--marble); font-weight:500; }
+
+  footer{ max-width:800px; margin:32px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page{ box-shadow:none; max-width:none; }
+    .note{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">入職執行表 · 雙軌制 · 適用任何職務</div>
+
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">The First Fourteen · v1.0</div>
+  </div>
+
+  <h1>新人的前十四天</h1>
+  <div class="h-cn">文化軌人人相同 · 職務軌照角色替換</div>
+  <div class="credo">面試決定她是誰。前十四天,決定 ESTIA 能不能住進她身上。</div>
+
+  <!-- 開始前 -->
+  <h2>開始前 · 團隊的功課(新人還沒到)</h2>
+  <div class="box">
+    <p><b>① 爐邊會宣布</b> — Jim 親自講她是誰、為什麼選她(講面試的故事,讓大家在見面前就開始欣賞她)。</p>
+    <p><b>② 指定學姊</b> — 一位,帶完整十四天的文化軌。</p>
+    <p><b>③ 立一條規矩</b> — 全團隊當面聽到這句:<span class="hl">「她前十四天的工作之一,就是問問題——這是我們付薪水請她做的事。她的每一個問題,只會被謝謝。」</span></p>
+    <p><b>④ 她的桌上放兩樣</b> — 印好的《ESTIA 的十八天》手冊 + <b>全團隊手寫的歡迎卡</b>。我們怎麼迎接客人,就怎麼迎接自己人。</p>
+  </div>
+
+  <!-- 文化軌 -->
+  <h2>文化軌 · 不分職務,人人一樣</h2>
+  <div class="box">
+    <div class="row"><span class="r-t">DAY 1 上午</span><span class="r-n"><b>起源故事</b> — Jim 親自唸給她聽,交手冊。這是她的權利,不是儀式表演。</span></div>
+    <div class="row"><span class="r-t">DAY 1 晚</span><span class="r-n"><b>住一晚</b> — 睡進自家空置單位,床上有寫她名字的迎賓卡。枕頭的高度、深夜的靜、早晨的光——變成她的身體記憶。</span></div>
+    <div class="row"><span class="r-t">隔週五</span><span class="r-n"><b>細節圈</b> — 第一次參加,作業:帶一個觀察來。</span></div>
+    <div class="row"><span class="r-t">全程</span><span class="r-n"><b>新眼睛筆記</b> — 任何奇怪的、看不懂的、可以更好的,全記。十四天至少五條,這是交付物。新人看得見怪東西的能力,保鮮期只有兩週。</span></div>
+    <div class="row"><span class="r-t">DAY 14</span><span class="r-n"><b>新眼睛面談</b> — 與 Jim 一對一,逐條講筆記。<b>Jim 的第一句話只能是「謝謝你講」</b>——顧火文化,由創辦人對最資淺的人親自示範。</span></div>
+  </div>
+
+  <!-- 職務軌 -->
+  <h2>職務軌 · 每一塊業務,由現任負責人教</h2>
+  <div class="tracks">
+
+    <div class="track">
+      <div class="tk-head"><span>Module A</span>Host · 管家</div>
+      <div class="tk-body">
+        <div class="wk">第一週 · 看</div>
+        <p>跟房務兩天(床單、實木保養、大理石照護)→ 跟訊息一天(訊息手冊+讀出聲練習)→ 用「客人的眼睛」走一個物件。</p>
+        <div class="wk">第二週 · 做</div>
+        <p>The First Hour:看學姊做一次 → 自己主持一次(學姊站後面不出聲)→ 寫真的客人訊息(審過才送)→ 督導下接手 1–2 個單位。</p>
+        <div class="three">
+          <div class="t-t">三個不能省</div>
+          <li>第一句話有客人的<b>名字</b></li>
+          <li>交付時的<b>一句在地推薦</b></li>
+          <li>最後一句<b>「我隨時都在」</b></li>
+        </div>
+        <p style="margin-top:10px;">Day 14 加交:三條自己走過的散步路線。</p>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="tk-head"><span>Module B</span>會計行政</div>
+      <div class="tk-body">
+        <div class="wk">第一週 · 看懂錢在買什麼</div>
+        <p>跟半天房務 + 旁觀一次 The First Hour(只看不做)→ 金流地圖:錢從客人進來、到房東出去的完整路徑 → 租金行事曆、押金台帳、統編發票流程。</p>
+        <div class="wk">第二週 · 接手三件</div>
+        <p>供應商與請款節奏(<b>每月 5 日、20 日</b>)→ 押金與退款作業 → <b>5,000 元裁量預算:她的角色是記錄與月底彙總,不是審批</b>——這個制度的靈魂就是「不用申請」,把關的本能在這裡要收起來。</p>
+        <div class="three">
+          <div class="t-t">三個不能省(帳務版)</div>
+          <li>房東的租金,<b>永不遲一天</b> —— 對外那句「租金準時」,她就是承諾本人</li>
+          <li>請款日 5 / 20,<b>逢班必出、絕不漏單</b> —— 可預期,就是對同事的溫度</li>
+          <li>押金,退房後 <b>14 天內退還 + 一頁明細</b> —— 款待的最後一棒是會計跑的;這是唯一可以不等請款日、單獨匯出的款項</li>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 全員補課 -->
+  <div class="allstaff">
+    <div class="a-t">全員補課 · 住一晚(Jim 拍板)</div>
+    <p>不只新人——<b>現有八位,每人都住一晚自家單位</b>。用空置夜排程,一次一人,兩個月內輪完;床上有同事互寫的迎賓卡;隔天交一則「住過才知道」的觀察,帶進細節圈。<b>名單第一個是 Jim</b>——老闆先睡,這件事就從福利變成了文化。擦了三年鏡子的人,值得在那面鏡子前醒來一次。</p>
+  </div>
+</div>
+
+<footer>
+  <span>ESTIA · The First Fourteen</span>
+  <span>Day 25 · 2026</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OASIS — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Italiana&family=Marcellus&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --concrete: #E5E0D8;
+    --concrete-deep: #D4CEC3;
+    --concrete-shadow: #BDB6A9;
+    --ink: #1C1A17;
+    --ink-soft: #3A3631;
+    --oak: #8B6F47;
+    --oak-pale: #C4A57B;
+    --mirror: #2A2724;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html,body{
+    background: var(--concrete);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* concrete texture overlay */
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.04) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  main{
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* HEADER */
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(28,26,23,0.12);
+    margin-bottom: 60px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  header .meta{display:flex;gap:24px}
+  header .meta span{opacity: 0.7}
+
+  .intro{
+    margin-bottom: 80px;
+    max-width: 720px;
+  }
+  .eyebrow{
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 20px;
+  }
+  .intro h1{
+    font-family: 'Italiana', serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  .intro p{
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 520px;
+  }
+
+  /* LOGO GRID */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
+    background: rgba(28,26,23,0.1);
+    border: 1px solid rgba(28,26,23,0.1);
+  }
+
+  .card{
+    background: var(--concrete);
+    padding: 60px 32px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: background 0.6s ease;
+  }
+  .card:hover{
+    background: var(--concrete-deep);
+  }
+
+  .card-label{
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.6;
+  }
+  .card-number{
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--oak);
+  }
+  .card-desc{
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+  .logo-area{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+  }
+
+  /* === LOGO 1 — Primary serif wordmark === */
+  .logo-1{
+    font-family: 'Italiana', serif;
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: 0.45em;
+    padding-left: 0.45em; /* optical balance */
+    color: var(--ink);
+  }
+
+  /* === LOGO 2 — O with horizon line === */
+  .logo-2{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Italiana', serif;
+    font-size: 56px;
+    letter-spacing: 0.35em;
+  }
+  .horizon-o{
+    position: relative;
+    display: inline-block;
+    width: 0.95em;
+    height: 0.95em;
+  }
+  .horizon-o::before{
+    content:"";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+  }
+  .horizon-o::after{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: var(--ink);
+  }
+  .logo-2 .rest{
+    padding-left: 0.35em;
+  }
+
+  /* === LOGO 3 — Stacked monogram === */
+  .logo-3{
+    text-align: center;
+  }
+  .logo-3 .mark{
+    font-family: 'Italiana', serif;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 18px;
+    letter-spacing: 0;
+  }
+  .logo-3 .name{
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.6em;
+    padding-left: 0.6em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .logo-3 .divider{
+    width: 24px;
+    height: 1px;
+    background: var(--oak);
+    margin: 12px auto;
+  }
+  .logo-3 .tagline{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  /* === LOGO 4 — Sans-serif lockup === */
+  .logo-4{
+    text-align: center;
+  }
+  .logo-4 .word{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .logo-4 .sub{
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+    color: var(--oak);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .logo-4 .sub::before,
+  .logo-4 .sub::after{
+    content:"";
+    width: 16px;
+    height: 1px;
+    background: var(--oak);
+  }
+
+  /* === LOGO 5 — Circular seal === */
+  .logo-5{
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .logo-5::before{
+    content:"";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(28,26,23,0.2);
+    border-radius: 50%;
+  }
+  .logo-5 .center{
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+    color: var(--ink);
+  }
+  .logo-5 .est{
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    color: var(--oak);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  .logo-5 .arc-top,
+  .logo-5 .arc-bottom{
+    position: absolute;
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .logo-5 .arc-top{ top: 24px; }
+  .logo-5 .arc-bottom{ bottom: 24px; }
+
+  /* === LOGO 6 — Mixed case modern === */
+  .logo-6{
+    text-align: center;
+  }
+  .logo-6 .word{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 72px;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .logo-6 .word .dot{
+    color: var(--oak);
+  }
+  .logo-6 .sub{
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  /* COLOR PALETTE */
+  .palette{
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(28,26,23,0.12);
+  }
+  .palette h2{
+    font-family: 'Italiana', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .palette .eyebrow{margin-bottom: 8px}
+  .palette .desc{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .swatches{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .swatch{
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    color: var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+  .swatch .hex{
+    font-size: 10px;
+    opacity: 0.6;
+    margin-top: 4px;
+    letter-spacing: 0.1em;
+  }
+  .sw-concrete{ background: var(--concrete); border: 1px solid rgba(28,26,23,0.1); }
+  .sw-deep{ background: var(--concrete-deep); border: 1px solid rgba(28,26,23,0.1); }
+  .sw-oak{ background: var(--oak); color: var(--concrete); }
+  .sw-pale{ background: var(--oak-pale); }
+  .sw-ink{ background: var(--ink); color: var(--concrete); }
+  .sw-mirror{
+    background: linear-gradient(135deg, #2A2724 0%, #4A4540 50%, #2A2724 100%);
+    color: var(--concrete);
+    position: relative;
+  }
+  .sw-mirror::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* FOOTER */
+  footer{
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(28,26,23,0.12);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 600px){
+    .logo-1, .logo-2{ font-size: 38px; }
+    .logo-3 .mark{ font-size: 90px; }
+    .logo-4 .word{ font-size: 28px; }
+    .logo-6 .word{ font-size: 52px; }
+    .logo-5{ width: 170px; height: 170px; }
+    .logo-5 .center{ font-size: 26px; }
+    main{ padding: 40px 16px 60px; }
+    header .meta span:nth-child(2){ display:none; }
+  }
+
+  /* subtle reveal */
+  .card{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 0.9s ease forwards;
+  }
+  .card:nth-child(1){ animation-delay: 0.05s; }
+  .card:nth-child(2){ animation-delay: 0.15s; }
+  .card:nth-child(3){ animation-delay: 0.25s; }
+  .card:nth-child(4){ animation-delay: 0.35s; }
+  .card:nth-child(5){ animation-delay: 0.45s; }
+  .card:nth-child(6){ animation-delay: 0.55s; }
+  @keyframes rise{
+    to{ opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>OASIS&nbsp;&nbsp;—&nbsp;&nbsp;Residences</span>
+    <div class="meta">
+      <span>Logo Concepts</span>
+      <span>Vol. 01</span>
+      <span>2026</span>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="eyebrow">Brand Identity / Visual Direction</div>
+    <h1>Six studies in<br/>quiet luxury.</h1>
+    <p>A logo system for a Nordic-inspired residential brand. Material language: polished microcement, smoked oak, mirror, blackened steel. Tone: restrained, editorial, considered.</p>
+  </section>
+
+  <section class="grid">
+
+    <!-- 01 -->
+    <div class="card">
+      <span class="card-label">Primary Wordmark</span>
+      <span class="card-number">01</span>
+      <div class="logo-area">
+        <div class="logo-1">OASIS</div>
+      </div>
+      <div class="card-desc">Italiana serif · letterspaced · editorial</div>
+    </div>
+
+    <!-- 02 -->
+    <div class="card">
+      <span class="card-label">Horizon Mark</span>
+      <span class="card-number">02</span>
+      <div class="logo-area">
+        <div class="logo-2">
+          <span class="horizon-o"></span>
+          <span class="rest">ASIS</span>
+        </div>
+      </div>
+      <div class="card-desc">O as horizon · stillness · water line</div>
+    </div>
+
+    <!-- 03 -->
+    <div class="card">
+      <span class="card-label">Monogram Stack</span>
+      <span class="card-number">03</span>
+      <div class="logo-area">
+        <div class="logo-3">
+          <div class="mark">O</div>
+          <div class="name">OASIS</div>
+          <div class="divider"></div>
+          <div class="tagline">Residences</div>
+        </div>
+      </div>
+      <div class="card-desc">Vertical lockup · signage &amp; print</div>
+    </div>
+
+    <!-- 04 -->
+    <div class="card">
+      <span class="card-label">Modern Sans</span>
+      <span class="card-number">04</span>
+      <div class="logo-area">
+        <div class="logo-4">
+          <div class="word">OASIS</div>
+          <div class="sub">A Quiet Retreat</div>
+        </div>
+      </div>
+      <div class="card-desc">Outfit light · contemporary · digital</div>
+    </div>
+
+    <!-- 05 -->
+    <div class="card">
+      <span class="card-label">Seal / Stamp</span>
+      <span class="card-number">05</span>
+      <div class="logo-area">
+        <div class="logo-5">
+          <span class="arc-top">— EST —</span>
+          <div class="center">OASIS</div>
+          <div class="est">MMXXVI</div>
+          <span class="arc-bottom">— RESIDENCES —</span>
+        </div>
+      </div>
+      <div class="card-desc">Hospitality mark · key fobs · stationery</div>
+    </div>
+
+    <!-- 06 -->
+    <div class="card">
+      <span class="card-label">Editorial Italic</span>
+      <span class="card-number">06</span>
+      <div class="logo-area">
+        <div class="logo-6">
+          <div class="word">Oasis<span class="dot">.</span></div>
+          <div class="sub">The Art of Pause</div>
+        </div>
+      </div>
+      <div class="card-desc">Cormorant italic · softer · feminine luxe</div>
+    </div>
+
+  </section>
+
+  <section class="palette">
+    <div class="eyebrow">Material Palette</div>
+    <h2>Concrete · Oak · Mirror</h2>
+    <p class="desc">Warm neutrals grounded by smoked oak and the cool reflection of polished metal. A surface story, not a color story.</p>
+    <div class="swatches">
+      <div class="swatch sw-concrete">Concrete<span class="hex">#E5E0D8</span></div>
+      <div class="swatch sw-deep">Sand<span class="hex">#D4CEC3</span></div>
+      <div class="swatch sw-pale">Pale Oak<span class="hex">#C4A57B</span></div>
+      <div class="swatch sw-oak">Smoked Oak<span class="hex">#8B6F47</span></div>
+      <div class="swatch sw-mirror">Mirror<span class="hex">#2A2724</span></div>
+      <div class="swatch sw-ink">Ink<span class="hex">#1C1A17</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>OASIS</span>
+    <span>© MMXXVI</span>
+  </footer>
+
+</main>
+</body>
+</html>

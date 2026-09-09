@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Logo System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,68px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:640px; }
+
+  section{ margin-top:84px; }
+  h2{ font-family:'Italiana',serif; font-weight:400; font-size:28px; margin-bottom:4px; }
+  .h2-cn{ font-family:'Noto Serif TC',serif; font-size:14px; color:var(--stone); margin-bottom:26px; letter-spacing:.1em; }
+
+  .stage{ border:1px solid rgba(34,29,23,.13); display:flex; align-items:center; justify-content:center;
+    min-height:230px; padding:50px 24px; position:relative; }
+  .stage.dark{ background:var(--ember); border-color:var(--ember); }
+  .stage-label{ position:absolute; top:14px; left:18px; font-size:9.5px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  .grid2{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+
+  /* WORDMARK */
+  .wm{ font-family:'Italiana',serif; font-size:clamp(40px,8vw,68px); letter-spacing:.42em; padding-left:.42em; color:var(--ember); }
+  .wm.rev{ color:var(--marble); }
+
+  /* FULL LOCKUP */
+  .lockup{ text-align:center; }
+  .lockup .wm2{ font-family:'Italiana',serif; font-size:clamp(34px,6.5vw,54px); letter-spacing:.42em; padding-left:.42em; }
+  .lockup .rule{ width:26px; height:1px; background:var(--oak); margin:16px auto; }
+  .lockup .sub{ font-size:10.5px; letter-spacing:.5em; padding-left:.5em; text-transform:uppercase; color:var(--stone); }
+  .rev .sub{ color:#8f887c; }
+  .rev .wm2{ color:var(--marble); }
+
+  /* STACKED */
+  .stack{ text-align:center; }
+  .stack .mark{ margin:0 auto 20px; }
+  .stack .wm3{ font-family:'Italiana',serif; font-size:30px; letter-spacing:.42em; padding-left:.42em; }
+
+  /* HEARTH MARK */
+  .hearth{ width:56px; height:56px; border:1.5px solid var(--ember); border-radius:50%;
+    position:relative; display:inline-block; }
+  .hearth::after{ content:""; position:absolute; top:50%; left:50%; width:8px; height:8px;
+    border-radius:50%; background:var(--ember); transform:translate(-50%,-50%); }
+  .hearth.oak{ border-color:var(--oak); } .hearth.oak::after{ background:var(--oak); }
+  .hearth.rev{ border-color:var(--marble); } .hearth.rev::after{ background:var(--marble); }
+  .hearth.lg{ width:88px; height:88px; border-width:1.5px; }
+  .hearth.lg::after{ width:11px; height:11px; }
+  .hearth.sm{ width:26px; height:26px; border-width:1px; } .hearth.sm::after{ width:4.5px; height:4.5px; }
+
+  /* SEAL */
+  .seal{ width:210px; height:210px; border:1.5px solid var(--marble); border-radius:50%;
+    position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .seal::before{ content:""; position:absolute; inset:9px; border:1px solid rgba(244,240,232,.35); border-radius:50%; }
+  .seal .s-top,.seal .s-bot{ position:absolute; font-size:9px; letter-spacing:.44em; padding-left:.44em;
+    text-transform:uppercase; color:#b7b0a2; }
+  .seal .s-top{ top:26px; } .seal .s-bot{ bottom:26px; }
+  .seal .s-wm{ font-family:'Italiana',serif; font-size:30px; letter-spacing:.32em; padding-left:.32em; color:var(--marble); margin-top:6px; }
+  .seal .s-year{ font-size:8.5px; letter-spacing:.3em; color:var(--oak); margin-top:10px; }
+
+  .note-row{ margin-top:14px; font-size:13px; line-height:1.85; color:#4a443b;
+    font-family:'Noto Serif TC',serif; max-width:660px; }
+  .note-row b{ color:var(--oak); font-weight:500; }
+
+  /* RULES */
+  .rules{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px;
+    background:rgba(34,29,23,.12); border:1px solid rgba(34,29,23,.12); }
+  .rule-c{ background:var(--marble); padding:24px 22px; }
+  .rule-c .num{ font-size:10.5px; letter-spacing:.24em; color:var(--oak); margin-bottom:10px; }
+  .rule-c p{ font-size:13px; line-height:1.75; color:#4a443b; font-family:'Noto Serif TC',serif; }
+
+  /* MISUSE */
+  .mis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+  .m{ border:1px solid rgba(34,29,23,.13); background:var(--marble); }
+  .m-demo{ height:84px; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border-bottom:1px solid rgba(34,29,23,.09); position:relative; }
+  .m-demo::after{ content:""; position:absolute; left:6%; right:6%; top:50%; height:1px;
+    background:rgba(160,110,92,.75); transform:rotate(-7deg); }
+  .m-demo .w{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.32em; padding-left:.32em; }
+  .m-label{ padding:10px 14px 12px; font-size:11px; color:var(--stone); line-height:1.6; font-family:'Noto Serif TC',serif; }
+
+  .santorini{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:32px 26px; margin-top:84px; }
+  .santorini p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .santorini p + p{ margin-top:8px; }
+
+  footer{ margin-top:84px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Logo System · Day 13</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03</div>
+    <h1>The name is<br/>the logo.</h1>
+    <p class="intro-cn">名字就是 Logo。ESTIA 不需要圖案來說明自己——五個字母、一種字體、一個呼吸感的字距,就是全部。像 Aesop、像 Aman:自信的品牌,把名字寫好就夠了。</p>
+  </div>
+
+  <!-- PRIMARY -->
+  <section>
+    <h2>Primary wordmark</h2>
+    <div class="h2-cn">主字標 · Italiana · 字距 0.42em · 永遠大寫</div>
+    <div class="grid2">
+      <div class="stage"><span class="stage-label">On Marble</span><div class="wm">ESTIA</div></div>
+      <div class="stage dark"><span class="stage-label">On Ember</span><div class="wm rev">ESTIA</div></div>
+    </div>
+    <p class="note-row">日常使用的版本:門牌、名片正面、官網導覽列、訊息簽名。<b>墨色只有兩種</b>——Marble 上用 Ember,Ember 上用 Marble。Oak 色版本只保留給封蠟與燙印。</p>
+  </section>
+
+  <!-- FULL LOCKUP -->
+  <section>
+    <h2>Full lockup</h2>
+    <div class="h2-cn">完整字標 · 正式場合 · 合約、官網頁尾、招牌</div>
+    <div class="grid2">
+      <div class="stage">
+        <div class="lockup">
+          <div class="wm2">ESTIA</div>
+          <div class="rule"></div>
+          <div class="sub">Residences</div>
+        </div>
+      </div>
+      <div class="stage dark">
+        <div class="lockup rev">
+          <div class="wm2">ESTIA</div>
+          <div class="rule"></div>
+          <div class="sub">Residences</div>
+        </div>
+      </div>
+    </div>
+    <p class="note-row">名字與身分之間隔著一條 Oak 色細線——那條線是品牌的一次呼吸。RESIDENCES 用 Outfit,字距 0.5em,永遠比名字安靜。</p>
+  </section>
+
+  <!-- HEARTH MARK -->
+  <section>
+    <h2>The Hearth Mark</h2>
+    <div class="h2-cn">爐火印 · 輔助符號 · 圓,與圓心的一點火</div>
+    <div class="grid2">
+      <div class="stage">
+        <span class="stage-label">The Mark</span>
+        <div style="display:flex; gap:34px; align-items:center;">
+          <span class="hearth lg"></span>
+          <span class="hearth"></span>
+          <span class="hearth sm"></span>
+        </div>
+      </div>
+      <div class="stage">
+        <span class="stage-label">With Wordmark · Stacked</span>
+        <div class="stack">
+          <div class="mark"><span class="hearth oak"></span></div>
+          <div class="wm3">ESTIA</div>
+        </div>
+      </div>
+    </div>
+    <p class="note-row"><b>一個圓,圓心一點。</b>圓是家,那一點是爐火——Estia 女神守護的、家中央永不熄滅的火。它刻意畫得像一個印章、一個記號,而不是一個「圖案」。</p>
+    <p class="note-row"><b>使用紀律:</b>它永遠是配角。出現在封蠟、鑰匙圈、網站 favicon、信紙角落——永遠不取代字標、永遠不放大到主視覺。客人會慢慢發現它,像發現房子裡的一個小祕密。</p>
+  </section>
+
+  <!-- SEAL -->
+  <section>
+    <h2>The Seal</h2>
+    <div class="h2-cn">圓印 · 封蠟、鑰匙牌、迎賓信封</div>
+    <div class="stage dark" style="min-height:300px;">
+      <div class="seal">
+        <span class="s-top">Hosted · Not Served</span>
+        <div class="s-wm">ESTIA</div>
+        <div class="s-year">TAIPEI · MMXXVI</div>
+        <span class="s-bot">Residences</span>
+      </div>
+    </div>
+    <p class="note-row">品牌本質「Hosted, not served.」藏在印的上緣——只有拿在手裡、湊近看的人會讀到。這就是它該有的音量。</p>
+  </section>
+
+  <!-- RULES -->
+  <section>
+    <h2>Four rules</h2>
+    <div class="h2-cn">四條使用規則</div>
+    <div class="rules">
+      <div class="rule-c"><div class="num">01 · 淨空</div><p>字標四周保留至少「E 字母高度」的淨空。擁擠的 Logo 說不出安靜的話。</p></div>
+      <div class="rule-c"><div class="num">02 · 最小尺寸</div><p>字標寬度低於 80px (印刷 20mm) 時,細節會糊——改用 Hearth Mark 代替。</p></div>
+      <div class="rule-c"><div class="num">03 · 色彩</div><p>只存在三種顏色組合:Ember on Marble、Marble on Ember、Oak (限燙印與封蠟)。沒有第四種。</p></div>
+      <div class="rule-c"><div class="num">04 · 字距是簽名</div><p>0.42em 的字距是品牌的呼吸,任何場合不得壓縮。寧可縮小,不可擠壓。</p></div>
+    </div>
+  </section>
+
+  <!-- MISUSE -->
+  <section>
+    <h2>Never</h2>
+    <div class="h2-cn">禁止事項</div>
+    <div class="mis">
+      <div class="m"><div class="m-demo"><span class="w" style="transform:scaleX(1.5)">ESTIA</span></div><div class="m-label">不拉寬、不壓扁。比例是骨,骨不能動。</div></div>
+      <div class="m"><div class="m-demo"><span class="w" style="letter-spacing:.02em;padding-left:0">ESTIA</span></div><div class="m-label">不縮字距。擠在一起的 ESTIA 不是 ESTIA。</div></div>
+      <div class="m"><div class="m-demo"><span class="w" style="color:#2E5E9E">ESTIA</span></div><div class="m-label">不用系統外的顏色——包括任何藍。</div></div>
+      <div class="m"><div class="m-demo"><span class="w" style="text-shadow:2px 3px 4px rgba(0,0,0,.35)">ESTIA</span></div><div class="m-label">不加陰影、描邊、漸層。特效是不安。</div></div>
+      <div class="m"><div class="m-demo"><span class="w" style="font-family:'Outfit',sans-serif;font-weight:400">ESTIA</span></div><div class="m-label">不用其他字體寫字標。Italiana 是唯一的臉。</div></div>
+      <div class="m"><div class="m-demo"><span class="w" style="transform:rotate(-9deg)">ESTIA</span></div><div class="m-label">不旋轉、不傾斜。ESTIA 永遠站得直。</div></div>
+    </div>
+  </section>
+
+  <!-- SANTORINI -->
+  <section class="santorini">
+    <div class="eyebrow">7/15 · Final sign-off in Santorini</div>
+    <p>這是 Logo System v1——架構今天完成。最後的簽字留給聖托里尼:<b>7/15 傍晚,把這一頁打開,對著島上的白牆看一次。</b></p>
+    <p>如果在那個光線裡、那個地方,它依然是對的——它就是 ESTIA 的 Logo。如果哪裡不對,帶著那個「不對」回來,我們修。</p>
+  </section>
+
+  <footer>
+    <span>ESTIA · Logo System v1</span>
+    <span>Pending Santorini Sign-off</span>
+  </footer>
+
+</main>
+</body>
+</html>

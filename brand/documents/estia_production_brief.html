@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 發包規格單 The Production Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:840px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:840px; margin:0 auto; background:var(--marble); padding:clamp(32px,6vw,52px) clamp(24px,6vw,50px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:6px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(23px,4.4vw,32px); margin:22px 0 6px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.14em; margin-bottom:18px; }
+
+  .gate{ background:var(--ember); padding:15px 20px; margin-bottom:24px; }
+  .gate p{ font-size:12.5px; line-height:1.9; color:#cfc8ba; }
+  .gate b{ color:var(--marble); font-weight:500; }
+
+  .common{ background:var(--linen); padding:16px 20px; margin-bottom:22px; }
+  .common .c-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.26em; color:var(--oak); margin-bottom:9px; text-transform:uppercase; }
+  .common p{ font-size:12.5px; line-height:1.95; color:#3f3a32; }
+  .common b{ color:var(--ember); font-weight:500; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:26px 0 12px; }
+
+  .spec{ border:1px solid rgba(34,29,23,.14); margin-bottom:12px; }
+  .sp-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    padding:12px 18px; border-bottom:1px solid rgba(34,29,23,.09); flex-wrap:wrap; }
+  .sp-name{ font-size:14.5px; font-weight:500; }
+  .sp-name span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .sp-qty{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10.5px; letter-spacing:.08em; color:#a3543f; }
+  .sp-body{ padding:4px 18px 8px; }
+  .row{ display:grid; grid-template-columns:86px 1fr; gap:12px; padding:8px 0; border-bottom:1px dashed rgba(34,29,23,.1); align-items:baseline; }
+  .row:last-child{ border-bottom:none; }
+  .r-k{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.16em; color:var(--stone); }
+  .r-v{ font-size:12.5px; line-height:1.8; color:#3f3a32; }
+  .r-v b{ color:var(--ember); font-weight:500; }
+
+  .qc{ border:1px solid var(--oak); padding:16px 20px; margin-top:22px; }
+  .qc .q-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.26em; color:var(--oak); margin-bottom:9px; text-transform:uppercase; }
+  .qc li{ list-style:none; font-size:12.5px; line-height:2.05; color:#3f3a32; padding-left:22px; position:relative; }
+  .qc li::before{ content:"□"; position:absolute; left:0; color:var(--oak); }
+  .qc b{ color:var(--ember); font-weight:500; }
+
+  footer{ max-width:840px; margin:32px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page{ box-shadow:none; max-width:none; }
+    .note{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">交付印刷廠/紙行/傘廠用 · 附驗收標準 · 報價欄由廠商填</div>
+
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">Production Brief · v1.0</div>
+  </div>
+
+  <h1>發包規格單</h1>
+  <div class="h-cn">首批哲學:小量精緻,先驗手感,用完再印</div>
+
+  <div class="gate">
+    <p><b>⚑ 生效條件:商標查核完成。</b>本單所有品項在此之前僅止於「取樣、打樣、報價」,不得量產。P1 背面與 P6 另需 M11 標記向量檔定稿。</p>
+  </div>
+
+  <div class="common">
+    <div class="c-t">全單通用規格</div>
+    <p><b>紙:</b>未塗佈棉紙(高棉含量),色帶暖米白——以 Marble #F4F0E8 色票現場比對選紙,不用純白。<b>墨:</b>單一墨色 Ember,按 Pantone Black 7 C 特調,禁純黑。<b>箔:</b>不用金箔;Oak 色箔僅限指定處。<b>字標:</b>ESTIA 全大寫、字距 0.42em,絕不壓縮(見識別手冊)。</p>
+  </div>
+
+  <h2>紙品</h2>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P1</span>手寫迎賓卡</div><div class="sp-qty">首批 300 張</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">尺寸</span><span class="r-v">A6 橫式 · 105 × 148 mm · 平卡</span></div>
+      <div class="row"><span class="r-k">紙</span><span class="r-v">棉紙 <b>325 gsm ±25</b>(拿起來要有份量)</span></div>
+      <div class="row"><span class="r-k">工藝</span><span class="r-v">正面:底緣置中<b>素壓(無墨壓凹)字標 ESTIA</b>,寬約 32 mm。背面:中央素壓 <b>M11 標記</b>,高約 18 mm(待向量檔;首批可先僅正面,二批補背面)。</span></div>
+      <div class="row"><span class="r-k">留白</span><span class="r-v">正面即書寫區——印刷是配角,<b>整張卡為手寫服務</b></span></div>
+      <div class="row"><span class="r-k">選配</span><span class="r-v">同紙信封 120 gsm × 100 個(致贈場合用)</span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P2</span>清潔小卡</div><div class="sp-qty">首批 500 張</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">尺寸</span><span class="r-v">A7 橫式 · 74 × 105 mm</span></div>
+      <div class="row"><span class="r-k">紙</span><span class="r-v">同族棉紙 <b>240 gsm</b></span></div>
+      <div class="row"><span class="r-k">工藝</span><span class="r-v">平版/數位單色 Ember:底緣小字標(寬約 22 mm)。其餘留白手寫。<b>紙不降級,工藝降級。</b></span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P3</span>名片</div><div class="sp-qty">100 張/人 × 9 人</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">尺寸</span><span class="r-v">90 × 54 mm</span></div>
+      <div class="row"><span class="r-k">紙</span><span class="r-v">棉紙 <b>350 gsm</b></span></div>
+      <div class="row"><span class="r-k">工藝</span><span class="r-v"><b>凸版印刷(Letterpress)單色 Ember</b>:正面上緣字標 + 資訊區(姓名/Host/聯絡,Outfit 字體);背面空白。壓痕深度以指腹可辨為準。</span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P4</span>一頁式簡介 · 印刷版</div><div class="sp-qty">每批 50 張</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">規格</span><span class="r-v">A4 · 未塗佈 <b>140 gsm</b> · 數位單色(內容會更新,不壓庫存)</span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P7</span>信封信紙組</div><div class="sp-qty">信紙 200 · 信封 100</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">信紙</span><span class="r-v">A4 · 棉紙 <b>110 gsm</b> · 頂緣置中小字標(平印 Ember),底緣 8pt 一行:Warmth, made in Taiwan.</span></div>
+      <div class="row"><span class="r-k">信封</span><span class="r-v">DL(110 × 220)+ C5 兩規 · 120 gsm 同紙 · 封口留素面(封蠟位)</span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P5</span>生活手冊 · 殼先行</div><div class="sp-qty">首批 50 本殼</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">規格</span><span class="r-v">A5 · 殼 300 gsm 素壓字標 · <b>活頁/線圈式</b>(內頁可換可更新)· 內頁 120 gsm 後補(等員工共創內容,收尾⑦)</span></div>
+    </div>
+  </div>
+
+  <h2>蠟與金屬</h2>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P6</span>封蠟銅模</div><div class="sp-qty">銅模 1 顆 + 蠟粒</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">模</span><span class="r-v">黃銅頭 <b>直徑 25 mm</b> · M11 標記陽刻(<b>待向量檔,含光學校正後開模</b>)· 木柄</span></div>
+      <div class="row"><span class="r-k">蠟</span><span class="r-v">蠟色近 Oak(蜜蠟褐)· 不用金/紅——蠟也守禁色</span></div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P8</span>戶門金屬小牌</div><div class="sp-qty">先做 2(仁愛/松山樣品)</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">規格</span><span class="r-v">黃銅蝕刻 · <b>90 × 30 mm</b> · 內容:ESTIA + 物件名一行 · 霧面處理不拋亮 · <b>前置:房東/管委同意</b></span></div>
+    </div>
+  </div>
+
+  <h2>織品</h2>
+
+  <div class="spec">
+    <div class="sp-head"><div class="sp-name"><span>P10</span>雨傘</div><div class="sp-qty">首批 100 把</div></div>
+    <div class="sp-body">
+      <div class="row"><span class="r-k">形制</span><span class="r-v"><b>直傘</b>(非折疊——質感與骨架)· 8 骨 · 傘面素 Ember 深色</span></div>
+      <div class="row"><span class="r-k">手把</span><span class="r-v">實木(自然帶出 Oak 色)——連傘都守材質原則</span></div>
+      <div class="row"><span class="r-k">識別</span><span class="r-v">僅兩處擇一:傘帶織標小字標,或手把金屬箍雷刻。<b>傘面零印刷</b>——撐出去是一把好傘,不是移動廣告。</span></div>
+      <div class="row"><span class="r-k">配置</span><span class="r-v">每戶玄關 2 把;遺失視為行銷費。</span></div>
+    </div>
+  </div>
+
+  <!-- QC -->
+  <div class="qc">
+    <div class="q-t">驗收標準 · 收貨當場逐項打勾</div>
+    <li>紙色與 <b>Marble 色票</b>現場比對——偏冷白即退</li>
+    <li>Ember 墨對 Pantone Black 7 C——偏純黑即退</li>
+    <li>素壓深度均勻、無破紙;凸版壓痕指腹可辨</li>
+    <li><b>手寫測試</b>:指定筆實寫三行,不暈墨、不刮紙(筆款回台實測後定,一款統一)</li>
+    <li>字標字距目視比對識別手冊——被壓縮即退</li>
+    <li>首批全數過檢後,才建立續印檔案</li>
+  </div>
+</div>
+
+<footer>
+  <span>ESTIA · Production Brief</span>
+  <span>Day 31 · 2026</span>
+</footer>
+
+</body>
+</html>

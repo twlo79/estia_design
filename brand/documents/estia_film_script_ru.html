@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — «Мир за дверью» · Сценарий</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Jost','Cormorant Garamond',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:920px; margin:0 auto; padding:56px 22px 100px; }
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:40px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+  .eyebrow{ font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  .wm{ font-family:'Italiana',serif; letter-spacing:.42em; }
+  h1{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(30px,5.2vw,46px); line-height:1.15; margin-bottom:12px; }
+  .intro{ font-size:14px; color:#4a443b; line-height:1.95; max-width:680px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:24px; margin:52px 0 3px; }
+  .h2-sub{ font-size:12.5px; color:var(--stone); margin-bottom:18px; letter-spacing:.06em; }
+
+  .card{ border:1px solid rgba(34,29,23,.14); background:var(--marble); margin-bottom:12px; padding:15px 20px; }
+  .c-t{ font-size:14.5px; font-weight:500; margin-bottom:7px; }
+  .c-t span{ font-family:'Jost',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .card p{ font-size:13.2px; line-height:1.9; color:#3f3a32; }
+  .card p + p{ margin-top:6px; }
+  .card b{ color:var(--ember); font-weight:500; }
+  .no{ color:#a3543f; }
+  .lock{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:var(--ember);
+    border-left:2px solid var(--oak); padding:2px 0 2px 14px; margin:8px 0 4px; line-height:1.7; }
+
+  table{ width:100%; border-collapse:collapse; margin-top:8px; }
+  th{ font-family:'Jost',sans-serif; font-size:10px; letter-spacing:.14em; color:var(--oak);
+    text-align:left; padding:8px 9px; border-bottom:1px solid rgba(34,29,23,.2); font-weight:400; text-transform:uppercase; }
+  td{ font-size:12.8px; line-height:1.8; color:#3f3a32; padding:9px; border-bottom:1px solid rgba(34,29,23,.1); vertical-align:top; }
+  td b{ color:var(--ember); font-weight:500; }
+  .t-shot td:first-child{ font-family:'Jost',sans-serif; font-size:11px; color:var(--oak); white-space:nowrap; }
+
+  .swrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .sw{ display:flex; align-items:center; gap:7px; font-size:12px; color:#5b5449;
+    border:1px solid rgba(34,29,23,.15); padding:5px 10px; }
+  .dot{ width:14px; height:14px; border-radius:50%; border:1px solid rgba(34,29,23,.2); }
+
+  ul.rules li{ list-style:none; font-size:13px; line-height:2.0; color:#33302a; padding-left:20px; position:relative; }
+  ul.rules li::before{ content:"·"; position:absolute; left:4px; color:var(--oak); font-weight:700; }
+  ul.rules b{ color:var(--ember); font-weight:500; }
+
+  footer{ margin-top:64px; padding-top:22px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Jost',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span class="wm">ESTIA</span>
+    <span>The Film · для тебя</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Фильм для сайта · сценарий и всё, что нужно знать</div>
+    <h1>«Мир за дверью»</h1>
+    <p class="intro">Это фильм на 70 секунд — <b>без слов и без музыки</b>. Мы снимаем одну простую мысль: снаружи — город, но стоит закрыть дверь, и мир останавливается. Вся идея бренда умещается в одну фразу: <b>A city address. A world apart.</b> — «Адрес — в городе. Мир — отдельно». И именно ты — та, через кого зритель это почувствует.</p>
+  </div>
+
+  <!-- ROLE -->
+  <h2>Твоя роль</h2>
+  <div class="h2-sub">Самое важное на этой странице</div>
+
+  <div class="card">
+    <div class="c-t"><span>01</span>Ты — не модель. Ты — гостья, которая здесь живёт</div>
+    <p>Никаких поз, никакого взгляда в камеру, никакого подиума. Камера видит тебя со спины, в профиль, через плечо, крупно — руки, вечером — силуэт. Лицо в кадре появляется, но <b>никогда не в центре внимания</b>. Наш тест для каждого кадра: похоже на документальное кино — или на fashion-съёмку? Если на второе — переснимаем.</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>02</span>Только настоящие действия</div>
+    <p>Чай завариваем по-настоящему и по-настоящему пьём. Книгу читаем по-настоящему. <span class="no">Никакого «рекламного» реквизита: шампанское, лепестки роз, бокал у окна — этого в фильме не будет.</span> Мы снимаем настоящую тихую жизнь, поэтому и выглядеть это будет правдой.</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>03</span>Главный звук фильма — тишина</div>
+    <p>Ни музыки, ни голоса. Только настоящие звуки: город, колёсики чемодана, замок, чайник, страницы. И один ключевой момент: <b>дверь закрывается — и звук города исчезает</b>. Эта секунда и есть весь фильм.</p>
+  </div>
+
+  <!-- WARDROBE -->
+  <h2>Гардероб</h2>
+  <div class="h2-sub">Твоя одежда — это палитра бренда, надетая на человека</div>
+
+  <div class="card">
+    <div class="c-t"><span>2.1</span>Общие правила</div>
+    <p><b>Ткани:</b> лён, хлопок, шерсть, трикотаж. <span class="no">Без атласа, кожи, блеска и кружева.</span> <b>Цвета:</b></p>
+    <div class="swrow">
+      <span class="sw"><span class="dot" style="background:#EFE9DC"></span>тёплый молочный / овсяный</span>
+      <span class="sw"><span class="dot" style="background:#E4DCCC"></span>льняной беж</span>
+      <span class="sw"><span class="dot" style="background:#C9BFAF"></span>светлый верблюжий</span>
+      <span class="sw"><span class="dot" style="background:#A49E94"></span>тёплый серо-бежевый</span>
+      <span class="sw"><span class="dot" style="background:#6B5B45"></span>тёмный дуб</span>
+    </div>
+    <p style="margin-top:8px"><span class="no">Нельзя:</span> чисто-белый, чисто-чёрный, любой синий, золото и блёстки, неон, крупные логотипы, принты. <b>Украшения:</b> минимум — тонкие кольца или ничего. <b>Ногти:</b> нюд. <b>Макияж:</b> «чистая кожа», без красной помады и яркого макияжа. <b>Волосы:</b> естественно — распущенные или свободно собранные. Дома — <b>босиком или в тапочках</b>; обувь по деревянному полу не ходит.</p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>2.2</span>Три образа</div>
+    <table>
+      <tr><th>Образ</th><th>Сцена</th><th>Что надеваем</th></tr>
+      <tr><td><b>A · Прибытие</b></td><td>сумерки, вход</td><td>Бежевый тренч или длинный льняной жакет + овсяный трикотаж + прямые хлопковые брюки + балетки или лоферы. Чемодан спокойного цвета (<span class="no">не зеркальный алюминий, без наклеек</span>).</td></tr>
+      <tr><td><b>B · Вечер дома</b></td><td>тёплые лампы, диван</td><td>Серо-бежевый кардиган + молочная футболка + свободные брюки. Босиком. Здесь можно быть максимально «домашней» — чем свободнее, тем лучше.</td></tr>
+      <tr><td><b>C · Утро</b></td><td>утренний свет</td><td>Тёплая молочная рубашка изо льна — слегка мятая, так честнее. Льняные брюки, рукава закатаны.</td></tr>
+    </table>
+    <p style="margin-top:8px">За три дня до съёмки — <b>примерка</b>: сфотографируем все три образа при тёплом свете (2700K). Цвет ткани при магазинном белом свете и при нашем тёплом — две разные вещи.</p>
+  </div>
+
+  <!-- SHOT LIST -->
+  <h2>Покадровый план · 70 секунд</h2>
+  <div class="h2-sub">Снимаем за два раза по полдня: вечер + ночь, и следующее утро</div>
+
+  <table class="t-shot">
+    <tr><th>Тайм-код</th><th>Кадр</th><th>Что делаешь · звук</th></tr>
+    <tr><td>00–06</td><td><b>Город.</b> Бульвар на закате: тени деревьев, свет фар. Единственный «внешний» эпизод фильма.</td><td>Тебя в кадре нет. Звук города — на полную: машины, дальние голоса.</td></tr>
+    <tr><td>06–10</td><td>Вход в дом. Ты идёшь с чемоданом, <b>со спины</b>.</td><td>Колёсики чемодана по камню.</td></tr>
+    <tr><td>10–15</td><td><b>Крупно: замок.</b> Твоя рука набирает код, замок открывается.</td><td>Клавиши, щелчок замка. Город ещё слышен, но дальше.</td></tr>
+    <tr><td>15–22</td><td><b>Сердце фильма.</b> Дверь открывается — внутри уже горит тёплый свет. Ты входишь; дверь медленно закрывается перед камерой.</td><td><b>В момент, когда дверь закрылась, — звук города исчезает.</b> Пауза. Тишина.</td></tr>
+    <tr><td>22–30</td><td>Прихожая. Снимаешь обувь, ставишь чемодан. <b>Крупно: руки берут рукописную карточку</b> («Anna — Welcome home. — ESTIA»).</td><td>Шорох бумаги. Ты читаешь — лёгкая улыбка, профиль, две секунды. Этого достаточно.</td></tr>
+    <tr><td>30–40</td><td>Жизнь, три коротких кадра: чайник с паром · наливаешь чай · читаешь у окна (профиль; окно за тобой засвечено в мягкий белый — это наш фирменный свет).</td><td>Кипяток, вода в чашке, страницы. Никуда не торопимся.</td></tr>
+    <tr><td>40–50</td><td>Сумерки переходят в вечер: комната сама «переключается» на тёплые лампы. Ты — <b>силуэт</b> на диване.</td><td>Почти тишина. За окном загорается город; внутри — другой мир.</td></tr>
+    <tr><td>50–58</td><td><b>Утро.</b> Свет из-за штор; крупно — <b>босые ноги по деревянному полу</b>; потом ты со спины у окна или на балконе, смотришь на просыпающийся город.</td><td>Тихие шаги по дереву, очень далёкое утро.</td></tr>
+    <tr><td>58–66</td><td>Ты выходишь из кадра. Остаются <b>следы</b>: пар над чашкой, открытая книга, карточка.</td><td>Тишина.</td></tr>
+    <tr><td>66–72</td><td>Финальная заставка: <span class="wm">ESTIA</span> и строка «A city address. A world apart.»</td><td>Без звука. Во всём фильме — ни одного слова, ни одной ноты. Как и обещали.</td></tr>
+  </table>
+
+  <!-- HOW -->
+  <h2>Как мы будем снимать</h2>
+  <div class="h2-sub">Чтобы тебе было легко</div>
+
+  <ul class="rules">
+    <li><b>Задачи вместо эмоций.</b> Мы никогда не скажем «изобрази расслабленность». Мы скажем: «завари чай и выпей два глотка», «найди в книге страницу, которую правда хочешь прочитать, и читай». Камера просто рядом.</li>
+    <li><b>Каждое действие — три раза подряд</b>, камера не выключается. Первый раз ты будешь думать о камере, к третьему — забудешь о ней. Мы используем третий дубль.</li>
+    <li><b>На площадке минимум людей</b> — оператор и Jim. Чем меньше глаз, тем настоящее кадр.</li>
+    <li>Квартира будет подготовлена так, как мы готовим её для настоящего гостя: тепло, тёплый свет, карточка с твоим именем. <b>Тебе не нужно ничего играть — только пожить там один вечер и одно утро.</b></li>
+    <li>Приходи выспавшейся: мы снимаем настоящий комфорт, а его не сыграешь.</li>
+  </ul>
+
+  <!-- PREP -->
+  <h2>Подготовка</h2>
+  <div class="h2-sub">До съёмки</div>
+
+  <ul class="rules">
+    <li><b>Примерка</b> трёх образов за три дня до съёмки, фото при тёплом свете.</li>
+    <li><b>Подписываем релиз</b> — согласие на использование изображения (сайт, соцсети, срок действия). Это обычная практика, она защищает и тебя, и бренд: всё зафиксировано письменно.</li>
+    <li>Съёмка: <b>два раза по полдня</b> — вечер и следующее утро, в одной из квартир ESTIA на бульваре.</li>
+  </ul>
+
+  <div class="card" style="border-color:var(--oak); margin-top:32px">
+    <div class="lock" style="border:none;padding:0">Весь фильм существует ради одной секунды — дверь закрылась, и город исчез.<br/>Остальные шестьдесят девять нужны только для того, чтобы эта секунда случилась.</div>
+  </div>
+
+  <footer>
+    <span class="wm" style="font-size:12px">ESTIA</span>
+    <span>The Film · RU · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

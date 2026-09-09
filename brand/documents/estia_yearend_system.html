@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 年終與成長制度(員工版)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:860px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:860px; margin:0 auto 30px; background:var(--marble); padding:clamp(32px,6vw,52px) clamp(24px,6vw,50px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:6px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(24px,4.6vw,34px); margin:22px 0 6px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.14em; margin-bottom:14px; }
+  .credo{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:15.5px; color:var(--oak); margin-bottom:24px; line-height:1.85; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:32px 0 12px; }
+  h2 span{ color:var(--stone); letter-spacing:.06em; text-transform:none; margin-left:10px; font-size:11px; }
+
+  p.t{ font-size:13px; line-height:2.0; color:#3f3a32; }
+  p.t + p.t{ margin-top:8px; }
+  p.t b{ color:var(--ember); font-weight:500; }
+
+  .tool{ border:1px solid rgba(34,29,23,.14); padding:14px 18px; margin-bottom:10px; }
+  .tool .tl-n{ font-size:14px; font-weight:500; margin-bottom:5px; }
+  .tool .tl-n span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .tool p{ font-size:12.5px; line-height:1.9; color:#4a443b; }
+  .tool b{ color:var(--ember); font-weight:500; }
+
+  .formula{ background:var(--ember); padding:20px 22px; margin:14px 0; text-align:center; }
+  .formula .f-main{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:14.5px; letter-spacing:.1em; color:var(--marble); }
+  .formula .f-sub{ font-size:11.5px; color:#8f887c; margin-top:10px; line-height:1.9; }
+  .formula b{ color:#c9855f; font-weight:400; }
+
+  .std{ border:1px solid rgba(34,29,23,.14); margin-bottom:12px; }
+  .sd-head{ padding:12px 18px; border-bottom:1px solid rgba(34,29,23,.09); }
+  .sd-name{ font-size:14px; font-weight:500; }
+  .sd-name span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .sd-def{ font-size:12px; color:#5b5449; margin-top:5px; line-height:1.8; }
+  .sd-def b{ color:var(--ember); font-weight:500; }
+  .sd-body{ padding:12px 18px 14px; }
+  .ex{ display:grid; grid-template-columns:22px 1fr; gap:10px; padding:7px 0; align-items:baseline; }
+  .ex + .ex{ border-top:1px dashed rgba(34,29,23,.1); }
+  .mark{ font-family:'Outfit',sans-serif; font-size:12px; }
+  .ok .mark{ color:#5e7050; } .no .mark{ color:#a3543f; }
+  .ex p{ font-size:12.5px; line-height:1.85; color:#3f3a32; }
+  .ex b{ color:var(--ember); font-weight:500; }
+
+  .fair{ background:var(--linen); padding:16px 20px; margin-top:18px; }
+  .fair .f-t{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:9.5px; letter-spacing:.26em; color:var(--oak); margin-bottom:9px; text-transform:uppercase; }
+  .fair li{ list-style:none; font-size:12.5px; line-height:2.0; color:#3f3a32; padding-left:16px; position:relative; }
+  .fair li::before{ content:"·"; position:absolute; left:2px; color:var(--oak); }
+  .fair b{ color:var(--ember); font-weight:500; }
+
+  .credit{ border-left:2px solid var(--oak); padding:6px 0 6px 16px; margin:14px 0 18px; }
+  .credit p{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14px; color:var(--soft); line-height:1.9; }
+
+  .todo{ display:inline-block; font-size:8.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:#a3543f; border:1px solid rgba(163,84,63,.4); padding:1px 7px; margin-left:6px; vertical-align:2px; font-family:'Outfit',sans-serif; }
+
+  footer{ max-width:860px; margin:6px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{ body{ background:white; padding:0; } .page{ box-shadow:none; max-width:none; } .note{ display:none; } }
+</style>
+</head>
+<body>
+
+<div class="note">員工版 · 爐邊會發布 · 橘標三數字年初公告後生效</div>
+
+<!-- ═══ PAGE 1 · 哲學與三工具 ═══ -->
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">Growth &amp; Year-end · v1.0</div>
+  </div>
+
+  <h1>年終與成長制度</h1>
+  <div class="h-cn">寫給每一位 Host · 看完你會知道錢從哪來、怎麼分、誰有資格</div>
+  <div class="credo">我們的獎金,不看你賣了多少——<br/>看客人離開之後,還想不想回來。</div>
+
+  <h2>三個工具,各管各的<span>混在一起,三個都會壞掉</span></h2>
+
+  <div class="tool">
+    <div class="tl-n"><span>工具一</span>ESTIA 服務標準</div>
+    <p>日常的<b>尺</b>:回覆多快、房況怎麼查、什麼絕不做。人人適用、天天在用——但它<b>不打分、不排名、不進獎金</b>。尺量出來的洞,用流程補,不用扣分罰。(全文見第四部)</p>
+  </div>
+  <div class="tool">
+    <div class="tl-n"><span>工具二</span>成長對話</div>
+    <p><b>每季一次</b>,你和 Jim 一對一:這一季做得漂亮的、卡住的、想學的。有真話、有回饋,<b>沒有分數</b>——分數留給客人打:他回不回來。加薪與職務調整的討論,發生在這裡,不在年終。</p>
+  </div>
+  <div class="tool">
+    <div class="tl-n"><span>工具三</span>年終獎金</div>
+    <p>錢<b>只</b>從這裡走。三個問題三個答案:池子多大(公司營業額)、怎麼分(客人還想不想回來)、誰有資格(說到做到)。整套機制在第二部。</p>
+  </div>
+</div>
+
+<!-- ═══ PAGE 2 · 年終機制 ═══ -->
+<div class="page">
+  <h2 style="margin-top:0">第二部 · 年終獎金機制</h2>
+
+  <div class="formula">
+    <div class="f-main">池子 = 年度營業額 × 提撥率 × 成果係數</div>
+    <div class="f-sub">營業額:公司全年實收——公司越大,池子越大,新物件自動涵蓋<br/>提撥率:年初公告的固定比例 <b>[待公告]</b><br/>成果係數:三指標對年度目標的達成——基線年 = 1.0;之後全達標 1.0、每超一支 +0.05(上限 1.15)、全未達 0.9</div>
+  </div>
+
+  <p class="t"><b>成果三指標,只算全公司,不算個人。</b>為什麼?因為每位 Host 手上只有六七位客人——一位客人被調回國,個人數字就掉兩成,那是運氣不是實力;而且松山的商務盤和仁愛的家庭盤天性不同,比個人等於比盤。所以:<b>全隊一起把「我還想再回來」做出來,全隊一起分。</b>會計、房務、Host,都在同一個成果裡。</p>
+
+  <p class="t" style="margin-top:14px"><b>池子怎麼切:80 / 20。</b></p>
+  <p class="t"><b>八成 · 基本份</b> — 每人一份,按「在職月數 × 職務係數」計算(職務係數年初公告)。做滿一年、過了門檻,這份就是你的。</p>
+  <p class="t"><b>兩成 · 貢獻份</b> — 由 Jim 具名裁量,配三條護欄:①裁量理由<b>當面</b>講給本人(放進成長對話);②只公告制度,不公告個人金額;③依據必須是<b>具體事蹟</b>(「開封開站那個月她扛住了整條線」),不是印象分。</p>
+
+  <p class="t" style="margin-top:14px"><b>兩條老闆條款:</b>Jim 本人不進池子——老闆的獎金叫利潤;但 Jim 的門檻(含房務日)照樣公開結算,年底跟大家的一起唸。<b>發放:農曆年前,一次發清</b>——不分期、不綁人。留人靠的是想回來,不是走不了;對你們,和對客人,是同一套哲學。</p>
+</div>
+
+<!-- ═══ PAGE 3 · 逐條範例 ═══ -->
+<div class="page">
+  <h2 style="margin-top:0">第三部 · 逐條範例<span>每一條:定義 → ✓ 滿足 → ✗ 不滿足</span></h2>
+
+  <p class="t" style="margin-bottom:14px"><b>基線年原則:</b>成果三指標第一年<b>只量、不設及格線</b>——量出真實基線,第二年目標=基線+進步幅度。門檻層第一年就生效:「說到做到」不需要等數據。</p>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G1</span>儀式出席 ≥ 8 成(個人門檻)</div>
+    <div class="sd-def">全年細節圈約 26 場 + 爐邊會 12 場 ≈ 38 場;8 成 ≈ 30 場。長假(產假/長病假)期間從分母扣除。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>全年出席 33 場,缺的是帶看撞期與病假 → 87%,過。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>出席 63%,缺席常態是「太忙先跳過」→ 不過。儀式都排在工作時間內——跳過是選擇,不是不得已。</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G2</span>年度跨崗輪班(個人門檻)</div>
+    <div class="sd-def">輪班的目的在<b>跨崗</b>——走進「不是你日常工作」的崗位。日常職務不能充抵。原則:<b>管家</b>(日常已在接待)→ 輪 1 天房務;<b>房務</b>(日常已在打掃)→ 輪 1–2 天接待見習(含旁觀一次 The First Hour);<b>會計行政</b> → 2 天接待 + 1 天房務;<b>Jim</b> → 2 天接待 + 1 天房務。住一晚:全員。正式配置表依《成員與定位規範》年初公告。<span class="todo">規範待定案</span></div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>資深房務 4 月跟了兩天接待、旁觀一次 The First Hour,9 月完成住一晚 → 過——她第一次從客人進門的角度,看見自己擦的那面鏡子。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>管家把日常帶看申報成「輪班完成」→ 不過。<b>日常職務不能充抵跨崗</b>——這條量的是換位,不是出勤。</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G3</span>零誠信事件(個人門檻)—— 錯誤免責,隱瞞重罪</div>
+    <div class="sd-def">做錯事永遠不影響這條;隱瞞、說謊才觸發。認定需經當面對談與紀錄,你有完整陳述的機會。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>補備品漏了一間的水,隔天自己在細節圈講、順手提議清單加勾稽欄 → 完全沒事——這正是我們要的。錯誤進流程檢討,人不進黑名單。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>碰裂檯燈底座,轉個角度藏起來;客人退房點交發現,問到第二次才承認 → 誠信事件,當年門檻不過。<b>罰的不是打破燈的手,是遮起來的手。</b></p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G4</span>12 小時首覆 ≥ 95%(團隊門檻)</div>
+    <div class="sd-def">全年詢問,12 小時內首覆的比例。不設 100%——一次深夜漏接不該毀掉全年;低於 95% 代表流程有洞。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>214 件詢問,208 件達成 = 97.2%,過;漏的 6 件都有補救紀錄。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>89%,漏接集中在連假與值日交接日 → 不過 → 複盤排班設計,團隊份受影響。<b>檢討的是制度,不點名個人。</b></p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G5</span>押金 14 天退還(團隊門檻)</div>
+    <div class="sd-def">退房後 14 天內退還+一頁明細。允許至多 1 件例外,需書面原因並事先告知客人。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>18 件退房,17 件如期;1 件因房東端水電延遲,第 16 天退,台帳有原因、客人有被先告知 → 過。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>3 件超期、台帳空白、其中 1 件客人來信催 → 不過。款待的最後一棒掉在地上,而且沒人記錄。</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>G6</span>平台評分地板(團隊門檻)</div>
+    <div class="sd-def">全年平台平均分 ≥ 地板值(地板=現況微降,正式值年初公告 <span class="todo">待公告</span>)。<b>星等是防線,不是比賽。</b></div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>年終平均高於地板 → 過。沒有「星星越高錢越多」——星星不進加分。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>破地板 → 團隊複盤掉分集中在哪,修系統。另一種不滿足:對客人說「方便幫我們留五星嗎」——<b>這句話本身就違規</b>,無論星數多高。</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>R1</span>續租率(成果 · 含延住)</div>
+    <div class="sd-def">分母=年內租約到期數;分子=續租或延住 ≥1 個月。<b>任期自然結束(外派約滿回國)從分母剔除</b>——那不是流失。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>到期 20 份、續 9 份 → 45% = 第一年基線。第二年目標 50%,實際 51% → 達標。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>第二年 38% 低於基線 → 複盤:退租原因逐案記了嗎? 是價格、服務,還是定義沒剔除自然結束在冤枉數字?</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>R2</span>回訪率(成果)</div>
+    <div class="sd-def">分母=去年度離開的客人;分子=12 個月內回來再住(任一物件)。此指標天生偏低,<b>趨勢比絕對值重要</b>。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>去年離開 30 位、今年回住 4 位 → 13% = 基線。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>回訪 0 位,且「離開後的回頭客信」全年只發 3 封——不是客人不回來,是我們沒把門留著。指標揪的是動作沒做。</p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>R3</span>推薦率(成果)</div>
+    <div class="sd-def">分母=年度新簽約;分子=來源為舊客/房東介紹。來源在首覆時固定問「怎麼認識我們的」,記入追蹤表。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>新約 25 份、6 份來自舊客介紹 → 24% = 基線。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>來源欄一半空白 → 當年此指標作廢。<b>沒被記錄的表現,不能拿來發錢,也不能拿來扣錢。</b></p></div>
+    </div>
+  </div>
+
+  <div class="std">
+    <div class="sd-head"><div class="sd-name"><span>¥</span>營業額 · 雙籃比較(池子與儀表)</div>
+    <div class="sd-def">池子用<b>實際總額</b>,不用比較。「做得好不好」分兩籃看,是 Jim 的儀表板,<b>不進員工公式</b>。</div></div>
+    <div class="sd-body">
+      <div class="ex ok"><span class="mark">✓</span><p>同店籃:滿一年的物件跟自己去年比(例:3,600 → 3,850 萬 = +6.9%)。長租滿租後天花板固定,+3~5% 即健康。</p></div>
+      <div class="ex ok"><span class="mark">✓</span><p>新店籃:開站<b>前</b>白紙黑字寫目標(例:480 萬),年終比達成率(512 萬 = 107%)。</p></div>
+      <div class="ex no"><span class="mark">✗</span><p>新店 90% 未達 → 檢討定價與定位(老闆的功課),<b>不砍員工獎金</b>——新店的風險在老闆身上。開站後補寫的目標,不算目標。</p></div>
+    </div>
+  </div>
+
+  <div class="fair">
+    <div class="f-t">公平條款 · 免得制度冤枉人</div>
+    <li><b>長假調整</b> — 產假/長病假期間,門檻分母按實際在職折算。</li>
+    <li><b>新人折算</b> — 到職未滿一年,年終與門檻皆按在職月數比例。</li>
+    <li><b>正當程序</b> — 誠信事件需當面對談與紀錄,當事人有完整陳述機會。</li>
+    <li><b>定義先行</b> — 各指標分母分子年初白紙黑字,年中不改規則。</li>
+    <li><b>數據缺漏</b> — 沒被記錄的表現,不發錢也不扣錢;記錄是全隊共同責任。</li>
+  </div>
+</div>
+
+<!-- ═══ PAGE 4 · 服務標準 ═══ -->
+<div class="page">
+  <h2 style="margin-top:0">第四部 · ESTIA 服務標準<span>日常的尺 · 不打分 · 不進獎金</span></h2>
+
+  <div class="credit">
+    <p>這份標準的第一版,由我們的夥伴親手寫成。ESTIA 版是在她的骨架上長出來的——回覆時限的階梯、輔導先於處分的精神,都來自她。謝謝妳給了我們地基。</p>
+  </div>
+
+  <div class="tool">
+    <div class="tl-n"><span>S1</span>在住訊息 · 回覆階梯(保留原版)</div>
+    <p><b>5 分鐘內=優 · 15 分鐘內=正常 · 超過 30 分鐘=需補救。</b>補救的動作是「一句致歉+立刻處理+檢討交接」,不是被扣分。帶看、休假時段誰接手機,交接表先排好。</p>
+  </div>
+  <div class="tool">
+    <div class="tl-n"><span>S2</span>詢問首覆 · 12 小時</p></div>
+    <p>對外白紙黑字的承諾(官網寫著);內部目標:工作時間 3 小時。<b>漏接一封詢問,漏掉的不是一則訊息——是一整年的租金,和一位可能回頭十年的客人。</b></p>
+  </div>
+  <div class="tool">
+    <div class="tl-n"><span>S3</span>抵達前 · 客人的眼睛</div>
+    <p>抵達前 30 分,用客人的視角走一遍:開門第一眼、鏡面、暖光逐顆確認、室溫 24–25 度、手寫卡就位。</p>
+  </div>
+  <div class="tool">
+    <div class="tl-n"><span>S4</span>錢的三個不能省</div>
+    <p>房東租金<b>永不遲一天</b> · 請款日 5/20 <b>逢班必出</b> · 押金 <b>14 天內退還+明細</b>(唯一可不等請款日的款項)。</p>
+  </div>
+
+  <p class="t" style="margin:18px 0 10px"><b>基本要求五條(原版第七章,ESTIA 語氣改寫):</b></p>
+  <div class="tool"><p><b>一 · 款待的禮貌與耐心</b> — 第一句有名字;訊息送出前讀出聲;一個句號的安靜,勝過三個驚嘆號的熱情。</p></div>
+  <div class="tool"><p><b>二 · 永不與客人爭執</b> — 要說不,用拒絕二式:給理由(我們是誰)+ 給替代(我能做什麼)。拒絕也是一次品牌表達。</p></div>
+  <div class="tool"><p><b>三 · 承諾的邊界</b> — 5,000 元裁量內,<b>你就是主人,直接做,不用問</b>;超出裁量的,一句「我確認一下,今天回覆你」——不私自承諾超過權限的事,但請記得:你的權限是真的。</p></div>
+  <div class="tool"><p><b>四 · 即時回報</b> — 房況與特殊事件,當日記入共享系統。客人的事不能只活在一個人的腦袋裡。</p></div>
+  <div class="tool"><p><b>五 · 錯誤免責,隱瞞重罪</b> — 說出來的錯,是團隊的養分;藏起來的錯,才是對這個家的傷害。</p></div>
+</div>
+
+<footer>
+  <span>ESTIA · Growth &amp; Year-end</span>
+  <span>Day 32–34 · v1.0 · 2026</span>
+</footer>
+
+</body>
+</html>

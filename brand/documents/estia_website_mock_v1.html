@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA Residences — A city address. A world apart.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17;
+    --ink:#221D17; --soft:#4a443b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{ background:var(--marble); color:var(--ink);
+    font-family:'Outfit',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+
+  /* ── NAV ── */
+  nav{ position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px clamp(20px,5vw,54px);
+    background:linear-gradient(to bottom, rgba(244,240,232,.88), rgba(244,240,232,0));
+    backdrop-filter:blur(2px); }
+  .nav-wm{ font-family:'Italiana',serif; font-size:17px; letter-spacing:.42em; color:var(--ink); text-decoration:none; }
+  .nav-links{ display:flex; gap:clamp(18px,3.4vw,40px); }
+  .nav-links a{ font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--soft); text-decoration:none; transition:color .3s; }
+  .nav-links a:hover{ color:var(--oak); }
+
+  /* ── HERO ── */
+  .hero{ min-height:100svh; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .hero-photo{ position:absolute; inset:0;
+    background:
+      radial-gradient(120% 90% at 78% 12%, rgba(255,244,222,.85) 0%, rgba(255,244,222,0) 55%),
+      linear-gradient(112deg, #EFE7D5 0%, #E2D5BC 38%, #CDBB9B 72%, #B9A583 100%);
+  }
+  .hero-photo::after{ content:""; position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(244,240,232,.0) 55%, rgba(244,240,232,.55) 88%, var(--marble) 100%); }
+  .ph-tag{ position:absolute; left:clamp(20px,5vw,54px); bottom:90px; font-size:9px; letter-spacing:.26em;
+    text-transform:uppercase; color:rgba(74,68,59,.55); z-index:2; }
+  .hero-core{ position:relative; z-index:3; text-align:center; padding:0 24px; }
+  .hero-wm{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(52px,11vw,108px);
+    letter-spacing:.4em; padding-left:.4em; line-height:1; }
+  .hero-rule{ width:26px; height:1px; background:var(--oak); margin:26px auto; }
+  .hero-sub{ font-size:10px; letter-spacing:.56em; padding-left:.56em; text-transform:uppercase; color:var(--soft); }
+  .hero-line{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(18px,3vw,25px);
+    color:var(--soft); margin-top:44px; }
+  .scroll-hint{ position:absolute; bottom:34px; left:50%; width:1px; height:44px; z-index:3;
+    background:linear-gradient(to bottom, var(--oak), transparent); animation:drip 2.6s ease-in-out infinite; }
+  @keyframes drip{ 0%,100%{opacity:.25; transform:scaleY(.6); transform-origin:top} 50%{opacity:.9; transform:scaleY(1); transform-origin:top} }
+
+  /* ── SECTIONS ── */
+  section{ padding:clamp(90px,13vh,150px) clamp(22px,6vw,60px); max-width:1120px; margin:0 auto; }
+  .sec-label{ font-size:10px; letter-spacing:.32em; text-transform:uppercase; color:var(--stone); margin-bottom:34px; }
+  .sec-label b{ color:var(--oak); font-weight:400; margin-right:14px; }
+
+  /* idea */
+  .idea-text{ font-family:'Cormorant Garamond',serif; font-size:clamp(21px,3.4vw,30px); line-height:1.75;
+    color:var(--ink); max-width:760px; font-weight:400; }
+  .idea-text em{ font-style:italic; color:var(--oak); }
+  .idea-close{ margin-top:44px; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); }
+
+  /* residences */
+  .res-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(18px,3vw,34px); }
+  .res-card{ text-decoration:none; color:var(--ink); display:block; transition:transform .5s cubic-bezier(.2,.6,.2,1); }
+  .res-card:hover{ transform:translateY(-4px); }
+  .res-photo{ aspect-ratio:4/4.7; position:relative; overflow:hidden; }
+  .res-photo .tag{ position:absolute; left:14px; bottom:12px; font-size:8.5px; letter-spacing:.24em;
+    text-transform:uppercase; color:rgba(74,68,59,.5); }
+  .p-renai{ background:
+      radial-gradient(90% 70% at 20% 8%, rgba(255,246,226,.9) 0%, rgba(255,246,226,0) 60%),
+      linear-gradient(160deg, #EDE4D0 0%, #DCCCAE 55%, #C3AE8B 100%); }
+  .p-songshan{ background:
+      radial-gradient(100% 80% at 82% 10%, rgba(255,241,220,.85) 0%, rgba(255,241,220,0) 55%),
+      linear-gradient(200deg, #EFE9DA 0%, #DED2BB 50%, #BCA98B 100%); }
+  .p-soon{ background:linear-gradient(150deg, #ECE6D8 0%, #E0D6C2 100%); }
+  .res-photo::after{ content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(34,29,23,.07); }
+  .res-body{ padding:20px 2px 0; }
+  .res-name{ font-family:'Italiana',serif; font-size:23px; letter-spacing:.18em; }
+  .res-dist{ font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--stone); margin-top:6px; }
+  .res-desc{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16.5px; color:var(--soft); margin-top:12px; line-height:1.55; }
+  .res-meta{ font-size:11px; letter-spacing:.14em; color:var(--soft); margin-top:12px; line-height:2; }
+  .res-meta span{ color:var(--oak); }
+  .soon .res-name{ color:#6d675d; }
+  .soon-flag{ display:inline-block; font-size:9px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--stone); border:1px solid rgba(164,158,148,.5); padding:5px 12px; margin-top:12px; }
+  .res-note{ margin-top:46px; font-size:12px; color:var(--stone); letter-spacing:.06em; }
+
+  /* stay */
+  .stay{ background:var(--linen); max-width:none; }
+  .stay-inner{ max-width:1120px; margin:0 auto; }
+  .stay-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:clamp(26px,4vw,48px) clamp(26px,4vw,56px); margin-top:8px; }
+  .stay-item .si-t{ font-family:'Italiana',serif; font-size:19px; letter-spacing:.1em; margin-bottom:10px; }
+  .stay-item p{ font-size:13.5px; line-height:1.9; color:var(--soft); }
+  .stay-first{ grid-column:1/-1; border-bottom:1px solid rgba(34,29,23,.12); padding-bottom:34px; margin-bottom:6px; }
+  .stay-first .si-t{ font-size:26px; }
+  .stay-first p{ max-width:620px; font-size:14.5px; }
+
+  /* story */
+  .story-block{ max-width:680px; margin:0 auto; text-align:center; }
+  .story-p{ font-family:'Cormorant Garamond',serif; font-size:clamp(17px,2.6vw,21px); line-height:2.0;
+    color:var(--ink); font-weight:400; text-align:left; }
+  .story-p + .story-p{ margin-top:22px; }
+  .story-sign{ margin-top:40px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; color:var(--oak); }
+  .story-founder{ margin-top:10px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--stone); }
+
+  /* enquire */
+  .enq{ background:var(--ember); max-width:none; }
+  .enq-inner{ max-width:760px; margin:0 auto; text-align:center; }
+  .enq .sec-label{ color:#8f887c; } .enq .sec-label b{ color:var(--oak); }
+  .enq-h{ font-family:'Italiana',serif; font-size:clamp(28px,5vw,44px); color:var(--marble); letter-spacing:.08em; }
+  .enq-p{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:#b9b1a3; margin-top:18px; line-height:1.8; }
+  .enq-form{ margin-top:52px; display:grid; grid-template-columns:1fr 1fr; gap:14px; text-align:left; }
+  .enq-form .full{ grid-column:1/-1; }
+  .f{ background:transparent; border:1px solid rgba(244,240,232,.25); padding:15px 16px;
+    font-family:'Outfit',sans-serif; font-weight:300; font-size:13px; color:var(--marble); letter-spacing:.04em; width:100%; }
+  .f::placeholder{ color:#8f887c; letter-spacing:.1em; }
+  textarea.f{ min-height:110px; resize:vertical; }
+  .enq-btn{ grid-column:1/-1; justify-self:center; margin-top:16px;
+    background:transparent; border:1px solid var(--oak); color:var(--oak);
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.4em; padding-left:.4em; text-transform:uppercase;
+    padding:15px 52px; cursor:pointer; transition:all .35s; }
+  .enq-btn:hover{ background:var(--oak); color:var(--ember); }
+  .enq-promise{ margin-top:26px; font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:#8f887c; }
+  @media (max-width:620px){ .enq-form{ grid-template-columns:1fr; } }
+
+  /* footer */
+  footer{ background:var(--ember); padding:70px 24px 44px; text-align:center; border-top:1px solid rgba(244,240,232,.08); }
+  .ft-sign{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:#b9b1a3; }
+  .ft-wm{ font-family:'Italiana',serif; font-size:15px; letter-spacing:.42em; padding-left:.42em; color:var(--marble); margin-top:30px; }
+  .ft-meta{ margin-top:16px; font-size:9.5px; letter-spacing:.26em; text-transform:uppercase; color:#6d675d; line-height:2.2; }
+
+  /* reveal */
+  [data-r]{ opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.6,.2,1); }
+  [data-r].in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-wm" href="#top">ESTIA</a>
+  <div class="nav-links">
+    <a href="#residences">Residences</a>
+    <a href="#story">Story</a>
+    <a href="#enquire">Enquire</a>
+  </div>
+</nav>
+
+<!-- ① ARRIVAL -->
+<div class="hero" id="top">
+  <div class="hero-photo"></div>
+  <span class="ph-tag">Photograph — after Santorini</span>
+  <div class="hero-core">
+    <div class="hero-wm">ESTIA</div>
+    <div class="hero-rule"></div>
+    <div class="hero-sub">Residences · Taipei</div>
+    <div class="hero-line">A city address. A world apart.</div>
+  </div>
+  <div class="scroll-hint"></div>
+</div>
+
+<!-- ② THE IDEA -->
+<section id="idea">
+  <div class="sec-label" data-r><b>01</b>The Idea</div>
+  <p class="idea-text" data-r>You chose the heart of the city — the morning market, the old lanes, the life outside your door. And yet, the moment the door closes behind you, <em>the city should stop.</em></p>
+  <p class="idea-text" data-r style="margin-top:28px;">ESTIA keeps homes for the long stay, in Taipei's finest quarters. Warm woods, warm light, and someone who prepared the room before you thought to ask.</p>
+  <div class="idea-close" data-r>Every detail, a welcome.</div>
+</section>
+
+<!-- ③ THE RESIDENCES -->
+<section id="residences">
+  <div class="sec-label" data-r><b>02</b>The Residences</div>
+  <div class="res-grid">
+
+    <a class="res-card" href="#enquire" data-r>
+      <div class="res-photo p-renai"><span class="tag">Photograph — after Santorini</span></div>
+      <div class="res-body">
+        <div class="res-name">ESTIA REN'AI</div>
+        <div class="res-dist">Ren'ai Road · Zhongzheng</div>
+        <div class="res-desc">Twenty residences on the tree-lined boulevard Taipei keeps for itself.</div>
+        <div class="res-meta">The Three &amp; Four Bedroom · 60–70 ping<br/><span>Rates on enquiry</span></div>
+      </div>
+    </a>
+
+    <a class="res-card" href="#enquire" data-r>
+      <div class="res-photo p-songshan"><span class="tag">Photograph — after Santorini</span></div>
+      <div class="res-body">
+        <div class="res-name">ESTIA SONGSHAN</div>
+        <div class="res-dist">Songshan</div>
+        <div class="res-desc">Twenty-five studios in the quiet north-east of the city — ten minutes from the airport, a lane away from breakfast.</div>
+        <div class="res-meta">The Studio<br/><span>Rates on enquiry</span></div>
+      </div>
+    </a>
+
+    <a class="res-card soon" href="#enquire" data-r>
+      <div class="res-photo p-soon"></div>
+      <div class="res-body">
+        <div class="res-name">ESTIA BADE</div>
+        <div class="res-dist">Songshan · The Townhouse</div>
+        <div class="res-desc">A two-storey house of one's own.</div>
+        <div class="soon-flag">Opening soon</div>
+      </div>
+    </a>
+
+    <a class="res-card soon" href="#enquire" data-r>
+      <div class="res-photo p-soon"></div>
+      <div class="res-body">
+        <div class="res-name">ESTIA KAIFENG</div>
+        <div class="res-dist">Zhongzheng · The House</div>
+        <div class="res-desc">Four floors near the old heart of the city.</div>
+        <div class="soon-flag">Opening soon</div>
+      </div>
+    </a>
+
+  </div>
+  <div class="res-note" data-r>Each residence has its own page — photography, floor plans, and the neighbourhood. <em style="color:#a3543f;font-style:normal;">(Sub-pages: Day 20+, links inactive in this render.)</em></div>
+</section>
+
+<!-- ④ THE STAY -->
+<section class="stay">
+  <div class="stay-inner">
+    <div class="sec-label" data-r><b>03</b>The Stay</div>
+    <div class="stay-grid">
+
+      <div class="stay-item stay-first" data-r>
+        <div class="si-t">The First Hour</div>
+        <p>Your host meets you at the door and hands you the home — how everything works, what's in the fridge, and one good address for tomorrow morning. Twenty minutes later you are alone, and the home is yours. We are one message away, for the whole of your stay.</p>
+      </div>
+
+      <div class="stay-item" data-r>
+        <div class="si-t">One host</div>
+        <p>Every guest has one dedicated host — one person, from your first message to your last morning. Not a front desk. A name.</p>
+      </div>
+
+      <div class="stay-item" data-r>
+        <div class="si-t">Before you arrive</div>
+        <p>The room is warmed to 24 degrees. The lights are on — 2700K, the colour of evening. The door opens on a home, not a unit.</p>
+      </div>
+
+      <div class="stay-item" data-r>
+        <div class="si-t">Weekly care</div>
+        <p>Fresh linen, quiet housekeeping, and a small written note when we've been. You will know the home is looked after, without ever being interrupted.</p>
+      </div>
+
+      <div class="stay-item" data-r>
+        <div class="si-t">Chosen, not collected</div>
+        <p>We don't take every home. We look for good bones — proportion, light, a quiet lane, a warmth of wood — and only then does a door earn the name. Each home keeps its own character.</p>
+      </div>
+
+      <div class="stay-item" data-r>
+        <div class="si-t">The quiet</div>
+        <p>Every home here is different. What never changes is the quiet. Close the door — the city stops.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ THE STORY -->
+<section id="story">
+  <div class="sec-label" style="text-align:center" data-r><b>04</b>The Story</div>
+  <div class="story-block">
+    <p class="story-p" data-r>When I was travelling in Greece, I realised something. What stays with you about a country is never the food, the sea, or the buildings. It is the people — the way they welcome you decides whether you return.</p>
+    <p class="story-p" data-r>I came home to Taipei and saw what was missing. A guest staying a month here chooses between serviced apartments with systems but no soul, and beautiful rentals whose warmth changes with every host. Discipline without warmth — or warmth without discipline.</p>
+    <p class="story-p" data-r>ESTIA is the middle we could not find, so we built it: the discipline of a hotel, the soul of a home. The name belongs to the Greek goddess of the hearth — the fire at the centre of every house. The fire here is Taiwanese.</p>
+    <p class="story-sign" data-r>ESTIA is Greek in spirit. Taiwanese in hands.<br/>That's the whole idea.</p>
+    <div class="story-founder" data-r>Jim · Founder</div>
+  </div>
+</section>
+
+<!-- ⑥ ENQUIRE -->
+<section class="enq" id="enquire">
+  <div class="enq-inner">
+    <div class="sec-label" data-r><b>05</b>Enquire</div>
+    <div class="enq-h" data-r>Begin the conversation.</div>
+    <p class="enq-p" data-r>Tell us what you're looking for — the dates, the neighbourhood, the way you like to live.</p>
+    <form class="enq-form" onsubmit="return false" data-r>
+      <input class="f" placeholder="NAME" />
+      <input class="f" placeholder="EMAIL" />
+      <input class="f" placeholder="ARRIVAL — DEPARTURE" />
+      <input class="f" placeholder="GUESTS" />
+      <textarea class="f full" placeholder="TELL US WHAT YOU'RE LOOKING FOR"></textarea>
+      <button class="enq-btn">Send</button>
+    </form>
+    <div class="enq-promise" data-r>You'll hear from us within twelve hours.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-sign">Warmth, made in Taiwan.</div>
+  <div class="ft-wm">ESTIA</div>
+  <div class="ft-meta">Residences · Taipei<br/>© 2026 ESTIA Residences · EN — 中文 to follow</div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
+  document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

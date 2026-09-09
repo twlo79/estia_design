@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 內部節奏 The Rhythm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:780px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:780px; margin:0 auto; background:var(--marble); padding:clamp(34px,6vw,54px) clamp(26px,6vw,52px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:8px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(24px,4.6vw,34px); margin:22px 0 4px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.16em; margin-bottom:26px; }
+
+  .layer{ border:1px solid rgba(34,29,23,.14); margin-bottom:12px; }
+  .l-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    padding:13px 18px; border-bottom:1px solid rgba(34,29,23,.09); flex-wrap:wrap; }
+  .l-name{ font-size:15px; font-weight:500; }
+  .l-name span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.24em; color:var(--oak); margin-right:10px; text-transform:uppercase; }
+  .l-when{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.1em; color:var(--oak); }
+  .l-body{ padding:13px 18px 15px; }
+  .l-body p{ font-size:12.5px; line-height:1.95; color:#4a443b; }
+  .l-body b{ color:var(--ember); font-weight:500; }
+
+  .agenda{ margin-top:8px; }
+  .ag-row{ display:flex; gap:14px; padding:7px 0; border-bottom:1px dashed rgba(34,29,23,.12); align-items:baseline; }
+  .ag-row:last-child{ border-bottom:none; }
+  .ag-t{ font-family:'Outfit',sans-serif; font-size:10px; color:var(--oak); letter-spacing:.1em; white-space:nowrap; width:56px; }
+  .ag-n{ font-size:12.5px; color:#3f3a32; }
+  .ag-n b{ font-weight:500; color:var(--ember); }
+
+  .laws{ background:var(--linen); padding:18px 20px; margin-top:18px; }
+  .laws .p-label{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin-bottom:10px; }
+  .laws p{ font-size:12.5px; line-height:2.0; color:#3f3a32; }
+  .laws b{ color:var(--ember); font-weight:500; }
+
+  /* appendix */
+  .apx{ max-width:780px; margin:40px auto 0; background:var(--marble); border:1px dashed var(--oak);
+    padding:clamp(26px,5vw,42px) clamp(24px,5vw,46px); }
+  .apx-title{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin-bottom:14px; }
+  .apx h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:22px; margin-bottom:16px; }
+  .apx .intro{ font-size:13px; line-height:2.0; color:#4a443b; margin-bottom:18px; }
+  .say{ border-left:2px solid var(--oak); padding:4px 0 4px 14px; margin:12px 0; }
+  .say .who{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10.5px; letter-spacing:.14em; color:var(--oak); margin-bottom:3px; }
+  .say p{ font-size:13px; line-height:1.9; color:#3f3a32; }
+  .rulecard{ background:var(--linen); padding:16px 18px; margin-top:20px; }
+  .rulecard li{ list-style:none; font-size:12.5px; line-height:2.05; color:#3f3a32; padding-left:16px; position:relative; }
+  .rulecard li::before{ content:"·"; position:absolute; left:2px; color:var(--oak); }
+
+  footer{ max-width:780px; margin:36px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page,.apx{ box-shadow:none; border:none; max-width:none; }
+    .note{ display:none; }
+    .apx{ page-break-before:always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">貼牆版 · A4 可列印 · 第二頁為細節圈實例</div>
+
+<!-- ═══ POSTER ═══ -->
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">The Rhythm · 2026</div>
+  </div>
+
+  <h1>內部節奏</h1>
+  <div class="h-cn">十三個儀式 · 四層 · 每人每月會議三小時封頂</div>
+
+  <div class="layer">
+    <div class="l-head"><div class="l-name"><span>Layer 1</span>日常習慣</div><div class="l-when">不進會議室 · 零會議成本</div></div>
+    <div class="l-body"><p><b>三十秒暫停</b>(動作前問:我為了誰做這件事)· <b>送出前讀出聲</b>(零錯字)· <b>客人的眼睛</b>(抵達前 30 分,用客人視角走一遍)· <b>48 小時預備會</b>(相關 Host 自約 15 分,備好三個沒開口的細節)</p></div>
+  </div>
+
+  <div class="layer">
+    <div class="l-head"><div class="l-name"><span>Layer 2</span>細節圈</div><div class="l-when">隔週五 16:00 · 30 分 · 站著開</div></div>
+    <div class="l-body"><p>一人一分鐘:<b>一個這兩週發現的瑕疵 + 你怎麼處理</b>。越小越好。輪值主持;要修的進修繕清單(誰/何時),值得學的記一句。最後點名「最小但最棒的發現」,說謝謝,散會。<b>30 分鐘硬停。</b></p></div>
+  </div>
+
+  <div class="layer">
+    <div class="l-head"><div class="l-name"><span>Layer 3</span>爐邊會</div><div class="l-when">每月底 · 95 分 · 全員</div></div>
+    <div class="l-body">
+      <p>公司的心臟。五段,順序即宣示——<b>提出問題,是每個月最重要的事:</b></p>
+      <div class="agenda">
+        <div class="ag-row"><span class="ag-t">40 min</span><span class="ag-n"><b>① 顧火時間</b> — 每人一件「如果我是老闆,我會改的事」。Jim 永遠第一個講,講自己的。</span></div>
+        <div class="ag-row"><span class="ag-t">25 min</span><span class="ag-n"><b>② 意圖反思</b> — 這個月意圖最純的一件事 + 只是交差的一件事。不評分,只誠實。</span></div>
+        <div class="ag-row"><span class="ag-t">20 min</span><span class="ag-n"><b>③ 5,000 元分享</b> — 這個月為客人做了什麼,互相偷學。</span></div>
+        <div class="ag-row"><span class="ag-t">10 min</span><span class="ag-n"><b>④ 回音十分鐘</b> — 上月顧火議題逐條回報:採納/不採納 + 為什麼。回音板全員可見。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer">
+    <div class="l-head"><div class="l-name"><span>Layer 4</span>季與年</div><div class="l-when">低頻 · 高儀式感</div></div>
+    <div class="l-body"><p><b>Estia Explores</b>(每季一天有薪 + NT$3,000,個人日)· <b>全員輪班</b>(每年:人人 2 天接待 + 1 天房務,含創辦人)· <b>文化健檢</b>(年底一次)· <b>Estia Reads</b>(暫停中,回歸時併回爐邊會)</p></div>
+  </div>
+
+  <div class="laws">
+    <div class="p-label">兩條鐵律</div>
+    <p><b>一、總量封頂。</b>每人每月會議 = 30×2 + 95 ≈ 2.5 小時。新會議要進來,先砍一個舊的。</p>
+    <p><b>二、儀式不加班。</b>全部排在工作時間內——用下班時間開文化會,等於宣告文化是額外的,那文化就死了。</p>
+  </div>
+</div>
+
+<!-- ═══ APPENDIX ═══ -->
+<div class="apx">
+  <div class="apx-title">附錄 · 給每一位 Host</div>
+  <h2>細節圈,實際長這樣</h2>
+  <p class="intro">隔週五下午四點,全員站著,30 分鐘。輪值主持開場:「老規矩——一人一分鐘,一個這兩週發現的瑕疵、你怎麼處理的。越小越好。」然後像這樣:</p>
+
+  <div class="say"><div class="who">房務 · 小芳</div><p>「松山 12 樓的浴室鏡,我擦完退到門口再看,側面的光照出一片水痕——正面看完全看不到。以後我擦完都退到門口,用客人進門的角度再檢查一次。」</p></div>
+  <div class="say"><div class="who">Host · 雅婷</div><p>「我上週的訊息把 check-out 打成 chek-out。有讀出聲但讀太快沒抓到,現在改成用手指著一個字一個字讀。」</p></div>
+  <div class="say"><div class="who">房務 · 美玲</div><p>「仁愛 8 樓玄關有一顆白光燈泡,是前房東換的。我換成 2700K 了,順便在備品櫃補了四顆暖光備品。」</p></div>
+  <div class="say"><div class="who">資深 · 阿好</div><p>「開封的木門下雨天會卡,客人沒講,但我帶看時聽到摩擦聲。記進修繕清單了,木工約下週二。」</p></div>
+  <div class="say"><div class="who">創辦人 · Jim</div><p>「我的:上次半夜傳訊息交代事情,害同事以為很急沒睡好。以後不急的事我用預約傳送,早上八點才送出。」</p></div>
+
+  <p class="intro" style="margin-top:18px">主持人邊聽邊記:要修的進<b>修繕清單</b>(誰負責、哪天),值得學的記一句進共享手帳。最後一分鐘,點名「本週最小但最棒的發現」——說聲謝謝,散會。</p>
+
+  <div class="rulecard">
+    <li><b>講事不講人</b> — 說「鏡子有水痕」,永遠不說「誰擦的鏡子有水痕」。</li>
+    <li><b>自己的錯自己講,講了只會被謝謝</b> — 沒有人會皺眉頭。這就是「檢討,但不責怪」。</li>
+    <li>沒有發現可以 pass 一次;連續兩次 pass,主持人私下關心(不是懲罰,是看你是不是太累)。</li>
+    <li>30 分鐘硬停,沒輪到的下次優先。</li>
+  </div>
+</div>
+
+<footer>
+  <span>ESTIA · The Rhythm</span>
+  <span>Day 24 · v1.0</span>
+</footer>
+
+</body>
+</html>

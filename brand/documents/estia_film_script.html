@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 官網影片腳本 The Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:940px; margin:0 auto; padding:56px 22px 100px; }
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:40px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(30px,5.2vw,46px); line-height:1.12; margin-bottom:12px; }
+  .intro{ font-size:13.5px; color:#4a443b; line-height:2.0; max-width:680px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:23px; margin:52px 0 3px; }
+  .h2-cn{ font-size:12.5px; color:var(--stone); margin-bottom:18px; letter-spacing:.1em; }
+
+  .card{ border:1px solid rgba(34,29,23,.14); background:var(--marble); margin-bottom:12px; padding:15px 20px; }
+  .c-t{ font-size:14px; font-weight:500; margin-bottom:7px; }
+  .c-t span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.2em; color:var(--oak); margin-right:9px; }
+  .card p{ font-size:12.8px; line-height:1.95; color:#3f3a32; }
+  .card p + p{ margin-top:6px; }
+  .card b{ color:var(--ember); font-weight:500; }
+  .en{ font-family:'Outfit',sans-serif; letter-spacing:.01em; }
+  .no{ color:#a3543f; }
+  .lock{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:var(--ember);
+    border-left:2px solid var(--oak); padding:2px 0 2px 14px; margin:8px 0 4px; line-height:1.75; }
+
+  table{ width:100%; border-collapse:collapse; margin-top:8px; }
+  th{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10px; letter-spacing:.14em; color:var(--oak);
+    text-align:left; padding:8px 9px; border-bottom:1px solid rgba(34,29,23,.2); font-weight:400; text-transform:uppercase; }
+  td{ font-size:12.2px; line-height:1.85; color:#3f3a32; padding:9px; border-bottom:1px solid rgba(34,29,23,.1); vertical-align:top; }
+  td b{ color:var(--ember); font-weight:500; }
+  .t-shot td:first-child{ font-family:'Outfit',sans-serif; font-size:11px; color:var(--oak); white-space:nowrap; }
+
+  .swrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .sw{ display:flex; align-items:center; gap:7px; font-size:11.5px; color:#5b5449;
+    border:1px solid rgba(34,29,23,.15); padding:5px 10px; }
+  .dot{ width:14px; height:14px; border-radius:50%; border:1px solid rgba(34,29,23,.2); }
+
+  ul.rules li{ list-style:none; font-size:12.7px; line-height:2.05; color:#33302a; padding-left:20px; position:relative; }
+  ul.rules li::before{ content:"·"; position:absolute; left:4px; color:var(--oak); font-weight:700; }
+  ul.rules b{ color:var(--ember); font-weight:500; }
+
+  footer{ margin-top:64px; padding-top:22px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>The Film · Script v1</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">官網主影片 · 腳本+服裝+拍攝規格</div>
+    <h1>The Film<br/>《門後的世界》</h1>
+    <p class="intro">一支 70 秒的無對白影片,把品牌主標拍成看得見的東西:城市在門外,關上門,世界停下來。<b>她在片中不是模特兒,是一位住客</b>——不看鏡頭、不擺姿勢,只做真的事。全片沒有一句話、沒有配樂:<b>聲音的主角是「安靜」本身</b>。</p>
+  </div>
+
+  <!-- RED LINES -->
+  <h2>一 · 三條紅線</h2>
+  <div class="h2-cn">開拍前全組讀一次,違反任何一條的素材直接不用</div>
+
+  <div class="card">
+    <div class="c-t"><span>R1</span>她是住客,不是模特</div>
+    <p>全片<b>不看鏡頭、不擺姿勢、不走台步</b>。鏡頭語言:背影、側影、過肩、手部特寫、剪影——臉可以出現,但永遠不是畫面的主角。判斷標準一句話:<b>這一顆看起來像紀錄片,還是像時裝片?</b>像後者就重拍。</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>R2</span>只拍真的會發生的事</div>
+    <p>沿用攝影規範的鐵律:茶是真的泡、書是真的讀、覺是真的睡姿。<span class="no">禁:香檳、玫瑰花瓣、浴缸紅酒、對窗外舉杯</span>——任何「廣告裡才有的生活」。</p>
+  </div>
+  <div class="card">
+    <div class="c-t"><span>R3</span>聲音=安靜</div>
+    <p><b>全片無配樂、無旁白、無對白。</b>只有真實聲音:城市的車流、行李輪、門鎖、壺的汽、翻頁、雨。整支片的聲音設計只做一件事——<b>門關上那一秒,城市的聲音消失</b>。那一秒就是品牌。</p>
+  </div>
+
+  <!-- WARDROBE -->
+  <h2>二 · 服裝規範</h2>
+  <div class="h2-cn">她的衣服=會走路的品牌色卡 · 三套,對應三個時段</div>
+
+  <div class="card">
+    <div class="c-t"><span>2.1</span>總原則</div>
+    <p><b>材質:</b>亞麻、棉、羊毛、針織——原形材質哲學穿在身上,禁亮面、緞面、皮革、蕾絲。<b>色域:</b>只穿品牌色的衣服版——</p>
+    <div class="swrow">
+      <span class="sw"><span class="dot" style="background:#EFE9DC"></span>暖米白/燕麥</span>
+      <span class="sw"><span class="dot" style="background:#E4DCCC"></span>亞麻米</span>
+      <span class="sw"><span class="dot" style="background:#C9BFAF"></span>淺褐/駝</span>
+      <span class="sw"><span class="dot" style="background:#A49E94"></span>石灰褐</span>
+      <span class="sw"><span class="dot" style="background:#6B5B45"></span>深橡木褐</span>
+    </div>
+    <p style="margin-top:8px"><span class="no">禁:</span>正白、正黑、任何藍、金蔥亮片、螢光、大 logo、圖案印花。<b>配件:</b>首飾極簡(細環或無),裸色指甲,妝=乾淨裸妝(<span class="no">禁紅唇、濃眼</span>),頭髮自然放下或鬆綁——她該看起來像「舒服的人」,不是「打扮好的人」。<b>室內赤腳或室內拖,永不穿鞋踩實木。</b></p>
+  </div>
+
+  <div class="card">
+    <div class="c-t"><span>2.2</span>三套造型</div>
+    <table>
+      <tr><th>Look</th><th>場景</th><th>內容</th></tr>
+      <tr><td><b>A · 抵達</b></td><td>黃昏 · 進門段</td><td>米駝色風衣或亞麻長版外套 + 燕麥色針織上衣 + 直筒棉褲 + 平底鞋。行李箱:素面淺色或深褐(<span class="no">禁亮鋁、禁貼滿貼紙</span>)。</td></tr>
+      <tr><td><b>B · 居家夜</b></td><td>檯燈 · 沙發段</td><td>石灰褐開襟針織 + 米白棉 T + 寬鬆棉褲,赤腳。這一套是「家的樣子」——寧鬆勿緊。</td></tr>
+      <tr><td><b>C · 晨</b></td><td>翌日 · 晨光段</td><td>暖米白襯衫(微皺的亞麻,燙太平反而假)+ 亞麻長褲。袖口隨意捲起。</td></tr>
+    </table>
+    <p style="margin-top:8px">開拍前三天:三套實穿拍照傳你確認——<b>衣服要在 2700K 暖光下看色</b>,店裡白光看準的色,進屋會跑。</p>
+  </div>
+
+  <!-- SHOT LIST -->
+  <h2>三 · 分鏡腳本 · 70 秒</h2>
+  <div class="h2-cn">兩個半天拍完:D1 黃昏+夜 · D2 清晨 · 地點:仁愛採光最好的一戶(空置檔期)</div>
+
+  <table class="t-shot">
+    <tr><th>時碼</th><th>畫面</th><th>她做什麼 / 聲音</th></tr>
+    <tr><td>00–06</td><td><b>城市。</b>仁愛路黃昏:樟樹影、車流光、行人(路人虛焦)。全片唯一的「外面」。</td><td>她不在畫面。<b>聲音:城市的全部聲量</b>——車流、喇叭遠響、人聲。</td></tr>
+    <tr><td>06–10</td><td>大樓入口。她拉著行李走入畫面,<b>背影</b>,鏡頭不跟臉。</td><td>行李輪滾過地面的聲音。</td></tr>
+    <tr><td>10–15</td><td><b>特寫:門鎖。</b>她的手輸入密碼,鎖舌彈開。</td><td>按鍵音、鎖舌「咔」。城市聲還在,略遠。</td></tr>
+    <tr><td>15–22</td><td><b>全片的心臟。</b>門開——屋內暖光已亮、室溫已在等。她走入,門在鏡頭前緩緩關上。</td><td><b>門闔上的瞬間:城市聲音「切」掉。</b>只剩空調的無聲與她的呼吸。停一拍(1.5 秒黑或靜幀)。</td></tr>
+    <tr><td>22–30</td><td>玄關。她脫鞋、放下行李;<b>手部特寫:拿起茶几上的手寫卡</b>(卡面入鏡:Anna — Welcome home. — ESTIA)。</td><td>紙卡被拿起的細聲。她讀卡,嘴角有反應——<b>側臉,兩秒,夠了</b>。</td></tr>
+    <tr><td>30–40</td><td>生活蒙太奇 ×3 顆:①壺在爐上冒汽(特寫)②倒茶入杯(過肩)③她窩進窗邊沙發讀書(<b>側影,窗外過曝成柔白</b>——品牌的招牌光)。</td><td>水滾、注水、翻頁。每顆 3 秒左右,節奏不趕。</td></tr>
+    <tr><td>40–50</td><td>黃昏轉夜。廣角(50mm 內)定鏡:房間由天光緩緩換成 2700K 檯燈;她是沙發上的一個<b>剪影</b>。(縮時或前後兩顆疊化)</td><td>幾乎無聲。遠處城市燈亮,窗內是另一個世界。</td></tr>
+    <tr><td>50–58</td><td><b>翌日清晨。</b>窗簾縫的晨光;特寫:她的赤腳踩過實木地板;然後<b>背影</b>站在窗前或陽台,望著醒來的城市。</td><td>木地板細微的踩聲、窗外很遠的晨。</td></tr>
+    <tr><td>58–66</td><td><b>人離開畫面,痕跡收尾</b>——桌上:茶杯的熱氣、翻開的書、那張手寫卡。回到 Day 21 的攝影語言:剛被生活過的證據。</td><td>靜。</td></tr>
+    <tr><td>66–72</td><td>Marble 底黑轉場:字標 <span class="en">ESTIA</span> 淡入,下一行小字:<span class="en">A city address. A world apart.</span></td><td>無聲收尾。<b>全片零台詞、零音樂,說到做到。</b></td></tr>
+  </table>
+
+  <div class="card" style="margin-top:12px">
+    <div class="c-t"><span>3.1</span>交付清單</div>
+    <p>主片 <b>70 秒(16:9)</b>官網 Hero/The Stay 用 → 另剪:<b>15 秒 ×3</b>(抵達段/生活段/晨段,社群與子頁用)+ <b>9:16 直式版</b>一支。所有版本結尾卡相同。</p>
+  </div>
+
+  <!-- TECH -->
+  <h2>四 · 拍攝規格</h2>
+  <div class="h2-cn">與攝影規範同一套眼睛,只是會動</div>
+
+  <ul class="rules">
+    <li><b>機位:</b>人眼高度 120–150cm;三腳架定鏡為主,滑軌極慢推拉為輔;<span class="no">禁手持晃動、禁快速運鏡、禁室內空拍機</span></li>
+    <li><b>鏡頭:</b>35mm/50mm 定焦;<span class="no">禁超廣角</span>(空間不誇飾,照片是承諾,影片也是)</li>
+    <li><b>光:</b>只用自然光+屋內 2700K 現場燈;<span class="no">禁補冷白光、禁 HDR 感調色</span>;黃昏與清晨是主戰場,正午不拍</li>
+    <li><b>調色:</b>白=Marble 暖白、陰影帶暖、窗外過曝成柔白;對著品牌色卡校色</li>
+    <li><b>格率:</b>4K · 24/25fps;生活鏡頭可 50fps 拍、放 25 呈現半速(慢半步的視覺版),但全片慢動作不超過三成</li>
+    <li><b>收音:</b>現場音全收(門鎖、壺、翻頁是主角);後期只做降噪與層次,不加音效庫的假聲音</li>
+  </ul>
+
+  <!-- DIRECTING -->
+  <h2>五 · 怎麼導她(非演員的導法)</h2>
+  <div class="h2-cn">給任務,不給情緒</div>
+
+  <div class="card">
+    <p><b>不說:</b>「表現出放鬆的感覺」「自然一點」——沒有人聽得懂這種指令。<b>只給真任務:</b>「真的泡一杯茶,泡好,喝兩口」「找到書裡你真的想讀的那頁,讀三分鐘,我們在旁邊拍」「進門後照你平常的習慣做,行李放哪都可以」。</p>
+    <p><b>每個動作連做三次,鏡頭一直開著</b>——第一次她會意識鏡頭,第三次她會忘記。用第三次。</p>
+    <p><b>現場只留必要的人</b>(攝影+你),人越少她越真。拍攝日的家要照 5.2 檢查單先跑一遍——她走進去的那一刻如果是真的舒服,鏡頭拍得到。</p>
+  </div>
+
+  <!-- PREP -->
+  <h2>六 · 前置清單</h2>
+  <div class="h2-cn">開拍前兩週</div>
+
+  <ul class="rules">
+    <li>選定物件與<b>空置檔期</b>:仁愛採光最好的一戶,黃昏+夜(半天)、翌日清晨(半天),共兩個半天</li>
+    <li><b>肖像授權書先簽</b>——即使是自己人,公司資產照公司的規矩走:授權範圍(官網/社群/年限)白紙黑字,保護她也保護品牌</li>
+    <li>三套服裝實穿+暖光下拍照確認色</li>
+    <li>手寫卡先寫好(她的名字),道具=真的迎賓佈置:照抵達前六十分鐘檢查單執行——<b>拍攝日就是一次真的 The First Hour 預演</b></li>
+    <li>攝影師:可與照片試拍同一人同場評估動態能力;確認器材(定焦、腳架、滑軌、現場收音)</li>
+    <li>走屋影片(詢問流程用的 3 分鐘版)可同場加拍,一魚兩吃</li>
+  </ul>
+
+  <div class="card" style="border-color:var(--oak); margin-top:32px">
+    <div class="lock" style="border:none;padding:0">整支片其實只在拍一秒鐘——門關上、城市消失的那一秒。<br/>其他六十九秒,都是為了讓那一秒成立。</div>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Film</span>
+    <span>Script v1 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

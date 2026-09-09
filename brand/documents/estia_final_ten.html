@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — The Final Ten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:52px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,64px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:15.5px; color:#5b5449; line-height:1.9; max-width:660px; }
+  .intro-cn b{ color:var(--oak); font-weight:500; }
+
+  /* GRID */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:48px; }
+  .cell{ border:1px solid rgba(34,29,23,.13); background:var(--marble); }
+  .cell-stage{ min-height:235px; display:flex; align-items:center; justify-content:center; padding:30px 16px; }
+  .cell-label{ border-top:1px solid rgba(34,29,23,.09); padding:11px 14px; display:flex; justify-content:space-between; align-items:baseline; }
+  .cl-id{ font-size:12px; letter-spacing:.2em; color:var(--oak); }
+  .cl-name{ font-family:'Noto Serif TC',serif; font-size:12px; color:#7a7468; text-align:right; }
+
+  .lock{ text-align:center; }
+  .lock .mk-w{ display:flex; justify-content:center; margin-bottom:17px; }
+  .lock .wm{ font-family:'Italiana',serif; font-size:22px; letter-spacing:.42em; padding-left:.42em; }
+  .rule{ width:22px; height:1px; background:var(--oak); margin:12px auto; }
+  .sub{ font-size:8.5px; letter-spacing:.5em; padding-left:.5em; text-transform:uppercase; color:var(--stone); }
+  .wm-solo{ font-family:'Italiana',serif; font-size:27px; letter-spacing:.42em; padding-left:.42em; }
+
+  svg.mk{ stroke:var(--ember); fill:none; stroke-width:2.8; stroke-linecap:square; }
+  .soft{ stroke-linecap:round; }
+
+  .lit-i .i{ color:var(--oak); }
+  .mirror-wrap{ text-align:center; }
+  .mirror-wrap .mir{ transform:scaleY(-1); opacity:.16; margin-top:5px;
+    -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 15%, rgba(0,0,0,1) 90%);
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 15%, rgba(0,0,0,1) 90%); }
+
+  /* DARK BAND */
+  .darkband{ margin-top:56px; background:var(--ember); border:1px solid var(--ember); padding:36px 20px 30px; }
+  .db-label{ font-size:9.5px; letter-spacing:.28em; text-transform:uppercase; color:#8f887c; margin-bottom:26px; text-align:center; }
+  .db-grid{ display:flex; flex-wrap:wrap; gap:30px 34px; justify-content:center; align-items:center; }
+  .db-item{ text-align:center; }
+  .db-item .lock .wm{ color:var(--marble); font-size:13px; }
+  .db-item .lock .mk-w{ margin-bottom:10px; }
+  .db-item svg.mk{ stroke:var(--marble); }
+  .db-item .wm-solo{ color:var(--marble); font-size:15px; }
+  .db-item .sub{ color:#8f887c; font-size:6.5px; }
+  .db-item .rule{ margin:7px auto; width:16px; }
+  .db-item .lit-i .i{ color:var(--oak); }
+  .db-item .cl-id{ display:block; margin-top:9px; font-size:9px; color:#8f887c; letter-spacing:.22em; }
+  .db-item .mirror-wrap .mir{ opacity:.22; }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:56px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ letter-spacing:.14em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">The Final Ten</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03 · Finalists</div>
+    <h1>The final ten.</h1>
+    <p class="intro-cn">七輪、四十八席之後,剩下這十個。你已經定了一條重要原則:<b>字標是日常,符號是特殊場合</b>——所以不管選誰,ESTIA 五個字母永遠是主角,符號只在封蠟、鑰匙牌、迎賓卡這些時刻現身。慢慢看,憑感覺,幾天後回我 1–3 個代號。</p>
+  </div>
+
+  <!-- ═══ THE TEN ═══ -->
+  <div class="grid">
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="wm-solo">ESTIA</div><div class="rule"></div><div class="sub">Residences</div></div>
+    </div><div class="cell-label"><span class="cl-id">0</span><span class="cl-name">純字標 · 完整鎖定版</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><path d="M32 82 V46 A18 18 0 0 1 68 46 V82"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M1</span><span class="cl-name">拱 · 門</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><path d="M42 24 A28 28 0 0 0 42 80"/><path d="M58 24 A28 28 0 0 1 58 80"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M3</span><span class="cl-name">相對的弧</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><line x1="28" y1="32" x2="72" y2="32"/><line x1="28" y1="52" x2="56" y2="52"/><line x1="28" y1="72" x2="72" y2="72"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M7</span><span class="cl-name">三橫 · Ε</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M10</span><span class="cl-name">鑰匙</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M11</span><span class="cl-name">門裡的 E</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg width="54" height="54" viewBox="0 0 100 100"><path fill="#8B6F47" d="M22 38 L70 24 L74 31 L26 45 Z"/><path fill="#8B6F47" d="M26 56 L74 42 L78 49 L30 63 Z"/><path fill="#8B6F47" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M15</span><span class="cl-name">三道光 · Oak</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="lock"><div class="mk-w"><svg class="mk" width="54" height="54" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg></div><div class="wm">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M17</span><span class="cl-name">爐火柔波</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="wm-solo lit-i" style="font-size:24px;">EST<span class="i">I</span>A</div>
+    </div><div class="cell-label"><span class="cl-id">M42</span><span class="cl-name">名字裡的一盞燈</span></div></div>
+
+    <div class="cell"><div class="cell-stage">
+      <div class="mirror-wrap"><div class="wm-solo" style="font-size:24px;">ESTIA</div><div class="wm-solo mir" style="font-size:24px;">ESTIA</div></div>
+    </div><div class="cell-label"><span class="cl-id">M43</span><span class="cl-name">倒影 · 鏡面的名字</span></div></div>
+
+  </div>
+
+  <!-- ═══ DARK BAND ═══ -->
+  <div class="darkband">
+    <div class="db-label">Same ten · on Ember · 夜裡的樣子</div>
+    <div class="db-grid">
+      <div class="db-item"><div class="lock"><div class="wm-solo">ESTIA</div><div class="rule"></div><div class="sub">Residences</div></div><span class="cl-id">0</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><path d="M32 82 V46 A18 18 0 0 1 68 46 V82"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M1</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><path d="M42 24 A28 28 0 0 0 42 80"/><path d="M58 24 A28 28 0 0 1 58 80"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M3</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><line x1="28" y1="32" x2="72" y2="32"/><line x1="28" y1="52" x2="56" y2="52"/><line x1="28" y1="72" x2="72" y2="72"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M7</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M10</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M11</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg width="34" height="34" viewBox="0 0 100 100"><path fill="#8B6F47" d="M22 38 L70 24 L74 31 L26 45 Z"/><path fill="#8B6F47" d="M26 56 L74 42 L78 49 L30 63 Z"/><path fill="#8B6F47" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M15</span></div>
+      <div class="db-item"><div class="lock"><div class="mk-w"><svg class="mk" width="34" height="34" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg></div><div class="wm">ESTIA</div></div><span class="cl-id">M17</span></div>
+      <div class="db-item"><div class="wm-solo lit-i">EST<span class="i">I</span>A</div><span class="cl-id">M42</span></div>
+      <div class="db-item"><div class="mirror-wrap"><div class="wm-solo">ESTIA</div><div class="wm-solo mir">ESTIA</div></div><span class="cl-id">M43</span></div>
+    </div>
+  </div>
+
+  <!-- HOW TO -->
+  <div class="howto">
+    <div class="eyebrow">How to choose · 怎麼選</div>
+    <p>不趕。這幾天讓它們住在你手機裡,通勤時看一眼、睡前看一眼——<b>哪一個看第五次還想看,就是它</b>。</p>
+    <p>回我 <span class="code">1–3 個代號</span> (可附修改方向,例如「M11 但拱再瘦」)。我做字體級精修,7/15 聖托里尼傍晚,對著島上的白牆簽字。</p>
+    <p>提醒:M42 / M43 是字標處理,可以與任一符號並存——例如「日常用 M42,封蠟用 M11」也是合法答案。</p>
+  </div>
+
+  <!-- ═══ THE DOSSIER ═══ -->
+  <style>
+    .an-card{border:1px solid rgba(34,29,23,.13);background:var(--marble);margin-top:14px;padding:18px 22px 20px;}
+    .an-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:12px;}
+    .an-id{font-size:12px;letter-spacing:.2em;color:var(--oak);white-space:nowrap;}
+    .an-name{font-family:'Noto Serif TC',serif;font-size:13px;color:#7a7468;text-align:right;}
+    .an-row{font-size:13px;line-height:1.82;color:#4a443b;font-family:'Noto Serif TC',serif;margin-top:7px;}
+    .an-row b{color:var(--oak);font-weight:500;}
+    .an-row .no{color:#a06e5c;font-weight:500;}
+    .pick{border:1px solid var(--oak);background:var(--marble);margin-top:16px;padding:22px 24px;}
+    .pick .pk-id{font-family:'Italiana',serif;font-size:22px;margin-bottom:4px;}
+    .pick .pk-role{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--oak);margin-bottom:10px;}
+    .pick p{font-size:13.5px;line-height:1.85;color:#4a443b;font-family:'Noto Serif TC',serif;}
+  </style>
+
+  <section>
+    <h2>The dossier</h2>
+    <div class="h2-cn">十席逐一解讀 · 意義 / 推薦 / 不推薦</div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">0</span><span class="an-name">純字標 · 完整鎖定版</span></div>
+      <div class="an-row"><b>意義</b> — 名字本身就是全部。灶神之名 + Italiana 的呼吸字距,Aesop 走了三十年的路線:自信到不需要第二張臉。</div>
+      <div class="an-row"><b>推薦,因為</b> — 零風險、最自信、永不過時。而且不管你最後選誰,它都是骨幹——它不是候選人,它是憲法。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 放棄了「被慢慢發現的祕密」。封蠟與鑰匙牌上只剩一個 E 可壓,少一層儀式感。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M1</span><span class="an-name">拱 · 門</span></div>
+      <div class="an-row"><b>意義</b> — 門檻:歡迎發生的地方。希臘柱廊與大稻埕騎樓共有的一個形,底部永遠開著。</div>
+      <div class="an-row"><b>推薦,因為</b> — 你最老的倖存者,六輪不死——這是數據,不是感覺。一筆即懂,建築而非裝飾。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 近年精品咖啡與選物店愛用拱,識別要靠比例與線的細度硬撐;單獨站著時,略空。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M3</span><span class="an-name">相對的弧</span></div>
+      <div class="an-row"><b>意義</b> — 主與客,兩道弧;中間的空隙,是留給你的位置。未閉合的圓 = 擁抱,但不強迫。</div>
+      <div class="an-row"><b>推薦,因為</b> — 十席裡與 "Hosted, not served." 咬合最深的概念;抽象得高級。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 第一眼是括號。需要說明書的符號,在門牌與封蠟這種「三秒場合」吃虧。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M7</span><span class="an-name">三橫 · Ε</span></div>
+      <div class="an-row"><b>意義</b> — E 退到只剩呼吸;同時是希臘的 Ε、爐火的層、木地板的縫。</div>
+      <div class="an-row"><b>推薦,因為</b> — 應用彈性的天花板:任何尺寸、任何材質、任何工藝都活。安靜到極致。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 這個形世上太多 (選單鍵、等化器)。沒有字體級的比例精修之前,它只是三條線。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M10</span><span class="an-name">鑰匙</span></div>
+      <div class="an-row"><b>意義</b> — 齒是 E 的三道臂。把鑰匙交到你手上——長租品牌與客人之間,信任的物理時刻。</div>
+      <div class="an-row"><b>推薦,因為</b> — 實體應用之王:刻在真的鑰匙牌上,鑰匙上有鑰匙,自我指涉的優雅。客人秒懂,不需解釋。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 圓頭與具象度,略微脫離你一路留下的細線幾何家族;飯店鑰匙意象有前人走過。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M11</span><span class="an-name">門裡的 E</span></div>
+      <div class="an-row"><b>意義</b> — 推開門,家的溫度在裡面。你兩個長青樹 (M1 × M7) 的孩子——門、灶火、字母,一個符號三層。</div>
+      <div class="an-row"><b>推薦,因為</b> — 層次最厚,經得起慢看;縮到極小時自動退化成 M1,等於自帶簡化版,一個符號兩種人格。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 元素最多,高頻日常使用會顯得「太多」——但你已定了「符號只出特殊場合」,這個弱點正好被你自己的原則抵銷。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M15</span><span class="an-name">三道光 · Oak</span></div>
+      <div class="an-row"><b>意義</b> — 午後的光穿過格柵落在橡木地板。光是第五種材質;系統裡唯一被允許發光的,是光本身。</div>
+      <div class="an-row"><b>推薦,因為</b> — 深色場景 (夜間官網、深色包裝) 無可取代的美。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 實心 + 斜向,是十席裡唯一違反「細線 + 靜」的;單色印刷即死。它更適合當攝影與網頁的「光語言」,不適合當印在紙上的 Logo。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M17</span><span class="an-name">爐火柔波</span></div>
+      <div class="an-row"><b>意義</b> — 不畫火,畫火的搖曳。E 的呼吸版,Estia 女神最溫柔的化身。</div>
+      <div class="an-row"><b>推薦,因為</b> — 十席裡最「暖」的線條;往寢具、織品、香氛延伸時最自然。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 容易被讀成水紋;柔波與你空間的直線骨相 (鏡面、大理石、比例) 之間,有半度的落差。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M42</span><span class="an-name">名字裡的一盞燈</span></div>
+      <div class="an-row"><b>意義</b> — 不加一筆,只讓 I 保持 Oak 色——名字裡有一盞不滅的燈。與色彩系統同一條法律:Oak 是唯一的暖。</div>
+      <div class="an-row"><b>推薦,因為</b> — 日常字標的完美形態:數位上它是燈,單色場合安全退回 0,零損失。而且它是你自己在第七輪留下的——你的直覺已經投過票。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 太細膩,快速掃過的人看不見;它的美需要第二眼——但精品本來就只為第二眼服務。</div>
+    </div>
+
+    <div class="an-card">
+      <div class="an-head"><span class="an-id">M43</span><span class="an-name">倒影 · 鏡面的名字</span></div>
+      <div class="an-row"><b>意義</b> — 你空間裡最安靜的材質 (鏡),第一次成為識別。同一個名字,兩個世界——城市在外,世界在內。</div>
+      <div class="an-row"><b>推薦,因為</b> — 作為官網開場動態、攝影語言 (鏡中的 ESTIA)、影片收尾——美得完全成立,而且沒有人這樣做。</div>
+      <div class="an-row"><span class="no">不推薦,因為</span> — 作為靜態印刷 Logo 工序極刁:倒影透明度差 3% 就像印壞。它更像品牌的「行為」,不是品牌的「印」。</div>
+    </div>
+  </section>
+
+  <!-- ═══ MY THREE ═══ -->
+  <section>
+    <h2>If I must choose three</h2>
+    <div class="h2-cn">如果逼我選三 · 一套分工,不是三個並列</div>
+
+    <p class="intro-cn" style="margin-bottom:6px;">先誠實交代戰績:我標過星的四個,全被你槍斃。所以以下不是「我的品味」——是把你七輪的殺與留當數據,回歸出來的答案。值得注意的是,三席裡有兩席是你自己第七輪留下的:我們的判斷,終於收斂了。</p>
+
+    <div class="pick">
+      <div class="pk-role">Daily · 日常</div>
+      <div class="pk-id">M42 — The Lit I</div>
+      <p>官網、名片、Email 簽名、導覽列。它本質是「0 + 一滴暖」:數位上發光,單色時無痛退回純字標——進可攻退可守,沒有任何情境會輸。每天出現一百次也不膩,因為它九成九的時候就是名字本身。</p>
+    </div>
+
+    <div class="pick">
+      <div class="pk-role">Ceremony · 儀式</div>
+      <div class="pk-id">M11 — The E Within</div>
+      <p>封蠟、鑰匙牌、迎賓卡、週年禮。特殊場合才現身——層次厚,正好配慢看;拿在手裡的人有時間讀出「門、火、E」三層。縮到極小自動變成 M1 的素拱,一個符號自帶兩個尺寸的人格。你的「符號只出特殊場合」原則,正好治好它唯一的病。</p>
+    </div>
+
+    <div class="pick">
+      <div class="pk-role">Behaviour · 行為</div>
+      <div class="pk-id">M43 — The Reflection</div>
+      <p>不印在紙上,活在動態裡:官網開場的一秒倒影、影片收尾、鏡面與水磨石上的品牌攝影。讓「倒影」成為 ESTIA 被拍攝、被動畫的固定方式——它不是第三個 Logo,是品牌的一種舉止。</p>
+    </div>
+
+    <p class="intro-cn" style="margin-top:22px;">為什麼不是其他七席:<b>0</b> 已內含於 M42 的退路;<b>M1</b> 已內含於 M11 的縮小版;<b>M7</b> 是 M11 的內芯;<b>M10</b> 輸在具象、<b>M15</b> 輸在系統相容、<b>M17</b> 輸在半度之差、<b>M3</b> 輸在需要說明書。十席其實是四個家族——這套選法,讓每個家族最強的基因都上場,沒有一席白死。</p>
+
+    <p class="intro-cn" style="margin-top:10px;">最後:這是我的答案,不是判決。七輪的紀錄證明你的手感比我的星星準——聖托里尼的白牆前,簽你自己的字。</p>
+  </section>
+
+  <footer>
+    <span>ESTIA · The Final Ten</span>
+    <span>Day 13 · In Selection</span>
+  </footer>
+
+</main>
+</body>
+</html>

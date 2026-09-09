@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 滅火與修復 The Repair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:#E9E3D6; color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased;
+    padding:40px 16px 80px; }
+  .note{ max-width:800px; margin:0 auto 26px; font-family:'Outfit','Noto Serif TC',sans-serif;
+    font-size:11px; letter-spacing:.18em; color:#8d8577; text-transform:uppercase; text-align:center; }
+
+  .page{ max-width:800px; margin:0 auto; background:var(--marble); padding:clamp(32px,6vw,52px) clamp(24px,6vw,50px);
+    box-shadow:0 24px 60px rgba(34,29,23,.14); }
+
+  .p-head{ display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:18px; border-bottom:1px solid rgba(34,29,23,.15); margin-bottom:6px; }
+  .p-wm{ font-family:'Italiana',serif; font-size:24px; letter-spacing:.42em; }
+  .p-sub{ font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:var(--stone); }
+
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(23px,4.4vw,32px); margin:22px 0 6px; }
+  .h-cn{ font-size:12px; color:var(--stone); letter-spacing:.14em; margin-bottom:12px; }
+  .credo{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:var(--oak); margin-bottom:26px; line-height:1.8; }
+
+  .station{ border:1px solid rgba(34,29,23,.14); margin-bottom:11px; }
+  .st-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    padding:12px 18px; border-bottom:1px solid rgba(34,29,23,.09); flex-wrap:wrap; }
+  .st-name{ font-size:14.5px; font-weight:500; }
+  .st-name span{ font-family:'Outfit',sans-serif; font-size:9.5px; letter-spacing:.22em; color:var(--oak); margin-right:10px; text-transform:uppercase; }
+  .st-when{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:10.5px; letter-spacing:.1em; color:#a3543f; }
+  .st-body{ padding:12px 18px 15px; }
+  .st-body p{ font-size:12.5px; line-height:1.95; color:#4a443b; }
+  .st-body p + p{ margin-top:6px; }
+  .st-body b{ color:var(--ember); font-weight:500; }
+  .say{ border-left:2px solid var(--oak); padding:3px 0 3px 12px; margin:8px 0;
+    font-size:12.5px; line-height:1.85; color:#3f3a32; }
+  .ban{ color:#a3543f; font-weight:500; }
+
+  h2{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--oak); margin:30px 0 12px; }
+
+  .clause{ background:var(--linen); padding:15px 18px; margin-bottom:10px; }
+  .clause .c-t{ font-size:13px; font-weight:500; margin-bottom:6px; }
+  .clause p{ font-size:12.5px; line-height:1.9; color:#3f3a32; }
+  .clause b{ color:var(--ember); font-weight:500; }
+
+  .bottom{ background:var(--ember); padding:20px 24px; margin-top:24px; text-align:center; }
+  .bottom p{ font-family:'Cormorant Garamond','Noto Serif TC',serif; font-style:italic; font-size:14.5px; color:#cfc8ba; line-height:1.9; }
+
+  footer{ max-width:800px; margin:32px auto 0; display:flex; justify-content:space-between;
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:#8d8577; }
+
+  @media print{
+    body{ background:white; padding:0; }
+    .page{ box-shadow:none; max-width:none; }
+    .note{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="note">內部管理文件 · Jim 與主持人用 · 不上牆</div>
+
+<div class="page">
+  <div class="p-head">
+    <div class="p-wm">ESTIA</div>
+    <div class="p-sub">The Repair · v1.0</div>
+  </div>
+
+  <h1>滅火與修復</h1>
+  <div class="h-cn">衝突爆發後的標準動線 · 五站</div>
+  <div class="credo">衝突不殺文化,沒有修復的衝突才殺。<br/>會修復的團隊,比從不吵架的團隊更信任彼此——因為每個人都見過「吵完之後,我們還在」。</div>
+
+  <!-- STATION 0 -->
+  <div class="station">
+    <div class="st-head"><div class="st-name"><span>Station 0</span>現場滅火</div><div class="st-when">爆發當下 · 0–10 分</div></div>
+    <div class="st-body">
+      <p>在場最資深者(或會議主持人)只做一件事——<b>停火,不裁決</b>:</p>
+      <div class="say">「停——這題重要,不在氣頭上處理。事我記下來了,今天之內會處理,不會裝沒事。現在先各自回到手上的事。」</div>
+      <p><span class="ban">禁:</span>當眾裁決誰對誰錯、逼任何一方當場道歉(被迫的道歉是二次羞辱)、<b>把衝突帶進 LINE 群組</b>——文字只會讓火變大。</p>
+    </div>
+  </div>
+
+  <!-- STATION 1 -->
+  <div class="station">
+    <div class="st-head"><div class="st-name"><span>Station 1</span>分開聽</div><div class="st-when">當天下班前</div></div>
+    <div class="st-body">
+      <p>Jim(或非當事的資深)<b>分別、單獨</b>聽兩邊,各 15–20 分。只聽,不裁:</p>
+      <div class="say">「我先聽妳完整講一次。我今天不下判斷,就是聽。」</div>
+      <p>兩邊都必須聽到同一句:<b>「妳的感受是真的,我聽到了。這件事不會被裝沒事。」</b>——上次的事故,就死在沒有人做這一步。</p>
+    </div>
+  </div>
+
+  <!-- STATION 2 -->
+  <div class="station">
+    <div class="st-head"><div class="st-name"><span>Station 2</span>修復對話</div><div class="st-when">48 小時內 · 30 分 · 三人</div></div>
+    <div class="st-body">
+      <p>兩造 + 主持(Jim 或非當事資深)。四段,順序不能亂:</p>
+      <p><b>① 事實</b> — 各自講「發生了什麼」。只准講看到、聽到的;<span class="ban">禁</span>「妳就是⋯」「妳每次都⋯」。<br/>
+      <b>② 影響</b> — 各自講「這件事讓我⋯」。感受在這一段合法出場。<br/>
+      <b>③ 需求</b> — 「我真正需要的是⋯」。<br/>
+      <b>④ 約定</b> — 收在<b>一條具體、可檢查的約定</b>。例:「檢查發現先私訊房務本人,兩小時後才記進系統。」</p>
+      <p>主持人的工作:把人身翻譯成系統(「這代表我們的流程有個洞」)、守住四段順序、寫下約定。結尾固定:</p>
+      <div class="say">「妳們不需要今天就喜歡彼此。只需要同意這一條約定。」</div>
+    </div>
+  </div>
+
+  <!-- STATION 3 -->
+  <div class="station">
+    <div class="st-head"><div class="st-name"><span>Station 3</span>回訪</div><div class="st-when">一週後</div></div>
+    <div class="st-body">
+      <p>分別私下問一句:<b>「那條約定,有守住嗎?」</b>守住了——各給一句肯定;沒守住——回 Station 2 加開一次,不責備,重談約定。</p>
+    </div>
+  </div>
+
+  <!-- STATION 4 -->
+  <div class="station">
+    <div class="st-head"><div class="st-name"><span>Station 4</span>系統化</div><div class="st-when">下一次爐邊會</div></div>
+    <div class="st-body">
+      <p>衝突背後若有結構洞(例:檢查者位階低於被檢查者),<b>去掉人名</b>帶進顧火時間:「上個月我們發現一個流程問題⋯」。</p>
+      <p><b>人的事私下修,事的教訓公開學。</b></p>
+    </div>
+  </div>
+
+  <!-- SPECIAL CLAUSES -->
+  <h2>特別條款</h2>
+
+  <div class="clause">
+    <div class="c-t">A · 氣頭上的離職 —— 不當場接受</div>
+    <p>有人在衝突中說「我不做了」,固定回應:</p>
+    <p><b>「我不在今天接受這個決定。給我 48 小時把事情處理完——週五妳再告訴我妳的決定,那時候我完全尊重。」</b></p>
+    <p>上一次,我們讓人在氣頭上走了。這條規則,就是那筆學費買回來的。</p>
+  </div>
+
+  <div class="clause">
+    <div class="c-t">B · 當事人是 Jim —— 沒有人能主持老闆的案子,所以</div>
+    <p>① 24 小時內<b>主動</b>約對方單獨談,開場固定:「昨天那件事,我想聽妳完整說一次。我先聽。」<br/>② Jim 的個人冷卻規則:<b>氣頭上不回群組訊息,隔夜再回</b>。</p>
+  </div>
+
+  <div class="clause">
+    <div class="c-t">C · 事後給臉色 —— 「提出者受保護」是有牙齒的</div>
+    <p>對提出問題的人事後刁難、冷落、放話——第一次:Jim 單獨、嚴肅地談,<b>而且只談這一次</b>。再犯,這就不是個性問題,是價值觀問題,按價值觀處理。全公司都知道這條線在哪。</p>
+  </div>
+
+  <div class="bottom">
+    <p>修復不是回到吵架之前——<br/>是走到一個「約定比情緒大」的新地方。</p>
+  </div>
+</div>
+
+<footer>
+  <span>ESTIA · The Repair</span>
+  <span>Day 27 · 2026</span>
+</footer>
+
+</body>
+</html>

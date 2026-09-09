@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — 攝影規範 The Eye</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital@1&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; --soft:#4a443b; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{ background:var(--marble); color:var(--ember);
+    font-family:'Noto Serif TC','Outfit',serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:900px; margin:0 auto; padding:56px 24px 100px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:clamp(34px,6vw,56px); line-height:1.1; margin-bottom:16px; }
+  .intro{ font-size:14.5px; color:#4a443b; line-height:2.0; max-width:620px; }
+  .intro b{ color:var(--oak); font-weight:500; }
+
+  .keyline{ margin:44px 0; padding:30px 26px; border:1px solid var(--oak); text-align:center; }
+  .keyline .k1{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:21px; color:var(--ember); }
+  .keyline .k2{ font-size:13px; color:var(--stone); margin-top:8px; letter-spacing:.1em; }
+
+  h2{ font-family:'Italiana','Noto Serif TC',serif; font-weight:400; font-size:24px; margin:66px 0 4px; }
+  .h2-cn{ font-family:'Outfit','Noto Serif TC',sans-serif; font-size:12.5px; color:var(--stone); margin-bottom:24px; letter-spacing:.14em; }
+
+  .rule{ border:1px solid rgba(34,29,23,.13); background:var(--marble); margin-bottom:12px; padding:18px 22px; }
+  .rule-t{ font-size:14.5px; font-weight:500; margin-bottom:8px; }
+  .rule-t span{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.2em; color:var(--oak); margin-right:10px; }
+  .rule p{ font-size:13px; line-height:1.95; color:#4a443b; }
+  .rule p b{ color:var(--ember); font-weight:500; }
+  .rule .ban{ color:#a3543f; }
+
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:640px){ .two{ grid-template-columns:1fr; } }
+  .col{ border:1px solid rgba(34,29,23,.13); padding:18px 20px; }
+  .col-t{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.26em; text-transform:uppercase; margin-bottom:12px; }
+  .ok .col-t{ color:var(--oak); } .no .col-t{ color:#a3543f; }
+  .col li{ font-size:13px; line-height:2.0; color:#4a443b; list-style:none; padding-left:16px; position:relative; }
+  .ok li::before{ content:"·"; position:absolute; left:2px; color:var(--oak); }
+  .no li::before{ content:"×"; position:absolute; left:0; color:#a3543f; font-size:11px; top:1px; }
+
+  .shot{ border:1px solid rgba(34,29,23,.13); margin-bottom:10px; padding:16px 20px; display:grid; grid-template-columns:130px 1fr; gap:16px; align-items:baseline; }
+  @media (max-width:560px){ .shot{ grid-template-columns:1fr; gap:4px; } }
+  .shot-n{ font-family:'Italiana',serif; font-size:16px; letter-spacing:.06em; }
+  .shot-n span{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.2em; color:var(--oak); display:block; margin-bottom:3px; }
+  .shot p{ font-size:12.5px; line-height:1.9; color:#4a443b; }
+
+  .spec{ border:1px solid rgba(34,29,23,.13); }
+  .spec-row{ display:flex; justify-content:space-between; gap:18px; padding:13px 20px; border-bottom:1px solid rgba(34,29,23,.09); }
+  .spec-row:last-child{ border-bottom:none; }
+  .spec-k{ font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--stone); white-space:nowrap; }
+  .spec-v{ font-size:12.5px; color:#3f3a32; text-align:right; line-height:1.7; }
+
+  .check{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:20px 22px; }
+  .check li{ list-style:none; font-size:13px; line-height:2.1; color:#3f3a32; padding-left:24px; position:relative; }
+  .check li::before{ content:"□"; position:absolute; left:0; color:var(--oak); }
+
+  .foot-sign{ margin-top:70px; text-align:center; }
+  .foot-sign .fq{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:var(--stone); line-height:2; }
+  footer{ margin-top:50px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-family:'Outfit',sans-serif;
+    font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:var(--stone); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span>Photography Direction</span>
+    <span>v1.0 · 2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">The Eye · 攝影規範 + Shot List</div>
+    <h1>我們拍的是光,<br/>不是房間。</h1>
+    <p class="intro">這份文件交給攝影師。它定義 ESTIA 的照片長什麼樣、絕不長什麼樣。原則只有一個:房仲攝影回答「這房子<b>有什麼</b>」,ESTIA 攝影回答「住在這裡<b>是什麼感覺</b>」。看清楚是平面圖的工作;想住進去,才是照片的工作。</p>
+  </div>
+
+  <div class="keyline">
+    <div class="k1">The photograph is a promise.</div>
+    <div class="k2">照片是承諾——客人到場的體驗,不能低於照片。寧可照片保守一分,現場驚喜一分。</div>
+  </div>
+
+  <!-- 五條規則 -->
+  <h2>Five Rules</h2>
+  <div class="h2-cn">五條規則 · 每一張照片都要通過</div>
+
+  <div class="rule">
+    <div class="rule-t"><span>01</span>光是主角</div>
+    <p>只用自然光與屋內既有暖光 (2700–3000K)。<b>黃昏優先</b>——同一面白牆,正午是冷的,黃昏是暖的,我們永遠選黃昏。一道斜陽切過木地板,就是 ESTIA 的招牌畫面。<span class="ban">禁:閃光燈、HDR 合成、冷白色溫、補光把陰影打死。</span>敢留陰影,光才存在。</p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>02</span>人眼的高度</div>
+    <p>相機高度 120–150cm,像一個人安靜地站在房裡。焦段以 35–50mm (全幅等效) 為主。<span class="ban">禁:超廣角變形、魚眼、把 10 坪拍成 20 坪的房仲透視。</span>寧可一張照片裝不下整個房間——<b>感覺比全貌重要,全貌交給平面圖。</b></p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>03</span>留白就是構圖</div>
+    <p>一張照片,一個主題。畫面配色即品牌配色:大面積 Marble/Linen 色調,一處 Oak 色的溫暖點睛。<b>九成安靜,一成溫度</b>——畫面塞滿的照片,跟塞滿形容詞的文案是同一種便宜。</p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>04</span>細節是證據</div>
+    <p>每個家除了大景,必拍 3–5 張細節:木紋、光落在牆上的形狀、亞麻的皺褶、五金的反光。客人放大照片時看到的,是我們的講究。這是 "Every detail, a welcome." 的視覺版。</p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>05</span>誠實</div>
+    <p>不拉寬空間、不過度修圖、不 P 掉現場真實存在的東西。照片與現場的落差,由品牌用信用買單。<span class="ban">禁:透視矯正以外的任何空間變形。</span></p>
+  </div>
+
+  <!-- 痕跡 -->
+  <h2>Traces, not people</h2>
+  <div class="h2-cn">痕跡規範 · 畫面裡永遠沒有人,但有「有人剛為你準備過」的證據</div>
+
+  <p class="intro" style="margin-bottom:20px">鐵律:<b>每一個入鏡的痕跡,必須是 The First Hour 或每週房務「真的會留下」的東西。</b>想加任何道具前先問:我們真的會這樣做嗎? 答案是否,就不准入鏡。</p>
+
+  <div class="two">
+    <div class="col ok">
+      <div class="col-t">允許入鏡</div>
+      <li>手寫迎賓卡 (床上或檯面,自然擺放)</li>
+      <li>一杯現泡的茶,要有熱氣 (拍攝前一刻上桌)</li>
+      <li>一本攤開的書 (書目從 Estia Reads 選)</li>
+      <li>亞麻床品的自然皺褶 (不燙平死)</li>
+      <li>擺好的室內拖一雙</li>
+      <li>窗簾半開,光進來的樣子</li>
+    </div>
+    <div class="col no">
+      <div class="col-t">永不入鏡</div>
+      <li>人 — 含手、背影、鏡中倒影</li>
+      <li>香檳、酒杯、草莓、花瓣</li>
+      <li>毛巾摺的天鵝、任何飯店式擺飾</li>
+      <li>Lifestyle 擺拍早餐盤 (咖啡+可頌+報紙)</li>
+      <li>電子產品陳列、氣球彩帶</li>
+      <li>清潔用品、電線、遙控器、垃圾桶</li>
+    </div>
+  </div>
+
+  <!-- 色調 -->
+  <h2>The Grade</h2>
+  <div class="h2-cn">色調規範 · 給修圖</div>
+  <div class="spec">
+    <div class="spec-row"><span class="spec-k">白的基準</span><span class="spec-v">照片裡的「白」對齊 Marble #F4F0E8 — 永遠不是純白</span></div>
+    <div class="spec-row"><span class="spec-k">陰影</span><span class="spec-v">帶暖褐,不帶藍。偏藍冷的白平衡直接淘汰</span></div>
+    <div class="spec-row"><span class="spec-k">飽和 / 對比</span><span class="spec-v">低飽和、柔對比。不追商業亮度</span></div>
+    <div class="spec-row"><span class="spec-k">窗外</span><span class="spec-v">允許過曝成柔白——窗內是主角,藍天不准搶戲。這就是 "A city address. A world apart." 的攝影語言</span></div>
+    <div class="spec-row"><span class="spec-k">參考基準</span><span class="spec-v">Aman 官網空間照 · Kinfolk 室內攝影 — 等光、留白、克制</span></div>
+  </div>
+
+  <!-- SHOT LIST -->
+  <h2>The Shot List</h2>
+  <div class="h2-cn">每個家八類鏡位 · 精修交付 12–15 張 (橫 8–10 + 直 4–5)</div>
+
+  <div class="shot"><div class="shot-n"><span>01</span>The Door</div><p>大樓入口與戶門、門牌位置。為未來的字標留構圖空間。至少一張直式。</p></div>
+  <div class="shot"><div class="shot-n"><span>02</span>The First Look</div><p>站在門內第一步的位置,人眼高度,拍「開門第一眼」——這張照片是客人入住前十秒的預演,也是子頁的候選主圖。</p></div>
+  <div class="shot"><div class="shot-n"><span>03</span>The Living</div><p>客廳。黃昏斜光時段,一點透視或 45 度,留白過半。沙發不必全入鏡。</p></div>
+  <div class="shot"><div class="shot-n"><span>04</span>The Light</div><p>自由題:這個家最美的一道光落在哪裡——牆上、地板、床角。每個家必交一張。這是整套照片的靈魂鏡位。</p></div>
+  <div class="shot"><div class="shot-n"><span>05</span>The Bedroom</div><p>床為主體。手寫迎賓卡自然入鏡 (寫 "Welcome home")。亞麻保留皺褶。晨光或黃昏皆可。</p></div>
+  <div class="shot"><div class="shot-n"><span>06</span>The Bath</div><p>材質特寫為主——石材、金屬、水。不需要全景;浴室的高級感在質地,不在大小。</p></div>
+  <div class="shot"><div class="shot-n"><span>07</span>The Details ×3–5</div><p>木紋近拍、五金反光、織品質地、光影的形狀。放大也經得起看。</p></div>
+  <div class="shot"><div class="shot-n"><span>08</span>The Window</div><p>從屋內看城市,室內主體曝光正確、窗外柔化過曝。城市在,但安靜。</p></div>
+
+  <!-- 交件 -->
+  <h2>Deliverables</h2>
+  <div class="h2-cn">交件規格</div>
+  <div class="spec">
+    <div class="spec-row"><span class="spec-k">張數</span><span class="spec-v">每物件代表戶:精修 12–15 張 (含全部八類鏡位)</span></div>
+    <div class="spec-row"><span class="spec-k">比例</span><span class="spec-v">橫式 3:2 (網站主圖) + 直式 4:5 (物件卡、手機瀏覽)</span></div>
+    <div class="spec-row"><span class="spec-k">規格</span><span class="spec-v">sRGB · 精修 JPG 長邊 ≥4000px · RAW 檔保留</span></div>
+    <div class="spec-row"><span class="spec-k">命名</span><span class="spec-v">estia-renai-living-01 (物件-空間-序號)</span></div>
+    <div class="spec-row"><span class="spec-k">第一輪範圍</span><span class="spec-v">ESTIA Ren'ai 代表戶 + ESTIA Songshan 代表戶 · 室內限定 (街區照第二輪)</span></div>
+  </div>
+
+  <!-- 拍攝日準備 -->
+  <h2>Shoot-day Prep</h2>
+  <div class="h2-cn">拍攝日準備清單 · Host 執行 · 把房間準備成「客人今天要入住」</div>
+  <div class="check">
+    <li>全屋燈開,逐顆確認 2700–3000K 暖光 (發現冷白燈泡,先換再拍)</li>
+    <li>窗簾調到光最好的角度,配合攝影師等光的時段</li>
+    <li>床鋪好,亞麻自然、不燙平死</li>
+    <li>手寫卡寫好放定 ("Welcome home" 或虛構客人名)</li>
+    <li>熱茶備好,拍攝前一刻才上桌 (要熱氣)</li>
+    <li>移走:電線、遙控器、清潔用品、垃圾桶、私人物品</li>
+    <li>會入鏡的鏡面與五金,擦亮</li>
+    <li>拍攝時段以黃昏為軸心排程;晨光鏡位另約</li>
+  </div>
+
+  <!-- 選攝影師 -->
+  <h2>Choosing the Eye</h2>
+  <div class="h2-cn">怎麼挑攝影師 · 一雙眼睛拍所有物件,風格才會一致</div>
+
+  <div class="rule">
+    <div class="rule-t"><span>看作品集</span>三個訊號</div>
+    <p>① 看他的<b>個人作品</b>,不是接案作品——接案看技術,個人作品看眼睛。裡面有沒有光、留白、安靜? ② 他敢不敢<b>留陰影</b>——每張都打到全亮的,是房仲的眼睛,改不過來。③ 他修圖的<b>白偏什麼色</b>——偏藍冷的直接淘汰,審美底色不合,溝通成本無限大。</p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>面談</span>兩個問題</div>
+    <p>① 「給你一個空房間和一個下午,你會等什麼?」——答案裡有「光」「時間」的,是對的人。② 給他看 Aman 級的參考照,問「這種照片難在哪?」——答「等光和克制」的留下;答「後製」的,謝謝再聯絡。</p>
+  </div>
+  <div class="rule">
+    <div class="rule-t"><span>試拍制</span>先看真實工作,再承諾關係</div>
+    <p>不直接簽長期。<b>先付費試拍:ESTIA Songshan 一間套房、半天</b>,用本規範驗收(五條規則+色調+痕跡)。過了,才談所有物件的長期合作。這跟我們面試 Host 的邏輯一樣——用一次真實的工作,取代十次口頭承諾。</p>
+  </div>
+
+  <div class="foot-sign">
+    <div class="fq">We don't describe the feeling. We create it.<br/>照片也一樣。</div>
+  </div>
+
+  <footer>
+    <span>ESTIA · The Eye</span>
+    <span>Photography Direction v1.0 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>

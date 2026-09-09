@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESTIA — Mark Candidates v4 · Ten E's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --marble:#F4F0E8; --linen:#E4DCCC; --stone:#A49E94; --oak:#8B6F47; --ember:#221D17; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{ background:var(--marble); color:var(--ember);
+    font-family:'Outfit','Noto Serif TC',sans-serif; font-weight:300; -webkit-font-smoothing:antialiased; }
+  main{ max-width:1080px; margin:0 auto; padding:56px 22px 80px; }
+
+  header{ display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:22px; margin-bottom:56px; border-bottom:1px solid rgba(34,29,23,.14);
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+
+  .eyebrow{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--oak); margin-bottom:16px; }
+  h1{ font-family:'Italiana',serif; font-weight:400; font-size:clamp(38px,6.5vw,64px); line-height:1.05; margin-bottom:12px; }
+  .intro-cn{ font-family:'Noto Serif TC',serif; font-size:16px; color:#5b5449; line-height:1.9; max-width:640px; }
+
+  .card{ border:1px solid rgba(34,29,23,.13); margin-top:40px; background:var(--marble); position:relative; }
+  .card.rec{ border-color:var(--oak); }
+  .badge{ position:absolute; top:14px; right:16px; font-size:9.5px; letter-spacing:.24em;
+    color:var(--oak); border:1px solid var(--oak); padding:5px 12px; text-transform:uppercase; z-index:2; }
+  .c-head{ padding:18px 22px 0; }
+  .c-id{ font-size:11px; letter-spacing:.24em; color:var(--oak); margin-bottom:4px; }
+  .c-name{ font-family:'Italiana',serif; font-size:23px; }
+  .c-cn{ font-family:'Noto Serif TC',serif; font-size:13px; color:var(--stone); margin-top:3px; }
+
+  .stages{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px;
+    background:rgba(34,29,23,.1); border-top:1px solid rgba(34,29,23,.1); border-bottom:1px solid rgba(34,29,23,.1); margin-top:16px; }
+  .stage{ background:var(--marble); min-height:180px; display:flex; align-items:center; justify-content:center; position:relative; padding:32px 16px; }
+  .stage.dark{ background:var(--ember); }
+  .stage-label{ position:absolute; top:12px; left:16px; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--stone); }
+
+  .c-notes{ padding:18px 22px 20px; display:grid; gap:8px; }
+  .note{ font-size:13px; line-height:1.78; color:#4a443b; font-family:'Noto Serif TC',serif; }
+  .note b{ color:var(--oak); font-weight:500; }
+
+  .stack{ text-align:center; }
+  .stack .mk{ margin-bottom:16px; display:flex; justify-content:center; }
+  .stack .wm{ font-family:'Italiana',serif; font-size:25px; letter-spacing:.42em; padding-left:.42em; }
+  .dark .wm{ color:var(--marble); }
+
+  svg.mk{ stroke:var(--ember); fill:none; stroke-width:3; stroke-linecap:square; }
+  .dark svg.mk{ stroke:var(--marble); }
+  svg.mk .soft{ stroke-linecap:round; }
+  svg.mk .dash{ stroke-dasharray:5 6; opacity:.55; stroke-width:2.4; }
+  svg.mk .fillonly{ fill:var(--oak); stroke:none; }
+
+  .howto{ border:1px solid rgba(34,29,23,.13); background:var(--linen); padding:30px 26px; margin-top:56px; }
+  .howto p{ font-size:14px; line-height:1.95; color:#3f3a32; font-family:'Noto Serif TC',serif; max-width:660px; }
+  .howto p + p{ margin-top:8px; }
+  .howto .code{ letter-spacing:.14em; color:var(--oak); }
+
+  footer{ margin-top:80px; padding-top:24px; border-top:1px solid rgba(34,29,23,.12);
+    display:flex; justify-content:space-between; font-size:10px; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--stone); }
+  @media (max-width:560px){ header .hide-m{display:none;} .badge{position:static;display:inline-block;margin:14px 0 0 22px;} }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span>ESTIA · Residences</span>
+    <span class="hide-m">Mark Candidates · v4</span>
+    <span>2026</span>
+  </header>
+
+  <div>
+    <div class="eyebrow">Visual Identity / 03 · Fourth Round</div>
+    <h1>Ten E's,<br/>ten meanings.</h1>
+    <p class="intro-cn">你要的:有意義,字母結合圖案。這十個,是同一個答案的十種寫法——每一個都是 Estia 的 E,而每一個 E 的身體裡,住著一個只屬於這個品牌的意思。</p>
+  </div>
+
+  <!-- M9 · THE TABLE -->
+  <div class="card rec">
+    <span class="badge">★ 推薦</span>
+    <div class="c-head"><div class="c-id">M9</div><div class="c-name">The Table</div><div class="c-cn">E 躺下來,是一張桌</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><line x1="14" y1="32" x2="86" y2="32"/><line x1="24" y1="32" x2="24" y2="74"/><line x1="50" y1="32" x2="50" y2="74"/><line x1="76" y1="32" x2="76" y2="74"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="60" height="60" viewBox="0 0 100 100"><line x1="14" y1="32" x2="86" y2="32"/><line x1="24" y1="32" x2="24" y2="74"/><line x1="50" y1="32" x2="50" y2="74"/><line x1="76" y1="32" x2="76" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><line x1="14" y1="32" x2="86" y2="32"/><line x1="24" y1="32" x2="24" y2="74"/><line x1="50" y1="32" x2="50" y2="74"/><line x1="76" y1="32" x2="76" y2="74"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><line x1="14" y1="32" x2="86" y2="32"/><line x1="24" y1="32" x2="24" y2="74"/><line x1="50" y1="32" x2="50" y2="74"/><line x1="76" y1="32" x2="76" y2="74"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 把 E 順時針轉九十度:三道臂變成桌腳,一道脊變成桌面。<b>桌子,是款待最古老的符號</b>——請人上桌,是全世界共通的「歡迎」。希臘人如此,台灣人更是如此。</div>
+      <div class="note"><b>為什麼推薦</b> — 一秒懂,終身記。E 與意義完全咬合,沒有一筆多餘;而它講的正是 Hosted, not served.——主人請你入座。</div>
+      <div class="note"><b>風險</b> — 三腳桌非常規 (但這正是「這是個 E」的提示)。</div>
+    </div>
+  </div>
+
+  <!-- M10 · THE KEY -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M10</div><div class="c-name">The Key</div><div class="c-cn">E 是一把鑰匙</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><circle cx="50" cy="20" r="9"/><line x1="50" y1="29" x2="50" y2="82"/><line x1="50" y1="56" x2="70" y2="56"/><line x1="50" y1="68" x2="63" y2="68"/><line x1="50" y1="80" x2="70" y2="80"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 鑰匙的三個齒,就是 E 的三道臂。<b>把鑰匙交到你手上</b>——長租品牌與客人之間最重要的一個瞬間,信任的物理形狀。</div>
+      <div class="note"><b>為什麼</b> — 它是十個裡最「行業原生」的:住宅、門、託付,全在一把鑰匙裡。實體應用最強 (真的刻在鑰匙牌上,鑰匙上有鑰匙)。</div>
+      <div class="note"><b>風險</b> — 鑰匙意象在飯店業被用過;靠「E 齒」的巧思與細線質感區隔。</div>
+    </div>
+  </div>
+
+  <!-- M11 · THE E WITHIN -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M11</div><div class="c-name">The E Within</div><div class="c-cn">門裡的 E · M1 × M7 之子</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><path d="M26 84 V44 A24 24 0 0 1 74 44 V84"/><line x1="40" y1="52" x2="60" y2="52"/><line x1="40" y1="63" x2="54" y2="63"/><line x1="40" y1="74" x2="60" y2="74"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 你留下的兩個符號,生的孩子:M1 的拱 × M7 的三橫。門裡有 E——<b>推開門,家的溫度在裡面</b>。三橫也讀作爐火的層、也讀作 Ε。</div>
+      <div class="note"><b>為什麼</b> — 「A city address. A world apart.」的完整圖解:外面是門,裡面是火。層次最豐富的一個。</div>
+      <div class="note"><b>風險</b> — 元素較多,小尺寸時三橫會擠;favicon 需只留拱。</div>
+    </div>
+  </div>
+
+  <!-- M12 · THE FLOOR PLAN -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M12</div><div class="c-name">The Floor Plan</div><div class="c-cn">E 是一張家的平面圖</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><line x1="30" y1="18" x2="30" y2="82"/><line x1="30" y1="18" x2="72" y2="18"/><line x1="30" y1="50" x2="60" y2="50"/><line x1="30" y1="82" x2="72" y2="82"/><line class="dash" x1="72" y1="18" x2="72" y2="82"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><line x1="30" y1="18" x2="30" y2="82"/><line x1="30" y1="18" x2="72" y2="18"/><line x1="30" y1="50" x2="60" y2="50"/><line x1="30" y1="82" x2="72" y2="82"/><line class="dash" x1="72" y1="18" x2="72" y2="82"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><line x1="30" y1="18" x2="30" y2="82"/><line x1="30" y1="18" x2="72" y2="18"/><line x1="30" y1="50" x2="60" y2="50"/><line x1="30" y1="82" x2="72" y2="82"/><line class="dash" x1="72" y1="18" x2="72" y2="82"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><line x1="30" y1="18" x2="30" y2="82"/><line x1="30" y1="18" x2="72" y2="18"/><line x1="30" y1="50" x2="60" y2="50"/><line x1="30" y1="82" x2="72" y2="82"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — E 的脊是走廊,三道臂是牆——<b>E 本身就是一張兩房的平面圖</b>。右側那道虛線,是還沒砌上的牆:家,永遠對客人開著一面。</div>
+      <div class="note"><b>為什麼</b> — 工程師的簽名。你看圖的人生,變成品牌的記號;虛線是整個系統裡最溫柔的一筆。</div>
+      <div class="note"><b>風險</b> — 意義需要被說一次才完整 (但精品符號常常如此——愛馬仕的馬車也要人講)。</div>
+    </div>
+  </div>
+
+  <!-- M13 · THE STEPS -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M13</div><div class="c-name">The Steps</div><div class="c-cn">E 是回家的階梯</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><line x1="18" y1="72" x2="46" y2="72"/><line x1="36" y1="52" x2="64" y2="52"/><line x1="54" y1="32" x2="82" y2="32"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><line x1="18" y1="72" x2="46" y2="72"/><line x1="36" y1="52" x2="64" y2="52"/><line x1="54" y1="32" x2="82" y2="32"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><line x1="18" y1="72" x2="46" y2="72"/><line x1="36" y1="52" x2="64" y2="52"/><line x1="54" y1="32" x2="82" y2="32"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><line x1="18" y1="72" x2="46" y2="72"/><line x1="36" y1="52" x2="64" y2="52"/><line x1="54" y1="32" x2="82" y2="32"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — M7 的三橫,錯開上行——變成階梯。<b>走上樓,回到家</b>。也是這個品牌自己的路:一階一階,不趕。</div>
+      <div class="note"><b>為什麼</b> — 保留 M7 全部的簡潔,多一個「動作」;比 M7 更難撞款。</div>
+      <div class="note"><b>風險</b> — 上升箭頭的既視感 (金融、成長類 Logo 愛用斜向上),要靠細線與留白避開俗氣。</div>
+    </div>
+  </div>
+
+  <!-- M14 · THE FIRST CUP -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M14</div><div class="c-name">The First Cup</div><div class="c-cn">迎賓茶 · 熱氣是 E</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><path d="M28 62 Q50 84 72 62" /><line x1="28" y1="62" x2="72" y2="62"/><path class="soft" d="M38 48 Q50 43 62 48"/><path class="soft" d="M41 38 Q50 33 59 38"/><path class="soft" d="M44 28 Q50 24 56 28"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path d="M28 62 Q50 84 72 62" /><line x1="28" y1="62" x2="72" y2="62"/><path class="soft" d="M38 48 Q50 43 62 48"/><path class="soft" d="M41 38 Q50 33 59 38"/><path class="soft" d="M44 28 Q50 24 56 28"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><path d="M28 62 Q50 84 72 62" /><line x1="28" y1="62" x2="72" y2="62"/><path class="soft" d="M38 48 Q50 43 62 48"/><path class="soft" d="M41 38 Q50 33 59 38"/><path class="soft" d="M44 28 Q50 24 56 28"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><path d="M28 62 Q50 84 72 62" /><line x1="28" y1="62" x2="72" y2="62"/><path class="soft" d="M38 48 Q50 43 62 48"/><path class="soft" d="M44 28 Q50 24 56 28"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 一碗茶,三道熱氣——熱氣就是 E。<b>客人抵達,第一件事是遞上一杯茶</b>:希臘人這樣做,台灣人更是。Warmth, made in Taiwan. 的具體形狀。</div>
+      <div class="note"><b>為什麼</b> — 十個裡最有「人的動作」的:有人剛把這杯茶放在你面前。台灣茶文化 × 待客,文化底最厚。</div>
+      <div class="note"><b>風險</b> — 茶飲品牌的既視感,需靠極簡線條與品牌語境撐開距離。</div>
+    </div>
+  </div>
+
+  <!-- M15 · THE LIGHT -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M15</div><div class="c-name">The Light</div><div class="c-cn">落在地板上的三道光 · Oak 色的 E</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><path class="fillonly" d="M22 38 L70 24 L74 31 L26 45 Z"/><path class="fillonly" d="M26 56 L74 42 L78 49 L30 63 Z"/><path class="fillonly" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path class="fillonly" d="M22 38 L70 24 L74 31 L26 45 Z"/><path class="fillonly" d="M26 56 L74 42 L78 49 L30 63 Z"/><path class="fillonly" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">On Ember · 光在黑裡</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><path class="fillonly" d="M22 38 L70 24 L74 31 L26 45 Z"/><path class="fillonly" d="M26 56 L74 42 L78 49 L30 63 Z"/><path class="fillonly" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100"><path class="fillonly" d="M22 38 L70 24 L74 31 L26 45 Z"/><path class="fillonly" d="M26 56 L74 42 L78 49 L30 63 Z"/><path class="fillonly" d="M30 74 L78 60 L82 67 L34 81 Z"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 午後,光穿過木格柵,落在橡木地板上——三道光,就是 E。<b>整個識別系統裡,唯一被允許「發光」的東西是光本身</b>,所以它是唯一的 Oak 色實心。</div>
+      <div class="note"><b>為什麼</b> — 「光是第五種材質」的化身;在深色底上最美 (夜裡的官網、深色包裝)。</div>
+      <div class="note"><b>風險</b> — 唯一非細線的候選,與其他系統元素氣質稍異;斜向也有動感既視感。</div>
+    </div>
+  </div>
+
+  <!-- M16 · THE CORRIDOR -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M16</div><div class="c-name">The Corridor</div><div class="c-cn">E 的透視 · 走進來</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><line x1="22" y1="36" x2="78" y2="36"/><line x1="32" y1="56" x2="68" y2="56"/><line x1="40" y1="70" x2="60" y2="70"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><line x1="22" y1="36" x2="78" y2="36"/><line x1="32" y1="56" x2="68" y2="56"/><line x1="40" y1="70" x2="60" y2="70"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><line x1="22" y1="36" x2="78" y2="36"/><line x1="32" y1="56" x2="68" y2="56"/><line x1="40" y1="70" x2="60" y2="70"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><line x1="22" y1="36" x2="78" y2="36"/><line x1="32" y1="56" x2="68" y2="56"/><line x1="40" y1="70" x2="60" y2="70"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — 三橫,寬度與間距遞減——透視。像站在玄關往裡看,<b>空間邀請你走進來</b>。E 有了縱深。</div>
+      <div class="note"><b>為什麼</b> — M7 的直系進化:同樣的靜,多了一個方向感。極簡程度不變。</div>
+      <div class="note"><b>風險</b> — 抽象度仍高;縱深感需要一眼的耐心。</div>
+    </div>
+  </div>
+
+  <!-- M17 · THE HEARTH LINES -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M17</div><div class="c-name">The Hearth Lines</div><div class="c-cn">爐火的三道柔波 · 名字的本義</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><path class="soft" d="M26 34 C38 28, 62 40, 74 34"/><path class="soft" d="M26 52 C38 46, 62 58, 74 52"/><path class="soft" d="M26 70 C38 64, 62 76, 74 70"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — M7 的三橫,呼吸了一下——微微起伏,像爐火的光在牆上晃。<b>Estia 女神的火,不用畫火焰,畫它的搖曳就夠了</b>。E,也是熱,也是波。</div>
+      <div class="note"><b>為什麼</b> — 名字語源唯一的直系後代,卻完全避開火焰的俗套。動與靜之間,拿捏得最曖昧的一個。</div>
+      <div class="note"><b>風險</b> — 柔波與「靜」的直線系統氣質略異;也可能被讀成水紋。</div>
+    </div>
+  </div>
+
+  <!-- M18 · THE SHELF -->
+  <div class="card">
+    <div class="c-head"><div class="c-id">M18</div><div class="c-name">The Shelf</div><div class="c-cn">E 是一座書牆,上面有一本書</div></div>
+    <div class="stages">
+      <div class="stage"><span class="stage-label">The Mark</span>
+        <svg class="mk" width="88" height="88" viewBox="0 0 100 100"><line x1="28" y1="20" x2="28" y2="80"/><line x1="28" y1="26" x2="76" y2="26"/><line x1="28" y1="52" x2="76" y2="52"/><line x1="28" y1="78" x2="76" y2="78"/><line x1="58" y1="52" x2="58" y2="38"/><line x1="66" y1="52" x2="61" y2="39"/></svg>
+      </div>
+      <div class="stage"><span class="stage-label">Stacked</span>
+        <div class="stack"><div class="mk"><svg class="mk" width="58" height="58" viewBox="0 0 100 100"><line x1="28" y1="20" x2="28" y2="80"/><line x1="28" y1="26" x2="76" y2="26"/><line x1="28" y1="52" x2="76" y2="52"/><line x1="28" y1="78" x2="76" y2="78"/><line x1="58" y1="52" x2="58" y2="38"/><line x1="66" y1="52" x2="61" y2="39"/></svg></div><div class="wm">ESTIA</div></div>
+      </div>
+      <div class="stage dark"><span class="stage-label">Reversed · Small</span>
+        <div style="display:flex;gap:26px;align-items:center;"><svg class="mk" width="72" height="72" viewBox="0 0 100 100"><line x1="28" y1="20" x2="28" y2="80"/><line x1="28" y1="26" x2="76" y2="26"/><line x1="28" y1="52" x2="76" y2="52"/><line x1="28" y1="78" x2="76" y2="78"/><line x1="58" y1="52" x2="58" y2="38"/><line x1="66" y1="52" x2="61" y2="39"/></svg><svg class="mk" width="30" height="30" viewBox="0 0 100 100" style="stroke-width:5"><line x1="28" y1="20" x2="28" y2="80"/><line x1="28" y1="26" x2="76" y2="26"/><line x1="28" y1="52" x2="76" y2="52"/><line x1="28" y1="78" x2="76" y2="78"/></svg></div>
+      </div>
+    </div>
+    <div class="c-notes">
+      <div class="note"><b>意思</b> — E 是一座書架:三道臂是層板,上面站著一本書、斜靠著另一本。<b>有書的家,才是被住著的家</b>——也是你 Cultural literacy 那條價值觀的形狀。</div>
+      <div class="note"><b>為什麼</b> — 唯一講「文化」的候選;Aesop 會喜歡的那種符號。斜靠的書,是整個圖裡唯一的「生活痕跡」。</div>
+      <div class="note"><b>風險</b> — 元素最多,小尺寸必須拿掉書;意義偏「副價值」而非品牌核心。</div>
+    </div>
+  </div>
+
+  <!-- HOW TO ANSWER -->
+  <div class="howto">
+    <div class="eyebrow">How to decide · 怎麼選</div>
+    <p>存活名單:<span class="code">0 · M1 · M3 · M7</span> + 這十個 <span class="code">M9 – M18</span>。</p>
+    <p>建議這次換個選法:先刪到剩 <b>2 – 3 個</b>,再對每一個下修改指令。「就是他」常常不是被找到的,是被磨出來的——最後一哩路,靠微調。</p>
+    <p>也可以指定雜交:「M9 的桌 + M14 的熱氣」「M11 但門改直角」都是合法指令。</p>
+  </div>
+
+  <footer>
+    <span>ESTIA · Mark Candidates v4</span>
+    <span>Day 13 · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>
