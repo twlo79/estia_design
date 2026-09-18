@@ -9,6 +9,7 @@ cp -f $OUT/*.html brand/documents/ 2>/dev/null || true
 cp -f $OUT/*.jpg $OUT/*.png brand/visual/ 2>/dev/null || true
 cp -f $OUT/*.docx $OUT/*.pptx office/ 2>/dev/null || true
 cp -f $OUT/正隆*.xlsx zhenglong/ 2>/dev/null || true
+cp -f $OUT/安幸*.xlsx anxing/ 2>/dev/null || true
 cp -f /mnt/transcripts/*.txt conversations/ 2>/dev/null || true
 sed -i "s/^_Last sync:.*/_Last sync: $(date +%F) · by Claude_/" README.md
 git add -A

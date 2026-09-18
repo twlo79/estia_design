@@ -48,3 +48,5 @@
 **本次(2026-09-09)**:建立本 repo 備份體系(結構/README/sync.sh/estia-backup skill)
 
 **自動備份管線啟用(2026-09-09)**:Project 知識庫(SKILL.md+token.txt)+ 專案指令已就位;本 commit 即為管線驗收。
+
+**2026-09-18**:安幸老闆版損益表 v2(ESTIA 樣式重建:總覽 dashboard+KPI 卡+三圖表+洞察;六分頁全套品牌化;SUMIFS 連動保留;新增 repo `anxing/` 資料夾)

@@ -24,6 +24,7 @@ ESTIA Residences(es-TEE-ah)品牌、營運與客源策略完整文件庫。
 | `brand/visual/` | 視覺輸出(logo、字標、票選頁、大頭貼、M11) |
 | `office/` | Word 手冊、方向公告 PPT、品牌文件 Office 版 |
 | `zhenglong/` | 正隆官邸:房客結構分析、詢問週報表 |
+| `anxing/` | 安幸公司財務:老闆版損益表 |
 | `scripts/` | 備份同步腳本 |
 | `skills/estia-backup/` | Claude 備份 skill(自動同步本 repo 的操作規範) |
 
@@ -36,4 +37,4 @@ ESTIA Residences(es-TEE-ah)品牌、營運與客源策略完整文件庫。
 
 > 命名規則:品牌對外一律使用全名 **ESTIA Residences Taipei**(避免與全球希臘餐廳 Estia 的搜尋衝突)。
 
-_Last sync: 2026-09-09 · auto-backup verified · by Claude_
+_Last sync: 2026-09-18 · by Claude_
