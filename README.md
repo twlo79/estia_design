@@ -37,4 +37,4 @@ ESTIA Residences(es-TEE-ah)品牌、營運與客源策略完整文件庫。
 
 > 命名規則:品牌對外一律使用全名 **ESTIA Residences Taipei**(避免與全球希臘餐廳 Estia 的搜尋衝突)。
 
-_Last sync: 2026-09-18 · by Claude_
+_Last sync: 2026-09-21 · by Claude_
